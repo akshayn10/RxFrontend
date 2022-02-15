@@ -4,12 +4,28 @@
     <div class="right-align">
       <app-profile></app-profile>
     </div>
-    <app-dashboard-title></app-dashboard-title>
+    <app-dashboard-title class="title"></app-dashboard-title>
     <div class="graph-container">
-      <app-graph [graphData]="lineChartData" class="graph"></app-graph>
-      <app-graph [graphData]="lineChartData2" class="graph"></app-graph>
+      <!-- <app-graph [graphData]="lineChartData" class="graph"></app-graph>
+      <app-graph [graphData]="lineChartData2" class="graph"></app-graph> -->
+      <app-curved-line class="graph"></app-curved-line>
+      <app-curved-line class="graph"></app-curved-line>
     </div>
     <app-dashboard-gridbox></app-dashboard-gridbox>
-
+    <div class="bottom-content">
+      <div class="table-grp">
+      <mat-tab-group>
+        <mat-tab label="Top Selling Plan"
+          ><app-dashboard-table class="table1"></app-dashboard-table
+        ></mat-tab>
+        <mat-tab label="Top Add-ons"
+          ><app-dashboard-table class="table2"></app-dashboard-table
+        ></mat-tab>
+      </mat-tab-group>
+    </div>
+      <div class="pie-chart">
+        <app-dash-pie></app-dash-pie>
+      </div>
+    </div>
   </div>
 </div>

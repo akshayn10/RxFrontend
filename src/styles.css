@@ -4,12 +4,11 @@
 
 html,
 body {
-  height: 100%;
-}
-body {
+
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Poppins;
 }
+
 :root {
   --primary-blue: #347AE2;
   --navWhite: #ECEFF4;
@@ -18,14 +17,14 @@ body {
 .app-container{
   display: flex;
   height: 100%;
+
 }
 .content{
   width: 100%;
+  margin-left: 250px;
 }
 .right-align{
   display: flex;
   justify-content: flex-end;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

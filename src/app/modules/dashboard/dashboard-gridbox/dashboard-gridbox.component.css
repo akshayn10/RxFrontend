@@ -3,7 +3,7 @@
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     grid-template-columns: auto auto auto;
-    padding: 100px;
+    padding: 90px;
 
   }
 
@@ -11,11 +11,9 @@
   [class^="box-"] {
     background-color: #ECEFF4;
     border: none ;
-    
     padding: 15px;
     font-size: 14px;
     color: #3072D8;
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
     text-align: start;
     border-radius: 10px 10px 10px 10px;
 
@@ -25,4 +23,3 @@
     color: black;
     margin-top: 10px;
 }
-  

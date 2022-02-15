@@ -7,6 +7,8 @@ mat-icon-button{
 .mat-sidenav-container {
   display: flex;
   height: 100%;
+  position: fixed;
+  overflow-x: hidden;
 
 }
 .mat-sidenav {

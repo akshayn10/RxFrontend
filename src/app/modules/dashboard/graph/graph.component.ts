@@ -13,13 +13,30 @@ export class GraphComponent implements OnInit {
         label: this.graphData.label, },
     ];
     this.lineChartLabels=this.graphData.chartLabels;
+    this.lineChartOptions = {
+      responsive: true,
+      showLines:true,
+      scales: {
+        // xAxes: [{
+        //   scaleLabel:{
+        //     display:true,
+        //     labelString:'Time',
+        //   }
+        // }],
+        yAxes: [{
+          scaleLabel:{
+            display:true,
+            labelString:this.graphData.yLabel,
+          }
+        }]
+      }
+    }
   }
   @Input() graphData:any;
-  public lineChartData!: any[];
+  lineChartData!: any[];
   lineChartLabels!: Label[];
-  lineChartOptions: ChartOptions = {
-    responsive: true
-  }
+  lineChartOptions!: ChartOptions;
+
   lineChartColors: Color[] = [
     {
       backgroundColor: 'rgba(52, 122, 226, 0.3)',
