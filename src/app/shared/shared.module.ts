@@ -28,6 +28,6 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     RouterModule
 
   ],
-  exports: [SideNavComponent, ProfileComponent],
+  exports: [SideNavComponent, ProfileComponent,TopBarComponent],
 })
 export class SharedModule { }

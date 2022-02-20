@@ -13,11 +13,14 @@ import { HelpModule } from './modules/help/help.module';
 import { SubscriptionModule } from './modules/subscription/subscription.module';
 import { ProductModule } from './modules/product/product.module';
 import { ChartsModule } from 'ng2-charts';
+import { ProfileModule } from './modules/profile/profile.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
     
 
   ],
@@ -34,8 +37,9 @@ import { ChartsModule } from 'ng2-charts';
     HelpModule,
     SubscriptionModule,
     ProductModule,
-    ChartsModule
-
+    ChartsModule,
+    ProfileModule
+ 
 
   ],
   providers: [],

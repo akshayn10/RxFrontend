@@ -1,32 +1,42 @@
-<!-- <div class="container">
-    <div class="logo"><img src="../../../assets/logo/rx.png" /></div>
-    <div class="login">hello</div>
-</div> -->
 <div class="container">
     <div class="box-1"> <img class="logo" src="../../../assets/logo/rx.png" /> </div>
     <div class="box-2">
-       <div class="header">LOGIN</div> 
-       <form [formGroup]="loginForm">
-        <div class="form-group">
-            <label>User Name</label>
-            <input type="text" class="form-control" formControlName="name" placeholder="Akshayan_T">
-            <span class="invalid" *ngIf="name?.invalid && name?.touched">Name is required</span>
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" formControlName="password" placeholder="**********" >
-            <span class="invalid" *ngIf="password?.invalid && password?.touched">Password is required</span>
-            <!-- <span class="invalid" *ngIf="password.errors?.minlength">Password must be at least 6 characters</span> -->
-           
-        </div>
-      
-            <button type="submit" class="btn btn-primary">Sign In</button>
-        </form>
-            <div >
-                <a class="forgot-btn">Forgot password?</a>
-                <a class="forgot-btn">Don't have an account?</a>
-  
+        <div class="header">LOGIN</div>
+        <form [formGroup]="loginForm">
+
+            <div class="form-group">
+                <label>User Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="akshi98@gmil.com" />
+                <!-- <div class="invalid" *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)"> -->
+                <div *ngIf="f['email'].touched && f['email'].invalid">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                        Email is required.
+                    </div>
+                    <div class="invalid" *ngIf="f['email'].errors && f['email'].errors['email']">
+                        Invalid email.
+                    </div>
+                </div>
             </div>
-        
+
+            <div class="form-group">
+                <label> Password</label>
+                <input type="password" class="form-control" formControlName="password" placeholder="**********" />
+                <div class="invalid"
+                    *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched) && f['password'].errors['required']">
+                    Password is required. </div>
+                <div *ngIf="f['password'].errors && f['password'].errors['minLength']"> Minimum length is 8 charectors
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Sign In</button>
+
+        </form>
+        <div>
+            <a class="forgot-btn">Forgot password?</a>
+            <a class="forgot-btn"> Don't have an account? </a>
+        </div>
+
     </div>
 </div>

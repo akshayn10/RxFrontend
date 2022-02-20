@@ -55,6 +55,13 @@ const routes: Routes = [
     path: 'top',
     component: TopBarComponent,
   },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./modules/profile/profile.module').then(
+        (m) => m.ProfileModule
+      ),
+  }
 ];
 
 @NgModule({

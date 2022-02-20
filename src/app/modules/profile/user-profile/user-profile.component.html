@@ -1,0 +1,21 @@
+<app-top-bar></app-top-bar>
+<p>user profile</p>
+<form [formGroup]="userForm">
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email" /> 
+        
+        <div *ngIf="f['email'].touched && f['email'].invalid">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                Email is required.
+            </div>
+           
+        </div>
+    </div>
+
+
+
+   
+
+</form>
