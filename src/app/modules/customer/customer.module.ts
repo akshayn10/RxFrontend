@@ -10,6 +10,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { DialogComponent } from './dialog/dialog.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { DialogComponent } from './dialog/dialog.component';
     MatDividerModule,
     MatListModule,
     MatTableModule,
+    MatSortModule,
+    MatDialogModule,
   ],
   exports: [],
 })
