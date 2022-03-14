@@ -9,6 +9,7 @@ import { CusSubInfoComponent } from './cus-sub-info/cus-sub-info.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MatTableModule } from '@angular/material/table';
     CustomerDetailsComponent,
     CustomerConfigComponent,
     CusSubInfoComponent,
+    DialogComponent,
   ],
   imports: [
     CommonModule,
