@@ -3,13 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-customer-config',
   templateUrl: './customer-config.component.html',
-  styleUrls: ['./customer-config.component.css']
+  styleUrls: ['./customer-config.component.css'],
 })
 export class CustomerConfigComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
+  billingInfo: String = 'Sri Lanka';
+  PaymentMethod: any = ' **** **** **** 1234';
 }

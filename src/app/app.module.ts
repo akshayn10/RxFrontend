@@ -15,10 +15,7 @@ import { ProductModule } from './modules/product/product.module';
 import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
-  declarations: [
-    AppComponent
-
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,11 +29,9 @@ import { ChartsModule } from 'ng2-charts';
     HelpModule,
     SubscriptionModule,
     ProductModule,
-    ChartsModule
-
-
+    ChartsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

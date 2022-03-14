@@ -6,6 +6,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { CustomerConfigComponent } from './customer-config/customer-config.component';
 import { CusSubInfoComponent } from './cus-sub-info/cus-sub-info.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,14 @@ import { CusSubInfoComponent } from './cus-sub-info/cus-sub-info.component';
     CustomerConfigComponent,
     CusSubInfoComponent,
   ],
-  imports: [CommonModule, CustomerRoutes, SharedModule],
+  imports: [
+    CommonModule,
+    CustomerRoutes,
+    SharedModule,
+    MatDividerModule,
+    MatListModule,
+    MatTableModule,
+  ],
   exports: [],
 })
 export class CustomerModule {}

@@ -10,14 +10,8 @@ import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 
-
-
 @NgModule({
-  declarations: [
-    SideNavComponent,
-    ProfileComponent,
-    TopBarComponent,
-  ],
+  declarations: [SideNavComponent, ProfileComponent, TopBarComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -25,9 +19,8 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    RouterModule
-
+    RouterModule,
   ],
   exports: [SideNavComponent, ProfileComponent],
 })
-export class SharedModule { }
+export class SharedModule {}
