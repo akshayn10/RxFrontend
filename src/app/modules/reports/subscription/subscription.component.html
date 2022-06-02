@@ -3,12 +3,22 @@
   <div class="intro"></div>
 </div>
 <div class="box-cont">
-  <div class="box">
+  <div
+    class="box"
+    [routerLink]="['subscription/summary']"
+    [state]="[lineChartData0, lineChartLabels0]"
+  >
     Subscription <br />
     Summary
   </div>
-  <div class="box">Activations</div>
 
+  <div
+    class="box"
+    [routerLink]="['subscription/activation']"
+    [state]="[lineChartData1, lineChartLabels1]"
+  >
+    Activations
+  </div>
   <div class="box">
     Active <br />
     Customers
