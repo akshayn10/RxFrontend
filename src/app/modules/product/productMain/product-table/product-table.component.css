@@ -49,9 +49,12 @@ th {
 
 }
 
- 
-  
+
+
   ::ng-deep.mat-tab-label{
     min-width: 50%!important;
     background-color: var(--navWhite);
-   } 
+   }
+   .mat-row{
+    cursor: pointer;
+  }
