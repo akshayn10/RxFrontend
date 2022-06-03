@@ -5,7 +5,7 @@ export interface Product{
     description:string;
     planCount: number;
     addOnCount: number;
-    redirectUrl:string;
+    redirectURL:string;
     webhookSecret:string;
     webhookURL:string;
     freeTrialDays: number;

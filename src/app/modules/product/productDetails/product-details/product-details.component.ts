@@ -9,43 +9,47 @@ import { Product } from 'src/app/data/schema/product.model'
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  productID:string;
+  productId:string;
   product!: Product ;
   
  
 
 
   constructor(public _activatedRoute: ActivatedRoute,public router: Router, private productservice:ProductService) {
-    this.productID = this._activatedRoute.snapshot.paramMap.get('id')||'';
+    this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';
   }
 
   ngOnInit(): void {
    
-    this.getProductById(this.productID);
+    this.getProductById(this.productId);
   }
  
 
   getProductById(productId:string){
-    this.productservice.getProductById(this.productID).subscribe(resp => {
-      this.product = {
-        
-        productId: resp.productId,
-        name: resp.name,
-        description: resp.description,
-        redirectUrl:resp.redirectUrl,
-        webhookURL: resp.webhookURL,
-        webhookSecret: resp.webhookSecret,
-        logoURL:resp.logoURL,
-        freeTrialDays: resp.freeTrialDays,
-        planCount:resp.planCount,
-        addOnCount:resp.addOnCount,
-
-
-      };
+    this.productservice.getProductById(productId).subscribe(resp => {
+      this.product =resp ;
 
     
-    });
+    })
+  }
+  navigateToAddPlan(){
+    this.router.navigate(['/product/'+this.productId+'/addPlan'])
   }
 
+  navigateToProductList(){
+    this.router.navigate(['/product'])}
+
+  onDelete(productId: string) {
+    if (confirm('Are you sure to delete this record ?') == true) {
+      this.productservice.deleteProduct(productId).subscribe((res) => {
+      });
+      this.router.navigate([`/product`]);
+    }
+  }
+
+ 
+
+
+  
 
 }

@@ -4,6 +4,7 @@ export interface Plan{
     description:string;
     price: number;
     Duration: number;
+    Trial:boolean;
     productId:string;
     
    

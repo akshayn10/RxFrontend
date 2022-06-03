@@ -27,7 +27,7 @@ export class AddProductComponent implements OnInit {
       logoImage: [null],
       webhookURL: ['', [Validators.required]],
       redirectUrl: ['', [Validators.required]],
-      webhookSecret: ['', [Validators.required]],
+     
       freeTrialDays: [0, [Validators.required]],
     });
   }

@@ -14,7 +14,7 @@ import { ProductDetailsComponent } from './productDetails/product-details/produc
 import {MatDividerModule} from '@angular/material/divider';
 import { PlanTableComponent } from './productDetails/plan-table/plan-table.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTabsModule,
     ReactiveFormsModule,
     MatDividerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule
     
   ],exports: [
 

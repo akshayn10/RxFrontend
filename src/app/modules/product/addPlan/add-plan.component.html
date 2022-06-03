@@ -9,77 +9,86 @@
             <div class="container1">Add Plan</div>
             
                 
-<div class="container2">
-    <form [formGroup]="userForm">
+            <div class="container2">
+                <form [formGroup]="planForm"  (ngSubmit)="onSubmit()" >
+                  <div class="form-group">
+                    <label class="labelName">Plan Name</label>
+                    <div>
+                      <input type="text" class="form-control" formControlName="name" />
+                      <div class="invalid">
+                        <div *ngIf="f['name'].touched && f['name'].invalid">
+                          <div *ngIf="f['name'].errors && f['name'].errors['required']">
+                            Plan name is required.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="form-group">
+                    <label class="labelName">Price </label>
+                    <div>
+                      <input type="text" class="form-control Z" formControlName="price" />
+                      <div class="invalid">
+                        <div *ngIf="f['price'].touched && f['price'].invalid">
+                          <div *ngIf="
+                            f['price'].errors && f['price'].errors['required'] ">
+                            Price is required.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="form-group">
+                    <label class="labelName">Bill Every</label>
+                    <div>
+                      <input type="text" class="form-control Z" formControlName="duration" />
+                      <div class="invalid">
+                        <div *ngIf="f['duration'].touched && f['duration'].invalid">
+                          <div *ngIf=" f['duration'].errors && f['duration'].errors['required']  ">
+                            Duration period is required.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-        <div class="form-group">
-            <label class="labelName">Plan Name</label>
-            <input type="text" class="form-control" formControlName="name" />
-            <div class="invalid" *ngIf="f['name'].touched && f['name'].invalid">
-                <div *ngIf="f['name'].errors && f['name'].errors['required']">Product name is required. </div>
-            </div>
-        </div>
+                  <div class="form-group">
+                    <label class="labelName">Description </label>
+                    <div>
+                      <input type="textarea" class="form-control form-control-des" formControlName="description" />
+                      <div class="invalid">
+                        <div *ngIf="f['description'].touched && f['description'].invalid">
+                          <div *ngIf=" f['description'].errors && f['description'].errors['required'] ">
+                            Description is required.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  
+          
+                  <div class="form-group">
+                    <mat-checkbox  class="labelName" type="boolean" formControlName="trial" >Trial </mat-checkbox >
+                 
+                      <div class="invalid">
+                       <div *ngIf="f['trial'].touched && f['trial'].invalid">
+                          <div *ngIf=" f['trial'].errors && f['trial'].errors['required'] ">
+                            Trial Period is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-        <div class="form-group">
-            <label class="labelName">Plan Code</label>
-            <input type="text" class="form-control" formControlName="name" />
-            <div class="invalid" *ngIf="f['name'].touched && f['name'].invalid">
-                <div *ngIf="f['name'].errors && f['name'].errors['required']">Product name is required. </div>
-            </div>
-        </div>
-        
-
-        <div class="form-group">
-            <label class="labelName">Logo</label>
-            <div class="imgup">
-              <div class="icon-container">
-                <img src="assets/icons/img.png" alt="" />
-                <div>Drop your image here, or browse</div>
+          
+                  <div class="form-group">
+                    <button class="btn" type="submit">Save</button>
+                    <button class="btn2" routerLink="/product">Cancel</button>
+                  </div>
+                </form>
               </div>
-              <input id="fileUpload" type="file" accept="image/*" formControlName="logo" />
-            </div>
-          </div>
-
-        <div class="form-group">
-            <label class="labelName">Price</label>
-            <input type="text" class="form-control" formControlName="webUrl" />
-            <div class="invalid" *ngIf="f['webUrl'].touched && f['webUrl'].invalid">
-                <div *ngIf="f['webUrl'].errors && f['webUrl'].errors['required']">URL is required. </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="labelName">Bill Every</label>
-            <input type="text" class="form-control" formControlName="redirectUrl" />
-            <div class="invalid" *ngIf="f['redirectUrl'].touched && f['redirectUrl'].invalid">
-                <div *ngIf="f['redirectUrl'].errors && f['redirectUrl'].errors['required']">URL is required. </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="labelName">Secret Key</label>
-            <input type="text" class="form-control" formControlName="key" />
-            <div class="invalid" *ngIf="f['key'].touched && f['key'].invalid">
-                <div *ngIf="f['key'].errors && f['key'].errors['required']">Secret Key is required. </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="labelName">Trial Period</label>
-            <input type="text" class="form-control" formControlName="period" />
-            <div class="invalid" *ngIf="f['period'].touched && f['period'].invalid">
-                <div *ngIf="f['period'].errors && f['period'].errors['required']">Trial Period is required.</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <button class="btn" type="submit">Save</button>
-            <button class="btn2" routerLink="/product">Cancel</button>
-           
-          </div>
-
-    </form>
-</div>
 
 
             </div>

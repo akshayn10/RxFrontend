@@ -84,22 +84,7 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <label class="labelName">Webhook Secret</label>
-          <div>
-            <input type="text" class="form-control" formControlName="webhookSecret" />
-            <div class="invalid">
-              <div *ngIf="f['webhookSecret'].touched && f['webhookSecret'].invalid">
-              <div *ngIf="
-                  f['webhookSecret'].errors &&
-                  f['webhookSecret'].errors['required']
-                ">
-                Secret Key is required.
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
+        
 
         <div class="form-group">
           <label class="labelName">Trial Period</label>
