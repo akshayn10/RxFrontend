@@ -1,4 +1,5 @@
 .footer {
+    font-weight: bold;
     height: 50px;
     background-color: var(--navWhite);
     padding: 10px;

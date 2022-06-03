@@ -9,8 +9,8 @@ import { ChartsModule } from 'ng2-charts';
 import { DashPieComponent } from './dash-pie/dash-pie.component';
 import { GraphComponent } from './graph/graph.component';
 import { DashboardGridboxComponent } from './dashboard-gridbox/dashboard-gridbox.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -30,10 +30,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     SharedModule,
     DashboardRoutes,
     ChartsModule,
-  MatTableModule,
-  MatTabsModule
+    MatTableModule,
+    MatTabsModule
 
-  ],exports: [
+  ], exports: [
 
   ],
   bootstrap: [DashboardTableComponent]
