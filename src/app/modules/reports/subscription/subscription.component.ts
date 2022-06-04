@@ -25,6 +25,42 @@ export class SubscriptionComponent implements OnInit {
     ['May'],
     ['June'],
   ];
+  lineChartData2: SingleDataSet = [100, 90, 80, 70, 60, 50];
+  lineChartLabels2: Label[] = [
+    ['January'],
+    ['February'],
+    ['March'],
+    ['April'],
+    ['May'],
+    ['June'],
+  ];
+  lineChartData3: SingleDataSet = [100, 90, 80, 70, 60, 50];
+  lineChartLabels3: Label[] = [
+    ['January'],
+    ['February'],
+    ['March'],
+    ['April'],
+    ['May'],
+    ['June'],
+  ];
+  lineChartData4: SingleDataSet = [100, 90, 80, 70, 60, 50];
+  lineChartLabels4: Label[] = [
+    ['January'],
+    ['February'],
+    ['March'],
+    ['April'],
+    ['May'],
+    ['June'],
+  ];
+  lineChartData5: SingleDataSet = [100, 90, 80, 70, 60, 50];
+  lineChartLabels5: Label[] = [
+    ['January'],
+    ['February'],
+    ['March'],
+    ['April'],
+    ['May'],
+    ['June'],
+  ];
   constructor() {}
 
   ngOnInit(): void {}

@@ -13,8 +13,26 @@ const routes: Routes = [
     children: [
       { path: 'summary', component: ReportChartComponent },
       { path: 'activation', component: ReportChartComponent },
-      //   { path: 'details/:id', component: ProductDetailsComponent }
+      { path: 'active customer', component: ReportChartComponent },
+      { path: 'Active Trials', component: ReportChartComponent },
+      { path: 'Upgrade Details', component: ReportChartComponent },
+      { path: 'Downgrade Details', component: ReportChartComponent },
     ],
+  },
+  {
+    path: 'Sales',
+    children: [
+      { path: 'Sales By Plan', component: ReportChartComponent },
+      { path: 'Sales By Add-Ons', component: ReportChartComponent },
+    ],
+  },
+  {
+    path: 'Revenue',
+    children: [{ path: 'Net Revenue', component: ReportChartComponent }],
+  },
+  {
+    path: 'Payments',
+    children: [{ path: 'Payment Received', component: ReportChartComponent }],
   },
 ];
 
