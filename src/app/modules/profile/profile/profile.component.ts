@@ -8,10 +8,13 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements AfterViewInit {
 
+
   constructor(private router: Router) {}
   ngAfterViewInit(): void {
   }
-  isProfile() {
-    return this.router.url == '/profile';
+  isDashboard() {
+    return this.router.url == '/dashboard';
   }
+
+
 }

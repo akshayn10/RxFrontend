@@ -31,6 +31,6 @@ import { FooterComponent } from './components/footer/footer/footer.component';
 
   ],
  // providers:[SharedService],
-  exports: [SideNavComponent, ProfileComponent, FooterComponent],
+  exports: [SideNavComponent, ProfileComponent, FooterComponent,TopBarComponent],
 })
 export class SharedModule { }
