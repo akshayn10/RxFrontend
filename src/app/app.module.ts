@@ -15,6 +15,7 @@ import { ProductModule } from './modules/product/product.module';
 import { ChartsModule } from 'ng2-charts';
 import { ReportsModule } from './modules/reports/reports.module';
 import { MarketplaceModule } from './modules/marketplace/marketplace.module';
+import { ProfileModule } from './modules/profile/profile.module';
 
 
 
@@ -36,10 +37,11 @@ import { MarketplaceModule } from './modules/marketplace/marketplace.module';
     ChartsModule,
     ReportsModule,
     MarketplaceModule,
-   
-    
+    ProfileModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
