@@ -3,5 +3,11 @@
   <div class="intro"></div>
 </div>
 <div class="box-cont">
-  <div class="box">Payment Received</div>
+  <div
+    class="box"
+    [routerLink]="['Sales/Sales By Plan']"
+    [state]="[lineChartData0, lineChartLabels0]"
+  >
+    Payment Received
+  </div>
 </div>
