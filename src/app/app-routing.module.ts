@@ -31,6 +31,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'profile',
+    loadChildren: () =>
+      import('./modules/profile/profile.module').then(
+        (m) => m.ProfileModule
+      ),
+  },
+  {
     path: 'customer',
     loadChildren: () =>
       import('./modules/customer/customer.module').then(
@@ -72,13 +79,13 @@ const routes: Routes = [
   },
   { path: '404', component: NotFoundComponent },
   {
-    path:'**',redirectTo:'404'
+    path: '**', redirectTo: '404'
   },
-  
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
