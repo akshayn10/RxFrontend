@@ -15,7 +15,7 @@
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
-    <td mat-cell *matCellDef="let bill">{{ bill.name }}</td>
+    <td mat-cell *matCellDef="let bill">{{ bill.customerName }}</td>
   </ng-container>
   <ng-container matColumnDef="generatedDate">
     <th mat-header-cell *matHeaderCellDef>Generated Date</th>
@@ -34,7 +34,7 @@
 
   <ng-container matColumnDef="amount">
     <th mat-header-cell *matHeaderCellDef>Amount</th>
-    <td mat-cell *matCellDef="let bill">{{ bill.amount }}</td>
+    <td mat-cell *matCellDef="let bill">{{ bill.totalAmount }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

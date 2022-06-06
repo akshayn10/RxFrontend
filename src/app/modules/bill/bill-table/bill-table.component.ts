@@ -35,6 +35,6 @@ export class BillTableComponent implements AfterViewInit, OnInit {
   /** Announce the change in sort state for assistive technology. */
 
   navigate(row: any) {
-    this._router.navigate(['/bill/' + row.billId]);
+    this._router.navigate(['/bill/details/' + row.billId]);
   }
 }
