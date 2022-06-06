@@ -13,7 +13,7 @@ export class TransactionTableComponent implements OnInit, AfterViewInit {
   transactions!: Transaction[];
   searchKey!: string;
   displayedColumns: string[] = [
-    'transactionId',
+    // 'transactionId',
     'date',
     'subscriptionId',
     'productName',
@@ -27,8 +27,17 @@ export class TransactionTableComponent implements OnInit, AfterViewInit {
 
   constructor(private _transactionService: TransactionService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getTransaction();
+  }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
+  }
+
+  getTransaction() {
+    this._transactionService.getTransactions().subscribe((data) => {
+      this.transactions = data;
+      this.dataSource.data = this.transactions;
+    });
   }
 }
