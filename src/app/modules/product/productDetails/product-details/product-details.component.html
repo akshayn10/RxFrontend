@@ -21,7 +21,6 @@
             <div><b>Free Trial Days </b></div>
           </div>
           <div class="detailResults">
-<<<<<<< HEAD
             <div>{{product.productId}} </div>
             <div>{{product.name}} </div>
             <div class="description">{{product.description}}</div>
@@ -29,15 +28,6 @@
             <div>{{product.webhookURL}}</div>
             <div>{{product.webhookSecret}}</div>
             <div>{{product.freeTrialDays}}</div>
-=======
-            <div>{{ product.productId }}</div>
-            <div>{{ product.name }}</div>
-            <div>{{ product.description }}</div>
-            <div>{{ product.redirectURL }}</div>
-            <div>{{ product.webhookURL }}</div>
-            <div>{{ product.webhookSecret }}</div>
-            <div>{{ product.freeTrialDays }}</div>
->>>>>>> dev
           </div>
         </div>
         <div class="logo">
@@ -58,19 +48,25 @@
 
         <app-plan-table></app-plan-table>
 
-        <div>
-          <a (click)="onDelete(product.productId)" class="delete-button">
-            <button mat-button class="delete-button">Delete</button>
-          </a>
-        </div>
-        <div>
-          <a (click)="navigateToEditProduct()" class="edit-button">
-            <button mat-button class="edit-button">Edit</button>
-          </a>
-        </div>
+        
 
 
         <app-add-on-table></app-add-on-table>
+
+
+       <div class="buttonF">
+        <div class="box1">
+          <a (click)="onDelete(product.productId)" class="delete-button">
+            <button mat-button class="delete-button">Delete Product</button>
+          </a>
+        </div>
+        <div class="box2">
+          <a (click)="navigateToEditProduct()" class="edit-button">
+            <button mat-button class="edit-button">Edit Product</button>
+          </a>
+        </div>
+       </div> 
+       
       </div>
     </div>
   </div>
