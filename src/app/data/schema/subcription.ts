@@ -6,4 +6,5 @@ export interface Subscription{
   createdDate:string;
   endDate:string;
   status:string;
+  subscriptionType:string;
 }

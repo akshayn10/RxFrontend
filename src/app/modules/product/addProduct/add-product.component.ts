@@ -24,10 +24,10 @@ export class AddProductComponent implements OnInit {
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       logoPath: [''],
-      logoImage: [null],
+      logoImage: [null,[Validators.required]],
       webhookURL: ['', [Validators.required]],
       redirectUrl: ['', [Validators.required]],
-      webhookSecret: ['', [Validators.required]],
+
       freeTrialDays: [0, [Validators.required]],
     });
   }

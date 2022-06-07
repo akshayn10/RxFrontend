@@ -1,0 +1,66 @@
+<div class="head">
+  <p>Bill Details</p>
+</div>
+<div class="form-group">
+  <input
+    type="text"
+    placeholder="Search"
+    class="form-control"
+    [(ngModel)]="searchKey"
+  />
+</div>
+<table mat-table [dataSource]="dataSource">
+  <!-- <ng-container matColumnDef="transactionId">
+    <th mat-header-cell *matHeaderCellDef>Transaction Id</th>
+    <td mat-cell *matCellDef="let transaction">
+      {{ transaction.transactionId }}
+    </td>
+  </ng-container> -->
+
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef>Date</th>
+    <td mat-cell *matCellDef="let transaction">{{ transaction.date }}</td>
+  </ng-container>
+  <ng-container matColumnDef="subscriptionId">
+    <th mat-header-cell *matHeaderCellDef>Subscription ID</th>
+    <td mat-cell *matCellDef="let transaction">
+      {{ transaction.subscriptionId }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="productName">
+    <th mat-header-cell *matHeaderCellDef>Product Name</th>
+    <td mat-cell *matCellDef="let transaction">
+      {{ transaction.productName }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="customerName">
+    <th mat-header-cell *matHeaderCellDef>Customer Name</th>
+    <td mat-cell *matCellDef="let transaction">
+      {{ transaction.customerName }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+    <th mat-header-cell *matHeaderCellDef>Amount</th>
+    <td mat-cell *matCellDef="let transaction">{{ transaction.amount }}</td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Transaction Status</th>
+    <td mat-cell *matCellDef="let transaction">{{ transaction.status }}</td>
+  </ng-container>
+  <ng-container matColumnDef="paymentFor">
+    <th mat-header-cell *matHeaderCellDef>Payment For</th>
+    <td mat-cell *matCellDef="let transaction">
+      {{ transaction.paymentFor }}<br />{{ transaction.addOnName }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+<mat-paginator
+  [pageSizeOptions]="[5]"
+  showFirstLastButtons
+  aria-label="Select page of periodic elements"
+></mat-paginator>

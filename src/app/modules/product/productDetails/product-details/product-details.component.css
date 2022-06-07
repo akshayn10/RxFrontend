@@ -9,6 +9,29 @@
   line-height: 27px;
   color: var(--primary-blue);
   }
+.flex-container{
+  margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+  .details-container {
+    display: flex;
+  }
+  .detailTitle {
+    width: 200px;
+    text-align: right;
+  }
+  .detailResults {
+    margin-left: 1%;
+    width:500px;
+  }
+
+  .logo{
+    width: 260px;
+    margin-left: 1%; 
+  }
+
   .subs-head{
     font-weight: 600;
     font-size: 18px;
@@ -16,7 +39,25 @@
     color: var(--primary-blue);
     margin-top: 30px;
   }
-  .details-container{
-    margin-top: 30px;
-  }
-  
+    
+.name-button {
+  background-color: var(--primary-blue);
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  height: 40px;
+  width: 150px;
+  border: none;
+  margin-top: 2%;
+}
+
+.delete-button{
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  height: 40px;
+  width: 150px;
+  border: none;
+  margin-top: 2%;
+}

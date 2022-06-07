@@ -8,21 +8,22 @@
       <div class="details">
         <div class="details-head">Customer Details</div>
         <mat-divider></mat-divider>
-
-
           <div class="details-container">
             <div class="detailTitle">
               <div><b>Customer ID :</b></div>
               <div><b>Name :</b></div>
               <div><b>E-mail :</b></div>
               <div><b>Status :</b></div>
-              <div><b>Billing Country :</b></div>
+              <div ><b>Payment Card Details :</b></div>
+
             </div>
             <div class="detail">
               <div>{{ customerID }}</div>
               <div>{{ customer.email }}</div>
               <div>{{ customer.name }}</div>
               <div>{{ customer.status }}</div>
+              <div *ngIf="customer.last4">**** **** **** {{ customer.last4 }}</div>
+              <div *ngIf="!customer.last4">No Card Details Available {{ customer.last4 }}</div>
             </div>
           </div>
         <div class="subs-info">

@@ -20,31 +20,25 @@
           display: flex;
          
       }
-      .form-control{
+      .form-control {
         width: 700px;
         height: 40px;
-        margin-top: 8px;
         background-color: var(--navWhite);
         border-radius: 10px;
         font-size: 14px;
         border: none;
-        margin-left: 10%;
-        
       }
-      .form-control :hover{
-          border-color: var(--primary-blue)! important;
+      .form-control :hover {
+        border-color: var(--primary-blue) !important;
       }
-
-      .form-control-des{
-        width: 700px;
+      
+      .form-control-des {
         height: 100px;
-        margin-top: 8px;
         background-color: var(--navWhite);
         border-radius: 10px;
         font-size: 14px;
         border: none;
         align-items: right;
-        margin-left: 10%;
       }
       
       .btn{
@@ -61,7 +55,7 @@
       
       .invalid{
           color: red;
-          width: 100px;
+          height: 15px;
       }
     
       .labelName{
@@ -73,28 +67,6 @@
       label{
         display: block;
        
-      }
-
-    
-      
-      .imgup {
-        position: relative;
-        border-radius: 10px;
-        background-color: var(--navWhite);
-        height: 110px;
-        width: 700px;
-        border: 1px dashed var(--primary-blue);
-        align-items: right;
-        margin-left: 10%;
-      }
-
-      .imgup img {
-        width: 60px;
-        height: 60px;
-        margin-top: 10px;
-      }
-      .imgup div {
-        text-align: center;
       }
 
       input[type="file"] {
@@ -129,3 +101,18 @@
         
       }
       
+      .tick{
+        margin-bottom: 15px; 
+     }
+     
+     .headerbox {
+         font-weight: bold;
+         margin-bottom: 0;
+         margin-top: 0;
+     }
+     
+     .checkbox {
+         font-family: Poppins !important;
+     }
+     
+     

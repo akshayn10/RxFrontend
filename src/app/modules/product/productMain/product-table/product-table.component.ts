@@ -45,7 +45,7 @@ export class ProductTableComponent implements AfterViewInit, OnInit {
 
 
   navigate(row: any) {
-    this._router.navigate(['/product/details', row.productId]);
+    this._router.navigate(['/product', row.productId]);
   }
 
 }
