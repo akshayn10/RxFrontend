@@ -1,0 +1,32 @@
+.details-head {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--primary-blue);
+}
+.cont {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+}
+.details-head {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--primary-blue);
+}
+.flex-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-container {
+  display: flex;
+}
+.subscription {
+  margin-left: 20px;
+}
+.addOn {
+  margin-left: 20px;
+}

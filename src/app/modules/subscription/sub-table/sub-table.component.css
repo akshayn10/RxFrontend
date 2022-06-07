@@ -37,3 +37,10 @@ th {
 .mat-row{
   cursor: pointer;
 }
+/* td{
+  text-align: center;
+} */
+.trial{
+  color: var(--primary-blue);
+  font-weight: bold;
+}

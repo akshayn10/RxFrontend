@@ -3,20 +3,52 @@
   <div class="intro"></div>
 </div>
 <div class="box-cont">
-  <div class="box">
+  <div
+    class="box"
+    [routerLink]="['subscription/summary']"
+    [state]="[lineChartData0, lineChartLabels0]"
+  >
     Subscription <br />
     Summary
   </div>
-  <div class="box">Activations</div>
 
-  <div class="box">
+  <div
+    class="box"
+    [routerLink]="['subscription/activation']"
+    [state]="[lineChartData1, lineChartLabels1]"
+  >
+    Activations
+  </div>
+  <div
+    class="box"
+    [routerLink]="['subscription/active customer']"
+    [state]="[lineChartData2, lineChartLabels2]"
+  >
     Active <br />
     Customers
   </div>
 </div>
 <div class="box-cont">
-  <div class="box">Active Trials</div>
-  <div class="box">Upgrade Details</div>
+  <div
+    class="box"
+    [routerLink]="['subscription/Active Trials']"
+    [state]="[lineChartData3, lineChartLabels3]"
+  >
+    Active Trials
+  </div>
+  <div
+    class="box"
+    [routerLink]="['subscription/Upgrade Details']"
+    [state]="[lineChartData4, lineChartLabels4]"
+  >
+    Upgrade Details
+  </div>
 
-  <div class="box">Downgrade Details</div>
+  <div
+    class="box"
+    [routerLink]="['subscription/Downgrade Details']"
+    [state]="[lineChartData4, lineChartLabels4]"
+  >
+    Downgrade Details
+  </div>
 </div>

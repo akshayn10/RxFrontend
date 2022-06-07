@@ -13,6 +13,8 @@ import { ProductDetailsComponent } from './productDetails/product-details/produc
 import {MatDividerModule} from '@angular/material/divider';
 import { PlanTableComponent } from './productDetails/plan-table/plan-table.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AddOnTableComponent } from './productDetails/add-on-table/add-on-table.component';
+
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ProductEditComponent } from './productDetails/product-edit/product-edit.component';
 import { PlanEditComponent } from './productDetails/plan-edit/plan-edit.component';
@@ -28,6 +30,7 @@ import { PlanEditComponent } from './productDetails/plan-edit/plan-edit.componen
     PlanTableComponent,
     ProductEditComponent,
     PlanEditComponent,
+    AddOnTableComponent,
    
     
   ],

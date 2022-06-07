@@ -1,0 +1,32 @@
+.mat-table {
+  width: 100%;
+  overflow: hidden !important;
+  box-shadow: none;
+}
+th {
+  background-color: var(--navWhite);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--primary-blue);
+}
+.form-group input {
+  margin-right: 20px;
+  border-radius: 15px;
+  margin-top: 10px;
+  border: 0;
+  outline: 0;
+  padding: 10px;
+}
+.form-group {
+  background-color: var(--navWhite);
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-group input:focus {
+  outline: none !important;
+}
+.mat-row {
+  cursor: pointer;
+}

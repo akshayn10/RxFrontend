@@ -6,7 +6,6 @@ export interface Plan{
     duration: number;
     haveTrial:boolean;
     productId:string;
-    
    
 }
 

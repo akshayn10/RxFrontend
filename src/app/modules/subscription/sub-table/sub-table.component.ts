@@ -20,6 +20,8 @@ export class SubTableComponent implements AfterViewInit, OnInit {
     'createdDate',
     'endDate',
     'status',
+    'subscriptionType'
+
   ];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
