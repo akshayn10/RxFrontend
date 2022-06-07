@@ -1,0 +1,41 @@
+<div class="top-content">
+  <div class="top">
+    <div class="logo">
+      <img src="../../../assets/logo/rx.png" />
+    </div>
+    <app-profile></app-profile>
+  </div>
+
+    
+    
+  
+
+<div class="second-content">
+<div class="container1">organization profile</div>
+  <div class="text-content">
+    <p>view and manage all your organization account associated information</p>
+  </div>
+  <div class="button-publish"> <a [routerLink]="['/organization-profile/manage-userrole']"><button mat-button class="button-content"> Manage Organization Roles</button></a></div>
+
+</div>
+<form>
+  <div class="containertext">
+    <h1>enadoc</h1>
+    <br>
+    <label for="name"><b>Organization name</b></label>
+    <input type="name" placeholder="enadoc" name="name" id="name" required>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+<br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+<br>
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <br>
+    <br>
+    <button type="submit" class="registerbtn">Save Changes</button>
+  </div>
+</form>
+    
+  

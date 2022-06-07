@@ -16,6 +16,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ReportsModule } from './modules/reports/reports.module';
 import { MarketplaceModule } from './modules/marketplace/marketplace.module';
 import { ProfileModule } from './modules/profile/profile.module';
+import { OrganizationModule } from './modules/organization-profile/organization.module';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ProfileModule } from './modules/profile/profile.module';
     ReportsModule,
     MarketplaceModule,
     ProfileModule,
+    OrganizationModule,
     
   ],
   providers: [],

@@ -1,0 +1,83 @@
+.logo img {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+  margin-left: 50px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  height: 130px;
+}
+
+.top-content {
+  height: 200px;
+  background-color: var(--navWhite);
+}
+
+app-profile {
+  margin-top: 20px;
+}
+
+
+.button-publish{
+  margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+    background-color:var(--primary-blue);
+    color: white;
+    font-size: 14px;
+    height: 40px;
+    width: 150px;
+  
+  }
+  .mat-button {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+  }
+
+
+.form-control {
+padding-left: 20px;
+text-align: start;
+border: none;
+height: 45px;
+width: 100%;
+border-radius: 10px 0 0 10px;
+box-sizing: border-box;
+
+}
+.mat-autocomplete{
+position: relative;
+  width: 93% !important;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  width: 60%;
+  height: 45px;
+  margin: 0 auto;
+}
+
+
+
+.second-content {
+  background-color: #C0C0C0;
+  height: 117px;
+  top: 86px;
+  width: 1728px;
+  color: var(--navWhite);
+  display: flex;
+  
+justify-content: space-around;
+
+}
+
+.text-content {
+  font-size: 22px;
+  color: var(--navWhite);
+  margin: auto;
+}
+
