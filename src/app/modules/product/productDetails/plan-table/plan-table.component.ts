@@ -13,15 +13,17 @@ import { Product } from 'src/app/data/schema/product.model'
 })
 export class PlanTableComponent implements  OnInit {
   productId!:string;
-  planId!:string;
-  product!: Product ;
+ 
+//  plan!:Plan;
 
   dataSource = new MatTableDataSource();
-  displayedColumns: String[] = ['planId',  'name','duration', 'price','description', ]
+  displayedColumns: String[] = ['planId',  'name','duration', 'price','description','edit' ]
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(public _activatedRoute: ActivatedRoute,public router: Router ,private planservice: PlanService)
-    {this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';}
+    {this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';
+  //this.planId = this.plan.planId||'';
+  }
    
 
   ngOnInit(): void {
@@ -36,19 +38,23 @@ export class PlanTableComponent implements  OnInit {
     });
   }
 
-  // deletePlan(planId: string) {
-  //   this.planservice.deletePlan(planId).subscribe(res => {
-  //     this.getPlan(this.productId);
-  //   }
-  // }
+ 
 
-
-  onDelete(planId: string,productId:string) {
+  onDelete(planId: string) {
     if (confirm('Are you sure to delete this record ?') == true) {
-      this.planservice.deletePlan(this.planId, this.productId).subscribe((res) => {
+      this.planservice.deletePlan(planId, this.productId).subscribe((res) => {
+        console.log(res)
+        this.ngOnInit();
       });
-      this.router.navigate([`/detail/${this.productId}`]);
+     
+      
+
     }
   }
+
+  onEdit(planId:string) {
+    this.router.navigate(['/product/'+this.productId+'/plan/'+planId+'/editPlan']);
+  }
+
 
 }
