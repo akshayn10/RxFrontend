@@ -9,7 +9,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatDividerModule } from '@angular/material/divider';
 import { TransactionTableComponent } from './transaction-table/transaction-table.component';
 import { BillDetailsComponent } from './bill-details/bill-details.component';
 
@@ -29,6 +29,7 @@ import { BillDetailsComponent } from './bill-details/bill-details.component';
     MatDialogModule,
     FormsModule,
     MatPaginatorModule,
+    MatDividerModule,
   ],
   exports: [],
 })
