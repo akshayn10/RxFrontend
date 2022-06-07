@@ -1,36 +1,46 @@
 <div class="app-container">
-    <app-side-nav></app-side-nav>
-    <div class="content">
-      <div class="right-align">
-        <app-profile></app-profile>
-      </div>
-  <div class="cont">
-    <div class="details">
-      <div class="details-head">
-        Product Details
-      </div>
-      <mat-divider></mat-divider>
+  <app-side-nav></app-side-nav>
+  <div class="content">
+    <div class="right-align">
+      <app-profile></app-profile>
     </div>
-  
-    <div class="details-container">
-      <div><b>Product ID</b> {{product.productId}} </div>
-      <div><b>Product Name</b>{{product.name}} </div>
-      <div><b>Description</b>{{product.description}}</div>
-      <div><b>Re-Direct URL</b> {{product.redirectUrl}}</div>
-      <div><b>Webhook URL</b>{{product.webhookURL}}</div>
-      <div><b>Secret Key</b>{{product.webhookSecret}}</div>
-      <div><b>Logo URL</b>{{product.logoURL}}</div>
-      <div><b>Free Trial Days</b>{{product.freeTrialDays}}</div>
-    </div>
-  
-    <div class="subs-info">
-      <div class="subs-head">
-        Plan Details
+    <div class="cont">
+      <div class="details">
+        <div class="details-head">
+          Product Details
+        </div>
+        <mat-divider></mat-divider>
       </div>
-      <mat-divider></mat-divider>
-  
-      <app-plan-table></app-plan-table>
+
+      <div class="details-container">
+        <div><b>Product ID</b> {{product.productId}} </div>
+        <div><b>Product Name</b>{{product.name}} </div>
+        <div><b>Description</b>{{product.description}}</div>
+        <div><b>Re-Direct URL</b> {{product.redirectUrl}}</div>
+        <div><b>Webhook URL</b>{{product.webhookURL}}</div>
+        <div><b>Secret Key</b>{{product.webhookSecret}}</div>
+        <div><b>Logo URL</b>{{product.logoURL}}</div>
+        <div><b>Free Trial Days</b>{{product.freeTrialDays}}</div>
+      </div>
+
+      <div class="subs-info">
+        <div class="subs-head">
+          Plan Details
+        </div>
+        <mat-divider></mat-divider>
+
+        <app-plan-table></app-plan-table>
+      </div>
+
+      <div class="subs-info">
+        <div class="subs-head">
+          Add-On Details
+        </div>
+        <mat-divider></mat-divider>
+
+        <app-add-on-table></app-add-on-table>
+      </div>
+
     </div>
   </div>
-    </div>
-  </div>
+</div>

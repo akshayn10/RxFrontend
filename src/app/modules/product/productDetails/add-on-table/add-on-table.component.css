@@ -1,0 +1,57 @@
+
+.container2{
+    margin: auto;
+    margin-top: 2%;
+}
+
+
+
+
+
+
+table {
+    width: 950px;
+    margin: auto;
+    border: none;
+    background-color: #F8FBFF;
+  }
+
+ 
+
+  .header{
+      color: var(--primary-blue);
+      font-size: 14px;
+  }
+
+  th{
+      background-color: var(--navWhite);
+
+  }
+
+ 
+  
+  /* .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  } */
+  
+  
+  .mat-row:hover .mat-cell {
+    border-color:  var(--primary-blue)! important;
+    
+  }
+  
+
+  
+  
+  
+  /* .table-grp{
+    border-radius: 12px;
+    overflow:hidden !important;
+  } */
+  
+  ::ng-deep.mat-tab-label{
+    min-width: 50%!important;
+    background-color: var(--navWhite);
+   }

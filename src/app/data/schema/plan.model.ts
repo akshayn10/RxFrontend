@@ -5,7 +5,6 @@ export interface Plan{
     price: number;
     Duration: number;
     productId:string;
-    
    
 }
 
