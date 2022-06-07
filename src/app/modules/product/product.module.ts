@@ -14,6 +14,8 @@ import { ProductDetailsComponent } from './productDetails/product-details/produc
 import {MatDividerModule} from '@angular/material/divider';
 import { PlanTableComponent } from './productDetails/plan-table/plan-table.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AddOnTableComponent } from './productDetails/add-on-table/add-on-table.component';
+
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
@@ -25,6 +27,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     AddPlanComponent,
     ProductDetailsComponent,
     PlanTableComponent,
+    AddOnTableComponent,
    
     
   ],
