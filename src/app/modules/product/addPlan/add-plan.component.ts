@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { PlanService } from 'src/app/data/service/ProductPlan/plan.service';
-import { Product } from 'src/app/data/schema/product.model'
-import { ActivatedRoute,Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-plan',

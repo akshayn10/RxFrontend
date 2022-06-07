@@ -25,6 +25,7 @@
   .detailResults {
     margin-left: 1%;
     width:500px;
+
   }
 
   .logo{
@@ -53,6 +54,17 @@
 
 .delete-button{
   background-color: red;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  height: 40px;
+  width: 150px;
+  border: none;
+  margin-top: 2%;
+}
+
+.edit-button{
+  background-color: rgb(64, 158, 195);
   border-radius: 10px;
   color: white;
   font-size: 14px;

@@ -11,12 +11,14 @@ import { Product } from 'src/app/data/schema/product.model'
 export class ProductDetailsComponent implements OnInit {
   productId:string;
   product!: Product ;
-  
+  planId:string;
  
 
 
   constructor(public _activatedRoute: ActivatedRoute,public router: Router, private productservice:ProductService) {
     this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';
+    this.planId = this._activatedRoute.snapshot.paramMap.get('planId') || '';
+ 
   }
 
   ngOnInit(): void {
@@ -36,14 +38,19 @@ export class ProductDetailsComponent implements OnInit {
     this.router.navigate(['/product/'+this.productId+'/addPlan'])
   }
 
+  navigateToEditProduct(){
+    this.router.navigate(['/product/'+this.productId+'/editProduct'])
+  }
+
   navigateToProductList(){
     this.router.navigate(['/product'])}
 
   onDelete(productId: string) {
     if (confirm('Are you sure to delete this record ?') == true) {
       this.productservice.deleteProduct(productId).subscribe((res) => {
+        this.router.navigate([`/product`]);
       });
-      this.router.navigate([`/product`]);
+      
     }
   }
 
