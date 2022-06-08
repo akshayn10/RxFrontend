@@ -39,8 +39,7 @@ import { MatTableModule } from '@angular/material/table';
     ReportsModule,
     MarketplaceModule,
     ProfileModule,
-    OrganizationModule,
-  MatTableModule
+    OrganizationModule
 
     
   ],
