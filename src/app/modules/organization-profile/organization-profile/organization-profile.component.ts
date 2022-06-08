@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-organization-profile',
+  templateUrl: './organization-profile.component.html',
+  styleUrls: ['./organization-profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class OraganizationProfileComponent implements OnInit {
 
   loginForm!: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -31,3 +31,4 @@ export class ProfileComponent implements OnInit {
 
 
 }
+
