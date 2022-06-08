@@ -12,21 +12,29 @@
       <div class="flex-container">
         <div class="details-container">
           <div class="detailTitle">
-            <div>
-              <div><b>Created Date </b>{{ billDetails.createdDate }}</div>
-              <div><b>Bill ID </b>{{ billDetails.billId }}</div>
-              <div><b>Customer Name</b>{{ billDetails.customerName }}</div>
-              <div
-                *ngFor="
-                  let subscription of billDetails.subscriptionsForBill;
-                  let i = index
-                "
-                class="subscription"
-              >
-                <div><b>Subscription Date </b>{{ subscription.date }}</div>
-                <div><b>Product Name </b>{{ subscription.productName }}</div>
-                <div><b>Plan Name </b>{{ subscription.planName }}</div>
-                <div><b>Price </b>{{ subscription.price }}</div>
+            <div class="auth">
+              <div><b>Created Date: </b>{{ billDetails.createdDate }}</div>
+              <div><b>Bill ID: </b>{{ billDetails.billId }}</div>
+              <div><b>Customer Name: </b>{{ billDetails.customerName }}</div>
+            </div>
+            <div
+              *ngFor="
+                let subscription of billDetails.subscriptionsForBill;
+                let i = index
+              "
+              class="subscription"
+            >
+              <div class="subs">
+                <div class="titles">
+                  <b>Subscription Date: </b>{{ subscription.date }}
+                </div>
+                <div class="titles">
+                  <b>Product Nam: </b>{{ subscription.productName }}
+                </div>
+                <div class="titles">
+                  <b>Plan Name: </b>{{ subscription.planName }}
+                </div>
+                <div class="titles"><b>Price </b>{{ subscription.price }}</div>
                 <div
                   *ngFor="
                     let addOn of subscription.addOnsForSubscription;
