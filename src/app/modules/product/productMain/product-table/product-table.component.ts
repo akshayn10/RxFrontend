@@ -23,7 +23,7 @@ export class ProductTableComponent implements AfterViewInit, OnInit {
 
   constructor(private _router: Router,private productservice: ProductService) { }
 
- // ProductList: any = [];
+ 
 
   ngOnInit(): void {
     this.getProducts();
@@ -41,8 +41,10 @@ export class ProductTableComponent implements AfterViewInit, OnInit {
 
     });
   }
-
-
+get totalRows(): number {
+  return this.products.length;
+  }
+  
 
   navigate(row: any) {
     this._router.navigate(['/product', row.productId]);

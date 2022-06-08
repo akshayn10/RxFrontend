@@ -1,7 +1,7 @@
 <div>
   <div class="container1">
     <div class="containerItem1">Product Plan insights</div>
-    <div class="containerItem2">Products</div>
+    <div class="containerItem2">{{totalRows}} Products</div>
   </div>
 
   <div class="container2">
@@ -54,25 +54,7 @@
     <mat-paginator
       [pageSizeOptions]="[5]"
       showFirstLastButtons
-      aria-label="Select page of periodic elements"
-    ></mat-paginator>
+      
+      ></mat-paginator>
   </div>
-
-  <!-- <div class="container3">
-
-     <mat-tab-group class="mat-elevation-z8">
-      <div >
-        <mat-tab label="Plans" >
-          <app-product-plan></app-product-plan>
-        </mat-tab>
-      </div>
-
-      <div >
-        <mat-tab label="Add-ons" >
-          <app-product-plan></app-product-plan>
-        </mat-tab>
-      </div>
-    </mat-tab-group>
-
-  </div> -->
 </div>
