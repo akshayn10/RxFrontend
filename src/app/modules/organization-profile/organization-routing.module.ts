@@ -1,9 +1,26 @@
 import { RouterModule, Routes } from '@angular/router';
-import { OrganizationProfileComponent } from './organization-profile/organization-profile.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ManageUserroleComponent } from './manage-org-role/manage-userrole.component';
+import { OraganizationProfileComponent } from './organization-profile/organization-profile.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
   path: '',
-    component: OrganizationProfileComponent}
+  component: OraganizationProfileComponent
+},
+{
+  path: '',
+  children:[
+    {
+      path: 'user-roles',
+      component: ManageUserroleComponent
+    },
+    {
+      path: 'user-roles/add-user',
+      component: AddUserComponent
+    },
+  ]
+}
 ];
 
 

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,15 +7,28 @@ import { Router } from '@angular/router';
   templateUrl: './organization-profile.component.html',
   styleUrls: ['./organization-profile.component.css']
 })
-export class OrganizationProfileComponent implements AfterViewInit {
+export class OraganizationProfileComponent implements OnInit {
+
+  loginForm!: FormGroup;
+  constructor(private fb: FormBuilder) {
+
+  }
 
 
-  constructor(private router: Router) {}
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+
+      email:['', [Validators.required ,Validators.email]],
+     password:['', [Validators.required,Validators.minLength(6)] ]
+
+
+    })
+
   }
-  isDashboard() {
-    return this.router.url == '/organization-profile';
-  }
+
+
+  get f() { return this.loginForm.controls; }
 
 
 }
+

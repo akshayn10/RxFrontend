@@ -7,9 +7,9 @@
     height: 300px;
   }
   .title{
-    background-color:rgba(154, 169, 219, 0.397);
+    background-color:var(--navWhite);
     width: 50%;
-    height:auto;
+    height: 120px;
     margin: 10px 0 5px 0;
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   }
@@ -327,16 +327,7 @@
   
     padding-left: 2%;
   }
-  .btn-black{
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 14px;
-    margin-bottom: 15px;
-    border: none;
-    color: white;
-    background-color: rgb(13, 13, 13);
-  }
+  
   
   .btn{
     width: 120px;
@@ -375,6 +366,3 @@
   .mat-elevation-z8{
     margin: 20px 200px 20px 200px;
   }
-.mr-5{
-  margin-right: 10px;
-}

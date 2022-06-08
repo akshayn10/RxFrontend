@@ -1,41 +1,76 @@
-<div class="top-content">
-  <div class="top">
-    <div class="logo">
-      <img src="../../../assets/logo/rx.png" />
+<div class="flex flex-col">
+  <app-top-bar></app-top-bar>
+  <!-- component -->
+  <div class="title self-center rounded-lg p-5">
+    <div class="flex space-between">
+      <div class="">
+        <h3 class="text-blue-800 font-bold"> Oraganization Profile</h3>
+        <span>View and Manage all your account associated information.</span>
+      </div>
+      <div class=""><a [routerLink]="['user-roles']"> <button mat-button class="btn-org">Manage Organization Roles</button>
+        </a></div>
     </div>
-    <app-profile></app-profile>
   </div>
-
-    
-    
-  
-
-<div class="second-content">
-<div class="container1">organization profile</div>
-  <div class="text-content">
-    <p>view and manage all your organization account associated information</p>
+  <div class="flex">
+    <h2 class="container text-blue-800 p-5">Enadoc</h2>
   </div>
-  <div class="button-publish"> <a [routerLink]="['/organization-profile/manage-userrole']"><button mat-button class="button-content"> Manage Organization Roles</button></a></div>
+  <div class="flex flex-col self-center">
+    <form class="justify-center">
+      <div class="form-group">
+        <label>Organization Name</label>
+        <div>
+          <input type="text" class="form-control" formControlName="fullName" placeholder="Enter FullName"
+            value="John Doe" />
+        </div>
+        <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
+          <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
+            Full name is Required
+          </div>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label>Organization E-mail Address</label>
+        <div>
+          <input type="text" class="form-control" formControlName="email" placeholder="Enter Email"
+            value="John@gmail.com" />
+        </div>
+        <div *ngIf="f['email'].touched && f['email'].invalid">
+          <div *ngIf="f['email'].errors && f['email'].errors['required']">
+            Email is required.
+          </div>
+          <div *ngIf="f['email'].errors && f['email'].errors['email']">
+            Email must be a valid email address.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Contact Number</label>
+        <div>
+          <input type="text" class="form-control" formControlName="number" placeholder="+94 77 123 4567"
+            value="077 123 4567" />
+        </div>
+        <div *ngIf="f['number'].touched && f['number'].invalid">
+          <div *ngIf="f['number'].errors && f['number'].errors['required']">
+            Number is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <div class="flex flex-col">
+          <input type="text" class="form-control" formControlName="Line1" placeholder="Address Line 1" value="" />
+          <input type="text" class="form-control" formControlName="Line2" placeholder="Address Line 2" value="" />
+          <input type="text" class="form-control" formControlName="city" placeholder="City" value="" />
+          <input type="text" class="form-control" formControlName="province" placeholder="Province/Region" value="" />
+          <input type="text" class="form-control" formControlName="postalCode" placeholder="Postal Code" value="" />
+        </div>
+      </div>
+    </form>
+    <div class="flex justify-center pt-5">
+      <button mat-button class="btn" routerLink="/dashboard">Save
+        Changes</button>
+    </div>
+  </div>
+  <app-footer class="mt-5"></app-footer>
 </div>
-<form>
-  <div class="containertext">
-    <h1>enadoc</h1>
-    <br>
-    <label for="name"><b>Organization name</b></label>
-    <input type="name" placeholder="enadoc" name="name" id="name" required>
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-<br>
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-<br>
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <br>
-    <br>
-    <button type="submit" class="registerbtn">Save Changes</button>
-  </div>
-</form>
-    
-  
