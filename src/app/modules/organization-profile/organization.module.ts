@@ -4,7 +4,7 @@ import { organizationRoutes } from './organization-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { ManageUserroleComponent } from './manage-org-role/manage-userrole.component';
-import { AddUserComponent } from './add-user/add-user.component';
+import { AddUserComponent } from './add-user/add-user.component'
 import { MatTableModule } from '@angular/material/table';
 
 
@@ -13,6 +13,7 @@ import { MatTableModule } from '@angular/material/table';
     OraganizationProfileComponent,
     ManageUserroleComponent,
     AddUserComponent
+
   ],
   imports: [
     CommonModule,

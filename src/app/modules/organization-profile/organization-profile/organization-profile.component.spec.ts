@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrganizationProfileComponent } from './organization-profile.component';
+import { OraganizationProfileComponent } from './organization-profile.component';
 
 describe('OrganizationProfileComponent', () => {
-  let component: OrganizationProfileComponent;
+  let component: OraganizationProfileComponent;
   let fixture: ComponentFixture<OraganizationProfileComponent>;
 
   beforeEach(async () => {

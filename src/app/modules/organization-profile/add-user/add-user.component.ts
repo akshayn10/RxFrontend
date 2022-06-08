@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements AfterViewInit {
+export class AddUserComponent implements OnInit {
 
   loginForm!: FormGroup;
   router: any;
