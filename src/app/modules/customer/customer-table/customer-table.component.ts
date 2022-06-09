@@ -12,7 +12,7 @@ import { CustomerService } from 'src/app/data/service/Customer/customer.service'
   styleUrls: ['./customer-table.component.css']
 })
 export class CustomerTableComponent implements AfterViewInit,OnInit {
-  searchKey!: string;
+  searchKey: string="Search";
   customers: Customer [] = [];
   displayedColumns: string[] = ['name','email','status'];
   dataSource =new MatTableDataSource<Customer>();
@@ -32,11 +32,14 @@ navigate(row:Customer){
   this._router.navigate(['/customer/details',row.customerId]);
 }
 getCustomers(){
-
-  this._customerService.getCustomers().subscribe(
+  this._customerService.getCustomers(this.searchKey).subscribe(
     (data:Customer[])=>{
       this.customers=data;
-      this.dataSource.data=this.customers})
-
+      this.dataSource.data=this.customers;
+      this.ngAfterViewInit();
+    })
+}
+emptySearch(){
+  this.searchKey="";
 }
 }
