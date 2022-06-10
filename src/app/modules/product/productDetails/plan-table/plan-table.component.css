@@ -1,54 +1,51 @@
-
-.container2{
-    margin: auto;
-    margin-top: 2%;
+.container2 {
+  margin: auto;
+  margin-top: 2%;
 }
 
 table {
-    width: 1050px;
-    margin: auto;
-    border: none;
-    background-color: #F8FBFF;
-  }
-
-  .header{
-      color: var(--primary-blue);
-      font-size: 14px;
-  }
-
-  th{
-      background-color: var(--navWhite);
-  }
-
-  .mat-row .mat-cell {
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
-  } 
-  
-  .mat-row:hover .mat-cell {
-    border-color:  var(--primary-blue)! important;  
-  }
-  
-  ::ng-deep.mat-tab-label{
-    min-width: 50%!important;
-    background-color: var(--navWhite);
-   }
-
-
-   .delete-button{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: var(--navWhite);
-    border-radius: 25px;
-    
-    font-size: 14px;
-    height: 40px;
-    width: 40px;
-    margin-left: 5px; 
-    border: none;
-    cursor: pointer;
-  }
-.image{
-  height: 28px;
-    width: 28px;
+  width: 1050px;
+  margin: auto;
+  border: none;
+  /* background-color: #f8fbff; */
 }
-    
+
+.header {
+  color: var(--primary-blue);
+  font-size: 14px;
+}
+
+th {
+  background-color: var(--navWhite);
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: var(--primary-blue) !important;
+}
+
+::ng-deep.mat-tab-label {
+  min-width: 50% !important;
+  background-color: var(--navWhite);
+}
+
+.delete-button,.edit-button {
+  background-color: white;
+  border-radius: 25px;
+  font-size: 14px;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  border: none;
+  cursor: pointer;
+}
+.image {
+  height: 28px;
+  width: 28px;
+  color: var(--primary-blue);
+
+}
