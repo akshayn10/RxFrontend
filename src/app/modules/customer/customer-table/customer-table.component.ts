@@ -12,7 +12,7 @@ import { CustomerService } from 'src/app/data/service/Customer/customer.service'
   styleUrls: ['./customer-table.component.css']
 })
 export class CustomerTableComponent implements AfterViewInit,OnInit {
-  searchKey: string="Search";
+  searchKey: string="";
   customers: Customer [] = [];
   displayedColumns: string[] = ['name','email','status'];
   dataSource =new MatTableDataSource<Customer>();
@@ -23,6 +23,7 @@ export class CustomerTableComponent implements AfterViewInit,OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+
   ngOnInit(){
   this.getCustomers();
   }
@@ -31,15 +32,18 @@ export class CustomerTableComponent implements AfterViewInit,OnInit {
 navigate(row:Customer){
   this._router.navigate(['/customer/details',row.customerId]);
 }
+
 getCustomers(){
   this._customerService.getCustomers(this.searchKey).subscribe(
     (data:Customer[])=>{
       this.customers=data;
       this.dataSource.data=this.customers;
-      this.ngAfterViewInit();
-    })
-}
-emptySearch(){
-  this.searchKey="";
+    },
+    (error:any)=>{
+      console.log(error);
+    }
+    )
+
+
 }
 }

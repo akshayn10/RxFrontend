@@ -4,15 +4,10 @@
     placeholder="Enter Name"
     class="form-control"
     [(ngModel)]="searchKey"
-    (click)="emptySearch()"
+    (keyup)="getCustomers()"
   />
-    <button (click)="getCustomers()"  >Search</button>
 </div>
 <table mat-table [dataSource]="dataSource">
-  <!-- <ng-container matColumnDef="customerId">
-    <th mat-header-cell *matHeaderCellDef>Customer ID</th>
-    <td mat-cell *matCellDef="let customer">{{ customer.customerId }}</td>
-  </ng-container> -->
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>

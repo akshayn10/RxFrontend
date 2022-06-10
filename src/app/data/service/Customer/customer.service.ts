@@ -25,11 +25,6 @@ export class CustomerService {
   getCustomerDetails(customerId: string): Observable<Customer> {
     return this.httpClient.get<Customer>(`${this.customerBaseApiUrl}/${customerId}`)
   }
-  searchCustomers(searchKey: string) {
-
-    return this.httpClient.get<Customer []>(this.customerBaseApiUrl)
-  }
-
 
 
   private handleError<T>(operation = 'operation', result?: T) {

@@ -6,10 +6,14 @@ html,
 body {
   scroll-behavior: smooth;
   margin: 0;
-  font-family: Poppins;
+  font-family: Poppins !important;
 
 }
 
+
+.mat-header-cell,input,.mat-cell,mat-paginator,button{
+  font-family: Poppins !important;
+}
 :root {
   --primary-blue: #347AE2;
   --navWhite: #ECEFF4;
