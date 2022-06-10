@@ -25,7 +25,7 @@
 
 .box-cont {
   display: flex;
-  flex-direction: "row";
+  flex-direction: row;
   justify-content: flex-start;
 }
 .box-1 {
@@ -52,5 +52,5 @@
   background: var(--navWhite);
   border-radius: 15px;
   align-items: stretch;
-  box-shadow: (2px 5px 10px rgba(41, 44, 56, 0.25));
+  box-shadow:(2px 5px 10px rgba(41, 44, 56, 0.25));
 }
