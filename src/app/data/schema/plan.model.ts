@@ -3,10 +3,9 @@ export interface Plan{
     name: string;
     description:string;
     price: number;
-    Duration: number;
-    Trial:boolean;
+    duration: number;
+    haveTrial:boolean;
     productId:string;
-    
    
 }
 

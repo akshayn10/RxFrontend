@@ -1,17 +1,21 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class AddUserComponent implements OnInit {
 
   loginForm!: FormGroup;
+  router: any;
   constructor(private fb: FormBuilder) {
 
+  }
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
   }
 
 
@@ -28,6 +32,8 @@ export class ProfileComponent implements OnInit {
 
 
   get f() { return this.loginForm.controls; }
-
+  isUserRole() {
+    return this.router.url == '/add-user';
+  }
 
 }

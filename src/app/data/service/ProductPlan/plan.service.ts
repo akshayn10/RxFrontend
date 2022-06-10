@@ -16,6 +16,10 @@ export class PlanService {
     return this.http.get<Plan[]>(this.PlanUrl+`/${productId}/plan`);
   }
 
+  getPlanById(planId:string,productId:string):Observable<Plan> {
+    return this.http.get<Plan>(this.PlanUrl+`/${productId}/plan/${planId}`);
+  }
+
   postPlan(productId:string,plan:any): Observable<any> {
     //console.log(plan)
     return this.http.post<any>(this.PlanUrl+`/${productId}/plan`, plan);
@@ -23,7 +27,11 @@ export class PlanService {
   }
 
   deletePlan(planId: string,productId:string): Observable<any> {
-    return this.http.delete(this.PlanUrl+`/${productId}/plan`);
+    return this.http.delete(this.PlanUrl+`/${productId}/plan/${planId}`);
+  }
+
+  updatePlan(planId: string,productId:string, planForm:any ): Observable<any> {
+    return this.http.put(this.PlanUrl+`/${productId}/plan/${planId}`, planForm);
   }
 
 } 

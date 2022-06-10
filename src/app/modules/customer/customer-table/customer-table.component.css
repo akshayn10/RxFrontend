@@ -15,7 +15,8 @@ th {
   margin-top: 10px;
   border:0;
   outline:0;
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
+  font-family: poppins;
 }
 .form-group{
   background-color: var(--navWhite);
