@@ -35,19 +35,21 @@
                   <b>Plan Name: </b>{{ subscription.planName }}
                 </div>
                 <div class="titles"><b>Price </b>{{ subscription.price }}</div>
-                <div
-                  *ngFor="
-                    let addOn of subscription.addOnsForSubscription;
-                    let i = index
-                  "
-                  class="addOn"
-                >
-                  {{ i + 1 }}
-                  <div><b>AddOn Date </b>{{ addOn.date }}</div>
-                  <div><b>AddOn Name </b>{{ addOn.addOnName }}</div>
-                  <div><b>Units </b>{{ addOn.units }}</div>
-                  <div><b>Unit Price </b>{{ addOn.unitPrice }}</div>
-                  <div><b>Total Amount </b>{{ addOn.totalAmount }}</div>
+                <div class="check">
+                  <div
+                    *ngFor="
+                      let addOn of subscription.addOnsForSubscription;
+                      let i = index
+                    "
+                    class="addOn"
+                  >
+                    {{ i + 1 }}
+                    <div><b>AddOn Date </b>{{ addOn.date }}</div>
+                    <div><b>AddOn Name </b>{{ addOn.addOnName }}</div>
+                    <div><b>Units </b>{{ addOn.units }}</div>
+                    <div><b>Unit Price </b>{{ addOn.unitPrice }}</div>
+                    <div><b>Total Amount </b>{{ addOn.totalAmount }}</div>
+                  </div>
                 </div>
               </div>
             </div>
