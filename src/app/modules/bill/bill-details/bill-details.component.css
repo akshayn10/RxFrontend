@@ -26,14 +26,16 @@
 }
 
 .addOn {
-  margin-left: 20px;
-  margin-bottom: 10px;
   border-radius: 10px;
   background-color: var(--navWhite);
-  padding: 10px;
+  padding: 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 2px 3px 3px 2px,
     rgba(0, 0, 0, 0.2) 0px 1px 3px 1px;
-  margin-top: 10px;
+  margin: 10px;
+  /* display: inline-block; */
+  max-width: 47%;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .auth {
   padding: 30px;
@@ -49,9 +51,19 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   min-width: 300px;
+  margin-bottom: 20px;
+  width: 1000px;
+  max-width: 1000px;
 }
 
 .titles {
   font-size: 18px;
   line-height: 30px;
+}
+.check {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 10px;
 }
