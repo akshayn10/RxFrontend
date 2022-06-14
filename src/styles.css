@@ -7,8 +7,12 @@ html,
 body {
   scroll-behavior: smooth;
   margin: 0;
-  font-family: Poppins;
+  font-family: Poppins !important;
 
+}
+
+.mat-header-cell,input,.mat-cell,mat-paginator,button{
+  font-family: Poppins !important;
 }
 
 :root {
@@ -17,19 +21,22 @@ body {
   --black :#292C38;
   --divider-blue:#77A4E9;
 }
+
 .app-container{
   display: flex;
   height: 100%;
-
 }
+
 .mat-divider {
   border-top-width: 3px !important;
   border-top-color: var(--divider-blue);
 }
+
 .content{
   width: 100%;
   margin-left: 250px;
 }
+
 .right-align{
   display: flex;
   justify-content: flex-end;
