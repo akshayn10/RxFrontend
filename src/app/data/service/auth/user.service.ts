@@ -13,4 +13,9 @@ export class UserService {
   registerUser(userForm:any):Observable<any>{
     return this.http.post<any>(this.userBaseApiUrl+'register',userForm);
   }
+
+  loginUser(loginForm:any):Observable<any>{
+    return this.http.post<any>(this.userBaseApiUrl+'login',loginForm);
+  }
+
 }

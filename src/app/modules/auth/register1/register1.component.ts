@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { UserService } from 'src/app/data/service/auth/user.service';
+import { ValidationService } from './validation.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class Register1Component implements OnInit {
   profilePreviewPath!: string;
   imageSelected:boolean = false;
 
-  constructor(private formBuilder: FormBuilder,private _userService:UserService) {
+  constructor(private formBuilder: FormBuilder,private _userService:UserService,private validationService:ValidationService) {
    }
 
   ngOnInit(): void {
@@ -24,11 +25,11 @@ export class Register1Component implements OnInit {
       profilePath: [''],
       profileImage: [null],
       userName: ['',[ Validators.required]],
-      password:['',[Validators.required,Validators.minLength(8)]],
+      password:['',Validators.compose([Validators.required,Validators.minLength(8),this.validationService.patternValidator()])],
       confirmPassword:['',[Validators.required,Validators.minLength(8)]]
     },
     {
-      validator: this.ConfirmedValidator('password', 'confirmPassword'),
+      validator: this.validationService.ConfirmedValidator('password', 'confirmPassword'),
     }
     )
   }
@@ -59,20 +60,6 @@ export class Register1Component implements OnInit {
 }
 
 
-ConfirmedValidator(controlName: string, matchingControlName: string){
-  return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-      if (matchingControl.errors && !matchingControl.errors['confirmedValidator']) {
-          return;
-      }
-      if (control.value !== matchingControl.value) {
-          matchingControl.setErrors({ confirmedValidator: true });
-      } else {
-          matchingControl.setErrors(null);
-      }
-  }
-}
 
 onFileChange(event: any) {
   if (event.target.files.length > 0) {
