@@ -6,12 +6,14 @@ import { Register1Component } from './register1/register1.component';
 import { RouterModule } from '@angular/router';
 import { Register2Component } from './register2/register2.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Register3Component } from './register3/register3.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     Register1Component,
-    Register2Component
+    Register2Component,
+    Register3Component,
 
   ],
   imports: [
