@@ -30,3 +30,9 @@ th {
 .mat-row {
   cursor: pointer;
 }
+.head {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--primary-blue);
+}

@@ -20,7 +20,7 @@ export class Register1Component implements OnInit {
       userName: ['',[ Validators.required]],
       password:['',[Validators.required,Validators.minLength(8)]],
       confirmPassword:['',[Validators.required,Validators.minLength(8)]],
-      companyName:['',[Validators.required]],
+      // companyName:['',[Validators.required]],
     },
     {
       validator: this.ConfirmedValidator('password', 'confirmPassword'),

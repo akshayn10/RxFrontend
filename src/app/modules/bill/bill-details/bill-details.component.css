@@ -24,9 +24,44 @@
 .details-container {
   display: flex;
 }
-.subscription {
-  margin-left: 20px;
-}
+
 .addOn {
-  margin-left: 20px;
+  border-radius: 10px;
+  background-color: var(--navWhite);
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 2px 3px 3px 2px,
+    rgba(0, 0, 0, 0.2) 0px 1px 3px 1px;
+  margin: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.auth {
+  padding: 30px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+.subs {
+  padding: 30px;
+  border-radius: 4%;
+  background-color: var(--navWhite);
+  border-width: 0.5px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  min-width: 300px;
+  margin-bottom: 20px;
+  width: 1350px;
+}
+
+.titles {
+  font-size: 18px;
+  line-height: 30px;
+}
+.check {
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  min-width: 100%;
+  grid-template-columns: auto auto auto;
 }

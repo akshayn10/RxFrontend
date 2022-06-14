@@ -18,12 +18,13 @@ import { AddOnTableComponent } from './productDetails/add-on-table/add-on-table.
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ProductEditComponent } from './productDetails/product-edit/product-edit.component';
 import { PlanEditComponent } from './productDetails/plan-edit/plan-edit.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
     ProductComponent,
     ProductTableComponent,
-    
+
     AddProductComponent,
     AddPlanComponent,
     ProductDetailsComponent,
@@ -31,8 +32,8 @@ import { PlanEditComponent } from './productDetails/plan-edit/plan-edit.componen
     ProductEditComponent,
     PlanEditComponent,
     AddOnTableComponent,
-   
-    
+
+
   ],
   imports: [
     CommonModule,
@@ -43,8 +44,9 @@ import { PlanEditComponent } from './productDetails/plan-edit/plan-edit.componen
     ReactiveFormsModule,
     MatDividerModule,
     MatPaginatorModule,
-    MatCheckboxModule
-    
+    MatCheckboxModule,
+    MatSelectModule
+
   ],exports: [
 
   ]

@@ -27,7 +27,7 @@ export class ReportChartComponent implements OnInit {
   lineChartColors: Color[] = [
     {
       borderColor: 'white',
-      backgroundColor: 'a7d8de',
+      backgroundColor: '#A2BAF5',
     },
   ];
   lineChartLegend = false;
