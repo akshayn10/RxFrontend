@@ -12,11 +12,11 @@
     margin-top: 2%;
 }
 
-.container3 {
+/* .container3 {
     margin: auto;
     margin-top: 2%;
     width: 85%;
-}
+} */
 
 .containerItem1 {
     color: var(--primary-blue);
@@ -49,9 +49,12 @@ th {
 
 }
 
- 
-  
+
+
   ::ng-deep.mat-tab-label{
     min-width: 50%!important;
     background-color: var(--navWhite);
-   } 
+   }
+   .mat-row{
+    cursor: pointer;
+  }

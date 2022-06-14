@@ -3,4 +3,5 @@ export interface Customer {
   name: string;
   email: string;
   status: string;
+  last4: string;
 }

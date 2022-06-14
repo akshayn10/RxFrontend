@@ -1,0 +1,35 @@
+<div class="container2">
+    <table mat-table [dataSource] = "dataSource"  class="mat-elevation-z8">
+
+      <ng-container  matColumnDef="addOnId">
+        <th mat-header-cell *matHeaderCellDef class="header"> Add-On ID </th>
+        <td mat-cell *matCellDef="let AddOn "> {{AddOn.addOnId}} </td>
+      </ng-container>
+
+
+      <ng-container  matColumnDef="displayName">
+        <th mat-header-cell *matHeaderCellDef class="header"> Display Name </th>
+        <td mat-cell *matCellDef="let AddOn "> {{AddOn.displayName}} </td>
+      </ng-container>
+
+
+      <ng-container  matColumnDef="unitOfMeasure">
+        <th mat-header-cell *matHeaderCellDef class="header"> Unit of Measure </th>
+        <td mat-cell *matCellDef="let AddOn "> {{AddOn.unitOfMeasure}} </td>
+      </ng-container>
+
+
+      <ng-container  matColumnDef="productPlan">
+        <th mat-header-cell *matHeaderCellDef class="header"> Product Plan </th>
+        <td mat-cell *matCellDef="let AddOn "> {{AddOn. productPlan}} </td>
+      </ng-container>
+
+      <ng-container  matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef class="header"> Price </th>
+        <td mat-cell *matCellDef="let AddOn "> {{AddOn.price}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row (click)="(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>

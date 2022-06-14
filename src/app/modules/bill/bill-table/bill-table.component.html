@@ -8,43 +8,39 @@
   />
 </div>
 <table mat-table [dataSource]="dataSource">
-
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef>E-mail</th>
-    <td mat-cell *matCellDef="let customer">{{ customer.email }}</td>
+    <td mat-cell *matCellDef="let bill">{{ bill.email }}</td>
   </ng-container>
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
-    <td mat-cell *matCellDef="let customer">{{ customer.name }}</td>
+    <td mat-cell *matCellDef="let bill">{{ bill.customerName }}</td>
   </ng-container>
   <ng-container matColumnDef="generatedDate">
     <th mat-header-cell *matHeaderCellDef>Generated Date</th>
-    <td mat-cell *matCellDef="let customer">{{ customer.generatedDate }}</td>
+    <td mat-cell *matCellDef="let bill">{{ bill.generatedDate }}</td>
   </ng-container>
-
 
   <!-- <ng-container matColumnDef="netRevenue">
     <th mat-header-cell *matHeaderCellDef>Net Revenue</th>
-    <td mat-cell *matCellDef="let customer">{{ customer.netRevenue }}</td>
+    <td mat-cell *matCellDef="let bill">{{ bill.netRevenue }}</td>
   </ng-container> -->
 
   <!-- <ng-container matColumnDef="totalAmount">
     <th mat-header-cell *matHeaderCellDef>Total Amount</th>
-    <td mat-cell *matCellDef="let customer">{{ customer.totalAmount }}</td>
+    <td mat-cell *matCellDef="let bill">{{ bill.totalAmount }}</td>
   </ng-container> -->
 
   <ng-container matColumnDef="amount">
     <th mat-header-cell *matHeaderCellDef>Amount</th>
-    <td mat-cell *matCellDef="let customer">{{ customer.amount }}</td>
+    <td mat-cell *matCellDef="let bill">{{ bill.totalAmount }}</td>
   </ng-container>
-
-
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr
     mat-row
-    (click)="openDialog(row)"
+    (click)="navigate(row)"
     *matRowDef="let row; columns: displayedColumns"
   ></tr>
 </table>
@@ -53,4 +49,4 @@
   showFirstLastButtons
   aria-label="Select page of periodic elements"
 >
-
+</mat-paginator>

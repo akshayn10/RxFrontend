@@ -3,6 +3,20 @@
   <div class="intro"></div>
 </div>
 <div class="box-cont">
-  <div class="box-1">Sales By Plan</div>
-  <div class="box-2">Sales By Add-Ons</div>
+  <div
+    class="box-1"
+    [routerLink]="['Sales/Sales By Plan']"
+    [state]="[lineChartData0, lineChartLabels0]"
+  >
+    Sales By Plan
+  </div>
+
+  <div
+    class="box-2"
+    [routerLink]="['Sales/Sales By Add-Ons']"
+    [state]="[lineChartData0, lineChartLabels0]"
+  >
+    Sales By Add-Ons
+  </div>
+  <div class="box-3"></div>
 </div>

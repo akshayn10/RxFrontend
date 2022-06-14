@@ -26,6 +26,7 @@ export class SubcsriptionDetailsComponent implements OnInit,AfterViewInit {
   }
   getSubscriptionDetails(subscriptionId:string){
     this._subscriptionService.getSubscriptionDetails(subscriptionId).subscribe(data=>{
+      console.log(data);
       this.subscription=data;
     })
 

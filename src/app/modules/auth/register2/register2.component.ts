@@ -21,8 +21,8 @@ export class Register2Component implements OnInit {
       city:['',[Validators.required]],
       state:['',[Validators.required]],
       country:['',[Validators.required]],
-      plan:['',[Validators.required]],
-      planCycle:['',[Validators.required]],
+      // plan:['',[Validators.required]],
+      // planCycle:['',[Validators.required]],
     })
   }
 
@@ -33,5 +33,5 @@ export class Register2Component implements OnInit {
         return;
     }
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm2.value))
-}
+  }
 }

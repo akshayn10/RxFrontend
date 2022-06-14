@@ -1,11 +1,6 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
-import {
-  SingleDataSet,
-  Label,
-  monkeyPatchChartJsLegend,
-  monkeyPatchChartJsTooltip,
-} from 'ng2-charts';
+import { SingleDataSet, Label } from 'ng2-charts';
 @Component({
   selector: 'app-dash-pie',
   templateUrl: './dash-pie.component.html',
@@ -18,11 +13,10 @@ export class DashPieComponent implements OnInit {
       position: 'bottom',
       labels: { fontColor: 'black', usePointStyle: true },
     },
-    elements:{
-      arc:{
-        borderWidth:1
-
-      }
+    elements: {
+      arc: {
+        borderWidth: 1,
+      },
     },
     // plugins: {
     //   datalabels: {

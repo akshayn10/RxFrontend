@@ -1,131 +1,116 @@
-.container1{
-    color: var(--primary-blue);
-    margin: auto;
-   font-weight: bold;
-    height:30px ;
-    width: 1100px;
-    border-bottom: 1px solid var(--primary-blue) ;
+.container1 {
+  color: var(--primary-blue);
+  margin: auto;
+  font-weight: bold;
+  height: 30px;
+  width: 1100px;
+  border-bottom: 1px solid var(--primary-blue);
 }
-    
-    .container2{
-      display: flex;
-        justify-content: center;
-        margin-top: 5%;
-    }
-    
-    .form-group{
-          margin-bottom: 10px;
-          font-size: 14px;
-          font-weight: bold;
-          display: flex;
-         
-      }
-      .form-control{
-        width: 700px;
-        height: 40px;
-        margin-top: 8px;
-        background-color: var(--navWhite);
-        border-radius: 10px;
-        font-size: 14px;
-        border: none;
-        margin-left: 10%;
-        
-      }
-      .form-control :hover{
-          border-color: var(--primary-blue)! important;
-      }
 
-      .form-control-des{
-        width: 700px;
-        height: 100px;
-        margin-top: 8px;
-        background-color: var(--navWhite);
-        border-radius: 10px;
-        font-size: 14px;
-        border: none;
-        align-items: right;
-        margin-left: 10%;
-      }
-      
-      .btn{
-        width: 120px;
-        height: 40px;
-        border-radius: 10px;
-        font-size: 14px;
-        margin-bottom: 15px;
-        border: none;
-        color: white;
-        background-color: var(--primary-blue);
-      }
-      
-      
-      .invalid{
-          color: red;
-          width: 100px;
-      }
-    
-      .labelName{
-          text-align: ends;
-          width: 120px;
-          margin-top: 10px;
-      }
-    
-      label{
-        display: block;
-       
-      }
+.container2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
 
-    
-      
-      .imgup {
-        position: relative;
-        border-radius: 10px;
-        background-color: var(--navWhite);
-        height: 110px;
-        width: 700px;
-        border: 1px dashed var(--primary-blue);
-        align-items: right;
-        margin-left: 10%;
-      }
+.form-group {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+}
+.form-control {
+  width: 500px;
+  height: 40px;
+  background-color: var(--navWhite);
+  border-radius: 10px;
+  font-size: 14px;
+  border: none;
+}
+.form-control :hover {
+  border-color: var(--primary-blue) !important;
+}
 
-      .imgup img {
-        width: 60px;
-        height: 60px;
-        margin-top: 10px;
-      }
-      .imgup div {
-        text-align: center;
-      }
+.form-control-des {
+  height: 100px;
+  background-color: var(--navWhite);
+  border-radius: 10px;
+  font-size: 14px;
+  border: none;
+  align-items: right;
+  padding-left: 10px;
+}
 
-      input[type="file"] {
-        left: 0;
-        top: 0;
-        position: absolute;
-        opacity: 0;
-        height: 100%;
-        cursor: pointer;
-        width: 100%;
-      }
+.btn {
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  border: none;
+  color: white;
+  background-color: var(--primary-blue);
+}
 
-      .btn{
-        width: 127px;
-      height: 40px;
-      background-color: var(--primary-blue);
-      font-weight: bold;
-      border-radius: 10px;
-      color: white;
-      margin-right: 10px;
-      margin-left: 23%;
+.invalid {
+  color: red;
+  height: 15px;
+}
 
-      }
+.labelName {
+  text-align: ends;
+  width: 120px;
+  margin-top: 10px;
+}
 
-      .btn2 {
-        width: 120px;
-        height: 40px;
-        border-radius: 10px;
-        color: white;
-        background-color: #292C38;
-        font-weight: bold;
-        
-      }
-      
+label {
+  display: block;
+}
+
+
+
+.btn {
+  width: 127px;
+  height: 40px;
+  background-color: var(--primary-blue);
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  margin-right: 10px;
+  margin-left: 23%;
+}
+
+.btn2 {
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  background-color: #292c38;
+  font-weight: bold;
+}
+
+.tick {
+  margin-bottom: 15px;
+}
+
+.headerbox {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.checkbox {
+  font-family: Poppins !important;
+}
+
+mat-form-field{
+  width: 100px;
+  margin-left: 20px;
+}
+
+.duration{
+  width: 60%;
+}
+input{
+  padding-left: 10px;
+}

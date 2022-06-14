@@ -3,6 +3,8 @@ import { ProductComponent } from './productMain/product-main/product.component';
 import { AddProductComponent } from './addProduct/add-product.component';
 import { AddPlanComponent } from './addPlan/add-plan.component';
 import { ProductDetailsComponent } from './productDetails/product-details/product-details.component';
+import { ProductEditComponent } from './productDetails/product-edit/product-edit.component';
+import { PlanEditComponent } from './productDetails/plan-edit/plan-edit.component';
 
 const routes: Routes = [
   {
@@ -14,8 +16,10 @@ const routes: Routes = [
     path: '',
     children:[
       { path: 'addProduct', component: AddProductComponent },
-      { path: 'addPlan', component: AddPlanComponent },
-      { path: 'details/:id', component: ProductDetailsComponent }
+      { path: ':id/addPlan', component: AddPlanComponent },
+      { path: ':id', component: ProductDetailsComponent },
+      { path: ':id/editProduct', component: ProductEditComponent },
+      { path: ':id/plan/:planId/editPlan', component: PlanEditComponent}
     ]
   }
 ];

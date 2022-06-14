@@ -4,22 +4,22 @@ import { BillComponent } from './bill-main/bill.component';
 import { BillRoutes } from './bill-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BillTableComponent } from './bill-table/bill-table.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { DialogComponent } from './dialog/dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { BillDetailsComponent } from './bill-details/bill-details/bill-details.component';
-import { TransactionTableComponent } from './bill-details/transaction-table/transaction-table.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { TransactionTableComponent } from './transaction-table/transaction-table.component';
+import { BillDetailsComponent } from './bill-details/bill-details.component';
 
 @NgModule({
   declarations: [
     BillComponent,
     BillTableComponent,
     DialogComponent,
+    TransactionTableComponent,
     BillDetailsComponent,
-    TransactionTableComponent
-
   ],
   imports: [
     CommonModule,
@@ -28,11 +28,9 @@ import { TransactionTableComponent } from './bill-details/transaction-table/tran
     MatTableModule,
     MatDialogModule,
     FormsModule,
-    MatPaginatorModule
-
-  ],exports: [
-
-  ]
-
+    MatPaginatorModule,
+    MatDividerModule,
+  ],
+  exports: [],
 })
-export class TransactionModule { }
+export class TransactionModule {}

@@ -1,0 +1,65 @@
+<div class="app-container">
+  <app-side-nav></app-side-nav>
+  <div class="content">
+    <div class="right-align">
+      <app-profile></app-profile>
+    </div>
+    <div class="cont">
+      <div class="details">
+        <div class="details-head">bill-details</div>
+        <mat-divider></mat-divider>
+      </div>
+      <div class="flex-container">
+        <div class="details-container">
+          <div class="detailTitle">
+            <div class="auth">
+              <div><b>Created Date: </b>{{ billDetails.createdDate }}</div>
+              <div><b>Bill ID: </b>{{ billDetails.billId }}</div>
+              <div><b>Customer Name: </b>{{ billDetails.customerName }}</div>
+            </div>
+            <div
+              *ngFor="
+                let subscription of billDetails.subscriptionsForBill;
+                let i = index
+              "
+              class="subscription"
+            >
+              <div class="subs">
+                <div class="titles">
+                  <b>Subscription Date: </b>{{ subscription.date }}
+                </div>
+                <div class="titles">
+                  <b>Product Nam: </b>{{ subscription.productName }}
+                </div>
+                <div class="titles">
+                  <b>Plan Name: </b>{{ subscription.planName }}
+                </div>
+                <div class="titles"><b>Price </b>{{ subscription.price }}</div>
+                <div class="check">
+                  <div
+                    *ngFor="
+                      let addOn of subscription.addOnsForSubscription;
+                      let i = index
+                    "
+                    class="addOn"
+                  >
+                    {{ i + 1 }}
+                    <div><b>AddOn Date </b>{{ addOn.date }}</div>
+                    <div><b>AddOn Name </b>{{ addOn.addOnName }}</div>
+                    <div><b>Units </b>{{ addOn.units }}</div>
+                    <div><b>Unit Price </b>{{ addOn.unitPrice }}</div>
+                    <div><b>Total Amount </b>{{ addOn.totalAmount }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div></div>
+
+      <div></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="box">
+      <div class="box-1">
+        <!-- <img class="logo" routerLink="/" src="../../../assets/logo/rx.png" />  -->
+        <object data="../../../../assets/logo/RX Logo T.svg" width="400" height="400"> </object>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-2">
+        <div class="header">REGISTER</div>
+        <form [formGroup]="registerForm3" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label style="font-size: 18px;">Choose Plan</label>
+                <div>
+
+                <div class="custom-control custom-radio label-cont">
+                  <input id="1month" type="radio" class="custom-control-input" value="1month" name="plan" formControlName="plan">
+                  <label class="custom-control-label1" for="1month">01 Month</label>
+                  <label class="custom-control-label" for="1month">$90.00</label>
+                </div>
+        
+                <div class="custom-control custom-radio label-cont">
+                  <input id="6months" type="radio" class="custom-control-input" value="6months" name="plan" formControlName="plan">
+                  <label class="custom-control-label1" for="6months">06 Months</label>
+                  <label class="custom-control-label" for="6months">$450.00</label>
+                </div>
+
+                <div class="custom-control custom-radio label-cont">
+                  <input id="12months" type="radio" class="custom-control-input" value="12months" name="plan" formControlName="plan">
+                  <label class="custom-control-label1" for="12months">12 Months</label>
+                  <label class="custom-control-label" for="12months">$840.00</label>
+                </div>
+
+              </div>
+        
+            </div>
+
+            <div class="blank" style="height: 15px;"></div>
+
+            <div class="form-group">
+                <label style="font-size: 18px;">Choose Plan Cycle</label>
+                <div class="custom-control custom-radio">
+                  <input id="onetime" type="radio" class="custom-control-input" value="onetime" name="planCycle" formControlName="planCycle">
+                  <label class="custom-control-label" for="onetime">One Time</label>
+                </div>
+        
+                <div class="custom-control custom-radio">
+                  <input id="recurring" type="radio" class="custom-control-input" value="recurring" name="planCycle" formControlName="planCycle">
+                  <label class="custom-control-label" for="recurring">Recurring</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <button class="btn" routerLink="/signup">Previous</button>
+                <button class="btn2" type="submit">Proceed Payment</button>
+            </div>
+        </form>
+
+        <!-- <div style="margin-left: 15%;">
+          <a class="forgot-btn">Forgot password?</a>
+          <a class="forgot-btn"> Don't have an account? </a>
+        </div> -->
+  
+      </div>
+    </div>
+  </div>

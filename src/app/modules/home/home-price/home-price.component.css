@@ -2,30 +2,18 @@
     box-sizing: border-box;
 }
 
-.break {
-    height: 0.5rem;
-    background-color: #292C38;
-    box-shadow: #292C381f 0px 2px 4px 0px, #292C3852 0px 2px 16px 0px;
-    border-radius: 0.5rem;
-}
-
-.bg {
-    height: 100vh;
-    padding: 0;
-    padding-top: 2%;
-    background-image: linear-gradient(to top, #ffffff, #fcfcfd, #f9f9fb, #f5f6f9, #f1f3f7, #f1f3f7, #f1f3f7, #f1f3f7, #f5f6f9, #f9f9fb, #fcfcfd, #ffffff);
-}
-
 .priceheadinfo {
-    height: 100vh;
+    height: 100%;
     padding: 0 10%;
-    padding-top: 2%;
+    background-image: linear-gradient(to top, #ffffff, #fcfcfd, #f9f9fb, #f5f6f9, #f1f3f7, #f1f3f7, #f1f3f7, #f1f3f7, #f5f6f9, #f9f9fb, #fcfcfd, #ffffff);
 }
 
 .priceheadinfo h1 {
     text-align: center;
-    font-size: 2.75rem;
+    font-size: 48px;
     color: #292C38;
+    margin-top: 5%;
+    margin-bottom: 2.5%;
 }
 
 .priceheadinfo h1 span {
@@ -34,25 +22,17 @@
 
 .priceheadinfo p {
     text-align: center;
+    font-size: 18px;
     color: #292C38;
     font-weight: 400;
-}
-  
-section {
-    margin: auto;
-    width: 80%;
-    padding: 0px;
-}
-  
-section .columns {
-    align-items: center;
+    margin: 0;
 }
   
 .columns {
     float: left;
     width: 33.3%;
-    padding: 12px;
-    border-radius: 1rem;
+    padding: 24px;
+    border-radius: 10px;
 }
   
 .price {
@@ -62,7 +42,7 @@ section .columns {
     padding: 0;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    border-radius: 1rem;
+    border-radius: 10px;
     box-shadow: 0 8px 12px 0 #292C3833;
 }
   
@@ -73,10 +53,10 @@ section .columns {
 .price .header {
     background-color: #292C38;
     color: #ECEFF4;
-    font-size: 2.2rem;
-    font-weight: bold;
-    padding: 40px;
-    border-radius: 1rem 1rem 0 0;
+    font-size: 48px;
+    font-weight: 700;
+    padding: 15%;
+    border-radius: 10px 10px 0 0;
 }
   
 .price li {
@@ -86,24 +66,28 @@ section .columns {
   
 .price .grey {
     background-color: #ECEFF4;
-    font-size: 1rem;
-    font-weight:450;
-    padding: 10px;
+    font-size: 18px;
+    font-weight:600;
+    padding: 5%;
+}
+
+.price .grey span {
+    color: #347AE2;
 }
 
 .price .grey_dollar {
     background-color: #ECEFF4;
-    font-size: 3rem;
-    padding: 20px;
+    font-size: 72px;
+    padding: 2.5%;
     font-weight: bold;
 }
   
 .price .btn_sign {
     background-color: #ECEFF4;
-    font-size: 1rem;
+    font-size: 14px;
+    padding-top: 0;
     padding-bottom: 40px;
-    padding-top: 40px;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 10px 10px;
 }
   
 .button {
@@ -113,8 +97,8 @@ section .columns {
     padding: 10px 25px;
     text-align: center;
     text-decoration: none;
-    font-size: 1rem;
-    border-radius: 0.5rem;
+    font-size: 14px;
+    border-radius: 10px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }
