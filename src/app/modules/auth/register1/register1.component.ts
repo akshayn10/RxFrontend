@@ -10,6 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class Register1Component implements OnInit {
   registerForm: FormGroup = new FormGroup({});
   submitted=false;
+  logoPreviewPath!: string;
+  imageSelected:boolean = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -20,6 +22,8 @@ export class Register1Component implements OnInit {
       userName: ['',[ Validators.required]],
       password:['',[Validators.required,Validators.minLength(8)]],
       confirmPassword:['',[Validators.required,Validators.minLength(8)]],
+      logoPath: [''],
+      logoImage: [null,[Validators.required]],
       // companyName:['',[Validators.required]],
     },
     {
@@ -28,6 +32,7 @@ export class Register1Component implements OnInit {
     )
   }
   get f() { return this.registerForm.controls; }
+
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
@@ -35,6 +40,8 @@ export class Register1Component implements OnInit {
     }
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
 }
+
+
 ConfirmedValidator(controlName: string, matchingControlName: string){
   return (formGroup: FormGroup) => {
       const control = formGroup.controls[controlName];
@@ -47,6 +54,21 @@ ConfirmedValidator(controlName: string, matchingControlName: string){
       } else {
           matchingControl.setErrors(null);
       }
+  }
+}
+
+onFileChange(event: any) {
+  if (event.target.files.length > 0) {
+    const file = event.target.files[0];
+    this.registerForm.patchValue({
+      logoImage: file,
+    });
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.logoPreviewPath = reader.result as string;
+    }
+    reader.readAsDataURL(file);
+    this.imageSelected = true;
   }
 }
 }

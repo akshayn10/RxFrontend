@@ -15,6 +15,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MarketplaceProductDetailComponent } from './marketplace-product-detail/marketplace-product-detail.component';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
+import {  MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatTableModule} from '@angular/material/table';
     MatInputModule,
     MatAutocompleteModule,
     MatDividerModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   
   ],
 })
