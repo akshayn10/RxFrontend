@@ -13,11 +13,11 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./product-table.component.css']
 })
 export class ProductTableComponent implements AfterViewInit, OnInit {
-
+  searchKey: string="";
   products: Product[] = [];
   displayedColumns: String[] = ['logoURL', 'productId', 'name', 'planCount', 'addOnCount', 'redirectUrl'];
 
-  productCount: string = '3';
+  
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -34,12 +34,17 @@ export class ProductTableComponent implements AfterViewInit, OnInit {
   }
 
   getProducts() {
-    this.productservice.getProducts().subscribe((data: Product[]) => {
+    this.productservice.getProducts(this.searchKey).subscribe((data: Product[]) => {
       this.products = data;
       this.dataSource.data = this.products
       //console.log(this.dataSource)
 
-    });
+    },
+    (error:any)=>{
+      console.log(error);
+    }
+    
+    );
   }
 get totalRows(): number {
   return this.products.length;

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+
+import { Router } from '@angular/router';
+import { SharedDataService } from '../shared-data.service';
 
 
 @Component({
@@ -13,23 +16,22 @@ import {map, startWith} from 'rxjs/operators';
 
 
 export class MarketplaceMainComponent implements OnInit {
+  searchKey: string = "";
 
-  myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
+  // myControl = new FormControl();
   filteredOptions!: Observable<string[]>;
 
+  constructor(
+    private _router: Router,
+    private _sharedDataService: SharedDataService) { }
 
   ngOnInit(): void {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value)),
-    );
+   
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  navigateToSearch() {
+     this._sharedDataService.setSearchKey(this.searchKey);
+    this._router.navigate(['/marketplace/search']);
   }
-
 }

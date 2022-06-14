@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../../schema/product.model';
 
@@ -11,8 +11,15 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.APIUrl);
+  getProducts(searchKey:string): Observable<Product[]> {
+    let params = new HttpParams(
+      {
+        fromObject:{
+          searchKey:searchKey
+        }
+      }
+    );
+    return this.http.get<Product[]>(this.APIUrl,{params:params});
   }
 
   CreateProduct(product: any): Observable<any> {

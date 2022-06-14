@@ -26,7 +26,7 @@
         <div class="form-group">
           <label class="labelName">Description </label>
           <div>
-            <input type="textarea" class="form-control form-control-des" formControlName="description" />
+            <textarea type="textarea" rows="4" class="form-control form-control-des" formControlName="description" ></textarea>
             <div class="invalid">
               <div *ngIf="f['description'].touched && f['description'].invalid">
                 <div *ngIf="
