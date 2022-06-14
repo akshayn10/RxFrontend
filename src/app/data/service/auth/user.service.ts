@@ -15,7 +15,7 @@ export class UserService {
   }
 
   loginUser(loginForm:any):Observable<any>{
-    return this.http.post<any>(this.userBaseApiUrl+'login',loginForm);
+    return this.http.post<any>(this.userBaseApiUrl+'authenticate',loginForm);
   }
 
 }
