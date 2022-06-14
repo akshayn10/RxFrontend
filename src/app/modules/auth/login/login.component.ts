@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email:['', [Validators.required ,Validators.email]],
@@ -24,7 +23,6 @@ export class LoginComponent implements OnInit {
     })
 
   }
-
 
   get f() { return this.loginForm.controls; }
 
@@ -37,7 +35,6 @@ export class LoginComponent implements OnInit {
       (data)=>{
         console.log(data);
       }
-
   )}
 
 
