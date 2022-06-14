@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/data/service/auth/user.service';
 
 
 @Component({
@@ -10,21 +11,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class Register1Component implements OnInit {
   registerForm: FormGroup = new FormGroup({});
   submitted=false;
-  logoPreviewPath!: string;
+  profilePreviewPath!: string;
   imageSelected:boolean = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private _userService:UserService) {
+   }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       fullName: ['',[ Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      profilePath: [''],
+      profileImage: [null],
       userName: ['',[ Validators.required]],
       password:['',[Validators.required,Validators.minLength(8)]],
-      confirmPassword:['',[Validators.required,Validators.minLength(8)]],
-      logoPath: [''],
-      logoImage: [null,[Validators.required]],
-      // companyName:['',[Validators.required]],
+      confirmPassword:['',[Validators.required,Validators.minLength(8)]]
     },
     {
       validator: this.ConfirmedValidator('password', 'confirmPassword'),
@@ -34,11 +35,27 @@ export class Register1Component implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    this.submitted = true;
     if (this.registerForm.invalid) {
         return;
     }
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+    console.log(this.registerForm.value);
+    const formData = new FormData();
+    formData.append('fullName', this.registerForm.value.fullName);
+    formData.append('email', this.registerForm.value.email);
+    formData.append('profileImage', this.registerForm.value.profileImage);
+    formData.append('userName', this.registerForm.value.userName);
+    formData.append('password', this.registerForm.value.password);
+    formData.append('confirmPassword', this.registerForm.value.confirmPassword);
+
+
+    console.log(formData);
+
+    this._userService.registerUser(formData).subscribe(
+      (data)=>{
+        console.log(data);
+        this.submitted = true;
+      }
+    )
 }
 
 
@@ -61,11 +78,11 @@ onFileChange(event: any) {
   if (event.target.files.length > 0) {
     const file = event.target.files[0];
     this.registerForm.patchValue({
-      logoImage: file,
+      profileImage: file,
     });
     const reader = new FileReader();
     reader.onload = () => {
-      this.logoPreviewPath = reader.result as string;
+      this.profilePreviewPath = reader.result as string;
     }
     reader.readAsDataURL(file);
     this.imageSelected = true;
