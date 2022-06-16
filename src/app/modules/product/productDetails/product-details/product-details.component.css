@@ -37,6 +37,11 @@
 
 
 .cont {
+<<<<<<< HEAD
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+=======
     width: 90%;
     margin: 0 auto;
     height: 100%;
@@ -53,19 +58,69 @@
   margin-top: 30px;
     display: flex;
     justify-content: space-between;
+>>>>>>> dev
 }
 
-  .details-container {
-    display: flex;
-  }
-  .detailTitle {
-    width: 200px;
-    text-align: right;
-  }
-  .detailResults {
-    margin-left: 1%;
-    width:500px;
+.details-head {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 60px;
+  color: var(--primary-blue);
+  margin-top: 20px;
+}
 
+<<<<<<< HEAD
+.subs-head {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 60px;
+  color: var(--primary-blue);
+  margin-top: 20px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-container {
+  margin-top: 30px;
+  display: flex;
+}
+
+.detailTitle {
+  width: 200px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: right;
+}
+
+.detailResults {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 36px;
+  margin-left: 4%;
+}
+
+.logo {
+  margin-top: 30px;
+  margin-right: 5%;
+}
+
+.plan-detail-add-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-btn {
+  margin-top: 28px;
+  justify-content: flex-end;
+}
+
+.add-button {
+  background-color: var(--primary-blue);
+=======
   }
   .secret{
     display: flex;
@@ -100,12 +155,17 @@
   
   box-shadow: 0px 0px 2px 2px rgb(0,0,0);
   text-align: center;
+>>>>>>> dev
   border-radius: 10px;
   font-size: 14px;
+  font-weight: 600;
   height: 40px;
+<<<<<<< HEAD
+  width: 200px;
+=======
   width: 130px;
+>>>>>>> dev
   border: none;
-  margin-top: 2%;
 }
 .name-button:hover {
   color: #292c38;
@@ -114,28 +174,52 @@
 }
 
 
-.delete-button{
+.add-button:hover {
+  cursor: pointer;
+}
+
+.delete-button {
   background-color: rgb(160, 62, 62);
   border-radius: 10px;
   color: white;
   font-size: 14px;
+  font-weight: 600;
   height: 40px;
-  width: 150px;
+  width: 200px;
   border: none;
   margin-top: 2%;
 }
 
-.edit-button{
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.edit-button {
   background-color: rgb(64, 158, 195);
   border-radius: 10px;
   color: white;
   font-size: 14px;
+  font-weight: 600;
   height: 40px;
-  width: 150px;
+  width: 200px;
   border: none;
   margin-top: 2%;
 }
 
+<<<<<<< HEAD
+.edit-button:hover {
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  margin-top: 24px;
+}
+
+.box-1 {
+  margin-right: 10px;
+}
+=======
 .buttonF{
   display: flex;
   margin-top: 15px;
@@ -165,3 +249,4 @@
   transition: 0.7s;
 }
 
+>>>>>>> dev

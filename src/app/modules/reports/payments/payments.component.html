@@ -1,15 +1,13 @@
-<div class="title-container">
-  <div class="title">Payments</div>
-  <div class="intro"></div>
+<div class="head">
+  <p>Payments</p>
 </div>
-<div class="box-cont">
-  <div
-    class="box"
-    [routerLink]="['Sales/Sales By Plan']"
-    [state]="[lineChartData0, lineChartLabels0]"
-  >
-    Payment Received
+
+<div class="row">
+  
+  <div class="column">
+    <div class="card" [routerLink]="['Sales/Sales By Plan']" [state]="[lineChartData0, lineChartLabels0]">
+      <h3>Subscription Summary</h3>
+    </div>
   </div>
-  <div class="box2"></div>
-  <div class="box2"></div>
+
 </div>

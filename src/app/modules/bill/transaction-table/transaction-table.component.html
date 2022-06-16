@@ -2,12 +2,7 @@
   <p>Transaction Details</p>
 </div>
 <div class="form-group">
-  <input
-    type="text"
-    placeholder="Search"
-    class="form-control"
-    [(ngModel)]="searchKey"
-  />
+  <input type="text" placeholder="Search" class="form-control" [(ngModel)]="searchKey" />
 </div>
 <table mat-table [dataSource]="dataSource">
   <!-- <ng-container matColumnDef="transactionId">
@@ -59,8 +54,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
-<mat-paginator
-  [pageSizeOptions]="[5]"
-  showFirstLastButtons
-  aria-label="Select page of periodic elements"
-></mat-paginator>
+<mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons aria-label="Select page of periodic elements">
+</mat-paginator>

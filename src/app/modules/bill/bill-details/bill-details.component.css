@@ -4,17 +4,20 @@
   line-height: 27px;
   color: var(--primary-blue);
 }
+
 .cont {
   width: 90%;
   margin: 0 auto;
   height: 100%;
 }
+
 .details-head {
   font-weight: 600;
   font-size: 18px;
   line-height: 27px;
   color: var(--primary-blue);
 }
+
 .flex-container {
   margin-top: 30px;
   display: flex;
@@ -35,11 +38,13 @@
   padding-left: 30px;
   padding-right: 30px;
 }
+
 .auth {
   padding: 30px;
   margin-bottom: 20px;
   line-height: 30px;
 }
+
 .subs {
   padding: 30px;
   border-radius: 4%;
@@ -57,6 +62,7 @@
   font-size: 18px;
   line-height: 30px;
 }
+
 .check {
   display: grid;
   flex-direction: row;

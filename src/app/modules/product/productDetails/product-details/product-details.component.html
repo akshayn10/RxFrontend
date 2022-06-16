@@ -22,17 +22,20 @@
         <div class="details-head">Product Details</div>
         <mat-divider></mat-divider>
       </div>
+
       <div class="flex-container">
+
         <div class="details-container">
           <div class="detailTitle">
-            <div><b>Product ID </b></div>
-            <div><b>Product Name </b></div>
-            <div><b>Description </b></div>
-            <div><b>Re-Direct URL </b></div>
-            <div><b>Webhook URL </b></div>
-            <div><b>Secret Key </b></div>
-            <div><b>Free Trial Days </b></div>
+            <div>Product ID : </div>
+            <div>Product Name : </div>
+            <div>Description : </div>
+            <div>Re-Direct URL : </div>
+            <div>Webhook URL : </div>
+            <div>Secret Key : </div>
+            <div>Free Trial Days : </div>
           </div>
+
           <div class="detailResults">
             <div>{{product.productId}} </div>
             <div>{{product.name}} </div>
@@ -50,23 +53,60 @@
             <div>{{product.freeTrialDays}}</div>
           </div>
         </div>
+
         <div class="logo">
-          <img [src]="product.logoURL" height="140px" width="140px" />
+          <img [src]="product.logoURL" height="100px" width="100px" />
         </div>
+<<<<<<< HEAD
+
+=======
         
+>>>>>>> dev
       </div>
      
 
       <div class="subs-info">
-        <div class="subs-head">Plan Details</div>
-        <mat-divider></mat-divider>
-        <div>
-          <a (click)="navigateToAddPlan()">
-            <button mat-button class="name-button">+ Add Plan</button>
-          </a>
+        <div class="plan-detail-add-container">
+          <div class="subs-head">Plan Details</div>
+          <div class="add-btn">
+            <a (click)="navigateToAddPlan()">
+              <button mat-button class="add-button">+ Add Plan</button>
+            </a>
+          </div>
         </div>
 
+        <mat-divider></mat-divider>
+
         <app-plan-table></app-plan-table>
+<<<<<<< HEAD
+        
+        <!-- Navigation is not completed for add-on -->
+        <div class="plan-detail-add-container">
+          <div class="subs-head">Add-On Details</div>
+          <div class="add-btn">
+            <a (click)="navigateToAddPlan()">
+              <button mat-button class="add-button">+ Add Add-On</button>
+            </a>
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <app-add-on-table></app-add-on-table>
+
+        <div class="button-container">
+          <div class="box-1">
+            <a (click)="onDelete(product.productId)" class="delete-button">
+              <button mat-button class="delete-button">Delete Product</button>
+            </a>
+          </div>
+          <div class="box-2">
+            <a (click)="navigateToEditProduct()" class="edit-button">
+              <button mat-button class="edit-button">Edit Product</button>
+            </a>
+          </div>
+        </div>
+=======
 
        
 
@@ -112,7 +152,9 @@
         
       
        
+>>>>>>> dev
       </div>
+
     </div>
   </div>
 </div>
