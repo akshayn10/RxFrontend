@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { MarketplaceMainComponent } from './marketplace-main/marketplace-main.component';
 import { MarketplaceProductDetailComponent } from './marketplace-product-detail/marketplace-product-detail.component';
+import { MarketplaceProductComponent } from './marketplace-product/marketplace-product.component';
 import { MarketplaceSearchComponent } from './marketplace-search/marketplace-search/marketplace-search.component';
 
 const routes: Routes = [
@@ -15,8 +16,9 @@ const routes: Routes = [
         path: 'search',
         component: MarketplaceSearchComponent
       },
+      
       {
-        path: 'product',
+        path: 'product/detail',
         component: MarketplaceProductDetailComponent
       },
     ]

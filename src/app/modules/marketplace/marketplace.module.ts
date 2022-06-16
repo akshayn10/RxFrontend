@@ -24,7 +24,8 @@ import {  MatCardModule } from '@angular/material/card';
     MarketplaceSearchComponent,
     MarketplaceFlex1Component,
     MarketplaceFlex2Component,
-    MarketplaceProductDetailComponent
+    MarketplaceProductDetailComponent,
+    
   ],
   imports: [
     CommonModule,

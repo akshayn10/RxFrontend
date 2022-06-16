@@ -20,10 +20,6 @@ export class MarketplaceFlex2Component implements OnInit {
     private productservice: ProductService,
     ) { }
 
-
-  
-
-
   ngOnInit(): void {
     this._sharedDataService.currentSearchKey.subscribe(
       data => this.searchKey = data);

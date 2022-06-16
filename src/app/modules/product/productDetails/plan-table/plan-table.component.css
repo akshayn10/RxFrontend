@@ -7,7 +7,7 @@ table {
   width: 1050px;
   margin: auto;
   border: none;
-  /* background-color: #f8fbff; */
+  background-color: #f8fbff;
 }
 
 .header {
@@ -19,10 +19,10 @@ th {
   background-color: var(--navWhite);
 }
 
-.mat-row .mat-cell {
+/* .mat-row .mat-cell {
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
-}
+} */
 
 .mat-row:hover .mat-cell {
   border-color: var(--primary-blue) !important;

@@ -15,6 +15,7 @@ import { AddOnTableComponent } from './subcsription-details/add-on-table/add-on-
 import { MatDivider, MatDividerModule } from '@angular/material/divider';
 
 
+
 @NgModule({
   declarations: [
     SubscriptionComponent,
@@ -33,6 +34,7 @@ import { MatDivider, MatDividerModule } from '@angular/material/divider';
     MatPaginatorModule,
     FormsModule,
     MatDividerModule
+    
 
   ],exports: [
 
