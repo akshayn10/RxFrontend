@@ -49,14 +49,11 @@
   align-items: right;
 }
 
-<<<<<<< HEAD
 .form-field {
   width: 20%;
   padding-left: 14px;
   border-radius: 20px;
 }
-=======
->>>>>>> dev
 
 .invalid {
   color: red;
