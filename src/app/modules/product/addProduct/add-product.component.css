@@ -1,99 +1,96 @@
-.container1 {
-  color: var(--primary-blue);
+.container-1 {
   margin: auto;
-  font-weight: bold;
-  height: 30px;
-  width: 1100px;
-  border-bottom: 1px solid var(--primary-blue);
+  margin-top: 2%;
+  width: 80%;
+  border-bottom: 3px solid var(--primary-blue);
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
-.container2 {
-  display: flex;
+.container-1 h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.container-2 {
   justify-content: center;
-  margin-top: 5%;
+  width: 90%;
+  margin-top: 2%;
 }
 
 .form-group {
-  margin-bottom: 10px;
-  font-size: 14px;
-  font-weight: bold;
   display: flex;
+  padding-bottom: 10px;
 }
 
 .form-control {
-  width: 700px;
+  width: 60%;
   height: 40px;
   background-color: var(--navWhite);
   border-radius: 10px;
+  padding-left: 14px;
   font-size: 14px;
   border: none;
 }
-.form-control :hover {
+
+.form-control:hover {
   border-color: var(--primary-blue) !important;
 }
 
 .form-control-des {
-  height: 100px;
+  height: 120px;
   background-color: var(--navWhite);
+  padding-top: 10px;
   border-radius: 10px;
   font-size: 14px;
+  font-family: "Poppins";
   border: none;
   align-items: right;
 }
 
-.btn {
-  width: 120px;
-  height: 40px;
-  border-radius: 10px;
-  font-size: 14px;
-  margin-bottom: 15px;
-  border: none;
-  color: white;
-  background-color: var(--primary-blue);
-}
-
 .invalid {
   color: red;
-  height: 15px;
-
+  width: 25%;
+  padding-top: 10px;
+  padding-left: 18px;
 }
 
-.labelName {
-  text-align: ends;
-  width: 120px;
+.form-group .labelName {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: end;
+  width: 30%;
   margin-top: 10px;
-}
-.previewImg{
-  margin: 0 0 0 20px;
-
-}
-.previewImg>img{
-  border-radius: 10%;
-}
-
-label {
-  display: block;
+  padding-right: 2%;
 }
 
 .imgup {
   position: relative;
+  width: 60%;
   border-radius: 10px;
-  height: 110px;
-  width: 450px;
-  border: 1px dashed var(--primary-blue);
-
+  height: 120px;
+  background-color: var(--navWhite);
+  border: 2px dashed var(--primary-blue);
 }
 
 .imgup img {
   width: 60px;
   height: 60px;
-  margin-top: 10px;
+  margin-top: 16px;
 }
+
 .imgup div {
   text-align: center;
 }
 
-input[type="file"] {
+.icon-container div {
+  font-weight: 500;
+  color: #292C38;
+  opacity: 0.6;
+}
+
+.imgup input[type="file"] {
   left: 0;
   top: 0;
   position: absolute;
@@ -103,22 +100,45 @@ input[type="file"] {
   width: 100%;
 }
 
+.previewImg {
+  position: fixed;
+  margin: 0 0 0 62%;
+}
+
+.previewImg img {
+  border-radius: 10px;
+}
+
+.form-group-btn {
+  margin-top: 10px;
+  margin-left: 27%;
+}
+
 .btn {
-  width: 127px;
+  width: 120px;
   height: 40px;
   background-color: var(--primary-blue);
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 10px;
   color: white;
   margin-right: 10px;
-  margin-left: 23%;
+  border: none;
 }
 
-.btn2 {
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-2 {
   width: 120px;
   height: 40px;
+  background-color: #292c38;
+  font-weight: 600;
   border-radius: 10px;
   color: white;
-  background-color: #292c38;
-  font-weight: bold;
+  border: none;
+}
+
+.btn-2:hover {
+  cursor: pointer;
 }

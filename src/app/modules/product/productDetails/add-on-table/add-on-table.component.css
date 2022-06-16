@@ -1,57 +1,67 @@
-
-.container2{
-    margin: auto;
-    margin-top: 2%;
+.container {
+  margin: auto;
+  margin-top: 36px;
 }
 
-
-
-
-
-
 table {
-    width: 950px;
-    margin: auto;
-    border: none;
-    background-color: #F8FBFF;
-  }
+  width: 100%;
+  margin: auto;
+  border: none;
+  background-color: #F8FBFF;
+}
 
- 
+.header {
+  color: var(--primary-blue);
+  font-size: 14px;
+}
 
-  .header{
-      color: var(--primary-blue);
-      font-size: 14px;
-  }
+th {
+  background-color: var(--navWhite);
 
-  th{
-      background-color: var(--navWhite);
+}
 
-  }
-
- 
-  
-  /* .mat-row .mat-cell {
+/* .mat-row .mat-cell {
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
     cursor: pointer;
   } */
-  
-  
-  .mat-row:hover .mat-cell {
-    border-color:  var(--primary-blue)! important;
-    
-  }
-  
 
-  
-  
-  
-  /* .table-grp{
+.mat-row:hover .mat-cell {
+  border-color: var(--primary-blue) ! important;
+
+}
+
+/* .table-grp{
     border-radius: 12px;
     overflow:hidden !important;
   } */
-  
-  ::ng-deep.mat-tab-label{
-    min-width: 50%!important;
-    background-color: var(--navWhite);
-   }
+
+::ng-deep.mat-tab-label {
+  min-width: 50% !important;
+  background-color: var(--navWhite);
+}
+
+.delete-button,
+.edit-button {
+  background-color: white;
+  border-radius: 25px;
+  font-size: 14px;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  height: 28px;
+  width: 28px;
+}
+
+.image-edit {
+  filter: invert(48%) sepia(93%) saturate(287%) hue-rotate(151deg) brightness(95%) contrast(96%);
+}
+
+.image-delete {
+  filter: invert(35%) sepia(6%) saturate(5030%) hue-rotate(314deg) brightness(92%) contrast(97%);
+}

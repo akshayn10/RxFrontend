@@ -17,13 +17,10 @@
               <div><b>Bill ID: </b>{{ billDetails.billId }}</div>
               <div><b>Customer Name: </b>{{ billDetails.customerName }}</div>
             </div>
-            <div
-              *ngFor="
+            <div *ngFor="
                 let subscription of billDetails.subscriptionsForBill;
                 let i = index
-              "
-              class="subscription"
-            >
+              " class="subscription">
               <div class="subs">
                 <div class="titles">
                   <b>Subscription Date: </b>{{ subscription.date }}
@@ -36,13 +33,10 @@
                 </div>
                 <div class="titles"><b>Price </b>{{ subscription.price }}</div>
                 <div class="check">
-                  <div
-                    *ngFor="
+                  <div *ngFor="
                       let addOn of subscription.addOnsForSubscription;
                       let i = index
-                    "
-                    class="addOn"
-                  >
+                    " class="addOn">
                     {{ i + 1 }}
                     <div><b>AddOn Date </b>{{ addOn.date }}</div>
                     <div><b>AddOn Name </b>{{ addOn.addOnName }}</div>

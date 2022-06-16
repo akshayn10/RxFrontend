@@ -19,7 +19,6 @@ import { ProfileModule } from './modules/profile/profile.module';
 import { OrganizationModule } from './modules/organization-profile/organization.module';
 import { MatTableModule } from '@angular/material/table';
 
-
 @NgModule({
   declarations: [AppComponent ],
   imports: [

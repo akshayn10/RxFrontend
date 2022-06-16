@@ -1,22 +1,19 @@
-<div class="title-container">
-  <div class="title">Sales</div>
-  <div class="intro"></div>
+<div class="head">
+  <p>Sales</p>
 </div>
-<div class="box-cont">
-  <div
-    class="box-1"
-    [routerLink]="['Sales/Sales By Plan']"
-    [state]="[lineChartData0, lineChartLabels0]"
-  >
-    Sales By Plan
+
+<div class="row">
+  
+  <div class="column">
+    <div class="card" [routerLink]="['Sales/Sales By Plan']" [state]="[lineChartData0, lineChartLabels0]">
+      <h3>Subscription Summary</h3>
+    </div>
   </div>
 
-  <div
-    class="box-2"
-    [routerLink]="['Sales/Sales By Add-Ons']"
-    [state]="[lineChartData0, lineChartLabels0]"
-  >
-    Sales By Add-Ons
+  <div class="column">
+    <div class="card" [routerLink]="['Sales/Sales By Add-Ons']" [state]="[lineChartData0, lineChartLabels0]">
+      <h3>Activations</h3>
+    </div>
   </div>
-  <div class="box-3"></div>
+
 </div>

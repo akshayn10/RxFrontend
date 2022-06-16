@@ -16,7 +16,7 @@ export class AddOnTableComponent implements OnInit {
 
   // dataSource = new MatTableDataSource<AddOn>();
   dataSource = ELEMENT_DATA;
-  displayedColumns: String[] = ['addOnId',  'displayName','unitOfMeasure', 'productPlan','price', ]
+  displayedColumns: String[] = ['addOnId',  'displayName','unitOfMeasure', 'productPlan','price','edit' ]
 
   constructor() { }
 

@@ -5,35 +5,31 @@
       <app-profile></app-profile>
     </div>
 
-    <div class="container1">Add Product</div>
+    <div class="container-1">
+      <h1>Add Product</h1>
+    </div>
 
-    <div class="container2">
+    <div class="container-2">
       <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label class="labelName">Product Name</label>
-          <div>
-            <input type="text" class="form-control" formControlName="name" />
-            <div class="invalid">
-              <div *ngIf="f['name'].touched && f['name'].invalid">
-                <div *ngIf="f['name'].errors && f['name'].errors['required']">
-                  Product name is required.
-                </div>
+          <input type="text" class="form-control" formControlName="name" />
+          <div class="invalid">
+            <div *ngIf="f['name'].touched && f['name'].invalid">
+              <div *ngIf="f['name'].errors && f['name'].errors['required']">
+                Product name is required.
               </div>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="labelName">Description </label>
-          <div>
-            <input type="textarea" class="form-control form-control-des" formControlName="description" />
-            <div class="invalid">
-              <div *ngIf="f['description'].touched && f['description'].invalid">
-                <div *ngIf="
-                  f['description'].errors && f['description'].errors['required']
-                ">
-                  Description is required.
-                </div>
+          <label class="labelName">Description</label>
+          <textarea type="textarea" rows="4" class="form-control form-control-des" formControlName="description"></textarea>
+          <div class="invalid">
+            <div *ngIf="f['description'].touched && f['description'].invalid">
+              <div *ngIf="f['description'].errors && f['description'].errors['required']">
+                Description is required.
               </div>
             </div>
           </div>
@@ -41,28 +37,26 @@
 
         <div class="form-group">
           <label class="labelName">Logo</label>
-          <div class="imgup form-control">
+          <div class="imgup">
             <div class="icon-container">
               <img src="assets/icons/img.png" alt="" />
               <div *ngIf="!imageSelected">Drop your image here, or browse</div>
             </div>
-            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*"
-              formControlName="logoPath" />
+            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="logoPath" />
           </div>
           <div class="previewImg" *ngIf="logoPreviewPath && logoPreviewPath !== ''">
-            <img height="105px" width="110px" [src]="logoPreviewPath" [alt]="productForm.value.name" />
+            <img height="120px" [src]="logoPreviewPath" [alt]="productForm.value.name" />
           </div>
+          <div class="invalid"></div>
         </div>
 
         <div class="form-group">
           <label class="labelName">Webhook URL</label>
-          <div>
-            <input type="text" class="form-control" formControlName="webhookURL" />
-            <div class="invalid">
-              <div *ngIf="f['webhookURL'].touched && f['webhookURL'].invalid">
-                <div *ngIf="f['webhookURL'].errors && f['webhookURL'].errors['required']">
-                  Webhook URL is required.
-                </div>
+          <input type="text" class="form-control" formControlName="webhookURL" />
+          <div class="invalid">
+            <div *ngIf="f['webhookURL'].touched && f['webhookURL'].invalid">
+              <div *ngIf="f['webhookURL'].errors && f['webhookURL'].errors['required']">
+                Webhook URL is required.
               </div>
             </div>
           </div>
@@ -70,42 +64,31 @@
 
         <div class="form-group">
           <label class="labelName">Redirect URL</label>
-          <div>
-            <input type="text" class="form-control" formControlName="redirectUrl" />
-            <div class="invalid">
-              <div *ngIf="f['redirectUrl'].touched && f['redirectUrl'].invalid">
-                <div *ngIf="
-                  f['redirectUrl'].errors && f['redirectUrl'].errors['required']
-                ">
-                  Redirect URL is required.
-                </div>
+          <input type="text" class="form-control" formControlName="redirectUrl" />
+          <div class="invalid">
+            <div *ngIf="f['redirectUrl'].touched && f['redirectUrl'].invalid">
+              <div *ngIf="f['redirectUrl'].errors && f['redirectUrl'].errors['required']">
+                Redirect URL is required.
               </div>
             </div>
           </div>
         </div>
-
-        
 
         <div class="form-group">
           <label class="labelName">Trial Period</label>
-          <div>
-            <input type="number" class="form-control" formControlName="freeTrialDays" />
-            <div class="invalid">
-              <div *ngIf="f['freeTrialDays'].touched && f['freeTrialDays'].invalid">
-                <div *ngIf="
-                  f['freeTrialDays'].errors &&
-                  f['freeTrialDays'].errors['required']
-                ">
-                  Trial Period is required.
-                </div>
+          <input type="number" class="form-control" formControlName="freeTrialDays" />
+          <div class="invalid">
+            <div *ngIf="f['freeTrialDays'].touched && f['freeTrialDays'].invalid">
+              <div *ngIf="f['freeTrialDays'].errors && f['freeTrialDays'].errors['required']">
+                Trial Period is required.
               </div>
             </div>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group-btn">
           <button class="btn" type="submit">Save</button>
-          <button class="btn2" routerLink="/product">Cancel</button>
+          <button class="btn-2" routerLink="/product">Cancel</button>
         </div>
       </form>
     </div>
