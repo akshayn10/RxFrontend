@@ -37,54 +37,22 @@
           </div>
         </div>
 
-                  <div class="form-group">
-                    <label class="labelName">Description </label>
-                    <div>
-                      <textarea type="textarea" rows="4" class="form-control form-control-des" formControlName="description" ></textarea>
-                      <div class="invalid">
-                        <div *ngIf="f['description'].touched && f['description'].invalid">
-                          <div *ngIf=" f['description'].errors && f['description'].errors['required'] ">
-                            Description is required.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-          
-                  
-          
-                  <div class="form-group">
-                    <mat-checkbox  class="labelName" type="boolean" formControlName="trial" >Trial </mat-checkbox >
-                 
-                      <div class="invalid">
-                       <div *ngIf="f['trial'].touched && f['trial'].invalid">
-                          <div *ngIf=" f['trial'].errors && f['trial'].errors['required'] ">
-                            Trial Period is required.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
         <div class="form-group" formGroupName="duration">
           <label class="labelName">Bill Every</label>
-          <input
-            type="text"
-            class="form-control duration"
-            formControlName="value"
-          />
+          <input type="text" class="form-control duration" formControlName="value" />
           <mat-form-field appearance="fill">
             <mat-select formControlName="period">
               <mat-option *ngFor="let x of durationPeriod" [value]="x">{{
                 x
-              }}</mat-option>
+                }}</mat-option>
             </mat-select>
           </mat-form-field>
 
         </div>
         <div class="invalid">
           <div *ngIf="f['duration'].value.value.touched && f['duration'].value.value.invalid">
-            <div
-              *ngIf="f['duration'].value.value.errors && f['duration'].value.value.errors['required']"
-            >
+            <div *ngIf="f['duration'].value.value.errors && f['duration'].value.value.errors['required']">
               Duration period is required.
             </div>
           </div>
@@ -93,19 +61,13 @@
         <div class="form-group">
           <label class="labelName">Description </label>
           <div>
-            <input
-              type="textarea"
-              class="form-control form-control-des"
-              formControlName="description"
-            />
+            <input type="textarea" class="form-control form-control-des" formControlName="description" />
             <div class="invalid">
               <div *ngIf="f['description'].touched && f['description'].invalid">
-                <div
-                  *ngIf="
+                <div *ngIf="
                     f['description'].errors &&
                     f['description'].errors['required']
-                  "
-                >
+                  ">
                   Description is required.
                 </div>
               </div>
@@ -114,8 +76,7 @@
         </div>
 
         <div class="form-group">
-          <mat-checkbox class="labelName" type="boolean" formControlName="trial"
-            >Trial
+          <mat-checkbox class="labelName" type="boolean" formControlName="trial">Trial
           </mat-checkbox>
 
           <div class="invalid">

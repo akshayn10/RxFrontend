@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { AddOn } from 'src/app/data/schema/addOn'
+import{AddOnService}from'src/app/data/service/AddOn/add-on.service'
+import {ActivatedRoute,Router } from '@angular/router';
 
-const ELEMENT_DATA: AddOn[] = [
-  {addOnId: '12345678', displayName: 'Test-01', unitOfMeasure: 90,productPlan: 'Test-01', price: 90 },
-  {addOnId: '87654321', displayName: 'Test-01', unitOfMeasure: 90,productPlan: 'Test-01', price: 90 },
-];
 
 @Component({
   selector: 'app-add-on-table',
@@ -13,14 +11,27 @@ const ELEMENT_DATA: AddOn[] = [
   styleUrls: ['./add-on-table.component.css']
 })
 export class AddOnTableComponent implements OnInit {
+  productId!: string;
+ 
+  dataSource = new MatTableDataSource();
+  displayedColumns: String[] = ['addOnId',  'name','unitOfMeasure']
 
-  // dataSource = new MatTableDataSource<AddOn>();
-  dataSource = ELEMENT_DATA;
-  displayedColumns: String[] = ['addOnId',  'displayName','unitOfMeasure', 'productPlan','price', ]
-
-  constructor() { }
+  constructor( public _activatedRoute: ActivatedRoute, 
+    public router: Router, 
+    private addOnservice: AddOnService) 
+    {
+      this.productId = this._activatedRoute.snapshot.paramMap.get('id') || '';
+     }
 
   ngOnInit(): void {
+    this.getAddOn(this.productId);
+  }
+
+  getAddOn(productId: string) {
+    this.addOnservice.getAddOns(productId).subscribe((data: AddOn[]) => {
+      this.dataSource.data = data
+      //console.log(this.dataSource)
+    });
   }
 
 }

@@ -34,7 +34,7 @@ export class Register1Component implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    this.submitted = true;
+    
     if (this.registerForm.invalid) {
         return;
     }

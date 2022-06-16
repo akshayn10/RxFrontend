@@ -1,0 +1,19 @@
+<div class="mat-box">
+  <form [formGroup]="addOnForm" (ngSubmit)="onSubmit()">
+<mat-form-field appearance="fill">
+  <mat-label>AddOn Name</mat-label>
+  <input matInput type="text" class="form-control" formControlName="name" >
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Unit Of Measure</mat-label>
+  <input matInput type="text" class="form-control" formControlName="unitOfMeasure" >
+</mat-form-field>
+
+<div class="form-group">
+  <button class="btn" (click)="closeDialog()">Cancel</button>
+  <button class="btn2" type="submit">Save</button>
+ 
+</div>
+</form>
+</div>

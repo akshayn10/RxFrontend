@@ -7,8 +7,6 @@
 
 .container {
     background-color: var(--navWhite);
-    
-
     width: 90%;
     margin: 0 auto;
     height: 130px;
@@ -38,7 +36,6 @@
 
 .containerItem2 {
     font-size: 14px;
-    
     font-style: normal;
     font-weight: normal;
 }
