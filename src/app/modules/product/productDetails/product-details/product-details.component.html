@@ -39,7 +39,14 @@
             <div class="description">{{product.description}}</div>
             <div>{{product.redirectURL}}</div>
             <div>{{product.webhookURL}}</div>
-            <div>{{product.webhookSecret}}</div>
+            <div class="secret" (click)="toggleViewSecret()">
+              <div class="key" [hidden]="showSecret">{{webhookSecret}}</div>
+              <div class="key" [hidden]="!showSecret">{{product.webhookSecret}}</div>
+              <div class="eyeSVG">
+                <img src="../../../../../assets/svg/eye-outline.svg" [hidden]="!showSecret" alt="">
+                <img src="../../../../../assets/svg/eye-off-outline.svg" [hidden]="showSecret" alt="">
+              </div>
+            </div>
             <div>{{product.freeTrialDays}}</div>
           </div>
         </div>

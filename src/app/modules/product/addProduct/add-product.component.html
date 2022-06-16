@@ -26,12 +26,14 @@
         <div class="form-group">
           <label class="labelName">Description </label>
           <div>
-            <textarea type="textarea" rows="4" class="form-control form-control-des" formControlName="description" ></textarea>
+            <textarea type="textarea" rows="4" class="form-control form-control-des"
+              formControlName="description"></textarea>
             <div class="invalid">
               <div *ngIf="f['description'].touched && f['description'].invalid">
                 <div *ngIf="
-                  f['description'].errors && f['description'].errors['required']
-                ">
+                    f['description'].errors &&
+                    f['description'].errors['required']
+                  ">
                   Description is required.
                 </div>
               </div>
@@ -60,7 +62,9 @@
             <input type="text" class="form-control" formControlName="webhookURL" />
             <div class="invalid">
               <div *ngIf="f['webhookURL'].touched && f['webhookURL'].invalid">
-                <div *ngIf="f['webhookURL'].errors && f['webhookURL'].errors['required']">
+                <div *ngIf="
+                    f['webhookURL'].errors && f['webhookURL'].errors['required']
+                  ">
                   Webhook URL is required.
                 </div>
               </div>
@@ -75,16 +79,15 @@
             <div class="invalid">
               <div *ngIf="f['redirectUrl'].touched && f['redirectUrl'].invalid">
                 <div *ngIf="
-                  f['redirectUrl'].errors && f['redirectUrl'].errors['required']
-                ">
+                    f['redirectUrl'].errors &&
+                    f['redirectUrl'].errors['required']
+                  ">
                   Redirect URL is required.
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        
 
         <div class="form-group">
           <label class="labelName">Trial Period</label>
@@ -93,9 +96,9 @@
             <div class="invalid">
               <div *ngIf="f['freeTrialDays'].touched && f['freeTrialDays'].invalid">
                 <div *ngIf="
-                  f['freeTrialDays'].errors &&
-                  f['freeTrialDays'].errors['required']
-                ">
+                    f['freeTrialDays'].errors &&
+                    f['freeTrialDays'].errors['required']
+                  ">
                   Trial Period is required.
                 </div>
               </div>
@@ -104,7 +107,7 @@
         </div>
 
         <div class="form-group">
-          <button class="btn" type="submit" >Save</button>
+          <button class="btn" type="submit">Save</button>
           <button class="btn2" routerLink="/product">Cancel</button>
         </div>
       </form>

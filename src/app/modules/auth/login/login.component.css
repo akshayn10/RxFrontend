@@ -23,7 +23,7 @@
 }
 
 .box-1 object {
-  width:100%;   
+  width:100%;
   margin: 0;
   position: absolute;
   top: 50%;
@@ -40,7 +40,7 @@
 }
 
 .box-2 {
-  width:50%;   
+  width:50%;
   margin: 0;
   position: absolute;
   top: 50%;
@@ -104,6 +104,7 @@ a:hover {
 
 .invalid {
     color: red;
+    height: 15px;
 }
 
 @media (min-with: 800px) {

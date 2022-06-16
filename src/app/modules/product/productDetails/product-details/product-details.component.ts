@@ -17,7 +17,10 @@ export class ProductDetailsComponent implements OnInit {
   productId:string;
   product!: Product ;
   planId:string;
-  
+  showSecret=false;
+  webhookSecret='********************************************';
+
+
 
   constructor(public _activatedRoute: ActivatedRoute,
     public router: Router,
@@ -26,22 +29,27 @@ export class ProductDetailsComponent implements OnInit {
      ) {
     this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';
     this.planId = this._activatedRoute.snapshot.paramMap.get('planId') || '';
- 
+
   }
 
   
 
   ngOnInit(): void {
-   
+
     this.getProductById(this.productId);
+
   }
- 
+
 
   getProductById(productId:string){
     this.productservice.getProductById(productId).subscribe(resp => {
       this.product =resp ;
-    
+
+
     })
+  }
+  toggleViewSecret(){
+    this.showSecret = !this.showSecret;
   }
   navigateToAddPlan(){
     this.router.navigate(['/product/'+this.productId+'/addPlan'])
@@ -59,7 +67,7 @@ export class ProductDetailsComponent implements OnInit {
       this.productservice.deleteProduct(productId).subscribe((res) => {
         this.router.navigate([`/product`]);
       });
-      
+
     }
   }
   onAddToMarketplace(productId :string){
@@ -86,6 +94,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
 
-  
+
+
 
 }

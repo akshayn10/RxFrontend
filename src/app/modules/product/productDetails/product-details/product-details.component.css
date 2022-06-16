@@ -67,11 +67,24 @@
     width:500px;
 
   }
+  .secret{
+    display: flex;
+  }
+  .secret .key{
+    width: 350px;
+  }
 
+
+  .eyeSVG img{
+    width: 18px;
+    height: 25px;
+    margin-left: 10px;
+  }
   .logo{
     width: 260px;
-    margin-left: 1%; 
+    margin-left: 1%;
   }
+
 
   .subs-head{
     font-weight: 600;
@@ -80,7 +93,7 @@
     color: var(--primary-blue);
     margin-top: 30px;
   }
-    
+
 .name-button {
   background-color:#292c38;
   color: #ccd2e5;
