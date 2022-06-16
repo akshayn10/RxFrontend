@@ -1,5 +1,21 @@
 <div class="box">
-<div>
-    
-</div>
+
+ <div   *ngFor="let Product of products">
+    <mat-card class="card" >
+        <mat-card-title-group>
+          <img mat-card-sm-image [src]="Product.logoURL" >
+          <mat-card-title>{{Product.name}}</mat-card-title>
+          <mat-card-subtitle>{{Product.planCount}}</mat-card-subtitle>
+         
+        </mat-card-title-group>
+        <mat-card-content>
+          {{Product.redirectURL}}
+        </mat-card-content>
+        
+      </mat-card>
+    </div>
+      
+        
+      
+
 </div>

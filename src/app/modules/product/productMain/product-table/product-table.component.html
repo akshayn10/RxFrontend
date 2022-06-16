@@ -1,7 +1,13 @@
 <div>
+<<<<<<< HEAD
   <div class="container-1">
     <h1>Product Plan insights</h1>
     <p>Products</p>
+=======
+  <div class="container1">
+    <div class="containerItem1">Product Plan insights</div>
+    <div class="containerItem2">{{totalRows}} Products</div>
+>>>>>>> dev
   </div>
 
   <div class="container-2">
@@ -44,6 +50,7 @@
       <tr mat-row (click)="navigate(row)" *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
 
+<<<<<<< HEAD
     <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons aria-label="Select page of periodic elements">
     </mat-paginator>
   </div>
@@ -66,3 +73,12 @@
 
   </div> -->
 </div>
+=======
+    <mat-paginator
+      [pageSizeOptions]="[5]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements" 
+      ></mat-paginator>
+  </div>
+</div>
+>>>>>>> dev

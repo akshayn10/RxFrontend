@@ -7,33 +7,30 @@
 
   <div class="search">
     <div class="search-box">
-      <input class="form-control" type="text" placeholder="Start searching products"  [formControl]="myControl"
-        [matAutocomplete]="auto">
-      <mat-autocomplete  #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option}}
+      <input class="form-control" type="text" matInput placeholder="Start searching products"  
+      [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="searchKey" >
+      
+     
+      <mat-autocomplete autoActiveFirstOption   #auto="matAutocomplete">
+        <mat-option *ngFor="let name of filteredOptions | async" [value]="name">
+          {{name}}
         </mat-option>
-      </mat-autocomplete>
+      </mat-autocomplete> 
 
     </div>
     <div class="button-box">
-      <a [routerLink]="['/marketplace/search']"><button mat-button class="button" type="submit"><img
+      <a (click)="navigateToSearch()"><button mat-button class="button" type="submit"><img
             src="../../../assets/icons/search.png" /></button></a>
     </div>
   </div>
 </div>
 
-<div class="second-content">
-  <div class="text-content">
-    <p>Welcome to RX Marketplace. <br>
-      Discover, try, and deploy the cloud software you want.</p>
-  </div>
-  <div class="button-publish"> <a [routerLink]="['/auth/signup']"><button mat-button class="button-content"> Browse All Apps</button></a></div>
 
+<div >
+  <app-marketplace-product ></app-marketplace-product>
 </div>
 
-<div>
-  <app-marketplace-product></app-marketplace-product>
+<div >
+  <app-marketplace-search></app-marketplace-search>
 </div>
-
 <app-footer></app-footer>

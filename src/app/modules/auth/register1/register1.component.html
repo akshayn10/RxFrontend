@@ -2,22 +2,23 @@
   <div class="box">
     <div class="box-1">
       <!-- <img class="logo" routerLink="/" src="../../../assets/logo/rx.png" />  -->
-      <object data="../../../../assets/logo/RX Logo T.svg" width="400" height="400"> </object>
+      <object data="../../../../assets/logo/RX Logo T.svg" width="400" height="400"></object>
     </div>
   </div>
   <div class="box">
     <div class="box-2">
       <div class="header">REGISTER</div>
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
         <div class="form-group">
           <label>Full Name</label>
           <div>
             <input type="text" class="form-control" formControlName="fullName" />
           </div>
-          <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
-            <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
-              Full name is Required
+          <div class="invalid">
+            <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
+              <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
+                Full name is Required
+              </div>
             </div>
           </div>
         </div>
@@ -27,12 +28,14 @@
           <div>
             <input type="text" class="form-control" formControlName="email" />
           </div>
-          <div *ngIf="f['email'].touched && f['email'].invalid">
-            <div *ngIf="f['email'].errors && f['email'].errors['required']">
-              Email is required.
-            </div>
-            <div *ngIf="f['email'].errors && f['email'].errors['email']">
-              Email must be a valid email address.
+          <div class="invalid">
+            <div *ngIf="f['email'].touched && f['email'].invalid">
+              <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                Email is required.
+              </div>
+              <div *ngIf="f['email'].errors && f['email'].errors['email']">
+                Email must be a valid email address.
+              </div>
             </div>
           </div>
         </div>
@@ -42,9 +45,11 @@
           <div>
             <input type="text" class="form-control" formControlName="userName" />
           </div>
-          <div *ngIf="f['userName'].touched && f['userName'].invalid">
-            <div *ngIf="f['userName'].errors && f['userName'].errors['required']">
-              User Name is required
+          <div class="invalid">
+            <div *ngIf="f['userName'].touched && f['userName'].invalid">
+              <div *ngIf="f['userName'].errors && f['userName'].errors['required']">
+                User Name is required
+              </div>
             </div>
           </div>
         </div>
@@ -54,12 +59,21 @@
           <div>
             <input type="password" class="form-control" formControlName="password" />
           </div>
-          <div *ngIf="f['password'].touched && f['password'].invalid">
-            <div *ngIf="f['password'].errors && f['password'].errors['required']">
-              Password is required
-            </div>
-            <div *ngIf="f['password'].errors && f['password'].errors['minlength']">
-              Minimum length is 8
+          <div class="invalid">
+            <div *ngIf="f['password'].touched && f['password'].invalid">
+              <div *ngIf="f['password'].errors && f['password'].errors['required']">
+                Password is required
+              </div>
+              <div *ngIf="
+                  f['password'].errors && f['password'].errors['minlength']
+                ">
+                Minimum length is 8
+              </div>
+              <div *ngIf="f['password'].touched &&
+                  f['password'].errors?.['invalidPassword']">
+                Password should have minimum 8 characters, at least 1 uppercase
+                letter, 1 lowercase letter and 1 number
+              </div>
             </div>
           </div>
         </div>
@@ -69,53 +83,60 @@
           <div>
             <input type="password" class="form-control" formControlName="confirmPassword" />
           </div>
-          <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid">
-            <div *ngIf="f['confirmPassword'].errors &&f['confirmPassword'].errors['required']">
-              Confirm Password is required
-            </div>
-            <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['minlength']">
-              Minimum length is 8
-            </div>
-            <div *ngIf="f['confirmPassword'].errors &&f['confirmPassword'].errors['confirmedValidator']">
-              Password mismatch
-            </div>
-          </div>
-        </div>
-
-        <!-- <div class="form-group">
-          <label>Company Name</label>
-          <div>
-            <input type="text" class="form-control" formControlName="companyName" />
-          </div>
-          <div *ngIf="f['companyName'].touched && f['companyName'].invalid">
-            <div *ngIf="f['companyName'].errors && f['companyName'].errors['required']">
-              Company Name is required
+          <div class="invalid">
+            <div *ngIf="
+                f['confirmPassword'].touched && f['confirmPassword'].invalid
+              ">
+              <div *ngIf="
+                  f['confirmPassword'].errors &&
+                  f['confirmPassword'].errors['required']
+                ">
+                Confirm Password is required
+              </div>
+              <div *ngIf="
+                  f['confirmPassword'].errors &&
+                  f['confirmPassword'].errors['minlength']
+                ">
+                Minimum length is 8
+              </div>
+              <div *ngIf="
+                  f['confirmPassword'].errors &&
+                  f['confirmPassword'].errors['confirmedValidator']
+                ">
+                Password mismatch
+              </div>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label>Logo</label>
-          <div class="imgup">
-            <div class="icon-container">
-              <img src="assets/icons/img.png" alt="" />
-              <div>Drop your image here, or browse</div>
+          <label class="labelName">Profile Picture</label>
+          <div class="profileImg">
+            <div class="imgup form-control">
+              <div class="icon-container">
+                <img src="assets/icons/img.png" alt="" />
+                <div *ngIf="!imageSelected">
+                  Drop your image here, or browse
+                </div>
+              </div>
+              <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*"
+                formControlName="profilePath" />
             </div>
-            <input id="fileUpload" type="file" accept="image/*" formControlName="logo" />
+            <div class="previewImg" *ngIf="profilePreviewPath && profilePreviewPath !== ''">
+              <img height="115px" width="120px" [src]="profilePreviewPath" [alt]="registerForm.value.fullName" />
+            </div>
           </div>
-        </div> -->
+        </div>
 
-        <button class="btn" [disabled]="!registerForm.valid" [routerLink]="['/auth/signup2']" type="submit">
-          Next
+        <button class="btn" [disabled]="!registerForm.valid" type="submit">
+          Register
         </button>
-
       </form>
-      <div style="margin-left: 15%;">
+      <div style="margin-left: 15%">
         <a class="forgot-btn" [routerLink]="['/auth/login']">Already have an account?</a>
         <!-- <a class="forgot-btn">Forgot password?</a>
         <a class="forgot-btn"> Don't have an account? </a> -->
       </div>
-
     </div>
   </div>
 </div>

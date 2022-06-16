@@ -1,8 +1,7 @@
 export interface AddOn{
     addOnId:string;
-    displayName: string;
+    name: string;
     unitOfMeasure: number;
-    productPlan: string;
-    price: number;
+    productId:string;
    
 }

@@ -1,3 +1,29 @@
+.second-content {
+  background-color: #292C38;
+  height: 200px;
+  color: var(--navWhite);
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.text-marketplace {
+  font-size: 22px;
+  color: var(--navWhite);
+  margin: auto;
+}
+
+.button-browse {
+  background-color: var(--navWhite);
+  color: #292C38;
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 15px;
+  border: none;
+  margin: auto;
+}
+
 .top{
     text-align: center;
     font-size: 22px;
@@ -10,7 +36,6 @@
     grid-template-columns: auto auto auto auto;
     justify-content: center;
   
-    
     }
   
     [class^="box-"] {

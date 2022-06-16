@@ -1,9 +1,22 @@
 <div class="app-container">
   <app-side-nav></app-side-nav>
   <div class="content">
+    
     <div class="right-align">
       <app-profile></app-profile>
+      
     </div>
+
+    <div class="container">
+      <div class="containerItem1">Products</div>
+      <div class="container1">
+      <div class="containerItem2"><p>Each of your products you can add to the marketplace to sell your items.</p></div>
+      <div ><a (click)="onAddToMarketplace(product.productId)">
+        <button mat-button class="btnMarketplace">+ Add to Marketplace</button>
+      </a></div>
+    </div>
+    </div>
+    
     <div class="cont">
       <div class="details">
         <div class="details-head">Product Details</div>
@@ -29,7 +42,14 @@
             <div class="description">{{product.description}}</div>
             <div>{{product.redirectURL}}</div>
             <div>{{product.webhookURL}}</div>
-            <div>{{product.webhookSecret}}</div>
+            <div class="secret" (click)="toggleViewSecret()">
+              <div class="key" [hidden]="showSecret">{{webhookSecret}}</div>
+              <div class="key" [hidden]="!showSecret">{{product.webhookSecret}}</div>
+              <div class="eyeSVG">
+                <img src="../../../../../assets/svg/eye-outline.svg" [hidden]="!showSecret" alt="">
+                <img src="../../../../../assets/svg/eye-off-outline.svg" [hidden]="showSecret" alt="">
+              </div>
+            </div>
             <div>{{product.freeTrialDays}}</div>
           </div>
         </div>
@@ -37,10 +57,13 @@
         <div class="logo">
           <img [src]="product.logoURL" height="100px" width="100px" />
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> dev
       </div>
-
-      <div></div>
+     
 
       <div class="subs-info">
         <div class="plan-detail-add-container">
@@ -55,6 +78,7 @@
         <mat-divider></mat-divider>
 
         <app-plan-table></app-plan-table>
+<<<<<<< HEAD
         
         <!-- Navigation is not completed for add-on -->
         <div class="plan-detail-add-container">
@@ -82,6 +106,53 @@
             </a>
           </div>
         </div>
+=======
+
+       
+
+        <div class="subs-head">Add-On Details</div>
+        <mat-divider></mat-divider>
+
+        <div>
+          <a  >
+           
+            <button class="name-button" mat-button (click)="openDialog()">+ Add Add-On</button>
+       
+          </a>
+        </div>
+        
+        <app-add-on-table></app-add-on-table>
+
+        <div class="subs-head">Add-On Price Details</div>
+        <mat-divider></mat-divider>
+
+        <div>
+          
+          <button class="name-button" mat-button (click)="openDialogPrice()">+ Add AddOn Price</button>
+        </div>
+        
+        <app-add-on-price></app-add-on-price>
+
+
+
+       <div class="buttonF">
+        <div>
+          <a (click)="onDelete(product.productId)" class="delete-button">
+            <button mat-button class="delete-button">Delete Product</button>
+          </a>
+        </div>
+
+        <div>
+          <a (click)="navigateToEditProduct()" class="edit-button">
+            <button mat-button class="edit-button">Edit Product</button>
+          </a>
+        </div>
+       </div> 
+       
+        
+      
+       
+>>>>>>> dev
       </div>
 
     </div>

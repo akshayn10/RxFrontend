@@ -1,7 +1,64 @@
+.container {
+  background-color: var(--navWhite);
+  width: 80%;
+  margin: 0 auto;
+  height: 130px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 12px;
+}
+
+.containerItem1 {
+  color: var(--primary-blue);
+  font-size: 24px;
+  margin: 10px 10px 0 10px;
+  padding: 20px 20px 0 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container1>div {
+  margin: 0 10px 0 10px;
+  padding: 0 20px 0 20px;
+
+}
+
+.containerItem2 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
 .cont {
+<<<<<<< HEAD
   width: 80%;
   margin: 0 auto;
   height: 100%;
+=======
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+  }
+ 
+  .details-head{
+    font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--primary-blue);
+  }
+
+.flex-container{
+  margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+>>>>>>> dev
 }
 
 .details-head {
@@ -12,6 +69,7 @@
   margin-top: 20px;
 }
 
+<<<<<<< HEAD
 .subs-head {
   font-weight: 600;
   font-size: 18px;
@@ -62,14 +120,59 @@
 
 .add-button {
   background-color: var(--primary-blue);
+=======
+  }
+  .secret{
+    display: flex;
+  }
+  .secret .key{
+    width: 350px;
+  }
+
+
+  .eyeSVG img{
+    width: 18px;
+    height: 25px;
+    margin-left: 10px;
+  }
+  .logo{
+    width: 260px;
+    margin-left: 1%;
+  }
+
+
+  .subs-head{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: var(--primary-blue);
+    margin-top: 30px;
+  }
+
+.name-button {
+  background-color:#292c38;
+  color: #ccd2e5;
+  
+  box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+  text-align: center;
+>>>>>>> dev
   border-radius: 10px;
-  color: white;
   font-size: 14px;
   font-weight: 600;
   height: 40px;
+<<<<<<< HEAD
   width: 200px;
+=======
+  width: 130px;
+>>>>>>> dev
   border: none;
 }
+.name-button:hover {
+  color: #292c38;
+  background-color:#ccd2e5 ;
+  transition: 0.7s;
+}
+
 
 .add-button:hover {
   cursor: pointer;
@@ -103,6 +206,7 @@
   margin-top: 2%;
 }
 
+<<<<<<< HEAD
 .edit-button:hover {
   cursor: pointer;
 }
@@ -115,3 +219,34 @@
 .box-1 {
   margin-right: 10px;
 }
+=======
+.buttonF{
+  display: flex;
+  margin-top: 15px;
+  justify-content: flex-end;
+  
+}
+
+.buttonF div{
+  margin-right: 10px;
+}
+
+.btnMarketplace {
+  width: 135px;
+  height: 45px;
+  border-radius: 12px;
+  color: #292c38;
+  background-color:#ccd2e5 ;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+  text-align: center;
+}
+
+.btnMarketplace:hover {
+  background-color:#292c38;
+  color: #ccd2e5;
+  transition: 0.7s;
+}
+
+>>>>>>> dev
