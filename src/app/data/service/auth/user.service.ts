@@ -10,12 +10,6 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  registerUser(userForm:any):Observable<any>{
-    return this.http.post<any>(this.userBaseApiUrl+'register',userForm);
-  }
 
-  loginUser(loginForm:any):Observable<any>{
-    return this.http.post<any>(this.userBaseApiUrl+'authenticate',loginForm);
-  }
 
 }

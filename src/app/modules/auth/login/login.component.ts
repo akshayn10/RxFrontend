@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/data/service/auth/auth.service';
 import { UserService } from 'src/app/data/service/auth/user.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { UserService } from 'src/app/data/service/auth/user.service';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
-  constructor(private fb: FormBuilder,private _userService:UserService) {
+  constructor(private fb: FormBuilder,private _authService:AuthService,private router:Router) {
 
   }
 
@@ -31,9 +33,11 @@ export class LoginComponent implements OnInit {
       return;
     }
     console.log(this.loginForm.value);
-    this._userService.loginUser(this.loginForm.value).subscribe(
+    this._authService.loginUser(this.loginForm.value).subscribe(
       (data)=>{
         console.log(data);
+        this.router.navigate(['/dashboard']);
+
       }
   )}
 

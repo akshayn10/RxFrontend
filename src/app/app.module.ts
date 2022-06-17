@@ -18,6 +18,8 @@ import { MarketplaceModule } from './modules/marketplace/marketplace.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { OrganizationModule } from './modules/organization-profile/organization.module';
 import { MatTableModule } from '@angular/material/table';
+import { HttpInterceptorService } from './core/interceptor/http-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent ],
@@ -39,10 +41,8 @@ import { MatTableModule } from '@angular/material/table';
     MarketplaceModule,
     ProfileModule,
     OrganizationModule
-
-    
   ],
-  providers: [],
+  // providers: [{ provide: HTTP_INTERCEPTORS,useClass:HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

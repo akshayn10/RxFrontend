@@ -1,6 +1,13 @@
 
 <div class="profile">
   <button mat-button class="name-button" routerLink="/profile">Hi! John</button>
-  <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+  <img class="avatar mat-elevation-z8" [matMenuTriggerFor]="menu" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Go to Profile</button>
+    <button mat-menu-item>Organization Profile</button>
+    <button mat-menu-item>Logout</button>
+
+
+  </mat-menu>
 
 </div>
