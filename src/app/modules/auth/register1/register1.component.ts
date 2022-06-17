@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/data/service/auth/auth-service.service';
 import { UserService } from 'src/app/data/service/auth/user.service';
 import { ValidationService } from './validation.service';
 
@@ -15,7 +16,7 @@ export class Register1Component implements OnInit {
   profilePreviewPath!: string;
   imageSelected:boolean = false;
 
-  constructor(private formBuilder: FormBuilder,private _userService:UserService,private validationService:ValidationService) {
+  constructor(private formBuilder: FormBuilder,private _authService:AuthService,private validationService:ValidationService) {
    }
 
   ngOnInit(): void {
@@ -36,6 +37,7 @@ export class Register1Component implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+
     if (this.registerForm.invalid) {
         return;
     }
@@ -51,10 +53,11 @@ export class Register1Component implements OnInit {
 
     console.log(formData);
 
-    this._userService.registerUser(formData).subscribe(
-      (data)=>{
-        console.log(data);
-        this.submitted = true;
+    this._authService.registerUser(formData).subscribe(
+      (res)=>{
+        if(res.succeeded){
+          console.log(res.data);
+        }
       }
     )
 }

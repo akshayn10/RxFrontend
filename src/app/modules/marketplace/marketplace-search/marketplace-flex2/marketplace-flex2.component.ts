@@ -1,5 +1,4 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { SharedDataService } from '../../shared-data.service';
 import { ProductService } from 'src/app/data/service/Product/product.service';
 import { Product } from 'src/app/data/schema/product.model';
@@ -15,7 +14,7 @@ export class MarketplaceFlex2Component implements OnInit {
   products: Product[] = [];
 
 
-  
+
   constructor(private _sharedDataService:SharedDataService,
     private productservice: ProductService,
     ) { }
