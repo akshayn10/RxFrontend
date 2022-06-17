@@ -14,7 +14,7 @@ export class AddOnTableComponent implements OnInit {
   productId!: string;
 
   dataSource = new MatTableDataSource();
-  displayedColumns: String[] = ['addOnId',  'name','unitOfMeasure']
+  displayedColumns: String[] = ['addOnId',  'name','unitOfMeasure','edit']
 
   constructor( public _activatedRoute: ActivatedRoute,
     public router: Router,
@@ -33,5 +33,10 @@ export class AddOnTableComponent implements OnInit {
       //console.log(this.dataSource)
     });
   }
+
+  onEdit(){
+    
+  }
+
 
 }
