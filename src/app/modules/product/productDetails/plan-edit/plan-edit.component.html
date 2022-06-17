@@ -9,71 +9,65 @@
       <h1>Edit Plan</h1>
     </div>
 
-    <div class="container2">
+    <div class="container-2">
       <form [formGroup]="planForm" (ngSubmit)="onEdit(planId)">
         <div class="form-group">
           <label class="labelName">Plan Name</label>
-          <div>
-            <input type="text" class="form-control" formControlName="name" [(ngModel)]="plan.name" />
-            <div class="invalid">
-              <div *ngIf="f['name'].touched && f['name'].invalid">
-                <div *ngIf="f['name'].errors && f['name'].errors['required']">
-                  Plan name is required.
-                </div>
+          <input type="text" class="form-control" formControlName="name" [(ngModel)]="plan.name" />
+          <div class="invalid">
+            <div *ngIf="f['name'].touched && f['name'].invalid">
+              <div *ngIf="f['name'].errors && f['name'].errors['required']">
+                Plan name is required.
               </div>
             </div>
           </div>
+          <div class="form-field"></div>
         </div>
 
         <div class="form-group">
           <label class="labelName">Price </label>
-          <div>
-            <input type="text" class="form-control Z" formControlName="price" [(ngModel)]="plan.price" />
-            <div class="invalid">
-              <div *ngIf="f['price'].touched && f['price'].invalid">
-                <div *ngIf="
-                            f['price'].errors && f['price'].errors['required'] ">
-                  Price is required.
-                </div>
+          <input type="text" class="form-control Z" formControlName="price" [(ngModel)]="plan.price" />
+          <div class="invalid">
+            <div *ngIf="f['price'].touched && f['price'].invalid">
+              <div *ngIf="f['price'].errors && f['price'].errors['required'] ">
+                Price is required.
               </div>
             </div>
           </div>
+          <div class="form-field"></div>
         </div>
 
         <div class="form-group">
           <label class="labelName">Bill Every</label>
-          <div>
-            <input type="text" class="form-control Z" formControlName="duration" [(ngModel)]="plan.duration" />
-            <div class="invalid">
-              <div *ngIf="f['duration'].touched && f['duration'].invalid">
-                <div *ngIf=" f['duration'].errors && f['duration'].errors['required']  ">
-                  Duration period is required.
-                </div>
+          <input type="text" class="form-control Z" formControlName="duration" [(ngModel)]="plan.duration" />
+          <div class="invalid">
+            <div *ngIf="f['duration'].touched && f['duration'].invalid">
+              <div *ngIf=" f['duration'].errors && f['duration'].errors['required']  ">
+                Duration period is required.
               </div>
             </div>
           </div>
+          <div class="form-field"></div>
         </div>
 
         <div class="form-group">
           <label class="labelName">Description </label>
-          <div>
-            <input type="textarea" class="form-control form-control-des" formControlName="description"
-              [(ngModel)]="plan.description" />
-            <div class="invalid">
-              <div *ngIf="f['description'].touched && f['description'].invalid">
-                <div *ngIf=" f['description'].errors && f['description'].errors['required'] ">
-                  Description is required.
-                </div>
+          <textarea type="textarea" class="form-control form-control-des" formControlName="description" [(ngModel)]="plan.description"></textarea>
+          <div class="invalid">
+            <div *ngIf="f['description'].touched && f['description'].invalid">
+              <div *ngIf=" f['description'].errors && f['description'].errors['required'] ">
+                Description is required.
               </div>
             </div>
           </div>
+          <div class="form-field"></div>
         </div>
 
 
-
         <div class="form-group">
-          <mat-checkbox class="labelName" type="boolean" formControlName="haveTrial">Trial </mat-checkbox>
-
+          <label class="labelName">Trial</label>
+          <mat-checkbox class="form-control" style="background-color: #FFFFFF; padding-top: 10px;" type="boolean" formControlName="haveTrial"></mat-checkbox>
+          <div class="form-field"></div>
           <div class="invalid">
             <div *ngIf="f['haveTrial'].touched && f['haveTrial'].invalid">
               <div *ngIf=" f['haveTrial'].errors && f['haveTrial'].errors['required'] ">
@@ -84,9 +78,9 @@
         </div>
 
 
-        <div class="form-group">
+        <div class="form-group-btn">
           <button class="btn" type="submit">Save</button>
-          <button class="btn2" routerLink="/product">Cancel</button>
+          <button class="btn-2" routerLink="/product">Cancel</button>
         </div>
       </form>
     </div>

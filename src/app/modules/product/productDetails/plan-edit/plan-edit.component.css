@@ -13,25 +13,23 @@
   color: var(--primary-blue);
 }
 
-.container2 {
-  display: flex;
+.container-2 {
   justify-content: center;
-  margin-top: 5%;
+  width: 90%;
+  margin-top: 2%;
 }
 
 .form-group {
-  margin-bottom: 10px;
-  font-size: 14px;
-  font-weight: bold;
   display: flex;
-
+  padding-bottom: 10px;
 }
 
 .form-control {
-  width: 700px;
+  width: 60%;
   height: 40px;
   background-color: var(--navWhite);
   border-radius: 10px;
+  padding-left: 14px;
   font-size: 14px;
   border: none;
 }
@@ -41,84 +39,117 @@
 }
 
 .form-control-des {
-  height: 100px;
+  height: 120px;
   background-color: var(--navWhite);
+  padding-top: 10px;
   border-radius: 10px;
   font-size: 14px;
+  font-family: "Poppins";
   border: none;
   align-items: right;
 }
 
-.btn {
-  width: 120px;
-  height: 40px;
-  border-radius: 10px;
-  font-size: 14px;
-  margin-bottom: 15px;
-  border: none;
-  color: white;
-  background-color: var(--primary-blue);
+.form-field {
+  width: 20%;
+  padding-left: 14px;
+  border-radius: 20px;
 }
-
 
 .invalid {
   color: red;
-  height: 15px;
+  width: 25%;
+  padding-top: 10px;
+  padding-left: 18px;
 }
 
-.labelName {
-  text-align: ends;
-  width: 120px;
+.form-group .labelName {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: end;
+  width: 30%;
   margin-top: 10px;
+  padding-right: 2%;
 }
 
-label {
-  display: block;
-
+::ng-deep .mat-form-field {
+  height: 40px;
 }
 
-input[type="file"] {
-  left: 0;
-  top: 0;
-  position: absolute;
-  opacity: 0;
-  height: 100%;
-  cursor: pointer;
-  width: 100%;
+::ng-deep .mat-form-field-wrapper {
+  height: 40px;
+}
+
+::ng-deep .mat-select-value-text {
+  padding-left: 10px;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  height: 40px;
+  border-radius: 10px 10px 0 0 !important;
+  padding: 0 0 10px 0 !important;
+  background-color: var(--navWhite);
+}
+
+::ng-deep .mat-form-field-infix {
+  width: 100% !important;
+  border-top: 0 !important;
+}
+
+::ng-deep .mat-select {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+::ng-deep .mat-select-arrow {
+  /* margin: 15px 5px !important; */
+  border-left: 6px solid transparent !important;
+  border-right: 6px solid transparent !important;
+  border-top: 6px solid !important;
+}
+
+::ng-deep .mat-select-arrow-wrapper {
+  display: inline !important;
+}
+
+::ng-deep .mat-option {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--navWhite);
+}
+
+.form-group-btn {
+  margin-top: 10px;
+  margin-left: 23%;
 }
 
 .btn {
-  width: 127px;
+  width: 120px;
   height: 40px;
   background-color: var(--primary-blue);
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 10px;
   color: white;
   margin-right: 10px;
-  margin-left: 23%;
-
+  border: none;
 }
 
-.btn2 {
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-2 {
   width: 120px;
   height: 40px;
+  background-color: #292c38;
+  font-weight: 600;
   border-radius: 10px;
   color: white;
-  background-color: #292C38;
-  font-weight: bold;
-
+  border: none;
 }
 
-.tick {
-  margin-bottom: 15px;
-}
-
-.headerbox {
-  font-weight: bold;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-.checkbox {
-  font-family: Poppins !important;
+.btn-2:hover {
+  cursor: pointer;
 }
