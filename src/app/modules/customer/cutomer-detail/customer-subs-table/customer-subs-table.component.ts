@@ -22,7 +22,6 @@ export class CustomerSubsTableComponent implements AfterViewInit, OnInit {
     private _activatedRoute: ActivatedRoute
   ) {
     this.customerId = _activatedRoute.snapshot.paramMap.get('id') || '';
-    // console.log(this.customerId);
   }
   ngOnInit(): void {
     this.getCustomerSubscriptions(this.customerId);
