@@ -19,6 +19,6 @@ import { ChartsModule } from 'ng2-charts';
     PaymentsComponent,
     ReportChartComponent,
   ],
-  imports: [CommonModule, ReportsRoutes, SharedModule, ChartsModule],
+  imports: [CommonModule, ReportsRoutes, SharedModule, ChartsModule]
 })
 export class ReportsModule {}

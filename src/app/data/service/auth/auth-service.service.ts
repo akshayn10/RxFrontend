@@ -19,25 +19,35 @@ export class AuthService {
 
   private userBaseApiUrl = 'https://localhost:44352/api/user/';
 
-  private isLoggedIn = new BehaviorSubject(false);
-  loginState = this.isLoggedIn.asObservable();
+  private isLoggedIn:boolean =false;
 
-  private role = new BehaviorSubject<string>("");
-  currentRole = this.role.asObservable();
+  // private role = new BehaviorSubject<string>("");
+  // currentRole = this.role.asObservable();
 
 
   constructor(private http:HttpClient,private _tokenService:TokenStorageService) { }
 
-  setLoginState(isLoggedIn: boolean) {
-    this.isLoggedIn.next(isLoggedIn);
+  setLoginState(state: boolean) {
+    console.log(state);
+    this.isLoggedIn = state;
+  }
+  getLoginState(){
+    // return this._tokenService.getToken()!=null;
+    return this.isLoggedIn;
+  }
+  isAdmin(){
+    return this.getRole() == "Admin";
+  }
+  isOwner(){
+    return this.getRole() == "Owner";
   }
   setRole() {
     var role = this._tokenService.getRole();
     if(role == null){
       role = "";
     }
-    this.role.next(role);
-    console.log(this.currentRole)
+    // this.role.next(role);
+    // console.log(this.currentRole)
   }
   signOut(): void {
     const refreshToken = this._tokenService.getRefreshToken();
@@ -47,6 +57,13 @@ export class AuthService {
   }
   getRole(){
     return this._tokenService.getRole();
+  }
+
+  getJwtToken(){
+    return this._tokenService.getToken();
+  }
+  setJwtToken(token: string) {
+    this._tokenService.saveToken(token);
   }
 
 
@@ -60,6 +77,11 @@ export class AuthService {
     const url = this.userBaseApiUrl+'authenticate';
      const req= this.http.post<{data:LoginResponseData}>(url,loginForm);
      return this.mapFromResponse(req,r=>r.data);
+  }
+  refreshJwtToken():Observable<LoginResponseData>{
+    const refreshToken = this._tokenService.getRefreshToken();
+    const url = this.userBaseApiUrl+'refresh-token';
+    return this.http.post<LoginResponseData>(url,{token:refreshToken});
   }
 
 
