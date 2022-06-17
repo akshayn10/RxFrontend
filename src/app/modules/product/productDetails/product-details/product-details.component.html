@@ -78,7 +78,7 @@
         <div class="plan-detail-add-container">
           <div class="subs-head">Add-On Details</div>
           <div class="add-btn">
-            <a (click)="navigateToAddPlan()">
+            <a (click)="openDialog()">
               <button mat-button class="add-button">+ Add Add-On</button>
             </a>
           </div>
@@ -87,6 +87,19 @@
         <mat-divider></mat-divider>
 
         <app-add-on-table></app-add-on-table>
+        <div class="plan-detail-add-container">
+          <div class="subs-head">Add-On Price Details</div>
+          <div class="add-btn">
+            <a (click)="openDialogPrice()">
+              <button mat-button class="add-button">+ Add AddOn Price</button>
+            </a>
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <app-add-on-table></app-add-on-table>
+
 
         <div class="button-container">
           <div class="box-1">
