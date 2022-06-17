@@ -52,4 +52,3 @@ export class HttpInterceptorService implements HttpInterceptor {
     return request.clone({ headers: request.headers.set('Authorization', 'bearer ' + token) });
   }
 }
-

@@ -19,7 +19,7 @@ export class AuthService {
 
   private userBaseApiUrl = 'https://localhost:44352/api/user/';
 
-  private isLoggedIn:boolean =false;
+  private isLoggedIn!:boolean;
 
   // private role = new BehaviorSubject<string>("");
   // currentRole = this.role.asObservable();
@@ -28,12 +28,11 @@ export class AuthService {
   constructor(private http:HttpClient,private _tokenService:TokenStorageService) { }
 
   setLoginState(state: boolean) {
-    console.log(state);
-    this.isLoggedIn = state;
+    console.log("passed"+ state);
+    this.isLoggedIn = true;
   }
   getLoginState(){
-    // return this._tokenService.getToken()!=null;
-    return this.isLoggedIn;
+    return this._tokenService.getToken()!=null;
   }
   isAdmin(){
     return this.getRole() == "Admin";
