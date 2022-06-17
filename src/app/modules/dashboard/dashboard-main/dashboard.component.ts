@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     yLabel:'Revenue'
   };
   lineChartData2 = {
-    data: [95, 49, 50, 31, 76, 85, 30],
+    data: [95, 49, 50, 39, 56, 85, 30],
     label: 'Product B',
     chartLabels: [
       'January',

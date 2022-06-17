@@ -22,14 +22,21 @@ export class GraphComponent implements AfterViewInit {
       },
 
       tooltips: {
-        backgroundColor: 'rgba(255,255,255, 0.5)',
-        titleFontColor: '#333',
-        bodyFontColor: '#666',
+        backgroundColor: 'rgba(52, 122, 226, 0.8)',
+        titleFontColor: '#292C38',
+        titleFontFamily: 'Poppins',
+        titleFontSize: 14,
+        bodyFontColor: '#ECEFF4',
+        bodyFontFamily: 'Poppins',
+        bodyFontStyle: 500,
         bodySpacing: 4,
-        xPadding: 12,
+        xPadding: 14,
         mode: "nearest",
         intersect: 0,
-        position: "nearest"
+        position: "nearest",
+        font: {
+          family: 'Poppins'
+        }
       },
 
       responsive: true,
@@ -46,7 +53,7 @@ export class GraphComponent implements AfterViewInit {
             suggestedMax: 120,
             padding: 20,
             fontColor: "#292C38",
-            fontFamily: "Poppins",
+            fontFamily: 'Poppins',
             fontWeight: 600,
             fontSize: 12
           }
@@ -62,7 +69,7 @@ export class GraphComponent implements AfterViewInit {
           ticks: {
             padding: 20,
             fontColor: "#292C38",
-            fontFamily: "Poppins",
+            fontFamily: 'Poppins',
             fontSize: 13
           },
           test: {

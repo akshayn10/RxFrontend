@@ -1,4 +1,12 @@
 .mat-table {
   overflow: hidden !important;
-  width: 100%
+  width: 100%;
+  background-color: #F8FBFF;
+  filter: drop-shadow(2px 5px 10px rgba(41, 44, 56, 0.25));
 }
+
+.mat-header-cell {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 600;
+} 
