@@ -12,8 +12,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
 import { TransactionTableComponent } from './transaction-table/transaction-table.component';
 import { BillDetailsComponent } from './bill-details/bill-details.component';
-import { HttpInterceptorService } from 'src/app/core/interceptor/http-interceptor.service';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +31,6 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     MatPaginatorModule,
     MatDividerModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS,useClass:HttpInterceptorService, multi: true }],
   exports: [],
 })
 export class TransactionModule {}

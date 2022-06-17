@@ -39,6 +39,7 @@ export class HttpInterceptorService implements HttpInterceptor {
     return authservice.refreshJwtToken().pipe(
       switchMap((data) => {
         authservice.setJwtToken(data.jwtToken);
+        authservice.setCurrentUserSubject(data);
         return next.handle(this.AddTokenheader(request,data.jwtToken))
       }),
       catchError(errodata=>{

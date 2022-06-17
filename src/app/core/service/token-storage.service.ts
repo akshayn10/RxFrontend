@@ -12,6 +12,7 @@ const ROLES_KEY = 'auth-role';
 export class TokenStorageService {
 
   setRoles(roles: string[]) {
+    localStorage.removeItem(ROLES_KEY);
     if(roles.includes('Owner')){
     localStorage.setItem(ROLES_KEY,"Owner");
     }
@@ -32,7 +33,7 @@ export class TokenStorageService {
   }
 
   public saveToken(token: string): void {
-    localStorage.removeItem(TOKEN_KEY);
+
     localStorage.setItem(TOKEN_KEY, token);
 
     const user = this.getUser();

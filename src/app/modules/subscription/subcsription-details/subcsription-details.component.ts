@@ -13,7 +13,6 @@ export class SubcsriptionDetailsComponent implements OnInit,AfterViewInit {
   subscription! :Subscription
   constructor(private _activatedRoute:ActivatedRoute,private _subscriptionService:SubscriptionService ) {
         this.subscriptionId= this._activatedRoute.snapshot.paramMap.get('id')||'';
-
   }
 
   ngOnInit(): void {
