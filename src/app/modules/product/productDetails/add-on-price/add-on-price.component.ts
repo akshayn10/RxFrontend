@@ -10,7 +10,7 @@ import {ActivatedRoute,Router } from '@angular/router';
   styleUrls: ['./add-on-price.component.css']
 })
 export class AddOnPriceComponent implements OnInit {
-planId!: string;
+
 productId!: string;
 
   dataSource = new MatTableDataSource();
@@ -21,6 +21,7 @@ productId!: string;
     public router: Router, 
     private addOnPriceservice: AddOnPriceService) {
       this.productId = this._activatedRoute.snapshot.paramMap.get('id') || '';
+      // this.planId = this._activatedRoute.snapshot.paramMap.get('planId') || '';
      }
 
   ngOnInit(): void {
@@ -34,9 +35,10 @@ productId!: string;
     });
   }
 
-  onDelete(addOnId:string){
+  onDelete(addOnPricePerPlanId:string){
+    
     if (confirm('Are you sure to delete this record ?') == true) {
-      this.addOnPriceservice.deleteAddOn(addOnId).subscribe((res) => {
+      this.addOnPriceservice.deleteAddOnPrice(addOnPricePerPlanId ).subscribe((res) => {
         console.log(res)
         this.ngOnInit();
       });
@@ -44,9 +46,9 @@ productId!: string;
   
   }
 
-  onEdit(addOnId:string){
-
+  onEdit(addOnPricePerPlanId:string){
+    this.router.navigate(['/product/'+this.productId+'/addOn/'+addOnPricePerPlanId+'/editAddOnPrice']);
   }
-
+ 
 
 }

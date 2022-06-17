@@ -20,4 +20,17 @@ export class AddOnService {
     return this.http.get<any>(this.AddOnUrl+`/${productId}`);
   }
 
+  getAddOnById(addOnId:string,productId:string):Observable<any>{
+    return this.http.get<any>(this.AddOnUrl+`/${productId}/${addOnId}`);
+  }
+
+  deleteAddOn(productId:string,addOnId:string):Observable<any>{
+    return this.http.delete(this.AddOnUrl+`/${productId}/${addOnId}`)
+
+  }
+
+  updateAddOn(productId:string,addOnId:string,addOnForm:any):Observable<any>{
+    return this.http.put<any>(this.AddOnUrl+`/${productId}/${addOnId}`,addOnForm);
+  }
+
 }

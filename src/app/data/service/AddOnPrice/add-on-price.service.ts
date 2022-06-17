@@ -21,8 +21,16 @@ export class AddOnPriceService {
     return this.http.get<any>(this.AddOnPriceUrl+`/addOnPlan/${productId}`);
   }
 
-  deleteAddOn(addOnId:string):Observable<any>{
-    return this.http.delete(this.AddOnPriceUrl+`/${addOnId}`)
+  deleteAddOnPrice(addOnPricePerPlanId:string):Observable<any>{
+    return this.http.delete(this.AddOnPriceUrl+`/${addOnPricePerPlanId}`)
 
+  }
+
+  updateAddOnPrice(addOnPricePerPlanId:string,addOnPriceForm:any):Observable<any>{
+    return this.http.put<any>(this.AddOnPriceUrl+`/${addOnPricePerPlanId}`,addOnPriceForm);
+  }
+
+  getAddOnPriceById(addOnPricePerPlanId:string):Observable<any>{
+    return this.http.get<any>(this.AddOnPriceUrl+`/${addOnPricePerPlanId}`);
   }
 }
