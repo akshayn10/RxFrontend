@@ -3,11 +3,9 @@
   <button mat-button class="name-button" routerLink="/profile">Hi! John</button>
   <img class="avatar mat-elevation-z8" [matMenuTriggerFor]="menu" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Go to Profile</button>
-    <button mat-menu-item>Organization Profile</button>
-    <button mat-menu-item>Logout</button>
-
-
+    <button (click)="navigateToUserProfile()" mat-menu-item>Go to Profile</button>
+    <button (click)="navigateToOrganizationProfile()" mat-menu-item>Organization Profile</button>
+    <button (click)="logout()" mat-menu-item>Logout</button>
   </mat-menu>
 
 </div>

@@ -17,8 +17,7 @@ import { ReportsModule } from './modules/reports/reports.module';
 import { MarketplaceModule } from './modules/marketplace/marketplace.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { OrganizationModule } from './modules/organization-profile/organization.module';
-import { MatTableModule } from '@angular/material/table';
-import { HttpInterceptorService } from './core/interceptor/http-interceptor.service';
+import { HttpInterceptorService } from './core/interceptors/http-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
@@ -42,7 +41,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ProfileModule,
     OrganizationModule
   ],
-  // providers: [{ provide: HTTP_INTERCEPTORS,useClass:HttpInterceptorService, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS,useClass:HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
