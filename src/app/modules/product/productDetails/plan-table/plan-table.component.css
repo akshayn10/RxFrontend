@@ -1,10 +1,11 @@
-.container2 {
+.container-2 {
   margin: auto;
   margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 table {
-  width: 1050px;
+  width: 100%;
   margin: auto;
   border: none;
   background-color: #f8fbff;
@@ -33,7 +34,8 @@ th {
   background-color: var(--navWhite);
 }
 
-.delete-button,.edit-button {
+.delete-button,
+.edit-button {
   background-color: white;
   border-radius: 25px;
   font-size: 14px;
@@ -43,9 +45,16 @@ th {
   border: none;
   cursor: pointer;
 }
-.image {
+
+img {
   height: 28px;
   width: 28px;
-  color: var(--primary-blue);
+}
 
+.image-edit {
+  filter: invert(48%) sepia(93%) saturate(287%) hue-rotate(151deg) brightness(95%) contrast(96%);
+}
+
+.image-delete {
+  filter: invert(35%) sepia(6%) saturate(5030%) hue-rotate(314deg) brightness(92%) contrast(97%);
 }

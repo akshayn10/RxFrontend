@@ -37,35 +37,69 @@
 
 
 .cont {
-    width: 90%;
-    margin: 0 auto;
-    height: 100%;
-  }
- 
-  .details-head{
-    font-weight: 600;
-  font-size: 18px;
-  line-height: 27px;
-  color: var(--primary-blue);
-  }
-
-.flex-container{
-  margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
 }
 
-  .details-container {
-    display: flex;
-  }
-  .detailTitle {
-    width: 200px;
-    text-align: right;
-  }
-  .detailResults {
-    margin-left: 1%;
-    width:500px;
+.details-head {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 60px;
+  color: var(--primary-blue);
+  margin-top: 20px;
+}
 
+.subs-head {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 60px;
+  color: var(--primary-blue);
+  margin-top: 20px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-container {
+  margin-top: 30px;
+  display: flex;
+}
+
+.detailTitle {
+  width: 200px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: right;
+}
+
+.detailResults {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 36px;
+  margin-left: 4%;
+}
+
+.logo {
+  margin-top: 30px;
+  margin-right: 5%;
+}
+
+.plan-detail-add-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-btn {
+  margin-top: 28px;
+  justify-content: flex-end;
+}
+
+.add-button {
+  background-color: var(--primary-blue);
   }
   .secret{
     display: flex;
@@ -97,15 +131,15 @@
 .name-button {
   background-color:#292c38;
   color: #ccd2e5;
-  
+
   box-shadow: 0px 0px 2px 2px rgb(0,0,0);
   text-align: center;
   border-radius: 10px;
   font-size: 14px;
+  font-weight: 600;
   height: 40px;
-  width: 130px;
+  width: 200px;
   border: none;
-  margin-top: 2%;
 }
 .name-button:hover {
   color: #292c38;
@@ -114,54 +148,47 @@
 }
 
 
-.delete-button{
+.add-button:hover {
+  cursor: pointer;
+}
+
+.delete-button {
   background-color: rgb(160, 62, 62);
   border-radius: 10px;
   color: white;
   font-size: 14px;
+  font-weight: 600;
   height: 40px;
-  width: 150px;
+  width: 200px;
   border: none;
   margin-top: 2%;
 }
 
-.edit-button{
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.edit-button {
   background-color: rgb(64, 158, 195);
   border-radius: 10px;
   color: white;
   font-size: 14px;
+  font-weight: 600;
   height: 40px;
-  width: 150px;
+  width: 200px;
   border: none;
   margin-top: 2%;
 }
 
-.buttonF{
-  display: flex;
-  margin-top: 15px;
-  justify-content: flex-end;
-  
+.edit-button:hover {
+  cursor: pointer;
 }
 
-.buttonF div{
+.button-container {
+  display: flex;
+  margin-top: 24px;
+}
+
+.box-1 {
   margin-right: 10px;
 }
-
-.btnMarketplace {
-  width: 135px;
-  height: 45px;
-  border-radius: 12px;
-  color: #292c38;
-  background-color:#ccd2e5 ;
-  font-weight: bold;
-  border: none;
-  box-shadow: 0px 0px 2px 2px rgb(0,0,0);
-  text-align: center;
-}
-
-.btnMarketplace:hover {
-  background-color:#292c38;
-  color: #ccd2e5;
-  transition: 0.7s;
-}
-

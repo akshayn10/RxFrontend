@@ -1,5 +1,4 @@
 .mat-table {
-
   overflow: hidden !important;
-  width: 870px;
+  width: 100%
 }

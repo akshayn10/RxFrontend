@@ -12,13 +12,13 @@ import {ActivatedRoute,Router } from '@angular/router';
 })
 export class AddOnTableComponent implements OnInit {
   productId!: string;
- 
+
   dataSource = new MatTableDataSource();
   displayedColumns: String[] = ['addOnId',  'name','unitOfMeasure','edit']
 
-  constructor( public _activatedRoute: ActivatedRoute, 
-    public router: Router, 
-    private addOnservice: AddOnService) 
+  constructor( public _activatedRoute: ActivatedRoute,
+    public router: Router,
+    private addOnservice: AddOnService)
     {
       this.productId = this._activatedRoute.snapshot.paramMap.get('id') || '';
      }
