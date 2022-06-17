@@ -10,7 +10,6 @@ table {
   background-color: #F8FBFF;
 }
 
-<<<<<<< HEAD
 .header {
   color: var(--primary-blue);
   font-size: 14px;
@@ -66,23 +65,3 @@ img {
 .image-delete {
   filter: invert(35%) sepia(6%) saturate(5030%) hue-rotate(314deg) brightness(92%) contrast(97%);
 }
-=======
-  .header{
-      color: var(--primary-blue);
-      font-size: 14px;
-  }
-
-  th{
-      background-color: var(--navWhite);
-  }
-
-  .mat-row:hover .mat-cell {
-    border-color:  var(--primary-blue)! important;
-    
-  }
-  
-  ::ng-deep.mat-tab-label{
-    min-width: 50%!important;
-    background-color: var(--navWhite);
-   }
->>>>>>> dev
