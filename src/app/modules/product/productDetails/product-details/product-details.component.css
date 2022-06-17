@@ -35,7 +35,7 @@
 
 .btn-marketplace {
   justify-content: flex-end;
-  background-color: var(--primary-blue);
+  background-color: #292c38;
   border-radius: 10px;
   color: var(--navWhite);
   font-size: 14px;
@@ -189,6 +189,7 @@
   width: 200px;
   border: none;
   margin-top: 2%;
+  margin-right: 10px;
 }
 
 .buttonF {

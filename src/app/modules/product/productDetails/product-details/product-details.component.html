@@ -64,7 +64,7 @@
 
 
       <div class="subs-info">
-        
+
         <div class="plan-detail-add-container">
           <h1>Plan Details</h1>
           <div class="add-btn">
@@ -102,17 +102,13 @@
         <app-add-on-price></app-add-on-price>
 
         <div class="buttonF">
-          <div>
-            <a (click)="onDelete(product.productId)" class="delete-button">
-              <button mat-button class="delete-button">Delete Product</button>
-            </a>
-          </div>
+          <a (click)="navigateToEditProduct()" class="edit-button">
+            <button mat-button class="edit-button">Edit Product</button>
+          </a>
 
-          <div>
-            <a (click)="navigateToEditProduct()" class="edit-button">
-              <button mat-button class="edit-button">Edit Product</button>
-            </a>
-          </div>
+          <a (click)="onDelete(product.productId)" class="delete-button">
+            <button mat-button class="delete-button">Delete Product</button>
+          </a>
         </div>
 
       </div>
