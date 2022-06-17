@@ -36,9 +36,10 @@ export class LoginComponent implements OnInit {
     this._authService.loginUser(this.loginForm.value).subscribe((res) => {
       if (res.succeeded) {
         console.log(res.data.email);
+        this._authService.setCurrentUserSubject(res.data);
         this._tokenService.saveToken(res.data.jwtToken);
         this._tokenService.saveRefreshToken(res.data.refreshToken);
-        this._tokenService.saveUser(res.data.userName);
+        this._tokenService.saveUser(res.data);
         this._tokenService.setRoles(res.data.roles);
         this._authService.setLoginState(true);
         this._authService.setRole()

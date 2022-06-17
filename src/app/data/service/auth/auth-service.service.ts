@@ -4,102 +4,131 @@ import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 import { TokenStorageService } from 'src/app/core/service/token-storage.service';
 import { LoginResponseData } from '../../schema/auth/loginResponseData';
 
-type ApiResponse<T>={
-  succeeded : true;
-  data: T;
-}|
-{
-  succeeded :false;
-  message : string;
-};
+type ApiResponse<T> =
+  | {
+      succeeded: true;
+      data: T;
+    }
+  | {
+      succeeded: false;
+      message: string;
+    };
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
   private userBaseApiUrl = 'https://localhost:44352/api/user/';
 
-  private isLoggedIn!:boolean;
+  private isLoggedIn!: boolean;
+  private currentUserSubject: BehaviorSubject<LoginResponseData| null>;
+  public currentUser: Observable<LoginResponseData|null>;
 
-  // private role = new BehaviorSubject<string>("");
-  // currentRole = this.role.asObservable();
 
+  constructor(
+    private http: HttpClient,
+    private _tokenService: TokenStorageService
+  ) {
+    this.currentUserSubject = new BehaviorSubject<LoginResponseData |null>(
+      JSON.parse(_tokenService.getUser())
+    );
+    this.currentUser = this.currentUserSubject.asObservable();
+  }
 
-  constructor(private http:HttpClient,private _tokenService:TokenStorageService) { }
+  public get currentUserValue(): LoginResponseData|null {
+    return this.currentUserSubject.value;
+  }
+  setCurrentUserSubject(data: LoginResponseData) {
+    this.currentUserSubject.next(data);
+  }
 
   setLoginState(state: boolean) {
-    console.log("passed"+ state);
+    console.log('passed' + state);
     this.isLoggedIn = true;
   }
-  getLoginState(){
-    return this._tokenService.getToken()!=null;
+  getLoginState() {
+    return this._tokenService.getToken() != null;
   }
-  isAdmin(){
-    return this.getRole() == "Admin";
+  isAdmin():boolean {
+    if(this.currentUserSubject.value?.roles){
+      return this.currentUserSubject.value?.roles.indexOf('Admin')>=0
+    }
+    return false
   }
-  isOwner(){
-    return this.getRole() == "Owner";
+  isOwner():boolean {
+    if(this.currentUserSubject.value?.roles){
+     return this.currentUserSubject.value?.roles.indexOf('Owner')>=0
   }
+  return false
+}
   setRole() {
     var role = this._tokenService.getRole();
-    if(role == null){
-      role = "";
+    if (role == null) {
+      role = '';
     }
     // this.role.next(role);
     // console.log(this.currentRole)
   }
   signOut(): void {
     const refreshToken = this._tokenService.getRefreshToken();
-    this.http.post(this.userBaseApiUrl+'logout',{token:refreshToken}).subscribe();
+    this.http
+      .post(this.userBaseApiUrl + 'logout', { token: refreshToken })
+      .subscribe();
+      this.currentUserSubject.next(null);
     this.setLoginState(false);
     this._tokenService.signOut();
   }
-  getRole(){
+  getRole() {
     return this._tokenService.getRole();
   }
 
-  getJwtToken(){
+  getJwtToken() {
     return this._tokenService.getToken();
   }
   setJwtToken(token: string) {
     this._tokenService.saveToken(token);
   }
 
-
-  registerUser(userForm:any):Observable<ApiResponse<string>>{
-    const url = this.userBaseApiUrl+'register';
-    const req =  this.http.post<{message:string}>(url,userForm);
-    return this.mapFromResponse(req,r=>r.message);
+  registerUser(userForm: any): Observable<ApiResponse<string>> {
+    const url = this.userBaseApiUrl + 'register';
+    const req = this.http.post<{ message: string }>(url, userForm);
+    return this.mapFromResponse(req, (r) => r.message);
   }
 
-  loginUser(loginForm:any):Observable<ApiResponse<LoginResponseData>>{
-    const url = this.userBaseApiUrl+'authenticate';
-     const req= this.http.post<{data:LoginResponseData}>(url,loginForm);
-     return this.mapFromResponse(req,r=>r.data);
+  loginUser(loginForm: any): Observable<ApiResponse<LoginResponseData>> {
+    const url = this.userBaseApiUrl + 'authenticate';
+    const req = this.http.post<{ data: LoginResponseData }>(url, loginForm);
+    return this.mapFromResponse(req, (r) => r.data);
   }
-  refreshJwtToken():Observable<LoginResponseData>{
+  refreshJwtToken(): Observable<LoginResponseData> {
     const refreshToken = this._tokenService.getRefreshToken();
-    const url = this.userBaseApiUrl+'refresh-token';
-    return this.http.post<LoginResponseData>(url,{token:refreshToken});
+    const url = this.userBaseApiUrl + 'refresh-token';
+    return this.http.post<LoginResponseData>(url, { token: refreshToken });
   }
 
-
-  private mapFromResponse<T, X>(result: Observable<T>, selector: (value: T) => X): Observable<ApiResponse<X>> {
+  private mapFromResponse<T, X>(
+    result: Observable<T>,
+    selector: (value: T) => X
+  ): Observable<ApiResponse<X>> {
     return result.pipe(
-      map(r => ({
+      map((r) => ({
         succeeded: true as const,
-        data: selector(r)
+        data: selector(r),
       })),
       catchError((e: HttpErrorResponse) => {
         if (e.error instanceof ProgressEvent) {
           return of({ succeeded: false as const, message: e.message });
         }
-        if ( e.error instanceof Object)
-        {
-          return of({ succeeded: false as const, message: `Error (${e.status}): ${e.error?.title ?? ''}` });
+        if (e.error instanceof Object) {
+          return of({
+            succeeded: false as const,
+            message: `Error (${e.status}): ${e.error?.title ?? ''}`,
+          });
         }
-        return of({ succeeded: false as const, message: `Error (${e.status}): ${e.error ?? ''}` });
-      }),
+        return of({
+          succeeded: false as const,
+          message: `Error (${e.status}): ${e.error ?? ''}`,
+        });
+      })
     );
   }
 }
