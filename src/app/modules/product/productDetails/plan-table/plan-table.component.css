@@ -46,6 +46,11 @@ th {
   cursor: pointer;
 }
 
+.alnright { 
+  text-align: right; 
+  padding-right: 60px !important;
+}
+
 img {
   height: 28px;
   width: 28px;

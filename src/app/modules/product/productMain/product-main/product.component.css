@@ -33,12 +33,6 @@
     font-size: 14px;
 }
 
-.cont {
-    width: 80%;
-    margin: 0 auto;
-    height: 100%;
-}
-
 .btn-container {
     margin: auto 0;
     padding-right: 3%;
@@ -51,10 +45,16 @@
     color: var(--navWhite);
     font-size: 14px;
     height: 40px;
-    width: 150px;
+    width: 200px;
     border: none;
 }
 
 .name-button:hover {
     cursor: pointer;
+}
+
+.cont {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
 }

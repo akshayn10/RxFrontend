@@ -5,7 +5,8 @@
 
 table {
   width: 100%;
-  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
   border: none;
   background-color: #F8FBFF;
 }
@@ -51,6 +52,11 @@ th {
   margin-left: 5px;
   border: none;
   cursor: pointer;
+}
+
+.alnright { 
+  text-align: right; 
+  padding-right: 60px !important;
 }
 
 img {

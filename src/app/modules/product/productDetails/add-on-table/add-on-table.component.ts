@@ -34,9 +34,12 @@ export class AddOnTableComponent implements OnInit {
     });
   }
 
-  onEdit(){
-    
+  onEdit(){    
+
   }
 
+  onDelete(){
+    
+  }
 
 }
