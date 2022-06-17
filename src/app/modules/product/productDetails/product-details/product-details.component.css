@@ -1,40 +1,52 @@
-.container {
+.title-container {
+  justify-content: space-between;
+  display: flex;
   background-color: var(--navWhite);
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  height: 130px;
+  height: 120px;
   border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 12px;
+  padding: 15px;
 }
 
-.containerItem1 {
-  color: var(--primary-blue);
-  font-size: 24px;
-  margin: 10px 10px 0 10px;
-  padding: 20px 20px 0 20px;
-  font-weight: bold;
+.title {
+  padding-top: 12px;
+  padding-left: 24px;
+  margin: 0;
   font-style: normal;
   font-weight: 600;
+  font-size: 24px;
+  color: var(--primary-blue);
 }
 
-.container1 {
-  display: flex;
-  justify-content: space-between;
-}
-
-.container1>div {
-  margin: 0 10px 0 10px;
-  padding: 0 20px 0 20px;
-
-}
-
-.containerItem2 {
-  font-size: 14px;
+.intro {
+  padding-top: 12px;
+  padding-left: 24px;
   font-style: normal;
   font-weight: normal;
+  font-size: 14px;
 }
 
+.btn-container {
+  margin: auto 0;
+  padding-right: 3%;
+}
+
+.btn-marketplace {
+  justify-content: flex-end;
+  background-color: var(--primary-blue);
+  border-radius: 10px;
+  color: var(--navWhite);
+  font-size: 14px;
+  height: 40px;
+  width: 200px;
+  border: none;
+}
+
+.btn-marketplace:hover {
+  cursor: pointer;
+}
 
 .cont {
   width: 80%;
@@ -42,18 +54,10 @@
   height: 100%;
 }
 
-.details-head {
+.details h1 {
   font-weight: 600;
   font-size: 18px;
-  line-height: 60px;
-  color: var(--primary-blue);
-  margin-top: 20px;
-}
-
-.subs-head {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 60px;
+  line-height: 36px;
   color: var(--primary-blue);
   margin-top: 20px;
 }
@@ -84,6 +88,7 @@
 }
 
 .logo {
+  justify-content: flex-end;
   margin-top: 30px;
   margin-right: 5%;
 }
@@ -91,15 +96,54 @@
 .plan-detail-add-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.add-btn {
-  margin-top: 28px;
+.plan-detail-add-container h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  color: var(--primary-blue);
+  margin-top: 10px;
+}
+
+.add-button {
   justify-content: flex-end;
+  background-color: var(--primary-blue);
+  border-radius: 10px;
+  color: var(--navWhite);
+  font-size: 14px;
+  height: 40px;
+  width: 200px;
+  border: none;
+  margin-top: 5px;
 }
 
 .add-button {
   background-color: var(--primary-blue);
+}
+
+.secret {
+  display: flex;
+}
+
+.secret .key {
+  width: 350px;
+}
+
+.eyeSVG img {
+  width: 18px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.name-button {
+  background-color: #292c38;
+  color: #ccd2e5;
+
+  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+  text-align: center;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 600;
@@ -107,9 +151,10 @@
   width: 200px;
   border: none;
 }
+
 .name-button:hover {
   color: #292c38;
-  background-color:#ccd2e5 ;
+  background-color: #ccd2e5;
   transition: 0.7s;
 }
 
@@ -146,14 +191,14 @@
   margin-top: 2%;
 }
 
-.buttonF{
+.buttonF {
   display: flex;
   margin-top: 15px;
   justify-content: flex-end;
-  
+
 }
 
-.buttonF div{
+.buttonF div {
   margin-right: 10px;
 }
 
@@ -162,16 +207,28 @@
   height: 45px;
   border-radius: 12px;
   color: #292c38;
-  background-color:#ccd2e5 ;
+  background-color: #ccd2e5;
   font-weight: bold;
   border: none;
-  box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
   text-align: center;
 }
 
 .btnMarketplace:hover {
-  background-color:#292c38;
+  background-color: #292c38;
   color: #ccd2e5;
   transition: 0.7s;
 }
 
+.edit-button:hover {
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  margin-top: 24px;
+}
+
+.box-1 {
+  margin-right: 10px;
+}

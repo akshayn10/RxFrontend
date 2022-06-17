@@ -1,4 +1,4 @@
-.mat-box{
+.mat-box {
     width: 400px;
     height: 350px;
     background-color: var(--navWhite);
@@ -7,17 +7,16 @@
     padding-top: 38px;
 }
 
-.mat-dialog-container{
+.mat-dialog-container {
     padding: 0px !important;
 }
 
-.mat-form-field{
-    width:280px;
+.mat-form-field {
+    width: 280px;
     height: 140px;
     border-radius: 5px;
     border: none;
     background-color: var(--Dark-Gray);
-    
 }
 
 .btn {
@@ -31,16 +30,15 @@
     margin-left: 23%;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
-  }
-  
-  .btn2 {
+.btn-2 {
     width: 100px;
     height: 40px;
     border-radius: 10px;
     color: #292c38;
-    background-color:var(--navWhite) ;
+    background-color: var(--navWhite);
     font-weight: bold;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
+}

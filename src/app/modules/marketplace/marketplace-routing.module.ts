@@ -7,23 +7,19 @@ import { MarketplaceSearchComponent } from './marketplace-search/marketplace-sea
 const routes: Routes = [
   {
     path: '',
-    component: MarketplaceMainComponent
-  },
-  {
-    path: '',
+    component: MarketplaceMainComponent,
     children:[
+      {
+        path: '',
+        component: MarketplaceProductComponent
+      },
       {
         path: 'search',
         component: MarketplaceSearchComponent
-      },
-      
-      {
-        path: 'product/detail',
-        component: MarketplaceProductDetailComponent
-      },
+      }
     ]
+
   }
-  
 
 ];
 
