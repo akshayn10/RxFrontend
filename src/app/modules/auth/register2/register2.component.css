@@ -130,6 +130,7 @@ textarea {
   border: none;
   padding-left: 20px;
   padding-top: 10px;
+  font: poppins !important;
 }
 
 .btn {

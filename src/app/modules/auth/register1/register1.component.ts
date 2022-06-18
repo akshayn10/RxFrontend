@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/data/service/auth/auth.service';
 import { UserService } from 'src/app/data/service/auth/user.service';
 import { ValidationService } from './validation.service';
@@ -11,12 +12,14 @@ import { ValidationService } from './validation.service';
   styleUrls: ['./register1.component.css']
 })
 export class Register1Component implements OnInit {
+  isLoading = false;
   registerForm: FormGroup = new FormGroup({});
   submitted=false;
   profilePreviewPath!: string;
   imageSelected:boolean = false;
 
-  constructor(private formBuilder: FormBuilder,private _authService:AuthService,private validationService:ValidationService) {
+  constructor(private formBuilder: FormBuilder,private _authService:AuthService,
+    private validationService:ValidationService,private router:Router) {
    }
 
   ngOnInit(): void {
@@ -48,14 +51,15 @@ export class Register1Component implements OnInit {
     formData.append('userName', this.registerForm.value.userName);
     formData.append('password', this.registerForm.value.password);
     formData.append('confirmPassword', this.registerForm.value.confirmPassword);
-
-
     console.log(formData);
+    this.isLoading = true;
 
     this._authService.registerUser(formData).subscribe(
       (data)=>{
         console.log(data);
         this.submitted = true;
+        this.isLoading = false;
+        this.router.navigate(['/auth/signup2']);
       }
     )
 }

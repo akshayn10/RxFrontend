@@ -168,7 +168,7 @@
         <button class="btn" [disabled]="!registerForm2.valid" type="submit">
           Next
         </button>
-
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
       </form>
       <!-- <div style="margin-left: 15%;">
         <a class="forgot-btn">Forgot password?</a>

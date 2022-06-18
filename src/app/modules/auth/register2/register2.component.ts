@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register2.component.css']
 })
 export class Register2Component implements OnInit {
+  isLoading = false;
   registerForm2: FormGroup = new FormGroup({});
   submitted=false;
 
