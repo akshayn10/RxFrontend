@@ -16,6 +16,10 @@ const routes: Routes = [
       {
         path: 'search',
         component: MarketplaceSearchComponent
+      },
+      {
+        path: 'product/:id',
+        component: MarketplaceProductDetailComponent
       }
     ]
 
