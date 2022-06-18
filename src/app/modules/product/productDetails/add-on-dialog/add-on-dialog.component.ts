@@ -2,7 +2,6 @@ import { Component, OnInit ,Inject} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import{AddOnService} from 'src/app/data/service/AddOn/add-on.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AddOnTableComponent } from 'src/app/modules/subscription/subcsription-details/add-on-table/add-on-table.component';
 
 
 @Component({

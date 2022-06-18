@@ -21,7 +21,8 @@ productId!:string;
               private addOnPriceService:AddOnPriceService,
               public router: Router) 
               {this.addOnPricePerPlanId=this._activatedRoute.snapshot.paramMap.get('addOnPriceId') || '';
-               this.productId=this._activatedRoute.snapshot.paramMap.get('id') || '';}
+                this.productId=this._activatedRoute.snapshot.paramMap.get('id') || '';}
+              
 
                
  
