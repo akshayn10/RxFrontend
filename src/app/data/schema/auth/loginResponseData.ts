@@ -7,6 +7,7 @@ export interface LoginResponseData {
   isAuthenticated: boolean;
   isVerified: boolean;
   jwtToken: string;
+  profileUrl:string;
   refreshToken: string;
   refreshTokenExpiration: string;
 }

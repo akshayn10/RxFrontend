@@ -6,37 +6,39 @@ import { LoginResponseData } from '../../schema/auth/loginResponseData';
 
 type ApiResponse<T> =
   | {
-      succeeded: true;
-      data: T;
-    }
+    succeeded: true;
+    data: T;
+  }
   | {
-      succeeded: false;
-      message: string;
-    };
+    succeeded: false;
+    message: string;
+  };
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private userBaseApiUrl = 'https://localhost:44352/api/user/';
-  private currentUserSubject: BehaviorSubject<LoginResponseData | null>;
-  public currentUser: Observable<LoginResponseData | null>;
+  private currentUserSubject!: BehaviorSubject<LoginResponseData | null>;
+  public currentUser!: Observable<LoginResponseData | null>;
 
   constructor(
     private http: HttpClient,
     private _tokenService: TokenStorageService
   ) {
-    const user = JSON.stringify(this._tokenService.getUser());
-
-    this.currentUserSubject = new BehaviorSubject<LoginResponseData | null>(
-      JSON.parse(user)
-    );
-
+    // const user = JSON.stringify(this._tokenService.getUser());
+    // const storageUser = JSON.stringify(localStorage.getItem('auth-user'));
+    // console.log('rwgr' + storageUser);
+    this.currentUserSubject = new BehaviorSubject<LoginResponseData | null>((this._tokenService.getUser()));
+    console.log('rwgr' + this.currentUserSubject);
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
   public get currentUserValue(): LoginResponseData | null {
     return this.currentUserSubject.value;
   }
+  // public get getcurrentUser(): LoginResponseData | null {
+  //   return this.currentUserSubject;
+  // }
   setCurrentUserSubject(data: LoginResponseData) {
     this.currentUserSubject.next(data);
   }
