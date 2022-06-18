@@ -1,0 +1,55 @@
+<div class="app-container">
+    <app-side-nav></app-side-nav>
+    <div class="content">
+        <div class="right-align">
+            <app-profile></app-profile>
+        </div>
+
+        <div class="container1">Edit Plan</div>
+        
+            
+        <div class="container2">
+            <form [formGroup]="addOnForm"  (ngSubmit)="onEdit(addOnId)">
+              <div class="form-group">
+                <label class="labelName">AddOn Name</label>
+                <div>
+                  <input type="text" class="form-control" formControlName="name" [(ngModel)]="addOn.name"/>
+                  <div class="invalid">
+                    <div *ngIf="f['name'].touched && f['name'].invalid">
+                      <div *ngIf="f['name'].errors && f['name'].errors['required']">
+                        Add-On name is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="form-group">
+                <label class="labelName">Unit Of Measure </label>
+                <div>
+                  <input type="text" class="form-control Z" formControlName="unitOfMeasure" [(ngModel)]="addOn.unitOfMeasure"/>
+                  <div class="invalid">
+                    <div *ngIf="f['unitOfMeasure'].touched && f['unitOfMeasure'].invalid">
+                      <div *ngIf="
+                        f['unitOfMeasure'].errors && f['unitOfMeasure'].errors['required'] ">
+                        Unit Of Measure is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+      
+              <div class="form-group">
+                <button class="btn" type="submit">Save</button>
+                <button class="btn2" routerLink="/product">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+    
+    
+   
+</div>

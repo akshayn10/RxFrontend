@@ -1,0 +1,36 @@
+<div class="app-container">
+    <app-side-nav></app-side-nav>
+    <div class="content">
+        <div class="right-align">
+            <app-profile></app-profile>
+        </div>
+
+        <div class="container1">Edit AddOn Price</div>
+
+
+        <div class="container2">
+            <form [formGroup]="addOnPriceForm" (ngSubmit)="onEdit(addOnPricePerPlanId)">
+                <div class="form-group">
+                    <label class="labelName">Price</label>
+                    <div>
+                        <input type="number" class="form-control" formControlName="price" [(ngModel)]="addOnPrice.price" />
+                        <div class="invalid">
+                            <div *ngIf="f['price'].touched && f['price'].invalid">
+                                <div *ngIf="f['price'].errors && f['price'].errors['required']">  Price is required. </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <button class="btn" type="submit">Save</button>
+                    <button class="btn2" routerLink="/product">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
