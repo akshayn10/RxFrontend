@@ -5,6 +5,7 @@ export interface AddOnPrice{
     planName: string;
     addOnId:string;
     addOnPricePerPlanId:string;
+    productPlanId:string;
     
    
 }

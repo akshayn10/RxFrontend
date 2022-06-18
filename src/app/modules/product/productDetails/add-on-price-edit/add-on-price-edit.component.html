@@ -13,7 +13,7 @@
                 <div class="form-group">
                     <label class="labelName">Price</label>
                     <div>
-                        <input type="text" class="form-control" formControlName="price" [(ngModel)]="addOnPrice.price" />
+                        <input type="number" class="form-control" formControlName="price" [(ngModel)]="addOnPrice.price" />
                         <div class="invalid">
                             <div *ngIf="f['price'].touched && f['price'].invalid">
                                 <div *ngIf="f['price'].errors && f['price'].errors['required']">  Price is required. </div>

@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './add-on-edit.component.html',
   styleUrls: ['./add-on-edit.component.css']
 })
+
 export class AddOnEditComponent implements OnInit {
   addOn!:AddOn;
 productId!:string;
@@ -17,19 +18,20 @@ productId!:string;
   submitted = false;
 
   constructor(public _activatedRoute: ActivatedRoute,
-    private fb: FormBuilder,
-    private addOnService:AddOnService, 
-    public router: Router)
-     {  this.productId = this._activatedRoute.snapshot.paramMap.get('id') || '';
-     this.addOnId = this._activatedRoute.snapshot.paramMap.get('addOnId') || '';
-    console.log(this.productId);
-    console.log(this.addOnId);
-    }
+              private fb: FormBuilder,
+              private addOnService:AddOnService, 
+              public router: Router)
+                { 
+                  this.productId = this._activatedRoute.snapshot.paramMap.get('id') || '';
+                  this.addOnId = this._activatedRoute.snapshot.paramMap.get('addOnId') || '';
+                  console.log(this.productId);
+                  console.log(this.addOnId);
+                }
 
 
   ngOnInit() {
     this.getAddOnById(this.addOnId,this.productId);
-
+    
     this.addOnForm = this.fb.group({
       name: ['', [Validators.required]],
       unitOfMeasure: ['', [Validators.required]] ,
