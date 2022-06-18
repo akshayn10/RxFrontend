@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+<<<<<<< HEAD
 import { AuthService } from 'src/app/data/service/auth/auth-service.service';
+=======
+import { AuthService } from 'src/app/data/service/auth/auth.service';
+>>>>>>> f67b6de4b18d47cf20f49e81db348e3c7e7f990f
 import { UserService } from 'src/app/data/service/auth/user.service';
 import { ValidationService } from './validation.service';
 
@@ -54,10 +58,16 @@ export class Register1Component implements OnInit {
     console.log(formData);
 
     this._authService.registerUser(formData).subscribe(
+<<<<<<< HEAD
       (res)=>{
         if(res.succeeded){
           console.log(res.data);
         }
+=======
+      (data)=>{
+        console.log(data);
+        this.submitted = true;
+>>>>>>> f67b6de4b18d47cf20f49e81db348e3c7e7f990f
       }
     )
 }
