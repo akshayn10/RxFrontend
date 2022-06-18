@@ -23,6 +23,8 @@ import { AddOnDialogComponent } from './productDetails/add-on-dialog/add-on-dial
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { AddOnPriceDialogComponent } from './productDetails/add-on-price-dialog/add-on-price-dialog.component';
+import { AddOnEditComponent } from './productDetails/add-on-edit/add-on-edit.component';
+import { AddOnPriceEditComponent } from './productDetails/add-on-price-edit/add-on-price-edit.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { AddOnPriceDialogComponent } from './productDetails/add-on-price-dialog/
     AddOnPriceComponent,
     AddOnDialogComponent,
     AddOnPriceDialogComponent,
+    AddOnEditComponent,
+    AddOnPriceEditComponent,
 
 
   ],

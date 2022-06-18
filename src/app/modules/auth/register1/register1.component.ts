@@ -40,6 +40,7 @@ export class Register1Component implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+
     if (this.registerForm.invalid) {
         return;
     }
