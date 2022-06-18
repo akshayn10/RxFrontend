@@ -21,7 +21,11 @@ productId!:string;
               private addOnPriceService:AddOnPriceService,
               public router: Router) 
               {this.addOnPricePerPlanId=this._activatedRoute.snapshot.paramMap.get('addOnPriceId') || '';
+<<<<<<< HEAD
                 this.productId=this._activatedRoute.snapshot.paramMap.get('id') || '';}
+=======
+               this.productId=this._activatedRoute.snapshot.paramMap.get('id') || '';}
+>>>>>>> dev
 
                
  
@@ -57,7 +61,10 @@ productId!:string;
 
       this.addOnPriceForm.patchValue({
         addOnPricePerPlanId: this.addOnPrice.addOnPricePerPlanId,
+<<<<<<< HEAD
        
+=======
+>>>>>>> dev
         productPlanId: this.addOnPrice.productPlanId,
         addOnId: this.addOnPrice.addOnId
       });

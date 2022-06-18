@@ -10,7 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
-
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import { FooterComponent } from './components/footer/footer/footer.component';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    RouterModule
+    RouterModule,
+    MatMenuModule
 
   ],
  // providers:[SharedService],
