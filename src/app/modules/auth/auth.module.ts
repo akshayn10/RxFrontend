@@ -10,6 +10,7 @@ import { Register3Component } from './register3/register3.component';
 import { ForgetPWComponent } from './forget-pw/forget-pw.component';
 import { ResetPwComponent } from './reset-pw/reset-pw.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ChangePwComponent } from './change-pw/change-pw.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     Register3Component,
     ForgetPWComponent,
     ResetPwComponent,
+    ChangePwComponent,
 
   ],
   imports: [
