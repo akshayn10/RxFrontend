@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartData, ChartDataSets } from 'chart.js';
 import { DashboardStats } from 'src/app/data/schema/dashboardStats';
+import { TableStats } from 'src/app/data/schema/dashboardTable';
 import { DashboardService } from 'src/app/data/service/Dashboard/dashboard.service';
 
 @Component({
@@ -13,6 +14,9 @@ export class DashboardComponent implements OnInit {
   chart1Labels!:string[];
   chart2Data!:number[];
   chart2Labels!:string[];
+
+  planData!:TableStats[];
+  addOnData!:TableStats[];
 
   lineChartData = {
     data:this.chart1Data,
@@ -27,7 +31,6 @@ export class DashboardComponent implements OnInit {
     yLabel:'Subscription'
   };
 
-
   constructor(private _dashboardService:DashboardService) {
     this.getSubscriptionData();
     this.getRevenueData();
@@ -36,6 +39,7 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getTableData();
 
   }
 
@@ -57,6 +61,13 @@ export class DashboardComponent implements OnInit {
       this.chart2Data = data.map((x)=>x.count);
       this.chart2Labels = data.map((x)=>x.type);
       console.log(this.chart2Data)
+    })
+  }
+  getTableData():void{
+    this._dashboardService.getTableDetails().subscribe((data)=>{
+      this.planData = data.plan;
+      this.addOnData = data.addOn;
+      console.log(data)
     })
   }
 
