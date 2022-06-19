@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { Register2Component } from './register2/register2.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Register3Component } from './register3/register3.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Register3Component } from './register3/register3.component';
     CommonModule,
     AuthRoutes,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
   exports: [
   ]

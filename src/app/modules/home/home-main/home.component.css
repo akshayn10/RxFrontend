@@ -63,13 +63,16 @@ html {
 #home-price {
     height: 100vh;
     margin: auto 0;
+    background-image: url(../../../../assets/svg/Wave-2.svg);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: bottom;
 }
 
 #features_ft {
     /* height: 50vh; */
     padding: 5% 10%;
     background-color: #292C38;
-    /* background-image: linear-gradient(to right top, #292c38, #333541, #3d3f4a, #474953, #51535d, #51535d, #51535d, #51535d, #474953, #3d3f4a, #333541, #292c38); */
 }
 
 #features_ft h1 {
@@ -90,11 +93,19 @@ html {
     padding: 0 10%;
     padding-top: 2%;
     padding-bottom: 3%;
+    background-image: url(../../../../assets/svg/Wave-4.svg);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: top;
 }
 
 #get-start {
     padding: 5% 15%;
-    background-color: #ECEFF4;
+    /* background-color: #ECEFF4; */
+    background-image: url(../../../../assets/svg/Wave-1.svg);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: bottom;
 }
 
 #get-start h1 {

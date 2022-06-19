@@ -46,6 +46,7 @@
         <button type="submit" class="btn" [disabled]="!loginForm.valid">
           Sign In
         </button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
       </form>
       <div style="margin-left: 15%">
         <a class="forgot-btn" (click)="logout()">Forgot password?</a>

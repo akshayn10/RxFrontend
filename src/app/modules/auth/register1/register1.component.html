@@ -131,6 +131,7 @@
         <button class="btn" [disabled]="!registerForm.valid" type="submit">
           Register
         </button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
       </form>
       <div style="margin-left: 15%">
         <a class="forgot-btn" [routerLink]="['/auth/login']">Already have an account?</a>

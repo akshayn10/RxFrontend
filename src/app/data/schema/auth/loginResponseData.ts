@@ -10,4 +10,5 @@ export interface LoginResponseData {
   profileUrl:string;
   refreshToken: string;
   refreshTokenExpiration: string;
+  organizationId: string;
 }

@@ -11,6 +11,7 @@ import { UserService } from 'src/app/data/service/auth/user.service';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  isLoading = false;
   constructor(
     private fb: FormBuilder,
     private _authService: AuthService,
@@ -32,13 +33,20 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+    this.isLoading = true;
     this._authService.loginUser(this.loginForm.value).subscribe((res) => {
       if (res.succeeded) {
         console.log(res.data.userName);
         this._authService.setCurrentUserSubject(res.data);
         this._authService.setLocalStorage(res.data);
+        if(res.data.organizationId){
         this.router.navigate(['/dashboard']);
+        this.isLoading = false;
         return;
+        }
+        this.router.navigate(['/auth/signup2']);
+        this.isLoading = false;
+        return
       }
     });
 
