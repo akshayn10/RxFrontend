@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Label, SingleDataSet } from 'ng2-charts';
+import { Stats } from 'src/app/data/schema/Stats';
+import { ReportService } from 'src/app/data/service/Report/report.service';
 
 @Component({
   selector: 'app-subscription',
@@ -7,15 +9,27 @@ import { Label, SingleDataSet } from 'ng2-charts';
   styleUrls: ['./subscription.component.css'],
 })
 export class SubscriptionComponent implements OnInit {
-  lineChartData0: SingleDataSet = [85, 72, 78, 75, 77, 75];
-  lineChartLabels0: Label[] = [
-    ['January'],
-    ['February'],
-    ['March'],
-    ['April'],
-    ['May'],
-    ['June'],
-  ];
+  stats!:Stats[];
+
+  lineChartData0!: SingleDataSet
+  //  = [85, 72, 78, 75, 77, 75];
+  lineChartLabels0!: Label[]
+  // = [
+  //   ['January'],
+  //   ['February'],
+  //   ['March'],
+  //   ['April'],
+  //   ['May'],
+  //   ['June'],
+  //   ['July'],
+  //   ['August'],
+  //   ['September'],
+  //   ['October'],
+  //   ['November'],
+  //   ['December']
+
+
+  // ];
   lineChartData1: SingleDataSet = [100, 90, 80, 70, 60, 50];
   lineChartLabels1: Label[] = [
     ['January'],
@@ -61,7 +75,22 @@ export class SubscriptionComponent implements OnInit {
     ['May'],
     ['June'],
   ];
-  constructor() {}
+  constructor(private reportService:ReportService) {
 
-  ngOnInit(): void {}
+  }
+  getSubscriptionStats():void{
+    console
+    this.reportService.getSubscriptionStats().subscribe(stats=>{
+      this.stats=stats;
+      console.log(stats);
+
+      this.lineChartData0=stats.map(stat=>stat.count);
+      this.lineChartLabels0=stats.map(stat=>stat.type);
+    }
+    )
+  }
+
+  ngOnInit(): void {
+    this.getSubscriptionStats();
+  }
 }

@@ -8,8 +8,8 @@ const routes: Routes = [
   {
     path: '',
     component: CustomerComponent,
-    canActivate: [AuthGuard],
-    data: { roles: [Role.Owner] }
+    // canActivate: [AuthGuard],
+    // data: { roles: [Role.Owner] }
   },
   {
     path: 'details/:id',

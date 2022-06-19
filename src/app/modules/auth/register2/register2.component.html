@@ -1,108 +1,54 @@
 <div class="container">
   <div class="box">
     <div class="box-1">
-      <!-- <img class="logo" routerLink="/" src="../../../assets/logo/rx.png" />  -->
       <object data="../../../../assets/logo/RX Logo T.svg" width="400" height="400"> </object>
     </div>
   </div>
   <div class="box">
     <div class="box-2">
-      <div class="header">REGISTER</div>
-      <form [formGroup]="registerForm2" (ngSubmit)="onSubmit()">
+      <div class="header">Create <br> Organization</div>
+      <form [formGroup]="organizationForm" (ngSubmit)="onSubmit()">
 
-        <!-- <div class="form-group">
-          <label>Full Name</label>
+
+        <div class="form-group">
+          <label>Company Name</label>
           <div>
-            <input type="text" class="form-control" formControlName="fullName" />
+            <input type="text" class="form-control" formControlName="name" />
           </div>
-          <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
-            <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
-              Full name is Required
+          <div *ngIf="f['name'].touched && f['name'].invalid">
+            <div *ngIf="f['name'].errors && f['name'].errors['required']">
+              Company Name is required
             </div>
           </div>
         </div>
-
         <div class="form-group">
-          <label>E-mail Address</label>
+          <label>Email</label>
           <div>
             <input type="text" class="form-control" formControlName="email" />
           </div>
           <div *ngIf="f['email'].touched && f['email'].invalid">
             <div *ngIf="f['email'].errors && f['email'].errors['required']">
-              Email is required.
-            </div>
-            <div *ngIf="f['email'].errors && f['email'].errors['email']">
-              Email must be a valid email address.
+              Email is required
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label>User Name</label>
-          <div>
-            <input type="text" class="form-control" formControlName="userName" />
-          </div>
-          <div *ngIf="f['userName'].touched && f['userName'].invalid">
-            <div *ngIf="f['userName'].errors && f['userName'].errors['required']">
-              User Name is required
+          <label class="labelName">Logo</label>
+          <div class="logoFlex">
+            <div class="imgup">
+              <div class="icon-container">
+                <img src="assets/icons/img.png" alt="" />
+                <div *ngIf="!imageSelected">Drop your image here, or browse</div>
+              </div>
+              <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*"
+                formControlName="logoPath" />
+            </div>
+            <div class="previewImg" *ngIf="logoPreviewPath && logoPreviewPath !== ''">
+              <img height="120px" width="120px" [src]="logoPreviewPath" [alt]="organizationForm.value.name" />
             </div>
           </div>
-        </div>
-
-        <div class="form-group">
-          <label>Password</label>
-          <div>
-            <input type="password" class="form-control" formControlName="password" />
-          </div>
-          <div *ngIf="f['password'].touched && f['password'].invalid">
-            <div *ngIf="f['password'].errors && f['password'].errors['required']">
-              Password is required
-            </div>
-            <div *ngIf="f['password'].errors && f['password'].errors['minlength']">
-              Minimum length is 8
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Re-Enter Password</label>
-          <div>
-            <input type="password" class="form-control" formControlName="confirmPassword" />
-          </div>
-          <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid">
-            <div *ngIf="f['confirmPassword'].errors &&f['confirmPassword'].errors['required']">
-              Confirm Password is required
-            </div>
-            <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['minlength']">
-              Minimum length is 8
-            </div>
-            <div *ngIf="f['confirmPassword'].errors &&f['confirmPassword'].errors['confirmedValidator']">
-              Password mismatch
-            </div>
-          </div>
-        </div> -->
-
-        <div class="form-group">
-          <label>Company Name</label>
-          <div>
-            <input type="text" class="form-control" formControlName="companyName" />
-          </div>
-          <div *ngIf="f['companyName'].touched && f['companyName'].invalid">
-            <div *ngIf="f['companyName'].errors && f['companyName'].errors['required']">
-              Company Name is required
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Logo</label>
-          <div class="imgup">
-            <div class="icon-container">
-              <img src="assets/icons/img.png" alt="" />
-              <div>Drop your image here, or browse</div>
-            </div>
-            <input id="fileUpload" type="file" accept="image/*" formControlName="logo" />
-          </div>
+          <div class="invalid"></div>
         </div>
 
         <div class="form-group">
@@ -117,40 +63,46 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" formGroupName="organizationAddress">
           <label>Address</label>
           <div class="address-line">
-            <input placeholder="Address Line 01" type="text" formControlName="address1" />
+            <input placeholder="Address Line 01" type="text" formControlName="addressLine1" />
           </div>
-          <div *ngIf="f['address1'].touched && f['address1'].invalid">
-            <div *ngIf="f['address1'].errors && f['address1'].errors['required']">
-              Address name is Required
+          <div
+            *ngIf="f['organizationAddress'].value.addressLine1.touched && f['organizationAddress'].value.addressLine1.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.addressLine1.errors && f['organizationAddress'].value.addressLine1.errors['required']">
+              Address 1 is Required
             </div>
           </div>
 
           <div class="address-line">
-            <input placeholder="Address Line 02" type="text" formControlName="address2" />
+            <input placeholder="Address Line 02" type="text" formControlName="addressLine2" />
           </div>
-          <div *ngIf="f['address2'].touched && f['address2'].invalid">
-            <div *ngIf="f['address2'].errors && f['address2'].errors['required']">
-              This field is Required
+          <div
+            *ngIf="f['organizationAddress'].value.addressLine2.touched && f['organizationAddress'].value.addressLine2.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.addressLine2.errors && f['organizationAddress'].value.addressLine2.errors['required']">
+              Address 1 Required
             </div>
           </div>
 
           <div class="address-line">
             <input placeholder="City" type="text" formControlName="city" />
           </div>
-          <div *ngIf="f['city'].touched && f['city'].invalid">
-            <div *ngIf="f['city'].errors && f['city'].errors['required']">
+          <div *ngIf="f['organizationAddress'].value.city.touched && f['organizationAddress'].value.city.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.city.errors && f['organizationAddress'].value.city.errors['required']">
               City is Required
             </div>
           </div>
 
           <div class="address-line">
-            <input placeholder="State/ Province/ Region" type="text" formControlName="state" />
+            <input placeholder="organizationAddress/ Province/ Region" type="text" formControlName="state" />
           </div>
-          <div *ngIf="f['state'].touched && f['state'].invalid">
-            <div *ngIf="f['state'].errors && f['state'].errors['required']">
+          <div *ngIf="f['organizationAddress'].value.state.touched && f['organizationAddress'].value.state.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.state.errors && f['organizationAddress'].value.state.errors['required']">
               State is Required
             </div>
           </div>
@@ -158,22 +110,20 @@
           <div class="address-line">
             <input placeholder="Country" type="text" formControlName="country" />
           </div>
-          <div *ngIf="f['country'].touched && f['country'].invalid">
-            <div *ngIf="f['country'].errors && f['country'].errors['required']">
+          <div
+            *ngIf="f['organizationAddress'].value.country.touched && f['organizationAddress'].value.country.touched.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.country.touched.errors && f['organizationAddress'].value.country.touched.errors['required']">
               Country is Required
             </div>
           </div>
         </div>
 
-        <button class="btn" [disabled]="!registerForm2.valid" type="submit">
+        <button class="btn" type="submit">
           Next
         </button>
-
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
       </form>
-      <!-- <div style="margin-left: 15%;">
-        <a class="forgot-btn">Forgot password?</a>
-        <a class="forgot-btn"> Don't have an account? </a>
-      </div> -->
 
     </div>
   </div>

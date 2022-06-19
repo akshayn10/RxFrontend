@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     SharedModule,
     ProfileRoutes
-
   ]
 })
 export class ProfileModule { }
