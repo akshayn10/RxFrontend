@@ -8,8 +8,10 @@ const routes: Routes = [
   {
     path: '',
     component: SubscriptionComponent,
-    canActivate: [AuthGuard],
-    data: {roles:[Role.Admin,Role.Owner]}
+    // canActivate: [AuthGuard],
+    // data: {
+    //   roles:[Role.Admin,Role.Owner]
+    // }
   },
   {
     path:'details/:id',
