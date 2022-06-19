@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartData, ChartDataSets } from 'chart.js';
+import { DashboardStats } from 'src/app/data/schema/dashboardStats';
+import { DashboardService } from 'src/app/data/service/Dashboard/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,36 +9,56 @@ import { ChartData, ChartDataSets } from 'chart.js';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  chart1Data!:number[];
+  chart1Labels!:string[];
+  chart2Data!:number[];
+  chart2Labels!:string[];
+
   lineChartData = {
-    data: [65, 59, 80, 81, 56, 55, 40],
+    data:this.chart1Data,
     label: 'Product A',
-    chartLabels: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-    ],
+    chartLabels:this.chart1Labels,
     yLabel:'Revenue'
   };
   lineChartData2 = {
-    data: [95, 49, 50, 39, 56, 85, 30],
+    data: this.chart2Data,
     label: 'Product B',
-    chartLabels: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-    ],
+    chartLabels: this.chart2Labels,
     yLabel:'Subscription'
   };
 
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor(private _dashboardService:DashboardService) {
+    this.getSubscriptionData();
+    this.getRevenueData();
+
+  }
+
+
+  ngOnInit(): void {
+
+  }
+
+  getSubscriptionData():void{
+    this._dashboardService.getSubscriptionStats().subscribe((data)=>{
+      this.chart1Data = data.map((x)=>x.count);
+      this.lineChartData.data = this.chart1Data;
+      this.chart1Labels = data.map((x)=>x.type);
+      this.lineChartData.chartLabels = this.chart1Labels;
+      console.log(this.chart1Data)
+
+    })
+  }
+
+  getRevenueData():void{
+    this._dashboardService.getRevenueStats().subscribe((data)=>{
+      this.lineChartData2.data = data.map((x)=>x.count);
+      this.lineChartData2.chartLabels = data.map((x)=>x.type);
+      this.chart2Data = data.map((x)=>x.count);
+      this.chart2Labels = data.map((x)=>x.type);
+      console.log(this.chart2Data)
+    })
+  }
+
+
 }

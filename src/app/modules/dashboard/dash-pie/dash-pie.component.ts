@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { SingleDataSet, Label } from 'ng2-charts';
+import { DashboardService } from 'src/app/data/service/Dashboard/dashboard.service';
 @Component({
   selector: 'app-dash-pie',
   templateUrl: './dash-pie.component.html',
@@ -15,35 +16,30 @@ export class DashPieComponent implements OnInit {
     },
     elements: {
       arc: {
-        borderWidth: 1,
+        borderWidth: 2,
       },
     },
-    // plugins: {
-    //   datalabels: {
-    //    formatter: (value, ctx) => {
-    //     const label = ctx.chart.data.labels[ctx.dataIndex];
-    //     return label;
-    //    },
     showLines: true,
     tooltips: {
       enabled: true,
       mode: 'single',
     },
     spanGaps: true,
-    circumference: 10,
   };
 
-  doughChartLabels: Label[] = [
-    ['Skate'],
-    ['Enadoc Sign'],
-    ['Flowdoh'],
-    ['Enadoc Doc'],
-  ];
-  doughChartData: SingleDataSet = [30, 50, 20, 70];
-  doughChartType: ChartType = 'doughnut';
-  doughChartLegend = true;
-  doughChartPlugins = [];
+  constructor(private _dashboardService: DashboardService) {}
 
-  constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getChartDetails();
+  }
+  doughnutChartLabels!: Label[];
+  doughnutChartData!: SingleDataSet;
+  public doughnutChartType: ChartType = 'doughnut';
+
+  getChartDetails(): void {
+    this._dashboardService.getCustomerCountForProducts().subscribe((data) => {
+      this.doughnutChartLabels = data.map((x) => x.type);
+      this.doughnutChartData = data.map((x) => x.count);
+    });
+  }
 }

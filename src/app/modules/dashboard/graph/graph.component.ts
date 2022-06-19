@@ -10,8 +10,10 @@ export class GraphComponent implements AfterViewInit {
   @Input() graphData: any;
   @ViewChild('lineCanvas') lineCanvas!: ElementRef;
   lineChart: any;
-  constructor() { }
+  constructor() {
+   }
   ngAfterViewInit(): void {
+    console.log(this.graphData);
     this.lineChartMethod();
   }
   lineChartMethod() {
@@ -49,8 +51,6 @@ export class GraphComponent implements AfterViewInit {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 50,
-            suggestedMax: 120,
             padding: 20,
             fontColor: "#292C38",
             fontFamily: 'Poppins',
@@ -108,7 +108,7 @@ export class GraphComponent implements AfterViewInit {
             pointHoverBorderWidth: 15,
             pointRadius: 0,
             data: this.graphData.data,
-            
+
           }
         ]
       },

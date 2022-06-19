@@ -24,7 +24,6 @@ const routes: Routes = [
       { path: ':id/plan/:planId/editPlan', component: PlanEditComponent},
       {path:  ':id/addOn/:addOnId/editAddOn', component: AddOnEditComponent},
       {path:':id/addOn/:addOnPriceId/editAddOnPrice',component:AddOnPriceEditComponent}
-      
     ]
   }
 ];
