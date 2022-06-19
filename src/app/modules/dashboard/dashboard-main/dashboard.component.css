@@ -24,7 +24,6 @@
 
 .table-grp {
   width: 66.67%;
-  margin: 10px;
   border-radius: 10px;
   overflow: hidden !important;
   filter: drop-shadow(2px 5px 10px rgba(41, 44, 56, 0.25));
@@ -37,29 +36,16 @@
   color: #347AE2;
 }
 
-::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, 
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
           .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #347AE2;
 }
 
-.pie-chart-container {
-  width: 33.33%;
-  margin: 10px;
-  /* height: 250px; */
-  background: #ECEFF4;
-  filter: drop-shadow(2px 5px 10px rgba(41, 44, 56, 0.25));
-  border-radius: 10px;
-}
-
-.pie-chart {
-  /* position: absolute; */
-  padding: 10px;
-}
 
 .bottom-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 24px;
+  margin-top: 30px;
   margin-bottom: 36px;
 }
 
@@ -71,7 +57,7 @@
 
 /* @media screen and (max-width: 900px) {
   .graph-container {
-    height: 85%; 
+    height: 85%;
     width: 90%;
     padding: 5%;
     display: block;
