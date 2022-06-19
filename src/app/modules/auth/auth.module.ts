@@ -8,6 +8,7 @@ import { Register2Component } from './register2/register2.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Register3Component } from './register3/register3.component';
 import { ForgetPWComponent } from './forget-pw/forget-pw.component';
+import { ResetPwComponent } from './reset-pw/reset-pw.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ForgetPWComponent } from './forget-pw/forget-pw.component';
     Register2Component,
     Register3Component,
     ForgetPWComponent,
+    ResetPwComponent,
 
   ],
   imports: [
