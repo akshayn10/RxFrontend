@@ -1,13 +1,14 @@
 .chart {
-    position: relative;
-    padding: 10px;
-    margin: auto 0;
+  position: relative;
+  padding: 10px;
+  margin: auto 0;
 }
+
 .pie-chart-container {
-  height: 250px;
-  /* margin-top: 15px; */
+  /* height: 250px; */
+  /* width: 100%; */
   background: #ECEFF4;
-  filter: drop-shadow(2px 5px 10px rgba(41, 44, 56, 0.25));
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   border-radius: 10px;
 }
 

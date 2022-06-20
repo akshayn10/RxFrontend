@@ -5,5 +5,8 @@ export interface SubscriptionForBill {
   productName: string;
   planName: string;
   price: number;
+  subscriptionId: string;
+  subscriptionType: string;
+  startDate: string;
   addOnsForSubscription: AddOnForSubscription[];
 }

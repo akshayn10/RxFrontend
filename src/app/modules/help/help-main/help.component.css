@@ -33,7 +33,110 @@
 
 .container h1 {
     text-align: center;
+    font-size: 36px;
+    color: var(--primary-blue);
+    margin: 0;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.container h1 span {
+    color: #292C38;
+}
+
+.contact-us {
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--navWhite);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 24px;
+}
+
+.contact-us h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-align: center;
+}
+
+.contact-us h1 span {
+    color: var(--black);
+}
+
+.contact-us .row .column {
+    width: 33.33%;
+    padding: 10px;
+}
+
+.contact-us .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-us .row .column .card {
+    height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 16px;
+    padding-left: 20px;
+    background-color: #FFFFFF;
+}
+
+.contact-us .row .column .card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #347ae2;
+    text-align: center;
+}
+
+.contact-us .row .column .card p {
+    margin: 0;
+    margin-top: 10px;
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contact-us .row .column .card p span {
+    color: var(--primary-blue);
+    margin-right: 16px;
     font-size: 48px;
+}
+
+@media screen and (max-width: 900px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.end {
+    height: 400px;
+    background-image: url(../../../../assets/svg/Wave-1.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.end h1 {
+    margin: 0;
+    margin-top: 72px;
+    font-size: 48px;
+    color: var(--black);
+    text-align: center;
+}
+
+.end h1 span {
     color: var(--primary-blue);
 }
 
+.end p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    color: var(--black);
+}

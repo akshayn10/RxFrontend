@@ -7,7 +7,7 @@ import { SalesByAddOnsComponent } from './sales/sales-by-add-ons/sales-by-add-on
 import { SalesByPlanComponent } from './sales/sales-by-plan/sales-by-plan.component';
 import { ActivationsComponent } from './subscription/activations/activations.component';
 import { ActiveCustomersComponent } from './subscription/active-customers/active-customers.component';
-import { ActiveTrialsComponent } from './subscription/active-trials/active-trials.component';
+import { UnsubscriptionComponent } from './subscription/unsubscription/unsubscription.component';
 import { DowngradesComponent } from './subscription/downgrades/downgrades.component';
 import { SubscriptionSummaryComponent } from './subscription/subscription-summary/subscription-summary.component';
 import { UpgradesComponent } from './subscription/upgrades/upgrades.component';
@@ -23,10 +23,10 @@ const routes: Routes = [
     children: [
       { path: 'summary', component: SubscriptionSummaryComponent },
       { path: 'activation', component: ActivationsComponent },
-      { path: 'active customer', component: ActiveCustomersComponent },
-      { path: 'Active Trials', component: ActiveTrialsComponent },
-      { path: 'Upgrade Details', component: UpgradesComponent },
-      { path: 'Downgrade Details', component: DowngradesComponent },
+      { path: 'active-customer', component: ActiveCustomersComponent },
+      { path: 'unsubscription', component: UnsubscriptionComponent },
+      { path: 'upgrade-details', component: UpgradesComponent },
+      { path: 'downgrade-details', component: DowngradesComponent },
     ],
   },
   {

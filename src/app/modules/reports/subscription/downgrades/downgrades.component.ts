@@ -21,7 +21,7 @@ export class DowngradesComponent implements OnInit {
   }
 
   getSubscriptionStats(): void {
-    this.reportService.getSubscriptionStats().subscribe((stats) => {
+    this.reportService.getDowngradeStats().subscribe((stats) => {
       this.stats = stats;
       this.chartData = stats.map((stat) => stat.count);
       this.chartLabels = stats.map((stat) => stat.type);
