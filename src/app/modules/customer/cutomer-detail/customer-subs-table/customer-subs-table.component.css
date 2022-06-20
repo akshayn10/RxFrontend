@@ -1,18 +1,26 @@
 .mat-table {
-  margin-top: 20px;
+  margin-top: 15px;
   width: 100%;
   overflow: hidden !important;
   border-radius: 12px !important;
   box-shadow: none;
 }
-
 th {
   background-color: var(--navWhite);
   font-weight: 600;
   font-size: 14px;
   color: var(--primary-blue);
 }
-
-.mat-row {
+.mat-row{
   cursor: pointer;
+}
+
+.statusActive {
+  color: #00a67e;
+  font-weight: bold;
+}
+
+.statusInactive {
+  color: red;
+  font-weight: bold;
 }
