@@ -10,9 +10,12 @@ import { BillService } from 'src/app/data/service/Bill/bill.service';
 })
 export class BillDetailsComponent implements OnInit {
   billId: string;
-  billDetails!:BillDetail;
+  billDetails!: BillDetail;
 
-  constructor(private _activatedRoute: ActivatedRoute,private _billService:BillService) {
+  constructor(
+    private _activatedRoute: ActivatedRoute,
+    private _billService: BillService
+  ) {
     this.billId = this._activatedRoute.snapshot.paramMap.get('id') || '';
   }
 
@@ -21,7 +24,7 @@ export class BillDetailsComponent implements OnInit {
   }
 
   getBillForCustomer() {
-    this._billService.getBillForCustomer().subscribe((data) => {
+    this._billService.getBillForCustomer(this.billId).subscribe((data) => {
       console.log(data);
       this.billDetails = data;
     });
