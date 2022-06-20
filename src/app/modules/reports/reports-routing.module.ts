@@ -1,6 +1,16 @@
 import { Routes, RouterModule } from '@angular/router';
+import { PaymentSummaryComponent } from './payments/payment-summary/payment-summary.component';
 import { ReportChartComponent } from './report-chart/report-chart.component';
 import { ReportsMainComponent } from './reports-main/reports-main.component';
+import { NetRevenueComponent } from './revenue/net-revenue/net-revenue.component';
+import { SalesByAddOnsComponent } from './sales/sales-by-add-ons/sales-by-add-ons.component';
+import { SalesByPlanComponent } from './sales/sales-by-plan/sales-by-plan.component';
+import { ActivationsComponent } from './subscription/activations/activations.component';
+import { ActiveCustomersComponent } from './subscription/active-customers/active-customers.component';
+import { ActiveTrialsComponent } from './subscription/active-trials/active-trials.component';
+import { DowngradesComponent } from './subscription/downgrades/downgrades.component';
+import { SubscriptionSummaryComponent } from './subscription/subscription-summary/subscription-summary.component';
+import { UpgradesComponent } from './subscription/upgrades/upgrades.component';
 
 const routes: Routes = [
   {
@@ -11,28 +21,30 @@ const routes: Routes = [
   {
     path: 'subscription',
     children: [
-      { path: 'summary', component: ReportChartComponent },
-      { path: 'activation', component: ReportChartComponent },
-      { path: 'active customer', component: ReportChartComponent },
-      { path: 'Active Trials', component: ReportChartComponent },
-      { path: 'Upgrade Details', component: ReportChartComponent },
-      { path: 'Downgrade Details', component: ReportChartComponent },
+      { path: 'summary', component: SubscriptionSummaryComponent },
+      { path: 'activation', component: ActivationsComponent },
+      { path: 'active customer', component: ActiveCustomersComponent },
+      { path: 'Active Trials', component: ActiveTrialsComponent },
+      { path: 'Upgrade Details', component: UpgradesComponent },
+      { path: 'Downgrade Details', component: DowngradesComponent },
     ],
   },
   {
-    path: 'Sales',
+    path: 'sales',
     children: [
-      { path: 'Sales By Plan', component: ReportChartComponent },
-      { path: 'Sales By Add-Ons', component: ReportChartComponent },
+      { path: 'sales-by-plan', component: SalesByPlanComponent },
+      { path: 'sales-by-add-ons', component: SalesByAddOnsComponent },
     ],
   },
   {
-    path: 'Revenue',
-    children: [{ path: 'Net Revenue', component: ReportChartComponent }],
+    path: 'revenue',
+    children: [{ path: 'net-revenue', component: NetRevenueComponent }],
   },
   {
-    path: 'Payments',
-    children: [{ path: 'Payment Received', component: ReportChartComponent }],
+    path: 'payments',
+    children: [
+      { path: 'payment-received', component: PaymentSummaryComponent },
+    ],
   },
 ];
 

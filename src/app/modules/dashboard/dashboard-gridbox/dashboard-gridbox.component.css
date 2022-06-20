@@ -3,20 +3,22 @@
 }
 
 .column {
-  float: left;
-  width: 25%;
-  padding: 10px;
+  /* float: left; */
+  width: 24%;
+  /* padding: 10px; */
 }
 
 .row {
   margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.row:after {
+/* .row:after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);

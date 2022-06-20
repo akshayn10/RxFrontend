@@ -63,7 +63,7 @@ html {
 #home-price {
     height: 100vh;
     margin: auto 0;
-    background-image: url(../../../../assets/svg/Wave-2.svg);
+    /* background-image: url(../../../../assets/svg/Wave-2.svg); */
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: bottom;

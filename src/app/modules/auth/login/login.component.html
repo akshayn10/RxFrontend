@@ -49,8 +49,8 @@
         <mat-spinner *ngIf="isLoading"></mat-spinner>
       </form>
       <div style="margin-left: 15%">
-        <a class="forgot-btn" (click)="logout()">Forgot password?</a>
-        <a class="forgot-btn">Don't have an account? </a>
+        <a class="forgot-btn" routerLink="/auth/forgot-password">Forgot password?</a>
+        <a class="forgot-btn" routerLink="/auth/signup" >Don't have an account? </a>
       </div>
     </div>
   </div>

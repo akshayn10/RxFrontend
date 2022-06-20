@@ -35,10 +35,10 @@ export class TokenStorageService {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.setItem(TOKEN_KEY, token);
 
-    const user = this.getUser();
-    if (user.id) {
-      this.saveUser({ ...user, accessToken: token });
-    }
+    // const user = this.getUser();
+    // if (user.id) {
+    //   this.saveUser({ ...user, accessToken: token });
+    // }
   }
 
   public getToken(): string | null {

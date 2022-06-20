@@ -92,6 +92,7 @@ export class AuthService {
     return this._tokenService.getToken();
   }
   setJwtToken(token: string) {
+    console.log('setJwtToken'+token);
     this._tokenService.saveToken(token);
   }
 
@@ -108,6 +109,7 @@ export class AuthService {
   }
   refreshJwtToken(): Observable<LoginResponseData> {
     const refreshToken = this._tokenService.getRefreshToken();
+    console.log('refreshJwtToken' + refreshToken);
     const url = this.userBaseApiUrl + 'refresh-token';
     return this.http.post<LoginResponseData>(url, { token: refreshToken });
   }

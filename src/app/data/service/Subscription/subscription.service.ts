@@ -4,6 +4,7 @@ import { Observable} from 'rxjs';
 import { AddOnUsage } from '../../schema/addUsage';
 import { CustomerSubscription } from '../../schema/cutomerSubscriptions';
 import { Subscription } from '../../schema/subcription';
+import { SubscriptionStats } from '../../schema/subscriptionStats';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,10 @@ export class SubscriptionService {
   }
   getAddOnUsage(subscriptionId:string):Observable<AddOnUsage[]>{
     return this.httpClient.get<AddOnUsage[]>('https://localhost:44352/api/AddOnUsage/subscription/'+subscriptionId);
+  }
+  getSubscriptionStats():Observable<SubscriptionStats>{
+    return this.httpClient.get<SubscriptionStats>(`${this.subscriptionBaseApiUrl}/sub-stats`);
+
   }
 
 }
