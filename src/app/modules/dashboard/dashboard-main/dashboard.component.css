@@ -13,7 +13,7 @@
   margin: 10px;
   background-color: #f8fbff;
   border-radius: 20px;
-  filter: drop-shadow(2px 5px 10px rgba(41, 44, 56, 0.25));
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   margin-top: 20px;
 }
 
@@ -26,7 +26,7 @@
   width: 66.67%;
   border-radius: 10px;
   overflow: hidden !important;
-  filter: drop-shadow(2px 5px 10px rgba(41, 44, 56, 0.25));
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 ::ng-deep .mat-tab-label .mat-tab-label-content {
@@ -37,10 +37,9 @@
 }
 
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
-          .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #347AE2;
 }
-
 
 .bottom-content {
   display: flex;
@@ -53,6 +52,11 @@
   width: 100%;
   /* min-width: 450px !important; */
   background-color: var(--navWhite);
+}
+
+.pie-chart {
+  width: 33.33%;
+  padding-left: 30px;
 }
 
 /* @media screen and (max-width: 900px) {
