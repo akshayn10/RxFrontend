@@ -5,20 +5,24 @@
     margin-left: 20px;
 
 }
+
 .profile{
   display: flex;
   margin: 20px;
 }
+
 .name-button{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
   background-color:var(--primary-blue);
   border-radius: 25px;
   color: white;
   font-size: 14px;
   height: 40px;
   width: 150px;
+}
 
+.profileFlex{
+  display: flex;
 }
 .mat-button {
   font-family: "Poppins", Arial, Helvetica, sans-serif;

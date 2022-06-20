@@ -1,0 +1,33 @@
+<div class="mat-box">
+  <form [formGroup]="addOnPriceForm" (ngSubmit)="onSubmit()">
+    <!-- <input type="text"  formControlName="value" />  -->
+    <mat-form-field appearance="fill">
+      <mat-label>Select Plan</mat-label>
+      <mat-select formControlName="productPlanId">
+        <mat-option *ngFor="let plan of plans" [value]="plan.planId">
+          {{plan.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- <input type="text"  formControlName="value" />  -->
+    <mat-form-field appearance="fill">
+      <mat-label>Select AddOn</mat-label>
+      <mat-select formControlName="addOnId">
+        <mat-option *ngFor="let addOn of addOns" [value]="addOn.addOnId">
+          {{addOn.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput type="text" class="form-control" formControlName="price">
+    </mat-form-field>
+
+    <div class="form-group">
+      <button class="btn" type="submit">Save</button>
+      <button class="btn-2" (click)="closeDialog()">Cancel</button>
+    </div>
+  </form>
+</div>

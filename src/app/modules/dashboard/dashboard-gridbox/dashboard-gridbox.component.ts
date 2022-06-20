@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardStats } from 'src/app/data/schema/dashboardStats';
+import { DashboardService } from 'src/app/data/service/Dashboard/dashboard.service';
 
 @Component({
   selector: 'app-dashboard-gridbox',
@@ -6,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-gridbox.component.css']
 })
 export class DashboardGridboxComponent implements OnInit {
+  gridStats!:DashboardStats;
 
-  tCustomer : string ='60';
-  nRevenue : string= '$200000';
-  tSubscription : string= '89';
-  tProduct : string= '7';
-  xVal1 : string= 'Xxxxxx';
-  xVal2 : string= 'Xxxxxx';
-  
-  constructor() { }
+
+
+
+  constructor(private _dashboardService:DashboardService) { }
 
   ngOnInit(): void {
+    this.getGridStats();
+  }
+  getGridStats():void{
+    this._dashboardService.getGridStats().subscribe((data)=>{
+      console.log(data)
+      this.gridStats = data;
+
+    })
   }
 
 }

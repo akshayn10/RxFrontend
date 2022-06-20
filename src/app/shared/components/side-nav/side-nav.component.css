@@ -1,6 +1,7 @@
-mat-icon-button{
+mat-icon-button {
   width: 100px;
 }
+
 .mat-sidenav-container {
   display: flex;
   height: 100%;
@@ -8,10 +9,12 @@ mat-icon-button{
   overflow-x: hidden;
 
 }
+
 .mat-button {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
+
 .mat-sidenav {
   min-width: 250px;
   background: var(--navWhite);
@@ -19,6 +22,7 @@ mat-icon-button{
   font-size: 20px;
   border: none;
 }
+
 .logo {
   width: 100px;
   height: 100px;
@@ -26,38 +30,52 @@ mat-icon-button{
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 .logo img {
   width: 100px;
   height: 100px;
 }
+
 .nav-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
+
 .menu-button {
-  width: 238px;
+  width: 90%;
+  text-align: left;
   margin-top: 20px;
   font-size: 1rem;
   height: 35px;
   border-radius: 20px 0px 0px 20px;
-
 }
+
+.menu-button span {
+  padding-left: 18px;
+  font-weight: 600;
+}
+
 .menu-button mat-icon {
   margin-left: 8px;
 }
+
 .content {
   font-size: 2rem;
   color: black;
 }
-.mat-sidenav-content{
+
+.mat-sidenav-content {
   width: 100%;
 }
+
 mat-divider {
   margin-top: 16px;
   margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.bg-color{
-background: #347ae2; color: white;
+
+.bg-color {
+  background: #347ae2;
+  color: white;
 }

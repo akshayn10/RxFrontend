@@ -1,10 +1,11 @@
-<div>
-  <canvas baseChart
-  [data]="doughChartData"
-  [labels]="doughChartLabels"
-  [chartType]="doughChartType"
-  [options]="doughChartOptions"
-  [plugins]="doughChartPlugins"
-  [legend]="doughChartLegend">
-</canvas>
+<div *ngIf="doughnutChartLabels" class="pie-chart-container">
+  <div class="pie-chart">
+    <div class="chart" *ngIf="doughnutChartLabels && doughnutChartData">
+      <div style="display: block;">
+        <canvas height="200px" width="300px" baseChart [data]="doughnutChartData" [options]="doughChartOptions" [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
 </div>

@@ -7,23 +7,23 @@
     <div class="side-container">
       <app-dashboard-title class="title"></app-dashboard-title>
       <div class="graph-container">
-        <app-graph [graphData]="lineChartData" class="graph"></app-graph>
-        <app-graph [graphData]="lineChartData2" class="graph"></app-graph>
+        <app-graph *ngIf="chart1Data && chart2Data" [graphData]="lineChartData" class="graph"></app-graph>
+        <app-graph *ngIf="chart1Data&&chart2Data" [graphData]="lineChartData2" class="graph"></app-graph>
       </div>
       <app-dashboard-gridbox></app-dashboard-gridbox>
       <div class="bottom-content">
         <div class="table-grp">
           <mat-tab-group>
             <mat-tab label="Top Selling Plan">
-              <app-dashboard-table class="table1"></app-dashboard-table>
+              <app-dashboard-table *ngIf="planData" [tableData]="planData" class="table1"></app-dashboard-table>
             </mat-tab>
             <mat-tab label="Top Add-ons">
-              <app-dashboard-table class="table2"></app-dashboard-table>
+              <app-dashboard-table *ngIf="addOnData" [tableData]="addOnData" class="table2"></app-dashboard-table>
             </mat-tab>
           </mat-tab-group>
         </div>
-        <div class="pie-chart-container">
-          <app-dash-pie class="pie-chart"></app-dash-pie>
+        <div>
+          <app-dash-pie ></app-dash-pie>
         </div>
       </div>
     </div>

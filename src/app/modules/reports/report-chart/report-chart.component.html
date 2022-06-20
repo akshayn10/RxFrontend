@@ -1,26 +1,13 @@
-<div class="app-container">
-  <app-side-nav></app-side-nav>
-  <div class="content">
-    <div class="right-align">
-      <app-profile></app-profile>
-    </div>
-    <div class="title-container">
-      <!-- <div class="title">Subscription</div> -->
-    </div>
-    <div>
-      <div class="chart">
-        <canvas
-          baseChart
-          [data]="lineChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins"
-        >
-        </canvas>
-      </div>
-    </div>
-  </div>
+<div class="chart">
+  <canvas
+    baseChart
+    [data]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [colors]="lineChartColors"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    [plugins]="lineChartPlugins"
+  >
+  </canvas>
 </div>

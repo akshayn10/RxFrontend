@@ -1,33 +1,42 @@
-.container1 {
+.container-1 {
     background-color: var(--navWhite);
-    height: 80px;
+    /* height: 80px; */
     width: 100%;
     border-radius: 10px;
     margin: auto;
     margin-top: 10px;
 }
 
-.container2 {
+.container-1 h1 {
+    margin: 0;
+    color: var(--primary-blue);
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 18px;
+    padding-left: 24px;
+}
+
+.container-1 p {
+    margin: 0;
+    font-size: 14px;
+    padding-left: 24px;
+    padding-top: 6px;
+    padding-bottom: 18px;
+}
+
+.container-2 {
     margin: auto;
     margin-top: 2%;
 }
 
-/* .container3 {
+/* .container-3 {
     margin: auto;
     margin-top: 2%;
     width: 85%;
 } */
 
-.containerItem1 {
-    color: var(--primary-blue);
-    font-size: 18px;
-    font-weight: bold;
-    padding: 13px 20px 0 20px;
-}
-
-.containerItem2 {
-    padding: 5px 20px 0 20px;
-    font-size: 14px;
+img {
+    margin-top: 5px;
 }
 
 .mat-table {
@@ -49,12 +58,11 @@ th {
 
 }
 
-
-
-  ::ng-deep.mat-tab-label{
-    min-width: 50%!important;
+::ng-deep.mat-tab-label {
+    min-width: 50% !important;
     background-color: var(--navWhite);
-   }
-   .mat-row{
+}
+
+.mat-row {
     cursor: pointer;
-  }
+}

@@ -14,3 +14,13 @@ th {
 .mat-row{
   cursor: pointer;
 }
+
+.statusActive {
+  color: #00a67e;
+  font-weight: bold;
+}
+
+.statusInactive {
+  color: red;
+  font-weight: bold;
+}

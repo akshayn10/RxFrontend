@@ -7,4 +7,5 @@ export interface Subscription{
   endDate:string;
   status:string;
   subscriptionType:string;
+  isTrial:boolean;
 }

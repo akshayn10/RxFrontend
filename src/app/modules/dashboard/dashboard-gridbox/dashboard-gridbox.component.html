@@ -1,9 +1,31 @@
+<div *ngIf="gridStats" class="row">
 
-    <div class="container">
-        <div class="box-1"> Total Customers <p class="var">{{tCustomer }}</p> </div>
-        <div class="box-2"> Net Revenue <p class="var">{{nRevenue}}</p></div>
-        <div class="box-3"> Total Subscriptions <p class="var">{{tSubscription}}</p></div>
-        <div class="box-4"> Total Products <p class="var">{{tProduct}}</p></div>
-        <div class="box-5"> Xxxxxxx <p class="var">{{xVal1}}</p></div>
-        <div class="box-6"> Xxxxxxxxx <p class="var">{{xVal2}}</p></div>
+    <div class="column">
+        <div class="card">
+            <h3>Total Customers</h3>
+            <p class="var">{{gridStats.totalCustomers }}</p>
+        </div>
     </div>
+
+    <div class="column">
+        <div class="card">
+            <h3>Net Revenue</h3>
+            <p class="var">$ {{gridStats.totalRevenue}}</p>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <h3>Total Subscriptions</h3>
+            <p class="var">{{gridStats.totalSubscriptions}}</p>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <h3>Total Products</h3>
+            <p class="var">{{gridStats.totalProducts}}</p>
+        </div>
+    </div>
+
+</div>

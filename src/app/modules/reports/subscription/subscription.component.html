@@ -1,53 +1,41 @@
-<div class="title-container">
-  <div class="title">Subscription</div>
-  <div class="intro"></div>
+<div class="head">
+  <p>Subscriptions</p>
 </div>
-<div class="box-cont">
-  <div
-    class="box"
-    [routerLink]="['subscription/summary']"
-    [state]="[lineChartData0, lineChartLabels0]"
-  >
-    Subscription <br />
-    Summary
+
+<div class="row">
+  <div class="column">
+    <div class="card" [routerLink]="['subscription/summary']">
+      <h3>Subscription Summary</h3>
+    </div>
   </div>
 
-  <div
-    class="box"
-    [routerLink]="['subscription/activation']"
-    [state]="[lineChartData1, lineChartLabels1]"
-  >
-    Activations
-  </div>
-  <div
-    class="box"
-    [routerLink]="['subscription/active customer']"
-    [state]="[lineChartData2, lineChartLabels2]"
-  >
-    Active <br />
-    Customers
+  <div class="column">
+    <div class="card" [routerLink]="['subscription/activation']">
+      <h3>Activations</h3>
+    </div>
   </div>
 
-  <div
-    class="box"
-    [routerLink]="['subscription/Active Trials']"
-    [state]="[lineChartData3, lineChartLabels3]"
-  >
-    Active Trials
-  </div>
-  <div
-    class="box"
-    [routerLink]="['subscription/Upgrade Details']"
-    [state]="[lineChartData4, lineChartLabels4]"
-  >
-    Upgrade Details
+  <div class="column">
+    <div class="card" [routerLink]="['subscription/active customer']">
+      <h3>Active Customers</h3>
+    </div>
   </div>
 
-  <div
-    class="box"
-    [routerLink]="['subscription/Downgrade Details']"
-    [state]="[lineChartData4, lineChartLabels4]"
-  >
-    Downgrade Details
+  <div class="column">
+    <div class="card" [routerLink]="['subscription/Active Trials']">
+      <h3>Active Trials</h3>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" [routerLink]="['subscription/Upgrade Details']">
+      <h3>Upgrade Details</h3>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" [routerLink]="['subscription/Downgrade Details']">
+      <h3>Downgrade Details</h3>
+    </div>
   </div>
 </div>

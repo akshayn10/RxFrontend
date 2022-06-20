@@ -9,7 +9,7 @@
     border-radius: 10px;
     font-size: 14px;
     padding-left: 15px; 
-
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .refine{
     margin-top: 0;

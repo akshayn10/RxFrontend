@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { HomePriceComponent } from './home-price/home-price.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { HomePriceComponent } from './home-price/home-price.component';
     HomeRoutes,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    SharedModule
+
   ]
 })
 export class HomeModule { }

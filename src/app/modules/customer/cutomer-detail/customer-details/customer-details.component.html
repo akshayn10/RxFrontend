@@ -5,30 +5,30 @@
       <app-profile></app-profile>
     </div>
     <div class="cont">
+
       <div class="details">
         <div class="details-head">Customer Details</div>
         <mat-divider></mat-divider>
-          <div class="details-container">
-            <div class="detailTitle">
-              <div><b>Customer ID :</b></div>
-              <div><b>Name :</b></div>
-              <div><b>E-mail :</b></div>
-              <div><b>Status :</b></div>
-              <div ><b>Payment Card Details :</b></div>
 
-            </div>
-            <div class="detail">
-              <div>{{ customerID }}</div>
-              <div>{{ customer.email }}</div>
-              <div>{{ customer.name }}</div>
-              <div>{{ customer.status }}</div>
-              <div *ngIf="customer.last4">**** **** **** {{ customer.last4 }}</div>
-              <div *ngIf="!customer.last4">No Card Details Available {{ customer.last4 }}</div>
-            </div>
+        <div class="details-container">
+          <div class="detailTitle">
+            <div>Customer ID :</div>
+            <div>Name :</div>
+            <div>E-mail :</div>
+            <div>Status :</div>
+            <div>Payment Card Details :</div>
           </div>
-        <div class="subs-info">
-          <div class="subs-head">Subscription Info</div>
+
+          <div class="detail">
+            <div>{{ customerID }}</div>
+            <div>{{ customer.email }}</div>
+            <div>{{ customer.name }}</div>
+            <div>{{ customer.status }}</div>
+            <div *ngIf="customer.last4">**** **** **** {{ customer.last4 }}</div>
+            <div *ngIf="!customer.last4">No Card Details Available {{ customer.last4 }}</div>
+          </div>
         </div>
+        <div class="subs-head">Subscription Info</div>
         <mat-divider></mat-divider>
 
         <app-customer-subs-table></app-customer-subs-table>

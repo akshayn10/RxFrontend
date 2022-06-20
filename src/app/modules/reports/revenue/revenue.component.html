@@ -1,15 +1,11 @@
-<div class="title-container">
-  <div class="title">Revenue</div>
-  <div class="intro"></div>
+<div class="head">
+  <p>Revenue</p>
 </div>
-<div class="box-cont">
-  <div
-    class="box"
-    [routerLink]="['Sales/Sales By Plan']"
-    [state]="[lineChartData0, lineChartLabels0]"
-  >
-    Net Revenue
+
+<div class="row">
+  <div class="column">
+    <div class="card" [routerLink]="['revenue/net-revenue']">
+      <h3>Net Revenue</h3>
+    </div>
   </div>
-  <div class="box2"></div>
-  <div class="box2"></div>
 </div>

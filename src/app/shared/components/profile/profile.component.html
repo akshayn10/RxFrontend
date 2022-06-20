@@ -1,6 +1,19 @@
-
 <div class="profile">
-  <button mat-button class="name-button" routerLink="/profile">Hi! John</button>
-  <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+  <button mat-button class="name-button" routerLink="/profile">
+    <div class="profileFlex">
+    <div style="margin:0px 5px 0px 10px;">Hi!</div>
+    <div *ngIf="currentUser">
+      {{currentUser?.userName}}</div>
+    <div *ngIf="!currentUser">John</div>
+  </div>
+  </button>
+
+  <img class="avatar mat-elevation-z8" [matMenuTriggerFor]="menu"
+    [src]="currentUser?.profileUrl??'https://source.unsplash.com/c_GmwfHBDzk/200x200'" />
+  <mat-menu #menu="matMenu">
+    <button (click)="navigateToUserProfile()" mat-menu-item>Go to Profile</button>
+    <button (click)="navigateToOrganizationProfile()" mat-menu-item>Organization Profile</button>
+    <button (click)="logout()" mat-menu-item>Logout</button>
+  </mat-menu>
 
 </div>
