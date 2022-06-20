@@ -84,6 +84,14 @@ button {
     margin: 10px 0;
 }
 
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn2:hover {
+    cursor: pointer;
+}
+
 .btn2 {
     width: 140px;
     height: 40px;
