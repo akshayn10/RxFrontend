@@ -38,12 +38,13 @@ export class HttpInterceptorService implements HttpInterceptor {
     let authservice = this.inject.get(AuthService);
     return authservice.refreshJwtToken().pipe(
       switchMap((data) => {
+        console.log(data+" refresh data")
         authservice.setJwtToken(data.jwtToken);
         authservice.setCurrentUserSubject(data);
-        return next.handle(this.AddTokenheader(request,data.jwtToken))
+        return next.handle(this.AddTokenheader(request,authservice.getJwtToken()))
       }),
       catchError(errodata=>{
-        authservice.signOut();
+        // authservice.signOut();
         return throwError(errodata)
       })
     );

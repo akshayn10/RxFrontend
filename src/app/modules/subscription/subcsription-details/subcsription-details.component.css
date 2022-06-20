@@ -43,3 +43,12 @@
 .table-cont {
   margin-top: 20px;
 }
+.statusActive {
+  color: #00a67e;
+  font-weight: bold;
+}
+
+.statusInactive {
+  color: red;
+  font-weight: bold;
+}

@@ -16,7 +16,7 @@
             <div>Plan Name : </div>
             <div>Created Date : </div>
             <div>End Date : </div>
-            <div>Status : </div>
+            <div >Status : </div>
             <div>Subscription Type : </div>
           </div>
           <div class="detail">
@@ -26,7 +26,7 @@
             <div>{{ subscription?.plan }}</div>
             <div>{{ subscription?.createdDate }}</div>
             <div>{{ subscription?.endDate }}</div>
-            <div>{{ subscription?.status }}</div>
+            <div [ngClass]="{'statusActive':subscription.status=='Active','statusInactive':subscription.status=='Inactive'}">{{ subscription?.status }}</div>
             <div>{{ subscription?.subscriptionType }}</div>
           </div>
         </div>
