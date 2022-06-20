@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'https://localhost:44352/api/'
+  // baseApiUrl: 'https://localhost:44352/api/'
+  baseApiUrl: 'https://rxapi.azurewebsites.net/api/'
 };
 
 /*
