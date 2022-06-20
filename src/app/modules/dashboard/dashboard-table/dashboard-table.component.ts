@@ -1,29 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
+import { Component, Input, OnInit } from '@angular/core';
+import { TableStats } from 'src/app/data/schema/dashboardTable';
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-
-];
 @Component({
   selector: 'app-dashboard-table',
   templateUrl: './dashboard-table.component.html',
-  styleUrls: ['./dashboard-table.component.css']
+  styleUrls: ['./dashboard-table.component.css'],
 })
 export class DashboardTableComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  data = ELEMENT_DATA;
-  constructor() { }
+  @Input() tableData!: TableStats[];
+  displayedColumns: string[] = ['index', 'product', 'name'];
+
+  constructor() {}
 
   ngOnInit(): void {
   }
-
 }

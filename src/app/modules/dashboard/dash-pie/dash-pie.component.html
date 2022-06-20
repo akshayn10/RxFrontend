@@ -1,10 +1,7 @@
-<div class="chart">
-  <canvas baseChart
-  [data]="doughChartData"
-  [labels]="doughChartLabels"
-  [chartType]="doughChartType"
-  [options]="doughChartOptions"
-  [plugins]="doughChartPlugins"
-  [legend]="doughChartLegend">
-</canvas>
+<div class="chart" *ngIf="doughnutChartLabels && doughnutChartData">
+  <div style="display: block;">
+    <canvas baseChart [data]="doughnutChartData" [options]="doughChartOptions" [labels]="doughnutChartLabels"
+      [chartType]="doughnutChartType">
+    </canvas>
+  </div>
 </div>

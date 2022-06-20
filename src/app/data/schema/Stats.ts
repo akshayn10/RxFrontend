@@ -1,4 +1,4 @@
 export interface Stats {
-  period: string;
+  type: string;
   count: number;
 }
