@@ -6,6 +6,8 @@ import { AddOnDialogComponent } from '../add-on-dialog/add-on-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddOnTableComponent } from '../add-on-table/add-on-table.component';
 import { AddOnPriceDialogComponent } from '../add-on-price-dialog/add-on-price-dialog.component';
+import { AuthService } from 'src/app/data/service/auth/auth.service';
+import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace.service';
 
 
 @Component({
@@ -19,6 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   planId:string;
   showSecret=false;
   webhookSecret='********************************************';
+  organizationId!:string;
 
 
 
@@ -26,17 +29,23 @@ export class ProductDetailsComponent implements OnInit {
     public router: Router,
      private productservice:ProductService,
      private _dialog:MatDialog,
+     private _authService:AuthService,
+     private __marketplaceService:MarketplaceService
      ) {
     this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';
     this.planId = this._activatedRoute.snapshot.paramMap.get('planId') || '';
 
   }
 
-  
+
 
   ngOnInit(): void {
 
     this.getProductById(this.productId);
+    if(this._authService.currentUserValue){
+      this.organizationId=this._authService.currentUserValue.organizationId;
+    }
+
 
   }
 
@@ -70,17 +79,27 @@ export class ProductDetailsComponent implements OnInit {
 
     }
   }
-  onAddToMarketplace(productId :string){
+  onAddToMarketplace(){
+    this.__marketplaceService.addProductToMarketplace(this.productId,
+      this.product.description,
+      this.product.name,
+      this.product.logoURL,
+      this.product.freeTrialDays
+      ,this.product.redirectURL,
+      this.organizationId).subscribe(resp=>{
+        console.log(resp);
+        this.ngOnInit();
+      })
 
   }
 
-  
+
   openDialog() {
     const dialog=this._dialog.open(AddOnDialogComponent,{
       width: '450px',
       height: '400px',
       data: {productId: this.productId}
-    
+
     });
   }
 
@@ -89,11 +108,11 @@ export class ProductDetailsComponent implements OnInit {
       width: '450px',
       height: '400px',
       data: {productId: this.productId}
-    
+
     });
   }
 
- 
+
 
 
 

@@ -9,4 +9,5 @@ export interface Product {
   webhookSecret: string;
   webhookURL: string;
   freeTrialDays: number;
+  isAddedToMarketplace: boolean;
 }
