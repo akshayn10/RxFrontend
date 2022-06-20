@@ -1,131 +1,139 @@
-<div class="flex flex-col">
+<div>
   <app-top-bar></app-top-bar>
-  <!-- component -->
-  <div class="title self-center rounded-lg p-5">
-    <h3 class="text-blue-800 font-bold"> User Profile</h3>
-    <span>View and Manage all your account associated information.</span>
-  </div>
-  <div class="w-10 flex self-center bg-navwhite mt-5 rounded-lg p-10 ">
-
-    <!-- Left Side -->
-    <div class="rounded-lg">
-      <!-- Profile Card -->
-      <div class="bg-white center p-5 border-t-4 border-blue-400">
-        <div class="">
-          <img class="profile-img rounded-full" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="Ajee">
-        </div>
-        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">John Doe</h1>
-        <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at RX</h3>
-        <p class="text-sm text-gray-500 leading-6">Lorem ipsum dolor sit amet
-          consectetur adipisicing elit.
-          Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
-      </div>
-      <!-- End of profile card -->
-    </div>
-    <!-- Right Side -->
-    <div class="w-full mx-2 h-full">
-      <!-- About Section -->
-      <div class="bg-white p-5 shadow-sm rounded-sm">
-        <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-          <span clas="text-green-500">
-            <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-          </span>
-          <span class="tracking-wide text-blue-800 text-xl">User Profile</span>
-        </div>
-        <form>
-          <div class="form-group">
-            <label>Full Name</label>
-            <div>
-              <input type="text" class="form-control" formControlName="fullName" placeholder="Enter FullName"
-                value="John Doe" />
-            </div>
-            <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
-              <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
-                Full name is Required
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>E-mail Address</label>
-            <div>
-              <input type="text" class="form-control" formControlName="email" placeholder="Enter Email"
-                value="John@gmail.com" />
-            </div>
-            <div *ngIf="f['email'].touched && f['email'].invalid">
-              <div *ngIf="f['email'].errors && f['email'].errors['required']">
-                Email is required.
-              </div>
-              <div *ngIf="f['email'].errors && f['email'].errors['email']">
-                Email must be a valid email address.
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>User Name</label>
-            <div>
-              <input type="text" class="form-control" formControlName="userName" placeholder="Enter UserName"
-                value="john Doe" />
-            </div>
-            <div *ngIf="f['userName'].touched && f['userName'].invalid">
-              <div *ngIf="f['userName'].errors && f['userName'].errors['required']">
-                User Name is required
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Language</label>
-            <div>
-              <input type="text" class="form-control" formControlName="language" placeholder="Enter Langaue"
-                value="English" />
-            </div>
-            <div *ngIf="f['language'].touched && f['language'].invalid">
-              <div *ngIf="
-                            f['language'].errors && f['language'].errors['required']
-                          ">
-                language is required
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Address</label>
-            <div>
-              <input type="text" class="form-control" formControlName="Line1" placeholder="Address Line 1" value="" />
-              <input type="text" class="form-control" formControlName="Line2" placeholder="Address Line 2" value="" />
-              <input type="text" class="form-control" formControlName="city" placeholder="City" value="" />
-              <input type="text" class="form-control" formControlName="province" placeholder="Province/Region"
-                value="" />
-              <input type="text" class="form-control" formControlName="postalCode" placeholder="Postal Code" value="" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Mobile Number</label>
-            <div>
-              <input type="text" class="form-control" formControlName="number" placeholder="+94 77 123 4567"
-                value="077 123 4567" />
-            </div>
-            <div *ngIf="f['number'].touched && f['number'].invalid">
-              <div *ngIf="
-                              f['number'].errors && f['number'].errors['required']
-                            ">
-                Number is required
-              </div>
-            </div>
-          </div>
-        </form>
-        <div class="flex justify-center pt-5">
-          <button mat-button class="btn" routerLink="/dashboard">Save
-            Changes</button>
-        </div>
-      </div>
-      <!-- End of about section -->
-
-      <div class="my-4"></div>
-      <!-- End of profile tab -->
+  <div class="title-container">
+    <div class="title">User Profile</div>
+    <div class="intro">
+      View and Manage all your account associated information.
     </div>
   </div>
-  <app-footer class="mt-5"></app-footer>
-</div>
+
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label class="labelName">Full Name</label>
+        <input type="text" class="form-control" formControlName="fullName" placeholder="Enter Fullname" value="" />
+        <div class="invalid">
+          <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
+            <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
+              Full name is Required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="labelName">E-mail Address</label>
+        <input type="text" class="form-control" formControlName="email" placeholder="Enter Email" value="" />
+        <div class="invalid">
+          <div *ngIf="f['email'].touched && f['email'].invalid">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+              Email is required.
+            </div>
+            <div *ngIf="f['email'].errors && f['email'].errors['email']">
+              Email must be a valid email address.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="labelName">User Name</label>
+        <input type="text" class="form-control" formControlName="userName" placeholder="Enter Username" value="" />
+        <div class="invalid">
+          <div *ngIf="f['userName'].touched && f['userName'].invalid">
+            <div *ngIf="f['userName'].errors && f['userName'].errors['required']">
+              User Name is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="labelName">Language</label>
+        <input type="text" class="form-control" formControlName="language" placeholder="Enter Language" value="" />
+        <div class="invalid">
+          <div *ngIf="f['language'].touched && f['language'].invalid">
+            <div *ngIf="f['language'].errors && f['language'].errors['required']">
+              language is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="labelName">Address</label>
+        <div class="form-control-address">
+          <div class="address-line" style="margin-bottom: 10px;">
+            <input placeholder="Address Line 01" type="text" formControlName="addressLine1" />
+          </div>
+          <div
+            *ngIf="f['organizationAddress'].value.addressLine1.touched && f['organizationAddress'].value.addressLine1.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.addressLine1.errors && f['organizationAddress'].value.addressLine1.errors['required']">
+              Address 1 is Required
+            </div>
+          </div>
+
+            <div class="address-line" style="margin-bottom: 10px;">
+              <input placeholder="Address Line 02" type="text" formControlName="addressLine2" />
+            </div>
+            <div
+              *ngIf="f['organizationAddress'].value.addressLine2.touched && f['organizationAddress'].value.addressLine2.invalid">
+              <div
+                *ngIf="f['organizationAddress'].value.addressLine2.errors && f['organizationAddress'].value.addressLine2.errors['required']">
+                Address 1 Required
+              </div>
+            </div>
+
+            <div class="address-line" style="margin-bottom: 10px;">
+              <input placeholder="City" type="text" formControlName="city" />
+            </div>
+            <div 
+              *ngIf="f['organizationAddress'].value.city.touched && f['organizationAddress'].value.city.invalid">
+              <div
+                *ngIf="f['organizationAddress'].value.city.errors && f['organizationAddress'].value.city.errors['required']">
+                City is Required
+              </div>
+            </div>
+
+            <div class="address-line" style="margin-bottom: 10px;">
+              <input placeholder="Province/ Region" type="text" formControlName="state" />
+            </div>
+            <div 
+              *ngIf="f['organizationAddress'].value.state.touched && f['organizationAddress'].value.state.invalid">
+              <div
+                *ngIf="f['organizationAddress'].value.state.errors && f['organizationAddress'].value.state.errors['required']">
+                State is Required
+              </div>
+            </div>
+
+            <div class="address-line">
+              <input placeholder="Country" type="text" formControlName="country" />
+            </div>
+            <div
+              *ngIf="f['organizationAddress'].value.country.touched && f['organizationAddress'].value.country.touched.invalid">
+              <div
+                *ngIf="f['organizationAddress'].value.country.touched.errors && f['organizationAddress'].value.country.touched.errors['required']">
+                Country is Required
+              </div>
+            </div>
+          </div>
+          <div class="invalid"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="labelName">Mobile Number</label>
+          <input type="text" class="form-control" formControlName="number" placeholder="+94 77 123 4567" value="" />
+          <div *ngIf="f['number'].touched && f['number'].invalid">
+            <div *ngIf="f['number'].errors && f['number'].errors['required']">
+              Number is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group-btn">
+          <button class="btn" type="submit">Save Changes</button>
+        </div>
+    </form>
+    <app-footer></app-footer>
+  </div>
