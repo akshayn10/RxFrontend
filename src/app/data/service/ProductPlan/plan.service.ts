@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import{Plan} from '../../schema/plan.model'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlanService {
 
-  readonly PlanUrl: any = "https://localhost:44352/api/product";
+  readonly PlanUrl: any = environment.baseApiUrl+"product";
 
   constructor(private http: HttpClient) { }
 
@@ -34,4 +35,4 @@ export class PlanService {
     return this.http.put(this.PlanUrl+`/${productId}/plan/${planId}`, planForm);
   }
 
-} 
+}

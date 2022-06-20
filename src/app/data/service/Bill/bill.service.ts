@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Bill } from '../../schema/bill';
 import { BillDetail } from '../../schema/Bill-Details/billDetail';
 
@@ -8,7 +9,7 @@ import { BillDetail } from '../../schema/Bill-Details/billDetail';
   providedIn: 'root',
 })
 export class BillService {
-  readonly billBaseApiUrl = 'https://localhost:44352/api/bill';
+  readonly billBaseApiUrl = environment.baseApiUrl+'bill';
 
   constructor(private httpClient: HttpClient) {}
   getAllBills(): Observable<Bill[]> {

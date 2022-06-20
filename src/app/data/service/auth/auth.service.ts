@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 import { TokenStorageService } from 'src/app/core/service/token-storage.service';
+import { environment } from 'src/environments/environment';
 import { LoginResponseData } from '../../schema/auth/loginResponseData';
 
 type ApiResponse<T> =
@@ -17,7 +18,7 @@ type ApiResponse<T> =
   providedIn: 'root',
 })
 export class AuthService {
-  private userBaseApiUrl = 'https://localhost:44352/api/user/';
+  private userBaseApiUrl = environment.baseApiUrl+'user/';
   private currentUserSubject!: BehaviorSubject<LoginResponseData | null>;
   public currentUser!: Observable<LoginResponseData | null>;
 

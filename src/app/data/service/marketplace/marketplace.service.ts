@@ -8,7 +8,7 @@ import { MarketplaceProduct } from '../../schema/marketplaceProduct';
   providedIn: 'root',
 })
 export class MarketplaceService {
-  readonly baseURL = environment.baseApiUrl + '/marketplace';
+  readonly baseURL = environment.baseApiUrl + 'marketplace';
 
   constructor(private http: HttpClient) {}
 
