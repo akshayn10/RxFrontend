@@ -13,7 +13,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class BillTableComponent implements AfterViewInit, OnInit {
   searchKey!: string;
-  displayedColumns: string[] = ['email', 'name', 'generatedDate', 'amount'];
+  displayedColumns: string[] = ['billId', 'name', 'generatedDate', 'amount'];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private _billService: BillService, private _router: Router) {}
