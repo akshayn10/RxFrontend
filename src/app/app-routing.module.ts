@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Role } from './core/constants/role';
 import { AuthGuard } from './core/guard/auth.guard';
+import { NoSubscriptionComponent } from './shared/components/no-subscription/no-subscription.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 
@@ -89,7 +90,7 @@ const routes: Routes = [
     loadChildren: () =>import('./modules/marketplace/marketplace.module').then((m) => m.MarketplaceModule)
 
   },
-
+  { path: 'no-subscription', component: NoSubscriptionComponent },
   { path: '404', component: NotFoundComponent },
   {
     path: '**', redirectTo: '404'
