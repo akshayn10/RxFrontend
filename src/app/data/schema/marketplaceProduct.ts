@@ -15,4 +15,5 @@ export interface MarketplaceProductForDisplay {
   haveTrial: boolean,
   redirectUrl: string,
   providerName: string
+  trialDays: number,
 }
