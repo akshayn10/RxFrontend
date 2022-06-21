@@ -1,76 +1,151 @@
-<div class="flex flex-col">
+<div>
   <app-top-bar></app-top-bar>
-  <!-- component -->
-  <div class="title self-center rounded-lg p-5">
-    <div class="flex space-between">
-      <div class="">
-        <h3 class="text-blue-800 font-bold"> Oraganization Profile</h3>
-        <span>View and Manage all your account associated information.</span>
+  <div class="title-container">
+    <div>
+      <div class="title">Oraganization Profile</div>
+      <div class="intro">
+        View and Manage all your organization account associated information.
       </div>
-      <div class=""><a [routerLink]="['user-roles']"> <button mat-button class="btn-org">Manage Organization Roles</button>
-        </a></div>
+    </div>
+    <div class="btn-container">
+      <a [routerLink]="['/product/addProduct']">
+        <button mat-button class="name-button">Manage Organization Roles</button>
+      </a>
     </div>
   </div>
-  <div class="flex">
-    <h2 class="container text-blue-800 p-5">Enadoc</h2>
-  </div>
-  <div class="flex flex-col self-center">
-    <form class="justify-center">
+
+  <div class="box-2">
+    <!-- <div class="header">CREATE ORGANIZATION</div> -->
+    <form>
+    <!-- <form [formGroup]="organizationForm" (ngSubmit)="onSubmit()"></form> -->
+
+
       <div class="form-group">
-        <label>Organization Name</label>
+        <label>Company Name</label>
         <div>
-          <input type="text" class="form-control" formControlName="fullName" placeholder="Enter FullName"
-            value="John Doe" />
+          <input type="text" class="form-control" formControlName="name" />
         </div>
-        <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
-          <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
-            Full name is Required
+        <div class="invalid">
+          <div *ngIf="f['name'].touched && f['name'].invalid">
+            <div *ngIf="f['name'].errors && f['name'].errors['required']">
+              Company Name is required
+            </div>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label>Organization E-mail Address</label>
+        <label>Email</label>
         <div>
-          <input type="text" class="form-control" formControlName="email" placeholder="Enter Email"
-            value="John@gmail.com" />
+          <input type="text" class="form-control" formControlName="email" />
         </div>
-        <div *ngIf="f['email'].touched && f['email'].invalid">
-          <div *ngIf="f['email'].errors && f['email'].errors['required']">
-            Email is required.
-          </div>
-          <div *ngIf="f['email'].errors && f['email'].errors['email']">
-            Email must be a valid email address.
+        <div class="invalid">
+          <div *ngIf="f['email'].touched && f['email'].invalid">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+              Email is required
+            </div>
           </div>
         </div>
       </div>
+
       <div class="form-group">
-        <label>Contact Number</label>
-        <div>
-          <input type="text" class="form-control" formControlName="number" placeholder="+94 77 123 4567"
-            value="077 123 4567" />
+        <label>Logo</label>
+        <div class="logoFlex">
+          <div class="imgup">
+            <div class="icon-container">
+              <img src="assets/icons/img.png" alt="" />
+              <div *ngIf="">Drop your image here, or browse</div>
+              <!-- <div *ngIf="!imageSelected">Drop your image here, or browse</div> -->
+            </div>
+            <input id="fileUpload" type="file" accept="image/*" formControlName="logoPath" />
+            <!-- <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="logoPath" /> -->
+          </div>
+          <div class="previewImg" *ngIf="">
+            <img height="120px" [src]="" />
+          </div>
+          <!-- <div class="previewImg" *ngIf="logoPreviewPath && logoPreviewPath !== ''">
+            <img height="120px" [src]="logoPreviewPath" [alt]="organizationForm.value.name" />
+          </div> -->
         </div>
-        <div *ngIf="f['number'].touched && f['number'].invalid">
-          <div *ngIf="f['number'].errors && f['number'].errors['required']">
-            Number is required
+        <div class="invalid"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <div class="description">
+          <textarea type="textarea" rows="5" formControlName="description"></textarea>
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['description'].touched && f['description'].invalid">
+            <div *ngIf="f['description'].errors && f['description'].errors['required']">
+              Description name is Required
+            </div>
           </div>
         </div>
       </div>
-      <div class="form-group">
+
+      <div class="form-group" formGroupName="organizationAddress">
         <label>Address</label>
-        <div class="flex flex-col">
-          <input type="text" class="form-control" formControlName="Line1" placeholder="Address Line 1" value="" />
-          <input type="text" class="form-control" formControlName="Line2" placeholder="Address Line 2" value="" />
-          <input type="text" class="form-control" formControlName="city" placeholder="City" value="" />
-          <input type="text" class="form-control" formControlName="province" placeholder="Province/Region" value="" />
-          <input type="text" class="form-control" formControlName="postalCode" placeholder="Postal Code" value="" />
+        <div class="address-line">
+          <input placeholder="Address Line 01" type="text" formControlName="addressLine1" />
+        </div>
+        <div
+          *ngIf="f['organizationAddress'].value.addressLine1.touched && f['organizationAddress'].value.addressLine1.invalid">
+          <div
+            *ngIf="f['organizationAddress'].value.addressLine1.errors && f['organizationAddress'].value.addressLine1.errors['required']">
+            Address 1 is Required
+          </div>
+        </div>
+
+        <div class="address-line">
+          <input placeholder="Address Line 02" type="text" formControlName="addressLine2" />
+        </div>
+        <div
+          *ngIf="f['organizationAddress'].value.addressLine2.touched && f['organizationAddress'].value.addressLine2.invalid">
+          <div
+            *ngIf="f['organizationAddress'].value.addressLine2.errors && f['organizationAddress'].value.addressLine2.errors['required']">
+            Address 1 Required
+          </div>
+        </div>
+
+        <div class="address-line">
+          <input placeholder="City" type="text" formControlName="city" />
+        </div>
+        <div *ngIf="f['organizationAddress'].value.city.touched && f['organizationAddress'].value.city.invalid">
+          <div
+            *ngIf="f['organizationAddress'].value.city.errors && f['organizationAddress'].value.city.errors['required']">
+            City is Required
+          </div>
+        </div>
+
+        <div class="address-line">
+          <input placeholder="organizationAddress/ Province/ Region" type="text" formControlName="state" />
+        </div>
+        <div *ngIf="f['organizationAddress'].value.state.touched && f['organizationAddress'].value.state.invalid">
+          <div
+            *ngIf="f['organizationAddress'].value.state.errors && f['organizationAddress'].value.state.errors['required']">
+            State is Required
+          </div>
+        </div>
+
+        <div class="address-line">
+          <input placeholder="Country" type="text" formControlName="country" />
+        </div>
+        <div
+          *ngIf="f['organizationAddress'].value.country.touched && f['organizationAddress'].value.country.touched.invalid">
+          <div
+            *ngIf="f['organizationAddress'].value.country.touched.errors && f['organizationAddress'].value.country.touched.errors['required']">
+            Country is Required
+          </div>
         </div>
       </div>
+
+      <button class="btn" type="submit">
+        Save Changes
+      </button>
+
     </form>
-    <div class="flex justify-center pt-5">
-      <button mat-button class="btn" routerLink="/dashboard">Save
-        Changes</button>
-    </div>
   </div>
-  <app-footer class="mt-5"></app-footer>
 </div>
+
+<app-footer></app-footer>

@@ -11,7 +11,7 @@
     <form>
       <div class="form-group">
         <label class="labelName">Full Name</label>
-        <input type="text" class="form-control" formControlName="fullName" placeholder="Enter Fullname" value="" />
+        <input type="text" class="form-control" formControlName="fullName" placeholder="Enter Full Name" value="" />
         <div class="invalid">
           <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
             <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
