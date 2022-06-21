@@ -5,21 +5,21 @@ import { ReportService } from 'src/app/data/service/Report/report.service';
 
 
 @Component({
-  selector: 'app-active-trials',
-  templateUrl: './active-trials.component.html',
-  styleUrls: ['./active-trials.component.css']
+  selector: 'app-unsubscription',
+  templateUrl: './unsubscription.component.html',
+  styleUrls: ['./unsubscription.component.css']
 })
-export class ActiveTrialsComponent implements OnInit {
+export class UnsubscriptionComponent implements OnInit {
   stats!: Stats[];
   chartData!: SingleDataSet;
   chartLabels!: Label[];
   constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
-    this.getSubscriptionStats();
+    this.getChartData();
   }
-  getSubscriptionStats(): void {
-    this.reportService.getSubscriptionStats().subscribe((stats) => {
+  getChartData(): void {
+    this.reportService.getUnsubscriptionStats().subscribe((stats) => {
       this.stats = stats;
       this.chartData = stats.map((stat) => stat.count);
       this.chartLabels = stats.map((stat) => stat.type);

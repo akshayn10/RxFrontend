@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { AddOnUsage } from '../../schema/addUsage';
 import { CustomerSubscription } from '../../schema/cutomerSubscriptions';
 import { Subscription } from '../../schema/subcription';
@@ -12,7 +13,7 @@ import { SubscriptionStats } from '../../schema/subscriptionStats';
 export class SubscriptionService {
 
 
-  readonly subscriptionBaseApiUrl = 'https://localhost:44352/api/subscription';
+  readonly subscriptionBaseApiUrl = environment.baseApiUrl+'subscription';
 
   constructor(private httpClient:HttpClient) { }
 

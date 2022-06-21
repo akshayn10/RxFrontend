@@ -13,20 +13,13 @@ export class ProfileComponent implements AfterViewInit,OnInit {
 
 
   constructor(private router: Router,private _authService:AuthService) {
-    if(this._authService.currentUserValue){
-    this.currentUser = this._authService.currentUserValue;
 
-      // console.log(this._authService.currentUserValue);
-
-    }
   }
   ngOnInit(): void {
-    console.log("currentUser",this.currentUser);
-    // this._authService.getcurrentUser.subscribe(x => this.currentUser = x);
-    this._authService.currentUser.subscribe(x => this.currentUser = x);
-    console.log("acurrentUser",this._authService.currentUserValue);
-    console.log("acurrentUserpp",this.currentUser?.userName);
-
+    if(this._authService.currentUserValue){
+      this.currentUser = this._authService.currentUserValue;
+      console.log(this.currentUser+'efgv');
+      }
   }
   ngAfterViewInit(): void {
 

@@ -7,9 +7,7 @@ import { Role } from 'src/app/core/constants/role';
 const routes: Routes = [
   {
     path: '',
-    component: CustomerComponent,
-    // canActivate: [AuthGuard],
-    // data: { roles: [Role.Owner] }
+    component: CustomerComponent
   },
   {
     path: 'details/:id',

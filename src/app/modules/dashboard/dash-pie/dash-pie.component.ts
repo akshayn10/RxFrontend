@@ -11,19 +11,38 @@ export class DashPieComponent implements OnInit {
   doughChartOptions: ChartOptions = {
     responsive: true,
     legend: {
-      position: 'bottom',
-      labels: { fontColor: 'black', usePointStyle: true },
-    },
-    elements: {
-      arc: {
-        borderWidth: 2,
+      position: 'right',  
+      labels: { 
+        fontColor: '#292C38', 
+        usePointStyle: true,
+        fontFamily: 'Poppins', 
+        fontStyle: '600',
+        fontSize: 14,
       },
     },
-    showLines: true,
+
     tooltips: {
       enabled: true,
       mode: 'single',
+      backgroundColor: 'rgba(41, 44, 56, 0.8)',
+      bodyFontColor: '#ECEFF4',
+      bodyFontFamily: 'Poppins',
+      bodyFontSize: 12,
+      bodyFontStyle: '600',
+      bodySpacing: 6,
+      xPadding: 12,
+      yPadding: 12,
+      position: "nearest",
     },
+
+    elements: {
+      arc: {
+        borderWidth: 0,
+      },
+    },
+
+    showLines: true,
+
     spanGaps: true,
   };
 

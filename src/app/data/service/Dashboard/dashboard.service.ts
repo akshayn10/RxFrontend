@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { DashboardStats } from '../../schema/dashboardStats';
 import { TableStats, TableVm } from '../../schema/dashboardTable';
 import { Stats } from '../../schema/Stats';
@@ -10,10 +11,7 @@ import { Stats } from '../../schema/Stats';
 })
 export class DashboardService {
 
-
-
-
-  readonly baseURL = 'https://localhost:44352/api/dashboard';
+  readonly baseURL = environment.baseApiUrl+'dashboard';
 
   constructor(private http:HttpClient) { }
 

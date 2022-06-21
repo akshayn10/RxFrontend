@@ -12,16 +12,11 @@ import { Stats } from 'src/app/data/schema/Stats';
 export class ReportChartComponent implements OnInit {
   @Input() chartData!: SingleDataSet;
   @Input() chartLabels!: Label[];
+  @Input() chartType:ChartType='line' ;
 
-  lineChartData: SingleDataSet = [85, 72, 78, 75, 77, 75];
-  lineChartLabels: Label[] = [
-    ['January'],
-    ['February'],
-    ['March'],
-    ['April'],
-    ['May'],
-    ['June'],
-  ];
+  lineChartData: SingleDataSet = [];
+
+  lineChartLabels: Label[] = [];
   lineChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -33,11 +28,12 @@ export class ReportChartComponent implements OnInit {
   ];
   lineChartLegend = false;
   lineChartPlugins = [];
-  lineChartType: ChartType = 'line';
+  lineChartType: ChartType = this.chartType;
 
   constructor() {}
   ngOnInit(): void {
     this.lineChartData = this.chartData;
     this.lineChartLabels = this.chartLabels;
+    this.lineChartType = this.chartType;
   }
 }
