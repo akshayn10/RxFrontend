@@ -38,13 +38,13 @@ export class AddOnTableComponent implements OnInit {
   }
 
 
-  openDialog(row:any) {
-    console.log('Row clicked', row);
-    const dialog = this._dialog.open(DialogComponent, {
-      width: '450px',
-      height: '500px',
-      // Can be closed only by clicking the close button
-      data: row
-    });
-  }
+  // openDialog(row:AddOnUsage) {
+  //   console.log('Row clicked', row);
+  //   const dialog = this._dialog.open(DialogComponent, {
+  //     width: '450px',
+  //     height: '500px',
+  //     // Can be closed only by clicking the close button
+  //     data: row
+  //   });
+  // }
 }

@@ -7,6 +7,7 @@ import { ManageUserroleComponent } from './manage-org-role/manage-userrole.compo
 import { AddUserComponent } from './add-user/add-user.component'
 import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     OrganizationRoutes,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ]
 })
 export class  OrganizationModule { }

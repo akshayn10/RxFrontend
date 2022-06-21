@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { MarketplaceProduct } from '../../schema/marketplaceProduct';
+import { MarketplaceProduct, MarketplaceProductForDisplay } from '../../schema/marketplaceProduct';
 
 
 @Injectable({
@@ -33,7 +33,7 @@ export class MarketplaceService {
     },{responseType:'text'});
   }
 
-  getProducts(searchKey:string):Observable<MarketplaceProduct[]>{
+  getProducts(searchKey:string):Observable<MarketplaceProductForDisplay[]>{
     let params = new HttpParams(
       {
         fromObject:{
@@ -41,7 +41,7 @@ export class MarketplaceService {
         }
       }
     );
-    return this.http.get<MarketplaceProduct[]>(this.baseURL,{params:params});
+    return this.http.get<MarketplaceProductForDisplay[]>(this.baseURL,{params:params});
   }
   getProductById(productId:string):Observable<MarketplaceProduct>{
     return this.http.get<MarketplaceProduct>(`${this.baseURL}/${productId}`);
