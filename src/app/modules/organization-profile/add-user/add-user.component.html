@@ -1,79 +1,56 @@
 <div>
-    <app-top-bar></app-top-bar>
-    <!-- component -->
+  <app-top-bar></app-top-bar>
+  <!-- component -->
 
-    <div class="container-1">
-        <h1>Add User</h1>
-    </div>
+  <div class="container-1">
+    <h1>Add User</h1>
+  </div>
 
-    <div class="container-2">
-        <form>
-            <!-- <form [formGroup]="UserProfileForm" (ngSubmit)="onSubmit()"> -->
-            <div class="form-group">
-                <label>User Name</label>
-                <div>
-                    <input type="text" class="form-control" formControlName="userName" />
-                </div>
-                <div class="invalid">
-                    <div *ngIf="f['userName'].touched && f['userName'].invalid">
-                        <div *ngIf="f['userName'].errors && f['userName'].errors['required']">
-                            User Name is required
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Email</label>
-                <div>
-                    <input type="text" class="form-control" formControlName="email" />
-                </div>
-                <div class="invalid">
-                    <div *ngIf="f['email'].touched && f['email'].invalid">
-                        <div *ngIf="f['email'].errors && f['email'].errors['required']">
-                            Email is required
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group" formGroupName="duration">
-                <label class="labelName">Bill Every</label>
-                <input type="text" class="form-control" formControlName="value"/>
-                <!-- <mat-form-field appearance="fill">
-                    <mat-label>Select</mat-label>
-                    <mat-select>
-                      <mat-option value="one">First option</mat-option>
-                      <mat-option value="two">Second option</mat-option>
-                    </mat-select>
-                  </mat-form-field> -->
-                <div class="invalid">
-                  <div *ngIf="f['duration'].value.value.touched && f['duration'].value.value.invalid">
-                    <div *ngIf="f['duration'].value.value.errors && f['duration'].value.value.errors['required']">
-                      Duration period is required.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            <div class="form-group">
-                <label>Choose Role</label>
-                <div class="flex flex-col">
-                    <div>
-                        <input type="radio" class="" formControlName="admin" id="Admin" />
-                        <label for="Admin">Admin</label>
-                    </div>
-                    <div>
-                        <input type="radio" class="" formControlName="f-user" id="Finance-user" />
-                        <label for="Finance-user">Finance User</label>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <div class="btn-container">
-            <button mat-button class="btn" routerLink="/organization">Add</button>
-            <button mat-button class="btn-2" routerLink="/organization">Cancel</button>
+  <div class="container-2">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>User Name</label>
+        <div>
+          <input type="text" class="form-control" formControlName="username" />
         </div>
-    </div>
+        <div class="invalid">
+          <div *ngIf="f['username'].touched && f['username'].invalid">
+            <div *ngIf="f['username'].errors && f['username'].errors['required']">
+              User Name is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <div>
+          <input type="text" class="form-control" formControlName="email" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['email'].touched && f['email'].invalid">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+              Email is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="labelName">Select role</label>
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-select formControlName="role">
+            <mat-option *ngFor="let role of roles" [value]="role.value">
+              {{role.type}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="btn-container">
+        <button mat-button class="btn" [disabled]="userForm.invalid" type="submit">Add</button>
+        <button mat-button class="btn-2" routerLink="/organization">Cancel</button>
+      </div>
+    </form>
+    <div>{{response}}</div>
+
+  </div>
 </div>
