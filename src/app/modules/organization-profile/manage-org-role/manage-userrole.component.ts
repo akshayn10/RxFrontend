@@ -14,8 +14,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 2, name: 'Akshajan_A', email: 'skshajan@gmail.com', role: 'Finance USer' },
   { position: 3, name: 'Ajeevitha_S', email: 'ajee@gmail.com', role: 'Admin' },
   { position: 4, name: 'Sarumatha_A', email: 'sarumatha@gmail.com', role: 'Account Owner' },
-
-
 ];
 
 @Component({

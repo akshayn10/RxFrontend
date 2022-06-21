@@ -3,6 +3,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileRoutes } from './profile-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     SharedModule,
-    ProfileRoutes
+    ProfileRoutes,
+    ReactiveFormsModule
   ]
 })
 export class ProfileModule { }
