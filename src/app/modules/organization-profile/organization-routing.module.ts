@@ -24,4 +24,4 @@ const routes: Routes = [
 ];
 
 
-export const organizationRoutes = RouterModule.forChild(routes);
+export const OrganizationRoutes = RouterModule.forChild(routes);

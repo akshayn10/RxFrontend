@@ -1,44 +1,72 @@
 <div>
   <app-top-bar></app-top-bar>
   <div class="title-container">
-    <div class="title">User Profile</div>
-    <div class="intro">
-      View and Manage all your account associated information.
+    <div>
+      <div class="title">User Profile</div>
+      <div class="intro">
+        View and Manage all your account associated information.
+      </div>
     </div>
+    <!-- <div class="btn-container">
+      <a [routerLink]="['/product/addProduct']">
+        <button mat-button class="name-button">Manage Organization Roles</button>
+      </a>
+    </div> -->
   </div>
 
-  <div class="container">
-    <form>
+  <div class="box-2">
+    <form [formGroup]="UserProfileForm" (ngSubmit)="onSubmit()">
+
       <div class="form-group">
-        <label class="labelName">Full Name</label>
-        <input type="text" class="form-control" formControlName="fullName" placeholder="Enter Full Name" value="" />
+        <label>Full Name</label>
+        <div>
+          <input type="text" class="form-control" formControlName="fullName" />
+        </div>
         <div class="invalid">
           <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
             <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
-              Full name is Required
+              Full Name is required
             </div>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="labelName">E-mail Address</label>
-        <input type="text" class="form-control" formControlName="email" placeholder="Enter Email" value="" />
+        <label>Email</label>
+        <div>
+          <input type="text" class="form-control" formControlName="email" />
+        </div>
         <div class="invalid">
           <div *ngIf="f['email'].touched && f['email'].invalid">
             <div *ngIf="f['email'].errors && f['email'].errors['required']">
-              Email is required.
-            </div>
-            <div *ngIf="f['email'].errors && f['email'].errors['email']">
-              Email must be a valid email address.
+              Email is required
             </div>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="labelName">User Name</label>
-        <input type="text" class="form-control" formControlName="userName" placeholder="Enter Username" value="" />
+        <label>Profile Image</label>
+        <div class="logoFlex">
+          <div class="imgup">
+            <div class="icon-container">
+              <img src="assets/icons/img.png" alt="" />
+              <div *ngIf="!imageSelected">Drop your image here, or browse</div>
+            </div>
+            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="profilePath" />
+          </div>
+          <div class="previewImg" *ngIf="profilePreviewPath && profilePreviewPath !== ''">
+            <img height="120px" [src]="profilePreviewPath" [alt]="UserProfileForm.value.name" />
+          </div>
+        </div>
+        <div class="invalid"></div>
+      </div>
+
+      <div class="form-group">
+        <label>User Name</label>
+        <div>
+          <input type="text" class="form-control" formControlName="userName" />
+        </div>
         <div class="invalid">
           <div *ngIf="f['userName'].touched && f['userName'].invalid">
             <div *ngIf="f['userName'].errors && f['userName'].errors['required']">
@@ -48,90 +76,12 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="labelName">Language</label>
-        <input type="text" class="form-control" formControlName="language" placeholder="Enter Language" value="" />
-        <div class="invalid">
-          <div *ngIf="f['language'].touched && f['language'].invalid">
-            <div *ngIf="f['language'].errors && f['language'].errors['required']">
-              language is required
-            </div>
-          </div>
-        </div>
-      </div>
+      <button class="btn" type="submit">
+        Save Changes
+      </button>
 
-      <div class="form-group">
-        <label class="labelName">Address</label>
-        <div class="form-control-address">
-          <div class="address-line" style="margin-bottom: 10px;">
-            <input placeholder="Address Line 01" type="text" formControlName="addressLine1" />
-          </div>
-          <div
-            *ngIf="f['organizationAddress'].value.addressLine1.touched && f['organizationAddress'].value.addressLine1.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.addressLine1.errors && f['organizationAddress'].value.addressLine1.errors['required']">
-              Address 1 is Required
-            </div>
-          </div>
-
-          <div class="address-line" style="margin-bottom: 10px;">
-            <input placeholder="Address Line 02" type="text" formControlName="addressLine2" />
-          </div>
-          <div
-            *ngIf="f['organizationAddress'].value.addressLine2.touched && f['organizationAddress'].value.addressLine2.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.addressLine2.errors && f['organizationAddress'].value.addressLine2.errors['required']">
-              Address 1 Required
-            </div>
-          </div>
-
-          <div class="address-line" style="margin-bottom: 10px;">
-            <input placeholder="City" type="text" formControlName="city" />
-          </div>
-          <div *ngIf="f['organizationAddress'].value.city.touched && f['organizationAddress'].value.city.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.city.errors && f['organizationAddress'].value.city.errors['required']">
-              City is Required
-            </div>
-          </div>
-
-          <div class="address-line" style="margin-bottom: 10px;">
-            <input placeholder="Province/ Region" type="text" formControlName="state" />
-          </div>
-          <div *ngIf="f['organizationAddress'].value.state.touched && f['organizationAddress'].value.state.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.state.errors && f['organizationAddress'].value.state.errors['required']">
-              State is Required
-            </div>
-          </div>
-
-          <div class="address-line">
-            <input placeholder="Country" type="text" formControlName="country" />
-          </div>
-          <div
-            *ngIf="f['organizationAddress'].value.country.touched && f['organizationAddress'].value.country.touched.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.country.touched.errors && f['organizationAddress'].value.country.touched.errors['required']">
-              Country is Required
-            </div>
-          </div>
-        </div>
-        <div class="invalid"></div>
-      </div>
-
-      <div class="form-group">
-        <label class="labelName">Mobile Number</label>
-        <input type="text" class="form-control" formControlName="number" placeholder="+94 77 123 4567" value="" />
-        <div *ngIf="f['number'].touched && f['number'].invalid">
-          <div *ngIf="f['number'].errors && f['number'].errors['required']">
-            Number is required
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group-btn">
-        <button class="btn" type="submit">Save Changes</button>
-      </div>
     </form>
-    <app-footer></app-footer>
   </div>
+</div>
+
+<app-footer></app-footer>
