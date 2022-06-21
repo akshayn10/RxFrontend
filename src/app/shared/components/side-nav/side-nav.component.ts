@@ -1,17 +1,21 @@
-import { Component, AfterViewInit} from '@angular/core';
+import { Component, AfterViewInit, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/data/service/auth/auth.service';
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.css'],
 })
-export class SideNavComponent implements AfterViewInit {
+export class SideNavComponent implements OnInit {
+  role!:string|null;
 
 
-  constructor(private router: Router) {}
-  ngAfterViewInit(): void {
+  constructor(private router: Router,private _authService:AuthService) {}
+  ngOnInit(): void {
+    this.role=this._authService.getRole();
   }
+
   isDashboard() {
     return this.router.url == '/dashboard';
   }

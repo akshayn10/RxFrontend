@@ -6,40 +6,32 @@ import { AuthService } from 'src/app/data/service/auth/auth.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent implements AfterViewInit,OnInit {
-  currentUser! : LoginResponseData|null;
+export class ProfileComponent implements OnInit {
+  currentUser!: LoginResponseData | null;
+  role!: string | null;
 
-
-  constructor(private router: Router,private _authService:AuthService) {
-
-  }
+  constructor(private router: Router, private _authService: AuthService) {}
   ngOnInit(): void {
-    if(this._authService.currentUserValue){
+    if (this._authService.currentUserValue) {
       this.currentUser = this._authService.currentUserValue;
-      console.log(this.currentUser+'efgv');
-      }
+      console.log(this.currentUser + 'efgv');
+    }
+    this.role = this._authService.getRole();
   }
-  ngAfterViewInit(): void {
-
-  }
-
 
   isProfile() {
     return this.router.url == '/profile';
   }
-  navigateToOrganizationProfile(){
+  navigateToOrganizationProfile() {
     this.router.navigate(['/organization']);
-
   }
-  navigateToUserProfile(){
+  navigateToUserProfile() {
     this.router.navigate(['/profile']);
-
   }
-  logout(){
+  logout() {
     this._authService.signOut();
     this.router.navigate(['/auth/login']);
-
   }
 }

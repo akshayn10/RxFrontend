@@ -24,7 +24,7 @@ export class UserService {
   }
 
   getUsersForOrganization(organizationId:string):Observable<OrganizationUser[]>{
-    return this.http.get<OrganizationUser[]>(this.userBaseApiUrl+'/organization-users/'+organizationId);
+    return this.http.get<OrganizationUser[]>(this.userBaseApiUrl+'organization-users/'+organizationId);
   }
   addUserToOrganization(value: any) {
     return this.http.post(this.userBaseApiUrl+"add-user", value,{

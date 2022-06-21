@@ -9,9 +9,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./modules/home/home.module').then((m) => m.HomeModule),
-    canActivate: [AuthGuard],
-    data: {}
+      import('./modules/home/home.module').then((m) => m.HomeModule)
   },
 
   {
@@ -43,7 +41,9 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/customer/customer.module').then((m) => m.CustomerModule),
     canActivate: [AuthGuard],
-    data: {}
+    data: {
+      roles:[Role.Admin]
+    }
   },
 
   {
@@ -74,7 +74,7 @@ const routes: Routes = [
     loadChildren: () =>import('./modules/subscription/subscription.module').then((m) => m.SubscriptionModule),
       canActivate: [AuthGuard],
       data: {
-        roles:[Role.Admin]
+        // roles:[Role.Admin]
       }
   },
   {
