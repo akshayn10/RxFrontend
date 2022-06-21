@@ -1,8 +1,7 @@
 export interface SystemSubscriptionPlan {
-  PlanId:string,
-    Name:string,
-    Description:string,
-    Price:number,
-    Duration:number
-
+  planId: string;
+  name: string;
+  description: string;
+  price: number;
+  duration: number;
 }

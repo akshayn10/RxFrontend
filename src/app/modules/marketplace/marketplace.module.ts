@@ -25,7 +25,7 @@ import {  MatCardModule } from '@angular/material/card';
     MarketplaceFlex1Component,
     MarketplaceFlex2Component,
     MarketplaceProductDetailComponent,
-    
+
   ],
   imports: [
     CommonModule,
@@ -39,12 +39,11 @@ import {  MatCardModule } from '@angular/material/card';
     MatAutocompleteModule,
     MatDividerModule,
     MatTableModule,
-    MatCardModule
-  
+    MatCardModule,
+
   ],
 })
 export class MarketplaceModule { }
 
 
-    
-    
+

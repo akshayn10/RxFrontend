@@ -74,66 +74,64 @@
             </div>
           </div>
 
-            <div class="address-line" style="margin-bottom: 10px;">
-              <input placeholder="Address Line 02" type="text" formControlName="addressLine2" />
-            </div>
+          <div class="address-line" style="margin-bottom: 10px;">
+            <input placeholder="Address Line 02" type="text" formControlName="addressLine2" />
+          </div>
+          <div
+            *ngIf="f['organizationAddress'].value.addressLine2.touched && f['organizationAddress'].value.addressLine2.invalid">
             <div
-              *ngIf="f['organizationAddress'].value.addressLine2.touched && f['organizationAddress'].value.addressLine2.invalid">
-              <div
-                *ngIf="f['organizationAddress'].value.addressLine2.errors && f['organizationAddress'].value.addressLine2.errors['required']">
-                Address 1 Required
-              </div>
-            </div>
-
-            <div class="address-line" style="margin-bottom: 10px;">
-              <input placeholder="City" type="text" formControlName="city" />
-            </div>
-            <div 
-              *ngIf="f['organizationAddress'].value.city.touched && f['organizationAddress'].value.city.invalid">
-              <div
-                *ngIf="f['organizationAddress'].value.city.errors && f['organizationAddress'].value.city.errors['required']">
-                City is Required
-              </div>
-            </div>
-
-            <div class="address-line" style="margin-bottom: 10px;">
-              <input placeholder="Province/ Region" type="text" formControlName="state" />
-            </div>
-            <div 
-              *ngIf="f['organizationAddress'].value.state.touched && f['organizationAddress'].value.state.invalid">
-              <div
-                *ngIf="f['organizationAddress'].value.state.errors && f['organizationAddress'].value.state.errors['required']">
-                State is Required
-              </div>
-            </div>
-
-            <div class="address-line">
-              <input placeholder="Country" type="text" formControlName="country" />
-            </div>
-            <div
-              *ngIf="f['organizationAddress'].value.country.touched && f['organizationAddress'].value.country.touched.invalid">
-              <div
-                *ngIf="f['organizationAddress'].value.country.touched.errors && f['organizationAddress'].value.country.touched.errors['required']">
-                Country is Required
-              </div>
+              *ngIf="f['organizationAddress'].value.addressLine2.errors && f['organizationAddress'].value.addressLine2.errors['required']">
+              Address 1 Required
             </div>
           </div>
-          <div class="invalid"></div>
-        </div>
 
-        <div class="form-group">
-          <label class="labelName">Mobile Number</label>
-          <input type="text" class="form-control" formControlName="number" placeholder="+94 77 123 4567" value="" />
-          <div *ngIf="f['number'].touched && f['number'].invalid">
-            <div *ngIf="f['number'].errors && f['number'].errors['required']">
-              Number is required
+          <div class="address-line" style="margin-bottom: 10px;">
+            <input placeholder="City" type="text" formControlName="city" />
+          </div>
+          <div *ngIf="f['organizationAddress'].value.city.touched && f['organizationAddress'].value.city.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.city.errors && f['organizationAddress'].value.city.errors['required']">
+              City is Required
+            </div>
+          </div>
+
+          <div class="address-line" style="margin-bottom: 10px;">
+            <input placeholder="Province/ Region" type="text" formControlName="state" />
+          </div>
+          <div *ngIf="f['organizationAddress'].value.state.touched && f['organizationAddress'].value.state.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.state.errors && f['organizationAddress'].value.state.errors['required']">
+              State is Required
+            </div>
+          </div>
+
+          <div class="address-line">
+            <input placeholder="Country" type="text" formControlName="country" />
+          </div>
+          <div
+            *ngIf="f['organizationAddress'].value.country.touched && f['organizationAddress'].value.country.touched.invalid">
+            <div
+              *ngIf="f['organizationAddress'].value.country.touched.errors && f['organizationAddress'].value.country.touched.errors['required']">
+              Country is Required
             </div>
           </div>
         </div>
+        <div class="invalid"></div>
+      </div>
 
-        <div class="form-group-btn">
-          <button class="btn" type="submit">Save Changes</button>
+      <div class="form-group">
+        <label class="labelName">Mobile Number</label>
+        <input type="text" class="form-control" formControlName="number" placeholder="+94 77 123 4567" value="" />
+        <div *ngIf="f['number'].touched && f['number'].invalid">
+          <div *ngIf="f['number'].errors && f['number'].errors['required']">
+            Number is required
+          </div>
         </div>
+      </div>
+
+      <div class="form-group-btn">
+        <button class="btn" type="submit">Save Changes</button>
+      </div>
     </form>
     <app-footer></app-footer>
   </div>

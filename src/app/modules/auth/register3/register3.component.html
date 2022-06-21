@@ -7,30 +7,27 @@
     </div>
     <div class="box">
       <div class="box-2">
-        <div class="header">REGISTER</div>
+        <div class="header">System Subscription</div>
         <form [formGroup]="registerForm3" (ngSubmit)="onSubmit()">
 
             <div class="form-group">
                 <label style="font-size: 18px;">Choose Plan</label>
                 <div>
+                  <div *ngFor="let plan of plans">
+                    {{plan.name}}<br>{{plan.price}}<br>{{plan.description}}<br>
+                  </div>
 
-                <!-- <div class="custom-control custom-radio label-cont" *ngFor="let plan of plans">
-                  <input id="1month" type="radio" class="custom-control-input" value="1month" name="plan" formControlName="plan">
-                  <label class="custom-control-label1" >{{plan.Name}}</label>
-                  <label class="custom-control-label" >$90.00</label>
-                </div> -->
-                <div class="form-group" *ngIf="plans" >
+                <div class="form-group" >
                   <label class="labelName">Plans</label>
                   <mat-form-field class="form-field" appearance="fill">
                     <mat-select formControlName="systemSubscriptionPlanId">
-                      <mat-option *ngFor="let plan of plans" [value]="plan.PlanId">
-                        {{plan.Price}}
+                      <mat-option  *ngFor="let plan of plans" [value]="plan.planId">
+                        {{plan.name}}<br>
+
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
                 </div>
-                <div>{{plans|json}}</div>
-
               </div>
 
             </div>
@@ -46,31 +43,13 @@
             </div>
 
             <div class="blank" style="height: 15px;"></div>
-
-            <!-- <div class="form-group">
-                <label style="font-size: 18px;">Choose Plan Cycle</label>
-                <div class="custom-control custom-radio">
-                  <input id="onetime" type="radio" class="custom-control-input" value="onetime" name="planCycle" formControlName="planCycle">
-                  <label class="custom-control-label" for="onetime">One Time</label>
-                </div>
-
-                <div class="custom-control custom-radio">
-                  <input id="recurring" type="radio" class="custom-control-input" value="recurring" name="planCycle" formControlName="planCycle">
-                  <label class="custom-control-label" for="recurring">Recurring</label>
-                </div>
-            </div>
-             -->
             <div class="form-group">
                 <button class="btn" routerLink="/signup">Previous</button>
                 <button class="btn2" type="submit">Proceed Payment</button>
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
             </div>
+            <div>{{response}}</div>
         </form>
-
-        <!-- <div style="margin-left: 15%;">
-          <a class="forgot-btn">Forgot password?</a>
-          <a class="forgot-btn"> Don't have an account? </a>
-        </div> -->
-
       </div>
     </div>
   </div>
