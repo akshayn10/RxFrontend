@@ -46,4 +46,5 @@ export class MarketplaceService {
   getProductById(productId:string):Observable<MarketplaceProduct>{
     return this.http.get<MarketplaceProduct>(`${this.baseURL}/${productId}`);
   }
+  
 }
