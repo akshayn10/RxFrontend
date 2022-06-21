@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActiveTrialsComponent } from './active-trials.component';
+import { UnsubscriptionComponent } from './unsubscription.component';
 
 describe('ActiveTrialsComponent', () => {
-  let component: ActiveTrialsComponent;
-  let fixture: ComponentFixture<ActiveTrialsComponent>;
+  let component: UnsubscriptionComponent;
+  let fixture: ComponentFixture<UnsubscriptionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ActiveTrialsComponent ]
+      declarations: [ UnsubscriptionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ActiveTrialsComponent);
+    fixture = TestBed.createComponent(UnsubscriptionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

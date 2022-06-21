@@ -17,11 +17,11 @@ export class UpgradesComponent implements OnInit {
   constructor(private reportService: ReportService) {}
 
   ngOnInit(): void {
-    this.getSubscriptionStats();
+    this.getGraphData();
   }
 
-  getSubscriptionStats(): void {
-    this.reportService.getSubscriptionStats().subscribe((stats) => {
+  getGraphData(): void {
+    this.reportService.getUpgradesStats().subscribe((stats) => {
       this.stats = stats;
       this.chartData = stats.map((stat) => stat.count);
       this.chartLabels = stats.map((stat) => stat.type);

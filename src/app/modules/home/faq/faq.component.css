@@ -33,7 +33,7 @@ summary {
     font-size: 20px;
     color: #292C38;
     display: flex;
-    justify-item: space-between;
+    /* justify-item: space-between; */
     align-items: center;
     margin-bottom: 25px;
 

@@ -10,8 +10,8 @@ import { ReportService } from 'src/app/data/service/Report/report.service';
 })
 export class ActivationsComponent implements OnInit {
 
- 
- 
+
+
   stats!: Stats[];
   chartData!: SingleDataSet;
   chartLabels!: Label[];
@@ -23,7 +23,7 @@ export class ActivationsComponent implements OnInit {
   }
 
   getSubscriptionStats(): void {
-    this.reportService.getSubscriptionStats().subscribe((stats) => {
+    this.reportService.getActivationsStats().subscribe((stats) => {
       this.stats = stats;
       this.chartData = stats.map((stat) => stat.count);
       this.chartLabels = stats.map((stat) => stat.type);

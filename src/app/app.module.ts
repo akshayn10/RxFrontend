@@ -17,17 +17,18 @@ import { ReportsModule } from './modules/reports/reports.module';
 import { MarketplaceModule } from './modules/marketplace/marketplace.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { OrganizationModule } from './modules/organization-profile/organization.module';
-import { HttpInterceptorService } from './core/interceptors/http-interceptor.service';
+import { TokenInterceptorService } from './core/interceptors/token-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { OrganizationIdInterceptorService } from './core/interceptors/organizationId-interceptor.service';
 
 @NgModule({
   declarations: [AppComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     BrowserAnimationsModule,
     AuthModule,
+    SharedModule,
     DashboardModule,
     CoreModule,
     DataModule,
@@ -39,9 +40,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ReportsModule,
     MarketplaceModule,
     ProfileModule,
-    OrganizationModule
+    OrganizationModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS,useClass:HttpInterceptorService, multi: true }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS,useClass:TokenInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

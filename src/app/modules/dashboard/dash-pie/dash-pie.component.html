@@ -2,8 +2,8 @@
   <div class="pie-chart">
     <div class="chart" *ngIf="doughnutChartLabels && doughnutChartData">
       <div style="display: block;">
-        <canvas height="200px" width="300px" baseChart [data]="doughnutChartData" [options]="doughChartOptions" [labels]="doughnutChartLabels"
-          [chartType]="doughnutChartType">
+        <canvas baseChart [data]="doughnutChartData" [options]="doughChartOptions"
+          [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
         </canvas>
       </div>
     </div>

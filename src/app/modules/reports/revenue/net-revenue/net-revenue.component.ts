@@ -18,11 +18,11 @@ export class NetRevenueComponent implements OnInit {
   constructor(private reportService: ReportService) {}
 
   ngOnInit(): void {
-    this.getSubscriptionStats();
+    this.getRevenueStats();
   }
 
-  getSubscriptionStats(): void {
-    this.reportService.getSubscriptionStats().subscribe((stats) => {
+  getRevenueStats(): void {
+    this.reportService.getRevenueStats().subscribe((stats) => {
       this.stats = stats;
       this.chartData = stats.map((stat) => stat.count);
       this.chartLabels = stats.map((stat) => stat.type);
