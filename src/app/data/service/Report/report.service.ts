@@ -8,15 +8,15 @@ import { Stats } from '../../schema/Stats';
   providedIn: 'root',
 })
 export class ReportService {
-  readonly baseURL = environment.baseApiUrl+'report/';
+  readonly baseURL = environment.baseApiUrl + 'report/';
 
   constructor(private http: HttpClient) {}
 
   getSubscriptionStats(): Observable<Stats[]> {
-    return this.http.get<Stats[]>(this.baseURL + 'subscription-summary');
+    return this.http.get<Stats[]>(this.baseURL + 'sub-summary');
   }
   getActivationsStats(): Observable<Stats[]> {
-    return this.http.get<Stats[]>(this.baseURL + 'subscription-activation');
+    return this.http.get<Stats[]>(this.baseURL + 'sub-activation');
   }
   getUpgradesStats(): Observable<Stats[]> {
     return this.http.get<Stats[]>(this.baseURL + 'upgrade');
