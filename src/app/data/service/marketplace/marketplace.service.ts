@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { MarketplaceProduct, MarketplaceProductForDisplay } from '../../schema/marketplaceProduct';
 
+
 @Injectable({
   providedIn: 'root',
 })
