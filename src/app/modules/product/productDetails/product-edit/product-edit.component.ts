@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './product-edit.component.html',
   styleUrls: ['./product-edit.component.css']
 })
+
 export class ProductEditComponent implements OnInit {
   productId: string;
   product!: Product;
@@ -37,7 +38,6 @@ export class ProductEditComponent implements OnInit {
       logoImage: [''],
       webhookURL: ['', [Validators.required]],
       redirectUrl: ['', [Validators.required]],
-
       freeTrialDays: [0, [Validators.required]],
     });
   }
@@ -93,8 +93,4 @@ export class ProductEditComponent implements OnInit {
       this.imageSelected = true;
     }
   }
-
-
-
-
 }
