@@ -1,20 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { AddOnPrice } from '../../schema/addOnPricePerPlan';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddOnPriceService {
-  readonly AddOnPriceUrl: any = "https://localhost:44352/api/addOnPrice";
+  readonly AddOnPriceUrl: any = environment.baseApiUrl+"addOnPrice";
 
   constructor(private http:HttpClient) { }
 
 
   createAddOnPrice(planId:string,addOnId:string,addOnPrice:any):Observable<any>{
     return this.http.post<any>(this.AddOnPriceUrl+`/${addOnId}/${planId}`,addOnPrice);
-    
+
   }
 
   getAddOnPrice(productId:string):Observable<any>{

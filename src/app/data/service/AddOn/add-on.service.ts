@@ -1,19 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { AddOnUsage } from '../../schema/addUsage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddOnService {
-  readonly AddOnUrl: any = "https://localhost:44352/api/addOn";
+  readonly AddOnUrl = environment.baseApiUrl+"addOn";
 
   constructor(private http:HttpClient) { }
 
   createAddOn(productId:string,addOn:any):Observable<any>{
     return this.http.post<any>(this.AddOnUrl+`/${productId}`,addOn);
-    
+
   }
 
   getAddOns(productId:string):Observable<any>{

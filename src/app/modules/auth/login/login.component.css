@@ -90,6 +90,11 @@ input {
   color: var(--navWhite);
   background-color: var(--primary-blue);
 }
+
+.btn:hover {
+  cursor: pointer;
+}
+
 a{
   text-decoration: none;
 }

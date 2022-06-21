@@ -14,8 +14,9 @@
         </div>
       </div>
       <div class="btn-container">
-        <a (click)="onAddToMarketplace(product.productId)">
-          <button mat-button class="btn-marketplace">+ Add to Marketplace</button>
+        <a (click)="onAddToMarketplace()">
+          <button *ngIf="!product.isAddedToMarketplace" mat-button class="btn-marketplace">+ Add to Marketplace</button>
+          <button *ngIf="product.isAddedToMarketplace" disabled mat-button class="btn-marketplace">Added to Marketplace</button>
         </a>
       </div>
     </div>
