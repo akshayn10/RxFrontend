@@ -17,50 +17,34 @@
   <div class="box-2">
     <!-- <div class="header">CREATE ORGANIZATION</div> -->
 
-    <form [formGroup]="organizationForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="organizationForm" (ngSubmit)="onEdit()">
 
 
       <div class="form-group">
         <label>Company Name</label>
         <div>
-<<<<<<< HEAD
-          <input type="text" class="form-control" formControlName="fullName" placeholder="Enter FullName"
-             />
-            </div>
-             <div class="invalid">
-        <div *ngIf="f['fullName'].touched && f['fullName'].invalid">
-          <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">
-            Full name is Required
-=======
-          <input type="text" class="form-control" formControlName="name" />
+          <input type="text" class="form-control" formControlName="name" [(ngModel)]="organization.name"/>
         </div>
         <div class="invalid">
           <div *ngIf="f['name'].touched && f['name'].invalid">
             <div *ngIf="f['name'].errors && f['name'].errors['required']">
               Company Name is required
             </div>
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
           </div>
         </div>
       </div>
-      </div>
+      
 
       <div class="form-group">
         <label>Email</label>
         <div>
-          <input type="text" class="form-control" formControlName="email" />
+          <input type="text" class="form-control" formControlName="email" [(ngModel)]="organization.email"/>
         </div>
         <div class="invalid">
-<<<<<<< HEAD
-        <div *ngIf="f['email'].touched && f['email'].invalid">
-          <div *ngIf="f['email'].errors && f['email'].errors['required']">
-            Email is required.
-=======
           <div *ngIf="f['email'].touched && f['email'].invalid">
             <div *ngIf="f['email'].errors && f['email'].errors['required']">
               Email is required
             </div>
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
           </div>
         </div>
       </div>
@@ -73,7 +57,7 @@
               <img src="assets/icons/img.png" alt="" />
               <div *ngIf="!imageSelected">Drop your image here, or browse</div>
             </div>
-            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="logoPath" />
+            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="logoPath" [(ngModel)]="organization.logoImage"/>
           </div>
           <!-- <div class="previewImg" *ngIf="">
             <img height="120px" [src]="" />
@@ -84,34 +68,12 @@
         </div>
         <div class="invalid"></div>
       </div>
-<<<<<<< HEAD
-      </div>
-=======
-
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
       <div class="form-group">
         <label>Description</label>
         <div class="description">
-          <textarea type="textarea" rows="5" formControlName="description"></textarea>
+          <textarea type="textarea" rows="5" formControlName="description" [(ngModel)]="organization.description"></textarea>
         </div>
         <div class="invalid">
-<<<<<<< HEAD
-        <div *ngIf="f['number'].touched && f['number'].invalid">
-          <div *ngIf="f['number'].errors && f['number'].errors['required']">
-            Number is required
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="form-group">
-        <label>Address</label>
-        <div class="flex flex-col">
-          <input type="text" class="form-control" formControlName="Line1" placeholder="Address Line 1" value="" />
-          <input type="text" class="form-control" formControlName="Line2" placeholder="Address Line 2" value="" />
-          <input type="text" class="form-control" formControlName="city" placeholder="City" value="" />
-          <input type="text" class="form-control" formControlName="state" placeholder="Province/Region" value="" />
-          <input type="text" class="form-control" formControlName="country" placeholder="Country" value="" />
-=======
           <div *ngIf="f['description'].touched && f['description'].invalid">
             <div *ngIf="f['description'].errors && f['description'].errors['required']">
               Description name is Required
@@ -123,7 +85,7 @@
       <div class="form-group" formGroupName="organizationAddress">
         <label>Address</label>
         <div class="address-line">
-          <input placeholder="Address Line 01" type="text" formControlName="addressLine1" />
+          <input placeholder="Address Line 01" type="text" formControlName="addressLine1" [(ngModel)]="organization.organizationAddress.addressLine1"/>
         </div>
         <div
           *ngIf="f['organizationAddress'].value.addressLine1.touched && f['organizationAddress'].value.addressLine1.invalid">
@@ -134,7 +96,7 @@
         </div>
 
         <div class="address-line">
-          <input placeholder="Address Line 02" type="text" formControlName="addressLine2" />
+          <input placeholder="Address Line 02" type="text" formControlName="addressLine2" [(ngModel)]="organization.organizationAddress.addressLine2" />
         </div>
         <div
           *ngIf="f['organizationAddress'].value.addressLine2.touched && f['organizationAddress'].value.addressLine2.invalid">
@@ -145,7 +107,7 @@
         </div>
 
         <div class="address-line">
-          <input placeholder="City" type="text" formControlName="city" />
+          <input placeholder="City" type="text" formControlName="city" [(ngModel)]="organization.organizationAddress.city"/>
         </div>
         <div *ngIf="f['organizationAddress'].value.city.touched && f['organizationAddress'].value.city.invalid">
           <div
@@ -155,7 +117,7 @@
         </div>
 
         <div class="address-line">
-          <input placeholder="organizationAddress/ Province/ Region" type="text" formControlName="state" />
+          <input placeholder="organizationAddress/ Province/ Region" type="text" formControlName="state" [(ngModel)]="organization.organizationAddress.state"/>
         </div>
         <div *ngIf="f['organizationAddress'].value.state.touched && f['organizationAddress'].value.state.invalid">
           <div
@@ -165,7 +127,7 @@
         </div>
 
         <div class="address-line">
-          <input placeholder="Country" type="text" formControlName="country" />
+          <input placeholder="Country" type="text" formControlName="country" [(ngModel)]="organization.organizationAddress.country"/>
         </div>
         <div
           *ngIf="f['organizationAddress'].value.country.touched && f['organizationAddress'].value.country.touched.invalid">
@@ -173,7 +135,6 @@
             *ngIf="f['organizationAddress'].value.country.touched.errors && f['organizationAddress'].value.country.touched.errors['required']">
             Country is Required
           </div>
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
         </div>
       </div>
 
@@ -182,13 +143,6 @@
       </button>
 
     </form>
-<<<<<<< HEAD
-    <div class="flex justify-center pt-5">
-      <button mat-button class="btn" type="submit">Save
-        Changes</button>
-    </div>
-=======
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
   </div>
 </div>
 

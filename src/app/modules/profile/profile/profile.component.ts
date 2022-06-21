@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/data/service/auth/auth.service';
+import { UserService } from 'src/app/data/service/auth/user.service';
+import{User} from 'src/app/data/schema/user';
 
 // import { Component, OnInit } from '@angular/core';
 // import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
@@ -21,13 +24,28 @@ export class ProfilePageComponent implements OnInit {
   submitted = false;
   profilePreviewPath!: string;
   imageSelected: boolean = false;
+  userId!: string;
+  userDetail!:User;
+
   constructor(
-    private formBuilder: FormBuilder,) {
+    private formBuilder: FormBuilder,
+    private _authService: AuthService,
+    private _userService: UserService,
+    private router: Router
+  
+    ) {
 
   }
 
 
   ngOnInit(): void {
+    if (this._authService.currentUserValue) {
+      this.userId = this._authService.currentUserValue.id;
+      
+    }
+
+
+
     this.UserProfileForm = this.formBuilder.group({
       fullName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -39,6 +57,16 @@ export class ProfilePageComponent implements OnInit {
   }
 
   get f() { return this.UserProfileForm.controls; }
+
+
+  getUserById(userId: string) {
+    this._userService.getUserById(userId).subscribe(resp =>{
+        this.userDetail = resp;
+        console.log(resp);
+    })
+  }
+
+  
 
   onSubmit() {
 
@@ -54,15 +82,12 @@ export class ProfilePageComponent implements OnInit {
     console.log(formData);
     this.isLoading = true;
 
-    // this._authService.registerUser(formData).subscribe(
-    //   (data)=>{
-    //     console.log(data);
-    //     this.submitted = true;
-    //     this.isLoading = false;
-    //     this.router.navigate(['/auth/signup2']);
-    //   }
-    // )
-  }
+  this._userService.updateUser(this.userId, formData).subscribe(resp => {
+   this.UserProfileForm.reset();
+    console.log(resp);
+    this.isLoading = false;
+  })
+}
 
   onFileChange(event: any) {
     if (event.target.files.length > 0) {

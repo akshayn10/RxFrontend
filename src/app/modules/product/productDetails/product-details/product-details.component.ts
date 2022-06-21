@@ -6,13 +6,8 @@ import { AddOnDialogComponent } from '../add-on-dialog/add-on-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddOnTableComponent } from '../add-on-table/add-on-table.component';
 import { AddOnPriceDialogComponent } from '../add-on-price-dialog/add-on-price-dialog.component';
-<<<<<<< HEAD
-import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace.service';
-
-=======
 import { AuthService } from 'src/app/data/service/auth/auth.service';
 import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace.service';
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
 
 @Component({
   selector: 'app-product-details',
@@ -20,26 +15,6 @@ import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace
   styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-<<<<<<< HEAD
-  submitted = false;
-  productId:string;
-  product!: Product ;
-  planId:string;
-  showSecret=false;
-  webhookSecret='********************************************';
-
-
-
-  constructor(public _activatedRoute: ActivatedRoute,
-              public router: Router,
-              private productservice:ProductService,
-              private _dialog:MatDialog,
-              private marketplaceService:MarketplaceService ) 
-                    {
-                      this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';
-                      this.planId = this._activatedRoute.snapshot.paramMap.get('planId') || '';
-                    }
-=======
   productId: string;
   product!: Product;
   planId: string;
@@ -59,7 +34,6 @@ export class ProductDetailsComponent implements OnInit {
     this.productId = this._activatedRoute.snapshot.paramMap.get('id') || '';
     this.planId = this._activatedRoute.snapshot.paramMap.get('planId') || '';
   }
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
 
   ngOnInit(): void {
     this.getProductById(this.productId);
@@ -68,19 +42,10 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
-<<<<<<< HEAD
-
-  getProductById(productId:string){
-    this.productservice.getProductById(productId).subscribe(resp => {
-      this.product =resp ;
-
-    })
-=======
   getProductById(productId: string) {
     this.productservice.getProductById(productId).subscribe((resp) => {
       this.product = resp;
     });
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
   }
   toggleViewSecret() {
     this.showSecret = !this.showSecret;
@@ -104,13 +69,6 @@ export class ProductDetailsComponent implements OnInit {
       });
     }
   }
-<<<<<<< HEAD
-
-  onAddToMarketplace(productId :string){
-
-}
-  
-=======
   onAddToMarketplace() {
     this.__marketplaceService
       .addProductToMarketplace(
@@ -129,7 +87,6 @@ export class ProductDetailsComponent implements OnInit {
       });
   }
 
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
   openDialog() {
     const dialog = this._dialog.open(AddOnDialogComponent, {
       width: '450px',
@@ -145,9 +102,4 @@ export class ProductDetailsComponent implements OnInit {
       data: { productId: this.productId },
     });
   }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7e1f19b6d0f29c8172bd91852b62ea066558de16
 }
