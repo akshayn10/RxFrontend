@@ -32,7 +32,6 @@ import { MatSelectModule } from '@angular/material/select';
     RouterModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatInputModule,
     MatSelectModule
   ],
   exports: [

@@ -16,7 +16,7 @@ export class SystemSubscriptionService {
     return this.http.get<SystemSubscriptionPlan[]>(this.baseUrl+"plan");
   }
   createSystemSubscription(subscriptionForm:any){
-    return this.http.post(this.baseUrl+"subscription",subscriptionForm);
+    return this.http.post(this.baseUrl+"subscription",subscriptionForm,{responseType:'text'});
   }
 
 }

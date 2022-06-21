@@ -26,9 +26,9 @@ import { OrganizationIdInterceptorService } from './core/interceptors/organizati
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     BrowserAnimationsModule,
     AuthModule,
+    SharedModule,
     DashboardModule,
     CoreModule,
     DataModule,
@@ -40,11 +40,10 @@ import { OrganizationIdInterceptorService } from './core/interceptors/organizati
     ReportsModule,
     MarketplaceModule,
     ProfileModule,
-    OrganizationModule
+    OrganizationModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS,useClass:TokenInterceptorService, multi: true },
-    // { provide: HTTP_INTERCEPTORS,useClass:OrganizationIdInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS,useClass:TokenInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent],
 })

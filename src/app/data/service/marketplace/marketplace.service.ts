@@ -2,7 +2,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { MarketplaceProduct } from '../../schema/marketplaceProduct';
+import { MarketplaceProduct, MarketplaceProductForDisplay } from '../../schema/marketplaceProduct';
+
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +21,8 @@ export class MarketplaceService {
     trialDays: number,
     redirectUrl: string,
     organizationId: string
-  ): Observable<any> {
-    return this.http.post<any>(this.baseURL, {
+  ) {
+    return this.http.post(this.baseURL, {
       productId,
       description,
       name,
@@ -29,10 +30,10 @@ export class MarketplaceService {
       trialDays,
       redirectUrl,
       organizationId,
-    });
+    },{responseType:'text'});
   }
 
-  getProducts(searchKey:string):Observable<MarketplaceProduct[]>{
+  getProducts(searchKey:string):Observable<MarketplaceProductForDisplay[]>{
     let params = new HttpParams(
       {
         fromObject:{
@@ -40,7 +41,7 @@ export class MarketplaceService {
         }
       }
     );
-    return this.http.get<MarketplaceProduct[]>(this.baseURL,{params:params});
+    return this.http.get<MarketplaceProductForDisplay[]>(this.baseURL,{params:params});
   }
   getProductById(productId:string):Observable<MarketplaceProduct>{
     return this.http.get<MarketplaceProduct>(`${this.baseURL}/${productId}`);

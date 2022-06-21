@@ -18,7 +18,8 @@ export class OrganizationIdInterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let authservice = this.inject.get(AuthService);
     let authreq = request;
-    authreq = this.AddTokenheader(request, authservice.currentUserValue?.organizationId);
+    let orgId = authservice.getOrganizationId();
+    authreq = this.AddTokenheader(request, orgId);
     return next.handle(authreq).pipe(
       catchError(errordata => {
         if (errordata.status === 401) {
@@ -27,6 +28,7 @@ export class OrganizationIdInterceptorService implements HttpInterceptor {
         return throwError(errordata);
       })
     );
+
   }
   AddTokenheader(request: HttpRequest<any>, token: any) {
     return request.clone({ headers: request.headers.set('OrganizationId',  token) });

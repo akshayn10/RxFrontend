@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { Role } from './core/constants/role';
 import { AuthGuard } from './core/guard/auth.guard';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
 
 
 const routes: Routes = [
@@ -37,6 +36,8 @@ const routes: Routes = [
       import('./modules/profile/profile.module').then((m) => m.ProfileModule),
     canActivate: [AuthGuard]
   },
+
+
   {
     path: 'customer',
     loadChildren: () =>
@@ -44,6 +45,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: {}
   },
+
   {
     path: 'help',
     loadChildren: () =>import('./modules/help/help.module').then((m) => m.HelpModule),
@@ -87,10 +89,7 @@ const routes: Routes = [
     loadChildren: () =>import('./modules/marketplace/marketplace.module').then((m) => m.MarketplaceModule)
 
   },
-  {
-    path: 'top',
-    component: TopBarComponent,
-  },
+
   { path: '404', component: NotFoundComponent },
   {
     path: '**', redirectTo: '404'

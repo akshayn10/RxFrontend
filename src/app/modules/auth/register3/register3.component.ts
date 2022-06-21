@@ -19,6 +19,8 @@ export class Register3Component implements OnInit {
   submitted=false;
   organizationId!: string;
   plans!:SystemSubscriptionPlan[];
+  isLoading=false;
+  response!:string;
 
   types:SubType[]=[
     {type:"OneTime",value:false},
@@ -50,16 +52,25 @@ export class Register3Component implements OnInit {
   }
 
   createSubscription(){
+    this.isLoading=true;
     this._systemSubscriptionService.createSystemSubscription(this.registerForm3.value).subscribe((resp)=>{
       console.log("success"+resp);
+      this.isLoading=false;
+      this.response=resp;
     })
   }
 
   onSubmit() {
-    // if (this.registerForm3.invalid) {
-    //     return;
-    // }
-    // this.submitted = true;
+    this.submitted = true;
+    if(this.registerForm3.invalid){
+      return;
+    }
+    this.isLoading=true;
+    this._systemSubscriptionService.createSystemSubscription(this.registerForm3.value).subscribe((resp)=>{
+      console.log("success"+resp);
+      this.isLoading=false;
+      this.response=resp;
+    })
 
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm3.value))
   }
