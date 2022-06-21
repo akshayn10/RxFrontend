@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './organization-profile.component.html',
   styleUrls: ['./organization-profile.component.css']
 })
+
 export class OraganizationProfileComponent implements OnInit {
 
   loginForm!: FormGroup;
