@@ -17,7 +17,7 @@
   <div class="box-2">
     <!-- <div class="header">CREATE ORGANIZATION</div> -->
 
-    <form [formGroup]="organizationForm" (ngSubmit)="onEdit()">
+    <form [formGroup]="organizationForm" (ngSubmit)="onEdit(organizationId)">
 
 
       <div class="form-group">
@@ -57,7 +57,7 @@
               <img src="assets/icons/img.png" alt="" />
               <div *ngIf="!imageSelected">Drop your image here, or browse</div>
             </div>
-            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="logoPath" [(ngModel)]="organization.logoImage"/>
+            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="logoPath" [(ngModel)]="organization.logoUrl"/>
           </div>
           <!-- <div class="previewImg" *ngIf="">
             <img height="120px" [src]="" />

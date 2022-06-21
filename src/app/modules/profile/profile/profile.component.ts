@@ -44,13 +44,13 @@ export class ProfilePageComponent implements OnInit {
       
     }
 
-
+this.getUserById(this.userId)
 
     this.UserProfileForm = this.formBuilder.group({
       fullName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       profilePath: [''],
-      profileImage: [null],
+      profileImage: [''],
       userName: ['', [Validators.required]]
     },
     )
@@ -69,17 +69,16 @@ export class ProfilePageComponent implements OnInit {
   
 
   onSubmit() {
-
-    // if (this.UserProfileForm.invalid) {
-    //   return;
-    // }
+    if (this.submitted == true) {
+      return;
+    }
     console.log(this.UserProfileForm.value);
     const formData = new FormData();
     formData.append('fullName', this.UserProfileForm.value.fullName);
     formData.append('email', this.UserProfileForm.value.email);
     formData.append('profileImage', this.UserProfileForm.value.profileImage);
     formData.append('userName', this.UserProfileForm.value.userName);
-    console.log(formData);
+    console.log(this.UserProfileForm.value);
     this.isLoading = true;
 
   this._userService.updateUser(this.userId, formData).subscribe(resp => {
@@ -87,6 +86,9 @@ export class ProfilePageComponent implements OnInit {
     console.log(resp);
     this.isLoading = false;
   })
+
+  this.submitted = true;
+    this.profilePreviewPath = "";
 }
 
   onFileChange(event: any) {

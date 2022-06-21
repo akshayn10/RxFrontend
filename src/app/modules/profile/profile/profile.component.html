@@ -53,10 +53,10 @@
               <img src="assets/icons/img.png" alt="" />
               <div *ngIf="!imageSelected">Drop your image here, or browse</div>
             </div>
-            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="profilePath" [(ngModel)]="userDetail.profileImage"/>
+            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="profilePath" [(ngModel)]="userDetail.profileUrl"/>
           </div>
-          <div class="previewImg" *ngIf="profilePreviewPath && profilePreviewPath !== ''">
-            <img height="120px" [src]="profilePreviewPath" [alt]="UserProfileForm.value.name" />
+          <div class="previewImg" >
+            <img height="120px" width="110px" [src]="profilePreviewPath" [alt]="UserProfileForm.value.name" />
           </div>
         </div>
         <div class="invalid"></div>

@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
 import { OrganizationService } from 'src/app/data/service/organization/organization.service';
-import{Organization} from 'src/app/data/schema/organization';
+import{OrganizationDetail} from 'src/app/data/schema/organization';
 import { AuthService } from 'src/app/data/service/auth/auth.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class OraganizationProfileComponent implements OnInit {
   logoPreviewPath!: string;
   imageSelected: boolean = false;
   organizationId!: string;
-organization!:Organization;
+organization!:OrganizationDetail;
 
   constructor(private formBuilder: FormBuilder,
     private _organizationService: OrganizationService,
@@ -32,7 +32,7 @@ organization!:Organization;
   ngOnInit(): void {
     if (this._authService.currentUserValue) {
       this.organizationId = this._authService.currentUserValue.organizationId;
-      
+      console.log(this.organizationId)
     }
 
  this.getOrganizationById(this.organizationId)
@@ -43,7 +43,7 @@ organization!:Organization;
       logoPath: ['', [Validators.required]],
       logoImage: [null, [Validators.required]],
       email: ['', [Validators.required]],
-      accountOwnerId: ['', [Validators.required]],
+    //  accountOwnerId: ['', [Validators.required]],
       organizationAddress: this.formBuilder.group({
         addressLine1: ['', [Validators.required]],
         addressLine2: ['', [Validators.required]],
@@ -65,7 +65,7 @@ getOrganizationById(organizationId: string) {
   })
 }
 
-  onEdit() {
+  onEdit(organizationId:string) {
     // if (this.organizationForm.invalid) {
     //   return;
     // }
@@ -75,9 +75,9 @@ getOrganizationById(organizationId: string) {
     formData.append('description', this.organizationForm.value.description);
     formData.append('logoImage', this.organizationForm.value.logoImage);
     formData.append('email', this.organizationForm.value.email);
-    formData.append('accountOwnerId',this.organizationForm.value.accountOwnerId);
+    //formData.append('accountOwnerId',this.organizationForm.value.accountOwnerId);
     formData.append('organizationAddress',JSON.stringify(this.organizationForm.value.organizationAddress));
-    console.log(formData);
+    console.log(this.organizationForm.value);
     this.isLoading = true;
     this.submitted = true;
 
