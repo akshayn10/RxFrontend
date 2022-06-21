@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 // import { ValidationService } from './validation.service';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-profile-page',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfilePageComponent implements OnInit {
 
   isLoading = false;
   UserProfileForm: FormGroup = new FormGroup({});

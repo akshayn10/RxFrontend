@@ -20,8 +20,8 @@ export class MarketplaceService {
     trialDays: number,
     redirectUrl: string,
     organizationId: string
-  ): Observable<any> {
-    return this.http.post<any>(this.baseURL, {
+  ) {
+    return this.http.post(this.baseURL, {
       productId,
       description,
       name,
@@ -29,7 +29,7 @@ export class MarketplaceService {
       trialDays,
       redirectUrl,
       organizationId,
-    });
+    },{responseType:'text'});
   }
 
   getProducts(searchKey:string):Observable<MarketplaceProduct[]>{

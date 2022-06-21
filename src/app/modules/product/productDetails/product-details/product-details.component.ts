@@ -21,6 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   showSecret = false;
   webhookSecret = '********************************************';
   organizationId!: string;
+  response!: string;
 
   constructor(
     public _activatedRoute: ActivatedRoute,
@@ -81,6 +82,7 @@ export class ProductDetailsComponent implements OnInit {
       )
       .subscribe((resp) => {
         console.log(resp);
+        this.response = resp;
         this.ngOnInit();
       });
   }
