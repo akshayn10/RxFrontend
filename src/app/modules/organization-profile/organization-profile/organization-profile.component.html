@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="btn-container">
-      <a [routerLink]="['/product/addProduct']">
+      <a [routerLink]="['user-roles']">
         <button mat-button class="name-button">Manage Organization Roles</button>
       </a>
     </div>
@@ -16,8 +16,8 @@
 
   <div class="box-2">
     <!-- <div class="header">CREATE ORGANIZATION</div> -->
-    <form>
-    <!-- <form [formGroup]="organizationForm" (ngSubmit)="onSubmit()"></form> -->
+
+    <form [formGroup]="organizationForm" (ngSubmit)="onSubmit()">
 
 
       <div class="form-group">
@@ -54,18 +54,16 @@
           <div class="imgup">
             <div class="icon-container">
               <img src="assets/icons/img.png" alt="" />
-              <div *ngIf="">Drop your image here, or browse</div>
-              <!-- <div *ngIf="!imageSelected">Drop your image here, or browse</div> -->
+              <div *ngIf="!imageSelected">Drop your image here, or browse</div>
             </div>
-            <input id="fileUpload" type="file" accept="image/*" formControlName="logoPath" />
-            <!-- <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="logoPath" /> -->
+            <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="logoPath" />
           </div>
-          <div class="previewImg" *ngIf="">
+          <!-- <div class="previewImg" *ngIf="">
             <img height="120px" [src]="" />
-          </div>
-          <!-- <div class="previewImg" *ngIf="logoPreviewPath && logoPreviewPath !== ''">
-            <img height="120px" [src]="logoPreviewPath" [alt]="organizationForm.value.name" />
           </div> -->
+          <div class="previewImg" *ngIf="logoPreviewPath && logoPreviewPath !== ''">
+            <img height="120px" [src]="logoPreviewPath" [alt]="organizationForm.value.name" />
+          </div>
         </div>
         <div class="invalid"></div>
       </div>
