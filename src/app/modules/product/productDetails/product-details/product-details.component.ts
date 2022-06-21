@@ -6,6 +6,7 @@ import { AddOnDialogComponent } from '../add-on-dialog/add-on-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddOnTableComponent } from '../add-on-table/add-on-table.component';
 import { AddOnPriceDialogComponent } from '../add-on-price-dialog/add-on-price-dialog.component';
+import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { AddOnPriceDialogComponent } from '../add-on-price-dialog/add-on-price-d
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
+  submitted = false;
   productId:string;
   product!: Product ;
   planId:string;
@@ -23,14 +25,14 @@ export class ProductDetailsComponent implements OnInit {
 
 
   constructor(public _activatedRoute: ActivatedRoute,
-    public router: Router,
-     private productservice:ProductService,
-     private _dialog:MatDialog,
-     ) {
-    this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';
-    this.planId = this._activatedRoute.snapshot.paramMap.get('planId') || '';
-
-  }
+              public router: Router,
+              private productservice:ProductService,
+              private _dialog:MatDialog,
+              private marketplaceService:MarketplaceService ) 
+                    {
+                      this.productId = this._activatedRoute.snapshot.paramMap.get('id')||'';
+                      this.planId = this._activatedRoute.snapshot.paramMap.get('planId') || '';
+                    }
 
   
 
@@ -44,7 +46,6 @@ export class ProductDetailsComponent implements OnInit {
   getProductById(productId:string){
     this.productservice.getProductById(productId).subscribe(resp => {
       this.product =resp ;
-
 
     })
   }
@@ -70,10 +71,10 @@ export class ProductDetailsComponent implements OnInit {
 
     }
   }
+
   onAddToMarketplace(productId :string){
 
-  }
-
+}
   
   openDialog() {
     const dialog=this._dialog.open(AddOnDialogComponent,{
@@ -92,10 +93,6 @@ export class ProductDetailsComponent implements OnInit {
     
     });
   }
-
- 
-
-
 
 
 }
