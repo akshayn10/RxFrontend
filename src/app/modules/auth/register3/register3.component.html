@@ -14,43 +14,52 @@
                 <label style="font-size: 18px;">Choose Plan</label>
                 <div>
 
-                <div class="custom-control custom-radio label-cont">
+                <!-- <div class="custom-control custom-radio label-cont" *ngFor="let plan of plans">
                   <input id="1month" type="radio" class="custom-control-input" value="1month" name="plan" formControlName="plan">
-                  <label class="custom-control-label1" for="1month">01 Month</label>
-                  <label class="custom-control-label" for="1month">$90.00</label>
+                  <label class="custom-control-label1" >{{plan.Name}}</label>
+                  <label class="custom-control-label" >$90.00</label>
+                </div> -->
+                <div class="form-group" *ngIf="plans" >
+                  <label class="labelName">Plans</label>
+                  <mat-form-field class="form-field" appearance="fill">
+                    <mat-select formControlName="systemSubscriptionPlanId">
+                      <mat-option *ngFor="let plan of plans" [value]="plan.PlanId">
+                        {{plan.Price}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 </div>
-        
-                <div class="custom-control custom-radio label-cont">
-                  <input id="6months" type="radio" class="custom-control-input" value="6months" name="plan" formControlName="plan">
-                  <label class="custom-control-label1" for="6months">06 Months</label>
-                  <label class="custom-control-label" for="6months">$450.00</label>
-                </div>
-
-                <div class="custom-control custom-radio label-cont">
-                  <input id="12months" type="radio" class="custom-control-input" value="12months" name="plan" formControlName="plan">
-                  <label class="custom-control-label1" for="12months">12 Months</label>
-                  <label class="custom-control-label" for="12months">$840.00</label>
-                </div>
+                <div>{{plans|json}}</div>
 
               </div>
-        
+
+            </div>
+            <div class="form-group" >
+              <label class="labelName">Subscription Type</label>
+              <mat-form-field class="form-field" appearance="fill">
+                <mat-select formControlName="subscriptionType">
+                  <mat-option *ngFor="let type of types" [value]="type.value">
+                    {{type.type}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
             </div>
 
             <div class="blank" style="height: 15px;"></div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label style="font-size: 18px;">Choose Plan Cycle</label>
                 <div class="custom-control custom-radio">
                   <input id="onetime" type="radio" class="custom-control-input" value="onetime" name="planCycle" formControlName="planCycle">
                   <label class="custom-control-label" for="onetime">One Time</label>
                 </div>
-        
+
                 <div class="custom-control custom-radio">
                   <input id="recurring" type="radio" class="custom-control-input" value="recurring" name="planCycle" formControlName="planCycle">
                   <label class="custom-control-label" for="recurring">Recurring</label>
                 </div>
             </div>
-            
+             -->
             <div class="form-group">
                 <button class="btn" routerLink="/signup">Previous</button>
                 <button class="btn2" type="submit">Proceed Payment</button>
@@ -61,7 +70,7 @@
           <a class="forgot-btn">Forgot password?</a>
           <a class="forgot-btn"> Don't have an account? </a>
         </div> -->
-  
+
       </div>
     </div>
   </div>

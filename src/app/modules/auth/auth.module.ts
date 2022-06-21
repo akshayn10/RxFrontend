@@ -11,6 +11,8 @@ import { ForgetPWComponent } from './forget-pw/forget-pw.component';
 import { ResetPwComponent } from './reset-pw/reset-pw.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ChangePwComponent } from './change-pw/change-pw.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { ChangePwComponent } from './change-pw/change-pw.component';
     AuthRoutes,
     RouterModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatSelectModule
   ],
   exports: [
   ]

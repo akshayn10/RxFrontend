@@ -1,6 +1,4 @@
 import {
-  HttpClient,
-  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
@@ -13,7 +11,7 @@ import { AuthService } from 'src/app/data/service/auth/auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class HttpInterceptorService implements HttpInterceptor {
+export class TokenInterceptorService implements HttpInterceptor {
 
   constructor(private inject: Injector) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
