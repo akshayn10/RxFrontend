@@ -11,6 +11,7 @@ import { GraphComponent } from './graph/graph.component';
 import { DashboardGridboxComponent } from './dashboard-gridbox/dashboard-gridbox.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     DashboardRoutes,
     ChartsModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    MatProgressSpinnerModule
 
   ], exports: [
 

@@ -9,6 +9,7 @@ type ApiResponse<T> =
   | {
     succeeded: true;
     data: T;
+    message: string;
   }
   | {
     succeeded: false;
@@ -27,9 +28,6 @@ export class AuthService {
     private http: HttpClient,
     private _tokenService: TokenStorageService
   ) {
-    // const user = JSON.stringify(this._tokenService.getUser());
-    // const storageUser = JSON.stringify(localStorage.getItem('auth-user'));
-    // console.log('rwgr' + storageUser);
     this.currentUserSubject = new BehaviorSubject<LoginResponseData | null>((this._tokenService.getUser()));
     console.log('rwgr' + this.currentUserSubject);
     this.currentUser = this.currentUserSubject.asObservable();
@@ -38,9 +36,7 @@ export class AuthService {
   public get currentUserValue(): LoginResponseData | null {
     return this.currentUserSubject.value;
   }
-  // public get getcurrentUser(): LoginResponseData | null {
-  //   return this.currentUserSubject;
-  // }
+
   setCurrentUserSubject(data: LoginResponseData) {
     this.currentUserSubject.next(data);
   }
@@ -121,7 +117,25 @@ export class AuthService {
     const url = this.userBaseApiUrl + 'refresh-token';
     return this.http.post<LoginResponseData>(url, { token: refreshToken });
   }
-
+  forgotPassword(form:any){
+    const url = this.userBaseApiUrl + 'forgot-password';
+    return this.http.post(url, form,{responseType:'text'});;
+  }
+  resetPassword(form:any): Observable<ApiResponse<string>>{
+    const url = this.userBaseApiUrl + 'reset-password';
+    const req = this.http.post<{message:string}>(url, form);
+    return this.mapFromResponse(req, (r) => r.message);
+  }
+  changePassword(email:string, oldPassword:string, password:string):Observable<ApiResponse<string>>{ {
+    const url = this.userBaseApiUrl + 'change-password';
+    const req = this.http.post<{message:string}>(url, {
+      email:email,
+      oldPassword:oldPassword,
+      newPassword:password
+    });
+    return this.mapFromResponse(req, (r) => r.message);
+  }
+}
   private mapFromResponse<T, X>(
     result: Observable<T>,
     selector: (value: T) => X
@@ -130,6 +144,7 @@ export class AuthService {
       map((r) => ({
         succeeded: true as const,
         data: selector(r),
+        message: '',
       })),
       catchError((e: HttpErrorResponse) => {
         if (e.error instanceof ProgressEvent) {

@@ -60,16 +60,12 @@ export class OraganizationProfileComponent implements OnInit {
   }
 
   onEdit(organizationId: string) {
-    // if (this.organizationForm.invalid) {
-    //   return;
-    // }
     const formData = new FormData();
     console.log(this.organizationForm.value);
     formData.append('name', this.organizationForm.value.name);
     formData.append('description', this.organizationForm.value.description);
     formData.append('logoImage', this.organizationForm.value.logoImage);
     formData.append('email', this.organizationForm.value.email);
-    //formData.append('accountOwnerId',this.organizationForm.value.accountOwnerId);
     formData.append('addressLine1', this.organizationForm.value.addressLine1);
     formData.append('addressLine2', this.organizationForm.value.addressLine2);
     formData.append('city', this.organizationForm.value.city);
@@ -83,6 +79,7 @@ export class OraganizationProfileComponent implements OnInit {
       this.organizationForm.reset();
       console.log(res);
       this.isLoading = false;
+      this.ngOnInit();
     });
   }
 

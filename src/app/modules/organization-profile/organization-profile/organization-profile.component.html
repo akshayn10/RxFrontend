@@ -60,11 +60,8 @@
             <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*"
               formControlName="logoPath" [(ngModel)]="organization.logoUrl" />
           </div>
-          <!-- <div class="previewImg" *ngIf="">
-            <img height="120px" [src]="" />
-          </div> -->
-          <div class="previewImg" *ngIf="logoPreviewPath && logoPreviewPath !== ''">
-            <img height="120px" [src]="logoPreviewPath" [alt]="organizationForm.value.name" />
+          <div class="previewImg" >
+            <img height="120px" [src]="logoPreviewPath?logoPreviewPath:organization.logoUrl" [alt]="organizationForm.value.name" />
           </div>
         </div>
         <div class="invalid"></div>
@@ -157,6 +154,7 @@
       <button class="btn" type="submit">
         Save Changes
       </button>
+      <mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
 
     </form>
   </div>

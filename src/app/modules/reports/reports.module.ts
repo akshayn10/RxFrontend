@@ -19,6 +19,7 @@ import { SalesByAddOnsComponent } from './sales/sales-by-add-ons/sales-by-add-on
 import { NetRevenueComponent } from './revenue/net-revenue/net-revenue.component';
 import { PaymentSummaryComponent } from './payments/payment-summary/payment-summary.component';
 import { UnsubscriptionComponent } from './subscription/unsubscription/unsubscription.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,6 @@ import { UnsubscriptionComponent } from './subscription/unsubscription/unsubscri
     NetRevenueComponent,
     PaymentSummaryComponent,
   ],
-  imports: [CommonModule, ReportsRoutes, SharedModule, ChartsModule],
+  imports: [CommonModule, ReportsRoutes, SharedModule, ChartsModule,MatProgressSpinnerModule],
 })
 export class ReportsModule {}

@@ -50,8 +50,8 @@
             </div>
             <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*" formControlName="profilePath" [(ngModel)]="userDetail.profileUrl"/>
           </div>
-          <div class="previewImg" >
-            <img height="120px" width="110px" [src]="profilePreviewPath" [alt]="UserProfileForm.value.name" />
+          <div class="previewImg" *ngIf="userDetail.profileUrl"  >
+            <img height="120px" width="110px" [src]="profilePreviewPath?profilePreviewPath:userDetail.profileUrl" [alt]="UserProfileForm.value.name" />
           </div>
         </div>
         <div class="invalid"></div>
@@ -74,6 +74,7 @@
       <button class="btn" type="submit">
         Save Changes
       </button>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
       <div>{{response}}</div>
 
     </form>
