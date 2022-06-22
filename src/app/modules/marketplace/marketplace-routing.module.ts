@@ -8,22 +8,20 @@ const routes: Routes = [
   {
     path: '',
     component: MarketplaceMainComponent,
-    children:[
-      {
-        path: '',
-        component: MarketplaceProductComponent
-      },
-      {
-        path: 'search',
-        component: MarketplaceSearchComponent
-      },
-      {
-        path: 'product/:id',
-        component: MarketplaceProductDetailComponent
-      }
-    ]
+    
 
-  }
+
+  },
+  
+    {
+      path: 'search',
+      component: MarketplaceSearchComponent
+    },
+    {
+      path: 'product/:id',
+      component: MarketplaceProductDetailComponent
+    }
+  
 
 ];
 

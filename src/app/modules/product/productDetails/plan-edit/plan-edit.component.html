@@ -37,7 +37,7 @@
           <div class="form-field"></div>
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label class="labelName">Bill Every</label>
           <input type="text" class="form-control Z" formControlName="duration" [(ngModel)]="plan.duration" />
           <div class="invalid">
@@ -48,6 +48,25 @@
             </div>
           </div>
           <div class="form-field"></div>
+        </div> -->
+
+        <div class="form-group" formGroupName="duration">
+          <label class="labelName">Bill Every</label>
+          <input type="text" class="form-control" formControlName="value"/>
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-select formControlName="period">
+              <mat-option *ngFor="let x of durationPeriod" [value]="x">
+                {{x}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="invalid">
+            <div *ngIf="f['duration'].value.value.touched && f['duration'].value.value.invalid">
+              <div *ngIf="f['duration'].value.value.errors && f['duration'].value.value.errors['required']">
+                Duration period is required.
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="form-group">

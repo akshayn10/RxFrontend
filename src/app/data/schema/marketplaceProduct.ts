@@ -13,7 +13,7 @@ export interface MarketplaceProductForDisplay {
   name: string,
   logoUrl: string,
   haveTrial: boolean,
+  providerName: string,
   redirectUrl: string,
-  providerName: string
   trialDays: number,
 }
