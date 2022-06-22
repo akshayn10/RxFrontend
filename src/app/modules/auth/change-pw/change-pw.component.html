@@ -1,31 +1,77 @@
 <div class="container">
   <div class="box-1">
-      <h1>Change Password</h1>
-      <p>Strong password required. Enter minimum 8 characters. 
-        Combine uppercase letters, lowercase letters, numbers and symbols
-      </p>
-      <form>
-          <div class="form-group">
-              <label>Enter Your Current Password</label>
-              <div>
-                  <input type="text" class="form-control" formControlName="e-mail" />
-              </div>
-          </div>
-          <div class="form-group">
-            <label>Enter New Password</label>
-            <div>
-                <input type="text" class="form-control" formControlName="e-mail" />
-            </div>
+    <h1>Change Password</h1>
+    <p>Strong password required. Enter minimum 8 characters.
+      Combine uppercase letters, lowercase letters, numbers and symbols
+    </p>
+    <form [formGroup]="changePasswordForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Enter Your Current Password</label>
+        <div>
+          <input type="password" class="form-control" formControlName="oldPassword" />
         </div>
-        <div class="form-group">
-          <label>Confirm Password</label>
-          <div>
-              <input type="text" class="form-control" formControlName="e-mail" />
+        <div class="invalid">
+          <div *ngIf="f['oldPassword'].touched && f['oldPassword'].invalid">
+            <div *ngIf="f['oldPassword'].errors && f['oldPassword'].errors['required']">
+              Old Password is required
+            </div>
           </div>
+        </div>
       </div>
-      </form>
-      <button class="btn">
-          Change Password
+      <div class="form-group">
+        <label>Enter New Password</label>
+        <div>
+          <input type="password" class="form-control" formControlName="password" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['password'].touched && f['password'].invalid">
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">
+              Password is required
+            </div>
+            <div *ngIf="f['password'].errors && f['password'].errors['minlength']">
+              Minimum length is 8
+            </div>
+            <div *ngIf="f['password'].touched &&
+                    f['password'].errors?.['invalidPassword']">
+              Password should have minimum 8 characters, at least 1 uppercase
+              letter, 1 lowercase letter and 1 number
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <div>
+          <input type="password" class="form-control" formControlName="confirmPassword" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid">
+            <div *ngIf="
+                  f['confirmPassword'].errors &&
+                  f['confirmPassword'].errors['required']
+                ">
+              Confirm Password is required
+            </div>
+            <div *ngIf="
+                  f['confirmPassword'].errors &&
+                  f['confirmPassword'].errors['minlength']
+                ">
+              Minimum length is 8
+            </div>
+            <div *ngIf="
+                  f['confirmPassword'].errors &&
+                  f['confirmPassword'].errors['confirmedValidator']
+                ">
+              Password mismatch
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn">
+        Change Password
       </button>
+      <div>{{response}}</div>
+    </form>
   </div>
 </div>

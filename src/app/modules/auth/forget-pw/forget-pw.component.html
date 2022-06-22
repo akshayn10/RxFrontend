@@ -4,16 +4,28 @@
         <p>Please enter the email address. You will receive an email message
             with verification code to reset your password.
         </p>
-        <form>
+        <form [formGroup]="forgotForm" (ngSubmit)="forgotPassword()">
             <div class="form-group">
                 <label>Enter E-Mail Address</label>
                 <div>
-                    <input type="text" class="form-control" formControlName="e-mail" />
+                    <input type="text" class="form-control" formControlName="email" />
+                    <div class="invalid">
+                      <div *ngIf="f['email'].touched && f['email'].invalid">
+                        <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                          Email is required.
+                        </div>
+                        <div class="invalid" *ngIf="f['email'].errors && f['email'].errors['email']">
+                          Invalid email.
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
+            <button type="submit" (click)="forgotPassword()" class="btn">
+              Send Verification Code
+          </button>
         </form>
-        <button class="btn">
-            Send Verification Code
-        </button>
+
+        <div>{{response}}</div>
     </div>
 </div>

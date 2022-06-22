@@ -8,6 +8,7 @@ import { AddUserComponent } from './add-user/add-user.component'
 import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatSelectModule } from '@angular/material/select';
     OrganizationRoutes,
     MatTableModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ]
 })
 export class  OrganizationModule { }
