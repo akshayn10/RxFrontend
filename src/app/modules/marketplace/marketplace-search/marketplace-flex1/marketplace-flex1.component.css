@@ -1,32 +1,22 @@
 .box {
-    background-color:  var(--navWhite);
-    width:200px;
-   height: 100%;
-    text-align: left;
-   color: black;
-    align-items: center;
-    margin-left: 50px;
+    background-color: var(--navWhite);
+    width: 60%;
+    height: 100%;
+    margin: 24px auto;
     border-radius: 10px;
-    font-size: 14px;
-    padding-left: 15px; 
- box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.refine{
-    margin-top: 0;
+    padding: 16px 24px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
-.tick{
-   margin-bottom: 15px; 
+.refine {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-blue);
 }
 
-.headerbox {
-    font-weight: bold;
-    margin-bottom: 0;
-    margin-top: 0;
-
+.mat-checkbox {
+    font-weight: 600;
+    font-family: Poppins !important;
 }
-.mat-checkbox{
-/* color: white; */
-font-family: Poppins !important; 
-}
-
