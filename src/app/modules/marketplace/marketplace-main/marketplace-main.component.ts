@@ -18,9 +18,6 @@ import { MarketplaceProduct, MarketplaceProductForDisplay } from 'src/app/data/s
 export class MarketplaceMainComponent implements OnInit {
   searchKey: string = "";
   products: MarketplaceProductForDisplay[] = [];
-  productNames: string[] = [];
-  myControl = new FormControl('');
-  filteredOptions!: Observable<string[]>;
 
   constructor(
     private _router: Router,
@@ -28,40 +25,20 @@ export class MarketplaceMainComponent implements OnInit {
     private _marketplaceService:MarketplaceService) { }
 
     ngOnInit() {
-      this.getProducts(); 
-
-      this.filteredOptions = this.myControl.valueChanges.pipe(
-        startWith(''),
-        map(value => this._filter(value || '')),
-      );
     }
-
-  //   getProducts() {
-  //     this._productService.getProducts(this.searchKey).subscribe((data: Product[]) => {
-  //       this.products = data;
-  // this.productNames=this.products.map(product=>product.name);
-  //     });
-  //   }
     getProducts() {
       this._marketplaceService.getProducts(this.searchKey).subscribe(
         data => {
           this.products = data;
-          this.productNames=this.products.map(product=>product.name);
-          console.log(this.products);
         }
       )
     }
-
-    private _filter(value: string): string[] {
-      const filterValue = value.toLowerCase();
-      return this.productNames.filter(productName => productName.toLowerCase().includes(filterValue));
+    navigateToDetails(productId:string){
+      this._router.navigate(['/marketplace/product',productId]);
     }
 
   navigateToSearch() {
-    console.log(this.myControl.value);
-    if(this.myControl.value!=''){
-      this.searchKey = this.myControl.value;
-    }
+
     console.log(this.searchKey);
      this._sharedDataService.setSearchKey(this.searchKey);
 
