@@ -70,60 +70,70 @@
           </div>
         </div>
 
-        <div class="form-group" formGroupName="organizationAddress">
+        <div class="form-group">
           <label>Address</label>
           <div class="address-line">
             <input placeholder="Address Line 01" type="text" formControlName="addressLine1" />
           </div>
-          <div
-            *ngIf="f['organizationAddress'].value.addressLine1.touched && f['organizationAddress'].value.addressLine1.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.addressLine1.errors && f['organizationAddress'].value.addressLine1.errors['required']">
-              Address 1 is Required
+          <div class="invalid">
+            <div *ngIf="f['addressLine1'].touched && f['addressLine1'].invalid">
+              <div *ngIf="f['addressLine1'].errors && f['addressLine1'].errors['required']">
+                Address 1 is Required
+              </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group">
           <div class="address-line">
             <input placeholder="Address Line 02" type="text" formControlName="addressLine2" />
           </div>
-          <div
-            *ngIf="f['organizationAddress'].value.addressLine2.touched && f['organizationAddress'].value.addressLine2.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.addressLine2.errors && f['organizationAddress'].value.addressLine2.errors['required']">
+          <div class="invalid">
+          <div *ngIf="f['addressLine2'].touched && f['addressLine2'].invalid">
+            <div *ngIf="f['addressLine2'].errors && f['addressLine2'].errors['required']">
               Address 1 Required
             </div>
           </div>
+        </div>
+        </div>
 
+        <div class="form-group">
           <div class="address-line">
             <input placeholder="City" type="text" formControlName="city" />
           </div>
-          <div *ngIf="f['organizationAddress'].value.city.touched && f['organizationAddress'].value.city.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.city.errors && f['organizationAddress'].value.city.errors['required']">
+          <div class="invalid">
+          <div *ngIf="f['city'].touched && f['city'].invalid">
+            <div *ngIf="f['city'].errors && f['city'].errors['required']">
               City is Required
             </div>
           </div>
+        </div>
+        </div>
 
+        <div class="form-group">
           <div class="address-line">
-            <input placeholder="organizationAddress/ Province/ Region" type="text" formControlName="state" />
+            <input placeholder="Province/ Region" type="text" formControlName="state" />
           </div>
-          <div *ngIf="f['organizationAddress'].value.state.touched && f['organizationAddress'].value.state.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.state.errors && f['organizationAddress'].value.state.errors['required']">
+          <div class="invalid">
+          <div *ngIf="f['state'].touched && f['state'].invalid">
+            <div *ngIf="f['state'].errors && f['state'].errors['required']">
               State is Required
             </div>
           </div>
+        </div>
+        </div>
 
+        <div class="form-group">
           <div class="address-line">
             <input placeholder="Country" type="text" formControlName="country" />
           </div>
-          <div
-            *ngIf="f['organizationAddress'].value.country.touched && f['organizationAddress'].value.country.touched.invalid">
-            <div
-              *ngIf="f['organizationAddress'].value.country.touched.errors && f['organizationAddress'].value.country.touched.errors['required']">
+          <div class="invalid">
+          <div *ngIf="f['country'].touched && f['country'].invalid">
+            <div *ngIf="f['country'].errors && f['country'].errors['required']">
               Country is Required
             </div>
           </div>
+        </div>
         </div>
 
         <button class="btn" type="submit">
