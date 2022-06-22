@@ -16,6 +16,7 @@ export class Register2Component implements OnInit {
   logoPreviewPath!: string;
   imageSelected: boolean = false;
   ownerId!: string;
+  response!:string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,8 +33,8 @@ export class Register2Component implements OnInit {
       description: ['', [Validators.required]],
       logoPath: ['', [Validators.required]],
       logoImage: [null, [Validators.required]],
-      email: ['', [Validators.required]],
-      accountOwnerId: ['', [Validators.required]],
+      email: ['', [Validators.required,Validators.email]],
+      accountOwnerId: [this.ownerId, [Validators.required]],
       addressLine1: ['', [Validators.required]],
       addressLine2: ['', [Validators.required]],
       city: ['', [Validators.required]],
@@ -65,11 +66,12 @@ export class Register2Component implements OnInit {
     this.isLoading = true;
     this.submitted = true;
 
-    // this._organizationService.createOrganization(formData).subscribe((res) => {
-    //   this.organizationForm.reset();
-    //   console.log(res);
-    //   this.isLoading = false;
-    // });
+    this._organizationService.createOrganization(formData).subscribe((res) => {
+      this.organizationForm.reset();
+      console.log(res);
+      this.response = res;
+      this.isLoading = false;
+    });
   }
 
   onFileChange(event: any) {

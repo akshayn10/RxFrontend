@@ -22,7 +22,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OrganizationIdInterceptorService } from './core/interceptors/organizationId-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,8 +43,18 @@ import { OrganizationIdInterceptorService } from './core/interceptors/organizati
     OrganizationModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS,useClass:TokenInterceptorService, multi: true }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: OrganizationIdInterceptorService,
+      multi: true,
+    },
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

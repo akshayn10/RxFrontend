@@ -34,6 +34,9 @@
               <div *ngIf="f['email'].errors && f['email'].errors['required']">
                 Email is required
               </div>
+              <div class="invalid" *ngIf="f['email'].errors && f['email'].errors['email']">
+                Invalid email.
+              </div>
             </div>
           </div>
         </div>
@@ -141,6 +144,7 @@
         </button>
 
         <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <div>{{response}}</div>
       </form>
 
     </div>

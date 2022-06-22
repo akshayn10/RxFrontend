@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class OrganizationService {
+
   readonly baseURL = environment.baseApiUrl+'organization';
 
   constructor(private http:HttpClient) { }
@@ -15,8 +16,13 @@ export class OrganizationService {
     return this.http.put(`${this.baseURL}/${organizationId}`,organizationForm,{responseType:'text'});
   }
 
+
   getOrganizationById(organizationId:string):Observable<any>{
     return this.http.get<any>(`${this.baseURL}/${organizationId}`);
+  }
+
+  createOrganization(formData: FormData) {
+    return this.http.post(`${this.baseURL}`, formData,{responseType:'text'});
   }
 
 }

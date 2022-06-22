@@ -51,21 +51,13 @@ export class Register3Component implements OnInit {
     })
   }
 
-  createSubscription(){
-    this.isLoading=true;
-    this._systemSubscriptionService.createSystemSubscription(this.registerForm3.value).subscribe((resp)=>{
-      console.log("success"+resp);
-      this.isLoading=false;
-      this.response=resp;
-    })
-  }
 
   onSubmit() {
-    this.submitted = true;
-    if(this.registerForm3.invalid){
-      return;
-    }
-    this.isLoading=true;
+    // this.submitted = true;
+    // if(this.registerForm3.invalid){
+    //   return;
+    // }
+    // this.isLoading=true;
     this._systemSubscriptionService.createSystemSubscription(this.registerForm3.value).subscribe((resp)=>{
       console.log("success"+resp);
       this.isLoading=false;
