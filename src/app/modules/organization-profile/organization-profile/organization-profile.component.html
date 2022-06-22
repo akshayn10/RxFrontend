@@ -100,13 +100,12 @@
       </div>
 
       <div class="form-group">
-
         <div class="address-line">
           <input placeholder="Address Line 02" type="text" formControlName="addressLine2"
             [(ngModel)]="organization.organizationAddress.addressLine2" />
         </div>
         <div
-          *ngIf="f['addressLine2'].touched && f['organizationAddress'].invalid">
+          *ngIf="f['addressLine2'].touched && f['addressLine2'].invalid">
           <div
             *ngIf="f['addressLine2'].errors && f['addressLine2'].errors['required']">
             Address 2 Required
@@ -126,6 +125,7 @@
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <div class="address-line">
           <input placeholder="Province/ Region" type="text" formControlName="state"
