@@ -24,7 +24,7 @@ export class ProductEditComponent implements OnInit {
     private productservice: ProductService, public _activatedRoute: ActivatedRoute, public router: Router
   ) {
     this.productId = this._activatedRoute.snapshot.paramMap.get('id') || '';
-   
+
   }
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class ProductEditComponent implements OnInit {
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       logoPath: [''],
-      logoImage: [''],
+      logoImage: [null],
       webhookURL: ['', [Validators.required]],
       redirectUrl: ['', [Validators.required]],
       freeTrialDays: [0, [Validators.required]],

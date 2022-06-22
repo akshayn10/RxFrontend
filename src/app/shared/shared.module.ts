@@ -11,6 +11,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { NoSubscriptionComponent } from './components/no-subscription/no-subscription.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
     TopBarComponent,
     NotFoundComponent,
     FooterComponent,
+    NoSubscriptionComponent,
   ],
   imports: [
     CommonModule,

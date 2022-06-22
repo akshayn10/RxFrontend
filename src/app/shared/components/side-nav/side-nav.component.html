@@ -14,11 +14,11 @@
         <span>Subscriptions</span>
       </button>
 
-      <button mat-button [ngClass]="{ 'bg-color': isCustomer() }" class="menu-button" routerLink="/customer">
+      <button mat-button [ngClass]="{ 'bg-color': isCustomer() }" *ngIf="role=='Admin'||role=='Owner'" class="menu-button" routerLink="/customer">
         <span>Customers</span>
       </button>
 
-      <button mat-button [ngClass]="{ 'bg-color': isProduct() }" class="menu-button" routerLink="/product">
+      <button mat-button [ngClass]="{ 'bg-color': isProduct() }" *ngIf="role=='Admin'||role=='Owner'" class="menu-button" routerLink="/product">
         <span>Products</span>
       </button>
 
@@ -44,5 +44,5 @@
   <!-- <div class="mat-sidenav-content">
     <div class="content">Main content here!</div>
   </div> -->
-  
+
 </div>

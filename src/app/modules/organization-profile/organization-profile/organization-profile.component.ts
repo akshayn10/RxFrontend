@@ -26,7 +26,7 @@ organization!:OrganizationDetail;
     private router: Router,
    )  {  }
 
-  
+
 
 
   ngOnInit(): void {
@@ -40,26 +40,26 @@ organization!:OrganizationDetail;
     this.organizationForm = this.formBuilder.group({
       name: ['', Validators.required],
       description: ['', [Validators.required]],
-      logoPath: ['', [Validators.required]],
-      logoImage: [null, [Validators.required]],
+      logoPath: [''],
+      logoImage: [null],
       email: ['', [Validators.required]],
     //  accountOwnerId: ['', [Validators.required]],
-      organizationAddress: this.formBuilder.group({
+      // organizationAddress: this.formBuilder.group({
         addressLine1: ['', [Validators.required]],
         addressLine2: ['', [Validators.required]],
         city: ['', [Validators.required]],
         state: ['', [Validators.required]],
         country: ['', [Validators.required]],
-      }),
+      // }),
     });
-    
+
   }
 
 
   get f() { return this.organizationForm.controls; }
 
 getOrganizationById(organizationId: string) {
-  this._organizationService.getOrganizationById(organizationId).subscribe(resp => { 
+  this._organizationService.getOrganizationById(organizationId).subscribe(resp => {
     this.organization=resp;
     console.log(resp);
   })
@@ -76,7 +76,12 @@ getOrganizationById(organizationId: string) {
     formData.append('logoImage', this.organizationForm.value.logoImage);
     formData.append('email', this.organizationForm.value.email);
     //formData.append('accountOwnerId',this.organizationForm.value.accountOwnerId);
-    formData.append('organizationAddress',JSON.stringify(this.organizationForm.value.organizationAddress));
+    // formData.append('organizationAddress',this.organizationForm.value.organizationAddress);
+    formData.append('addressLine1', this.organizationForm.value.addressLine1);
+    formData.append('addressLine2', this.organizationForm.value.addressLine2);
+    formData.append('city', this.organizationForm.value.city);
+    formData.append('state', this.organizationForm.value.state);
+    formData.append('country', this.organizationForm.value.country);
     console.log(this.organizationForm.value);
     this.isLoading = true;
     this.submitted = true;

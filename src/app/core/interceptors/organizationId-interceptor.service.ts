@@ -23,7 +23,7 @@ export class OrganizationIdInterceptorService implements HttpInterceptor {
     return next.handle(authreq).pipe(
       catchError(errordata => {
         if (errordata.status === 401) {
-          this.router.navigate(['/help']);
+          this.router.navigate(['/no-subscription']);
         }
         return throwError(errordata);
       })

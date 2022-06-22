@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Role } from './core/constants/role';
 import { AuthGuard } from './core/guard/auth.guard';
+import { NoSubscriptionComponent } from './shared/components/no-subscription/no-subscription.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 
@@ -9,9 +10,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./modules/home/home.module').then((m) => m.HomeModule),
-    canActivate: [AuthGuard],
-    data: {}
+      import('./modules/home/home.module').then((m) => m.HomeModule)
   },
 
   {
@@ -43,7 +42,9 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/customer/customer.module').then((m) => m.CustomerModule),
     canActivate: [AuthGuard],
-    data: {}
+    data: {
+      roles:[Role.Admin]
+    }
   },
 
   {
@@ -74,7 +75,7 @@ const routes: Routes = [
     loadChildren: () =>import('./modules/subscription/subscription.module').then((m) => m.SubscriptionModule),
       canActivate: [AuthGuard],
       data: {
-        roles:[Role.Admin]
+        // roles:[Role.Admin]
       }
   },
   {
@@ -89,7 +90,7 @@ const routes: Routes = [
     loadChildren: () =>import('./modules/marketplace/marketplace.module').then((m) => m.MarketplaceModule)
 
   },
-
+  { path: 'no-subscription', component: NoSubscriptionComponent },
   { path: '404', component: NotFoundComponent },
   {
     path: '**', redirectTo: '404'
