@@ -177,6 +177,7 @@ app-profile {
     width: 50%;
     box-shadow: 3px 3px 7px rgb(164, 164, 164);
     height: 250px;
+    margin-bottom: 10px;
 }
 
 .flex1 {

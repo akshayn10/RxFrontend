@@ -15,7 +15,9 @@ export class PlanEditComponent implements OnInit {
   planForm: FormGroup = new FormGroup({});
   submitted = false;
   planId: string;
+  durationPeriod=['Month','Year'];
 
+  
   constructor(public _activatedRoute: ActivatedRoute,
     private fb: FormBuilder, private planservice: PlanService, public router: Router) {
     this.productId = this._activatedRoute.snapshot.paramMap.get('id') || '';
@@ -31,7 +33,10 @@ export class PlanEditComponent implements OnInit {
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       price: [0, [Validators.required]],
-      duration: [0, [Validators.required]],
+      duration: this.fb.group({
+        value: [0, [Validators.required]],
+        period: ['Month', [Validators.required]],
+      }),
       haveTrial: [false, [Validators.required]],
       productId: [this.productId, [Validators.required]]
     })
