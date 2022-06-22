@@ -79,7 +79,6 @@ export class ProfilePageComponent implements OnInit {
       this.response = resp;
       this.isLoading = false;
       this._notificationService.showSuccess(this.response, 'Rx');
-
     });
 
     this.submitted = true;

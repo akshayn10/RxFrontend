@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/core/service/notification.service';
 import { AuthService } from 'src/app/data/service/auth/auth.service';
 import { UserService } from 'src/app/data/service/auth/user.service';
 
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _authService: AuthService,
-    private router: Router
+    private router: Router,
+    private _notificationService:NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -30,26 +32,31 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.loginForm.invalid) {
+    if (this.loginForm.invalid ) {
       return;
     }
     this.isLoading = true;
     this._authService.loginUser(this.loginForm.value).subscribe((res) => {
       if (res.succeeded) {
-        console.log(res.data.userName);
-        this._authService.setCurrentUserSubject(res.data);
-        this._authService.setLocalStorage(res.data);
-        if(res.data.organizationId){
-        this.router.navigate(['/dashboard']);
-        this.isLoading = false;
-        return;
+        if (res.data.isAuthenticated) {
+          this._notificationService.showSuccess( `Welcome ${res.data.userName}`,"Login Success");
+          console.log(res.data.userName);
+          this._authService.setCurrentUserSubject(res.data);
+          this._authService.setLocalStorage(res.data);
+          if (res.data.organizationId) {
+            this.router.navigate(['/dashboard']);
+            this.isLoading = false;
+            return;
+          }
+          this.router.navigate(['/auth/signup2']);
+          this.isLoading = false;
+
+          return;
         }
-        this.router.navigate(['/auth/signup2']);
+        this._notificationService.showError(res.data.message, 'Login Error');
         this.isLoading = false;
-        return
       }
     });
-
   }
 
   logout() {

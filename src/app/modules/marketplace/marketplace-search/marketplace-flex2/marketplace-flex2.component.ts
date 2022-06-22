@@ -28,10 +28,8 @@ export class MarketplaceFlex2Component implements OnInit{
   }
 
   getProducts() {
-    console.log(this.searchKey + 'erggre');
     this._marketplaceService.getProducts(this.searchKey).subscribe((data) => {
       this.products = data;
-      console.log(this.products);
     });
   }
 }
