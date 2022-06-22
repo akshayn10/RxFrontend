@@ -1,7 +1,7 @@
 <div class="profile">
   <button mat-button class="name-button" routerLink="/profile">
     <div class="profileFlex">
-    <div style="margin:0px 5px 0px 10px;">Hi!</div>
+    <div style="margin-right: 6px;">Hi!</div>
     <div *ngIf="currentUser">
       {{currentUser?.userName}}</div>
     <div *ngIf="!currentUser">John</div>
@@ -12,7 +12,7 @@
     [src]="currentUser?.profileUrl??'https://source.unsplash.com/c_GmwfHBDzk/200x200'" />
   <mat-menu #menu="matMenu">
     <button (click)="navigateToUserProfile()" mat-menu-item>Go to Profile</button>
-    <button (click)="navigateToOrganizationProfile()" mat-menu-item>Organization Profile</button>
+    <button (click)="navigateToOrganizationProfile()" *ngIf="role=='Owner'" mat-menu-item>Organization Profile</button>
     <button (click)="logout()" mat-menu-item>Logout</button>
   </mat-menu>
 

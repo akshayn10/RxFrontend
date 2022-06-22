@@ -18,8 +18,11 @@ export class Register1Component implements OnInit {
   profilePreviewPath!: string;
   imageSelected:boolean = false;
 
-  constructor(private formBuilder: FormBuilder,private _authService:AuthService,
-    private validationService:ValidationService,private router:Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private _authService:AuthService,
+    private validationService:ValidationService,
+    private router:Router) {
    }
 
   ngOnInit(): void {

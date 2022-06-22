@@ -12,6 +12,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { OrganizationIdInterceptorService } from 'src/app/core/interceptors/organizationId-interceptor.service';
 @NgModule({
   declarations: [
     CustomerComponent,
@@ -30,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     FormsModule
 
-  ],exports: [
+  ],
+  // providers: [{ provide: HTTP_INTERCEPTORS,useClass:OrganizationIdInterceptorService, multi: true }],
+  exports: [
   ]
 
 })

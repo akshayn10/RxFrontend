@@ -7,11 +7,7 @@ import { SubscriptionComponent } from './subscription-main/subscription.componen
 const routes: Routes = [
   {
     path: '',
-    component: SubscriptionComponent,
-    // canActivate: [AuthGuard],
-    // data: {
-    //   roles:[Role.Admin,Role.Owner]
-    // }
+    component: SubscriptionComponent
   },
   {
     path:'details/:id',

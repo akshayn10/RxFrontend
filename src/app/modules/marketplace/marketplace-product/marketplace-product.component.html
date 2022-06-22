@@ -4,27 +4,22 @@
         Discover, try, and deploy the cloud software you want.</p>
     </div>
     <div class="button-publish"> <a [routerLink]="['/auth/signup']"><button mat-button class="button-browse"> Browse All Apps</button></a></div>
-  
+
   </div>
 
 
 <div class="top">
-    <p>Popular Products</p>
+    <p>Featured Products</p>
 </div>
-<div class="container">
-   <div class="box-1" [routerLink]="['/marketplace/product']"> <img src="../../../assets/icons/c1.png" /> <p>Flowdoh</p> </div>
-   <div class="box-2" [routerLink]="['/marketplace/product']"> <img src="../../../assets/icons/c4.png" /> <p>Flowdoh</p> </div>
-   <div class="box-3" [routerLink]="['/marketplace/product']"> <img src="../../../assets/icons/c3.png" /> <p>Flowdoh</p> </div>
-   <div class="box-4" [routerLink]="['/marketplace/product']"> <img src="../../../assets/icons/c4.png" /> <p>Flowdoh</p> </div>
-   <div class="box-5" [routerLink]="['/marketplace/product']"> <img src="../../../assets/icons/c4.png" /> <p>Flowdoh</p> </div>
-   <div class="box-6" [routerLink]="['/marketplace/product']"> <img src="../../../assets/icons/c3.png" /> <p>Flowdoh</p> </div>
-   <div class="box-7" [routerLink]="['/marketplace/product']"> <img src="../../../assets/icons/c1.png" /> <p>Flowdoh</p> </div>
-   <div class="box-8" [routerLink]="['/marketplace/product']"> <img src="../../../assets/icons/c3.png" /> <p>Flowdoh</p> </div>
+<div class="container" >
+
+   <div *ngFor="let product of products" class="box-1" [routerLink]="['/marketplace/product/',product.productId]"> <img [src]="product?.logoUrl ?? '../../assets/logo/rx.png' " width="40px" height="40px"/> <p>{{product.name}}</p> </div>
+
 </div>
 
 <div class="bottom">
    <div class="button-publish"> <a [routerLink]="['/auth/signup']">  <button  mat-button class="button-content"> Publish with Us </button></a></div>
     <div class="text-content"><p >Sell Your Products in<br>
         RX Marketplace</p></div>
-   
+
 </div>

@@ -3,19 +3,15 @@
  <div   *ngFor="let Product of products">
     <mat-card class="card" >
         <mat-card-title-group>
-          <img mat-card-sm-image [src]="Product.logoURL" >
+          <img mat-card-sm-image [src]="Product.logoUrl" >
           <mat-card-title>{{Product.name}}</mat-card-title>
-          <mat-card-subtitle>{{Product.planCount}}</mat-card-subtitle>
-         
+          <mat-card-subtitle>{{Product.providerName}}</mat-card-subtitle>
+
         </mat-card-title-group>
         <mat-card-content>
-          {{Product.redirectURL}}
+          {{Product.description}}
         </mat-card-content>
-        
       </mat-card>
     </div>
-      
-        
-      
 
 </div>

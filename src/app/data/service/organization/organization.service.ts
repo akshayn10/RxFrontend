@@ -11,7 +11,12 @@ export class OrganizationService {
 
   constructor(private http:HttpClient) { }
 
-  createOrganization(organizationForm:any):Observable<any>{
-    return this.http.post<any>(this.baseURL,organizationForm);
+  updateOrganization(organizationId:string,organizationForm:any){
+    return this.http.put(`${this.baseURL}/${organizationId}`,organizationForm,{responseType:'text'});
   }
+
+  getOrganizationById(organizationId:string):Observable<any>{
+    return this.http.get<any>(`${this.baseURL}/${organizationId}`);
+  }
+
 }

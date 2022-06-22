@@ -7,3 +7,13 @@ export interface MarketplaceProduct {
   redirectUrl: string,
   organizationId: string
 }
+export interface MarketplaceProductForDisplay {
+  productId: string,
+  description: string,
+  name: string,
+  logoUrl: string,
+  haveTrial: boolean,
+  redirectUrl: string,
+  providerName: string
+  trialDays: number,
+}

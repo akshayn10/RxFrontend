@@ -18,6 +18,7 @@ type ApiResponse<T> =
   providedIn: 'root',
 })
 export class AuthService {
+
   private userBaseApiUrl = environment.baseApiUrl+'user/';
   private currentUserSubject!: BehaviorSubject<LoginResponseData | null>;
   public currentUser!: Observable<LoginResponseData | null>;
@@ -95,6 +96,12 @@ export class AuthService {
   setJwtToken(token: string) {
     console.log('setJwtToken'+token);
     this._tokenService.saveToken(token);
+  }
+  getOrganizationId() {
+    if(this.currentUserValue?.organizationId){
+      return this.currentUserValue.organizationId;
+    }
+    return ""
   }
 
   registerUser(userForm: any): Observable<ApiResponse<string>> {

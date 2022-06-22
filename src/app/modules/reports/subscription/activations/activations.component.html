@@ -1,22 +1,20 @@
-
 <div class="app-container">
-    <app-side-nav></app-side-nav>
-    <div class="content">
-      <div class="right-align">
-        <app-profile></app-profile>
-      </div>
-      <div class="title-container">
-        <div class="column">
-          <h3>activations</h3>
-        </div>
-      </div>
-      <div>
-        <app-report-chart
-          *ngIf="chartData"
-          [chartData]="chartData"
-          [chartLabels]="chartLabels"
-        ></app-report-chart>
+  <app-side-nav></app-side-nav>
+  <div class="content">
+    <div class="right-align">
+      <app-profile></app-profile>
+    </div>
+    <div class="title-container">
+      <div class="column">
+        <h3>Activations</h3>
       </div>
     </div>
+    <div>
+      <app-report-chart
+        *ngIf="chartData"
+        [chartData]="chartData"
+        [chartLabels]="chartLabels"
+      ></app-report-chart>
+    </div>
   </div>
-  
+</div>

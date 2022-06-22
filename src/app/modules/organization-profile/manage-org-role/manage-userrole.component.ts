@@ -1,22 +1,12 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataSource } from '@angular/cdk/table';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  email: string;
-  role: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Sulegjan_S', email: 'suledgan@gmail.com', role: 'Account Owner' },
-  { position: 2, name: 'Akshajan_A', email: 'skshajan@gmail.com', role: 'Finance USer' },
-  { position: 3, name: 'Ajeevitha_S', email: 'ajee@gmail.com', role: 'Admin' },
-  { position: 4, name: 'Sarumatha_A', email: 'sarumatha@gmail.com', role: 'Account Owner' },
+import { OrganizationUser } from 'src/app/data/schema/Organization/organizationUser';
+import { UserService } from 'src/app/data/service/auth/user.service';
+import { AuthService } from 'src/app/data/service/auth/auth.service';
 
 
-];
+
 
 @Component({
   selector: 'app-manage-userrole',
@@ -24,14 +14,23 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./manage-userrole.component.css']
 })
 export class ManageUserroleComponent implements OnInit {
+  users!:OrganizationUser[];
+  organizationId!:string
+  tableData!:any;
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  data = ELEMENT_DATA;
+  displayedColumns: string[] = ['username', 'email', 'role'];
 
 
-  constructor(private router: Router) { }
+
+  constructor(private router: Router,private _userService:UserService,private authService:AuthService) { }
 
   ngOnInit(): void {
+    if(this.authService.currentUserValue){
+      this.organizationId=this.authService.currentUserValue.organizationId;
+    }
+    this.getUsersForOrganization();
+
+
 
   }
 
@@ -39,6 +38,13 @@ export class ManageUserroleComponent implements OnInit {
   isManageUserRole() {
     return this.router.url == '/user-roles';
   }
-
-
+  getUsersForOrganization(){
+    this._userService.getUsersForOrganization(this.organizationId).subscribe(
+      data => {
+        this.users = data;
+        this.tableData = data
+        console.log(this.users);
+      }
+    )
+  }
 }

@@ -5,37 +5,35 @@ import { environment } from 'src/environments/environment';
 import { Stats } from '../../schema/Stats';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ReportService {
-  readonly baseURL = environment.baseApiUrl+'report/';
+  readonly baseURL = environment.baseApiUrl + 'report/';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getSubscriptionStats():Observable<Stats[]>{
-    return this.http.get<Stats[]>(this.baseURL+"sub-summary");
+  getSubscriptionStats(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(this.baseURL + 'sub-summary');
   }
-  getActivationsStats():Observable<Stats[]>{
-    return this.http.get<Stats[]>(this.baseURL+"sub-activation");
+  getActivationsStats(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(this.baseURL + 'sub-activation');
   }
-  getUpgradesStats():Observable<Stats[]>{
-    return this.http.get<Stats[]>(this.baseURL+"upgrade");
+  getUpgradesStats(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(this.baseURL + 'upgrade');
   }
-  getDowngradeStats():Observable<Stats[]>{
-    return this.http.get<Stats[]>(this.baseURL+"downgrade");
+  getDowngradeStats(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(this.baseURL + 'downgrade');
   }
-  getUnsubscriptionStats():Observable<Stats[]>{
-    return this.http.get<Stats[]>(this.baseURL+"unsubscribe");
-
+  getUnsubscriptionStats(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(this.baseURL + 'unsubscribe');
   }
-  getSalesByPlanStats():Observable<Stats[]>{
-    return this.http.get<Stats[]>(this.baseURL+"sales-by-plan");
+  getSalesByPlanStats(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(this.baseURL + 'sales-by-plan');
   }
-  getSalesByAddOnStats():Observable<Stats[]>{
-    return this.http.get<Stats[]>(this.baseURL+"sales-by-addOn");
+  getSalesByAddOnStats(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(this.baseURL + 'sales-by-addOn');
   }
-  getRevenueStats():Observable<Stats[]>{
-    return this.http.get<Stats[]>(this.baseURL+"revenue");
+  getRevenueStats(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(this.baseURL + 'revenue');
   }
-
 }

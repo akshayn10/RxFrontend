@@ -84,6 +84,14 @@ button {
     margin: 10px 0;
 }
 
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn2:hover {
+    cursor: pointer;
+}
+
 .btn2 {
     width: 140px;
     height: 40px;
@@ -93,10 +101,9 @@ button {
     border-radius: 10px;
     color: white;
 }
-
-/* .forgot-btn {
-    margin-right: 20px;
-    color: #292C38;
-    font-weight: 600;
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
-} */
+.description{
+  font-size: smaller;
+}
+.plan{
+  font-size: x-small;
+}

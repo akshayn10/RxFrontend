@@ -5,9 +5,7 @@ import { HelpComponent } from './help-main/help.component';
 const routes: Routes = [
   {
     path: '',
-    component: HelpComponent,
-    canActivate: [AuthGuard],
-    data: {}
+    component: HelpComponent
   }
 ];
 

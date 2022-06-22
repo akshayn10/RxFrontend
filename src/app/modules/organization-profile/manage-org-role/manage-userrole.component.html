@@ -1,44 +1,45 @@
-<div class="flex flex-col">
+<div>
   <app-top-bar></app-top-bar>
-  <!-- component -->
-  <div class="title self-center rounded-lg p-5">
-    <div class="flex space-between">
-      <div class="">
-        <h3 class="text-blue-800 font-bold">Manage Oraganization Roles</h3>
-        <span>View and Manage all your account associated information.</span>
+
+  <div class="title-container">
+    <div>
+      <div class="title">Manage Oraganization Roles</div>
+      <div class="intro">
+        Manage all your organization role information.
       </div>
-      <div class=""><a [routerLink]="['add-user']"> <button mat-button class="btn-org">+Add
-            Roles</button>
-        </a>
-      </div>
+    </div>
+    <div class="btn-container">
+      <a [routerLink]="['add-user']">
+        <button mat-button class="name-button">+Add User</button>
+      </a>
     </div>
   </div>
 
-    <table mat-table [dataSource]="data" class="mat-elevation-z8  ">
+  <div class="container-1">
+    <h1>User</h1>
+  </div>
 
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
+  <div class="container-2">
+    <table mat-table [dataSource]="tableData">
 
-      <ng-container matColumnDef="name">
+      <ng-container matColumnDef="username">
         <th mat-header-cell *matHeaderCellDef>User Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <td mat-cell *matCellDef="let user"> {{user.username}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="weight">
+      <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef> Email </th>
-        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="symbol">
+      <ng-container matColumnDef="role">
         <th mat-header-cell *matHeaderCellDef> Role </th>
-        <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+        <td mat-cell *matCellDef="let user"> {{user.role}} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+  </div>
 
-  <app-footer class="mt-5"></app-footer>
 </div>
