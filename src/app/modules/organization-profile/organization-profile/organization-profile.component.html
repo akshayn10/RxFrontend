@@ -60,11 +60,8 @@
             <input id="fileUpload" type="file" (change)="onFileChange($event)" accept="image/*"
               formControlName="logoPath" [(ngModel)]="organization.logoUrl" />
           </div>
-          <!-- <div class="previewImg" *ngIf="">
-            <img height="120px" [src]="" />
-          </div> -->
-          <div class="previewImg" *ngIf="logoPreviewPath && logoPreviewPath !== ''">
-            <img height="120px" [src]="logoPreviewPath" [alt]="organizationForm.value.name" />
+          <div class="previewImg" >
+            <img height="120px" [src]="logoPreviewPath?logoPreviewPath:organization.logoUrl" [alt]="organizationForm.value.name" />
           </div>
         </div>
         <div class="invalid"></div>
@@ -100,13 +97,12 @@
       </div>
 
       <div class="form-group">
-
         <div class="address-line">
           <input placeholder="Address Line 02" type="text" formControlName="addressLine2"
             [(ngModel)]="organization.organizationAddress.addressLine2" />
         </div>
         <div
-          *ngIf="f['addressLine2'].touched && f['organizationAddress'].invalid">
+          *ngIf="f['addressLine2'].touched && f['addressLine2'].invalid">
           <div
             *ngIf="f['addressLine2'].errors && f['addressLine2'].errors['required']">
             Address 2 Required
@@ -126,6 +122,7 @@
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <div class="address-line">
           <input placeholder="Province/ Region" type="text" formControlName="state"
@@ -157,6 +154,7 @@
       <button class="btn" type="submit">
         Save Changes
       </button>
+      <mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
 
     </form>
   </div>

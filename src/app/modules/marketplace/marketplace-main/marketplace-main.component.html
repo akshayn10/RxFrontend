@@ -7,17 +7,15 @@
 
   <div class="search">
     <div class="search-box">
-      <input class="form-control" type="text" matInput placeholder="Start searching products"
-      [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="searchKey" >
-
-
-      <mat-autocomplete autoActiveFirstOption   #auto="matAutocomplete">
-        <mat-option *ngFor="let name of filteredOptions | async" [value]="name">
-          {{name}}
+      <input class="form-control" type="text" placeholder="Start searching products" matInput [matAutocomplete]="auto"
+        [(ngModel)]="searchKey" (keyup)="getProducts()">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of products" [value]="option.productId">
+          <div (click)="navigateToDetails(option.productId)">{{option.name}}</div>
         </mat-option>
       </mat-autocomplete>
-
     </div>
+
     <div class="button-box">
       <a (click)="navigateToSearch()"><button mat-button class="button" type="submit"><img
             src="../../../assets/icons/search.png" /></button></a>
@@ -25,8 +23,7 @@
   </div>
 </div>
 
-
-<div >
-  <router-outlet></router-outlet>
+<div>
+  <app-marketplace-product></app-marketplace-product>
 </div>
 <app-footer></app-footer>

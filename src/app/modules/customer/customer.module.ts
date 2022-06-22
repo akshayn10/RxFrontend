@@ -33,7 +33,6 @@ import { OrganizationIdInterceptorService } from 'src/app/core/interceptors/orga
     FormsModule
 
   ],
-  // providers: [{ provide: HTTP_INTERCEPTORS,useClass:OrganizationIdInterceptorService, multi: true }],
   exports: [
   ]
 

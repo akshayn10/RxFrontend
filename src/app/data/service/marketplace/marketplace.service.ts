@@ -43,8 +43,8 @@ export class MarketplaceService {
     );
     return this.http.get<MarketplaceProductForDisplay[]>(this.baseURL,{params:params});
   }
-  getProductById(productId:string):Observable<MarketplaceProduct>{
-    return this.http.get<MarketplaceProduct>(`${this.baseURL}/${productId}`);
+  getProductById(productId:string):Observable<MarketplaceProductForDisplay>{
+    return this.http.get<MarketplaceProductForDisplay>(`${this.baseURL}/${productId}`);
   }
   
 }

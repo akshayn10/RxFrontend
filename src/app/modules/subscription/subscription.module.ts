@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { SubcsriptionDetailsComponent } from './subcsription-details/subcsription-details.component';
 import { AddOnTableComponent } from './subcsription-details/add-on-table/add-on-table.component';
 import { MatDivider, MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -33,8 +34,9 @@ import { MatDivider, MatDividerModule } from '@angular/material/divider';
     MatDialogModule,
     MatPaginatorModule,
     FormsModule,
-    MatDividerModule
-    
+    MatDividerModule,
+    MatProgressSpinnerModule
+
 
   ],exports: [
 

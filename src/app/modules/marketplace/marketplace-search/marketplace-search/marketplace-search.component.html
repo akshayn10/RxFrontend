@@ -1,21 +1,29 @@
+<div class="top-content">
+  <div class="top">
+    <div class="logo">
+      <img src="../../../assets/logo/rx.png" />
+    </div>
+  </div>
 
-
-<!-- <div class="top-content">
-    <div class="top">
-        <div class="logo">
-            <img src="../../../assets/logo/rx.png" />
-        </div>
+  <div class="search">
+    <div class="search-box">
+      <input class="form-control" type="text" placeholder="Start searching products" matInput [matAutocomplete]="auto"
+        [(ngModel)]="searchKey" (keyup)="getProducts()">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of products" [value]="option.productId">
+          <div (click)="navigateToDetails(option.productId)">{{option.name}}</div>
+        </mat-option>
+      </mat-autocomplete>
     </div>
 
-    <div class="search">
-        <input class="form-control" type="text" name="search" [(ngModel)]="this.searchKey">
-        <button mat-button class="button" type="submit"><img src="../../../assets/icons/search.png" /></button>
-
+    <div class="button-box">
+      <a (click)="navigateToSearch()"><button mat-button class="button" type="submit"><img
+            src="../../../assets/icons/search.png" /></button></a>
     </div>
-</div> -->
+  </div>
+</div>
 
-<div class="flexbox" 
->
+<div class="flexbox" >
     <app-marketplace-flex1></app-marketplace-flex1>
     <app-marketplace-flex2></app-marketplace-flex2>
 </div>

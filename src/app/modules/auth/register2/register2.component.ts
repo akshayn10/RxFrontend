@@ -16,6 +16,7 @@ export class Register2Component implements OnInit {
   logoPreviewPath!: string;
   imageSelected: boolean = false;
   ownerId!: string;
+  response!:string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,15 +33,13 @@ export class Register2Component implements OnInit {
       description: ['', [Validators.required]],
       logoPath: ['', [Validators.required]],
       logoImage: [null, [Validators.required]],
-      email: ['', [Validators.required]],
-      accountOwnerId: ['', [Validators.required]],
-      organizationAddress: this.formBuilder.group({
-        addressLine1: ['', [Validators.required]],
-        addressLine2: ['', [Validators.required]],
-        city: ['', [Validators.required]],
-        state: ['', [Validators.required]],
-        country: ['', [Validators.required]],
-      }),
+      email: ['', [Validators.required,Validators.email]],
+      accountOwnerId: [this.ownerId, [Validators.required]],
+      addressLine1: ['', [Validators.required]],
+      addressLine2: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      country: ['', [Validators.required]],
     });
   }
 
@@ -57,17 +56,22 @@ export class Register2Component implements OnInit {
     formData.append('description', this.organizationForm.value.description);
     formData.append('logoImage', this.organizationForm.value.logoImage);
     formData.append('email', this.organizationForm.value.email);
-    formData.append('accountOwnerId',this.organizationForm.value.accountOwnerId);
-    formData.append('organizationAddress',JSON.stringify(this.organizationForm.value.organizationAddress));
+    formData.append('accountOwnerId', this.organizationForm.value.accountOwnerId);
+    formData.append('addressLine1', this.organizationForm.value.addressLine1);
+    formData.append('addressLine2', this.organizationForm.value.addressLine2);
+    formData.append('city', this.organizationForm.value.city);
+    formData.append('state', this.organizationForm.value.state);
+    formData.append('country', this.organizationForm.value.country);
     console.log(formData);
     this.isLoading = true;
     this.submitted = true;
 
-    // this._organizationService.createOrganization(formData).subscribe((res) => {
-    //   this.organizationForm.reset();
-    //   console.log(res);
-    //   this.isLoading = false;
-    // });
+    this._organizationService.createOrganization(formData).subscribe((res) => {
+      this.organizationForm.reset();
+      console.log(res);
+      this.response = res;
+      this.isLoading = false;
+    });
   }
 
   onFileChange(event: any) {

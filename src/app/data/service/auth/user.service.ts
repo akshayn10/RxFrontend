@@ -19,8 +19,8 @@ export class UserService {
     return this.http.get<User>(`${this.userBaseApiUrl}${userId}`);
   }
 
-  updateUser(userId:string,user:any):Observable<any>{
-    return this.http.put<any>(`${this.userBaseApiUrl}${userId}`,user);
+  updateUser(userId:string,user:any){
+    return this.http.put(`${this.userBaseApiUrl}${userId}`,user,{responseType:'text'});
   }
 
   getUsersForOrganization(organizationId:string):Observable<OrganizationUser[]>{

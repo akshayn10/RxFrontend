@@ -1,30 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace.service';
+import { MarketplaceProductForDisplay } from 'src/app/data/schema/marketplaceProduct';
 import { SharedDataService } from '../../shared-data.service';
-
 
 @Component({
   selector: 'app-marketplace-search',
   templateUrl: './marketplace-search.component.html',
-  styleUrls: ['./marketplace-search.component.css']
+  styleUrls: ['./marketplace-search.component.css'],
 })
 export class MarketplaceSearchComponent implements OnInit {
-  searchKey: string = "";
-  
+  searchKey: string = '';
+  products: MarketplaceProductForDisplay[] = [];
 
-  constructor(private _sharedDataService:SharedDataService ) { }
+  constructor(
+    private _router: Router,
+    private _sharedDataService: SharedDataService,
+    private _marketplaceService: MarketplaceService
+  ) {}
 
-  ngOnInit(): void {
-    this._sharedDataService.currentSearchKey.subscribe(
-      data => this.searchKey = data);
-      console.log(this.searchKey)
+  ngOnInit(): void {}
+
+  getProducts() {
+    this._marketplaceService.getProducts(this.searchKey).subscribe((data) => {
+      this.products = data;
+    });
   }
- 
+  navigateToDetails(productId: string) {
+    this._router.navigate(['/marketplace/product', productId]);
+  }
+  navigateToSearch() {
+    this._sharedDataService.setSearchKey(this.searchKey);
+  }
+  search() {
+    console.log(this.searchKey);
+    this._sharedDataService.setSearchKey(this.searchKey);
 
-
- 
-  
-
+  }
 }

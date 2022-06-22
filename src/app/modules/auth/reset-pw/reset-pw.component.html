@@ -1,31 +1,91 @@
 <div class="container">
   <div class="box-1">
-      <h1>Reset Password</h1>
-      <p>Enter the verification code you have received via your email here. 
-        Please enter the new password and confirm the password to reset your password.
-      </p>
-      <form>
-          <div class="form-group">
-              <label>Enter Verification Code</label>
-              <div>
-                  <input type="text" class="form-control" formControlName="e-mail" />
-              </div>
-          </div>
-          <div class="form-group">
-            <label>Enter New Password</label>
-            <div>
-                <input type="text" class="form-control" formControlName="e-mail" />
-            </div>
+    <h1>Reset Password</h1>
+    <p>
+      Enter the verification code you have received via your email here. Please
+      enter the new password and confirm the password to reset your password.
+    </p>
+    <form [formGroup]="resetForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Enter Your E-mail</label>
+        <div>
+          <input type="text" class="form-control" formControlName="email" />
         </div>
-        <div class="form-group">
-          <label>Confirm Password</label>
-          <div>
-              <input type="text" class="form-control" formControlName="e-mail" />
+        <div class="invalid">
+          <div *ngIf="f['email'].touched && f['email'].invalid">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+              Email is required.
+            </div>
+            <div class="invalid" *ngIf="f['email'].errors && f['email'].errors['required']">
+              Invalid email.
+            </div>
           </div>
+        </div>
       </div>
-      </form>
-      <button class="btn">
-          Reset Password
-      </button>
+      <div class="form-group">
+        <label>Enter New Password</label>
+        <div>
+          <input type="password" class="form-control" formControlName="password" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['password'].touched && f['password'].invalid">
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">
+              Password is required
+            </div>
+            <div *ngIf="f['password'].errors && f['password'].errors['minlength']">
+              Minimum length is 8
+            </div>
+            <div *ngIf="f['password'].touched &&
+                f['password'].errors?.['invalidPassword']">
+              Password should have minimum 8 characters, at least 1 uppercase
+              letter, 1 lowercase letter and 1 number
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <div>
+          <input type="password" class="form-control" formControlName="confirmPassword" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid">
+            <div *ngIf="
+                f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['required']
+              ">
+              Confirm Password is required
+            </div>
+            <div *ngIf="
+                f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['minlength']
+              ">
+              Minimum length is 8
+            </div>
+            <div *ngIf="
+                f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['confirmedValidator']
+              ">
+              Password mismatch
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Enter Token</label>
+        <div>
+          <input type="text" class="form-control" formControlName="token" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['token'].touched && f['token'].invalid">
+            <div *ngIf="f['token'].errors && f['token'].errors['required']">
+              Token is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn">Reset Password</button>
+      <div>{{response}}</div>
+    </form>
   </div>
 </div>
