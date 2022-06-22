@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../shared-data.service';
-import { ProductService } from 'src/app/data/service/Product/product.service';
-import { Product } from 'src/app/data/schema/product.model'
 import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace.service';
-import { MarketplaceProduct, MarketplaceProductForDisplay } from 'src/app/data/schema/marketplaceProduct';
+import { MarketplaceProductForDisplay } from 'src/app/data/schema/marketplaceProduct';
 
 @Component({
   selector: 'app-marketplace-main',
@@ -38,10 +33,8 @@ export class MarketplaceMainComponent implements OnInit {
     }
 
   navigateToSearch() {
-
     console.log(this.searchKey);
      this._sharedDataService.setSearchKey(this.searchKey);
-
     this._router.navigate(['/marketplace/search']);
   }
 }

@@ -26,18 +26,12 @@ export class MarketplaceSearchComponent implements OnInit {
       this.products = data;
     });
   }
-
   navigateToDetails(productId: string) {
     this._router.navigate(['/marketplace/product', productId]);
   }
   navigateToSearch() {
-    console.log(this.searchKey+"search");
     this._sharedDataService.setSearchKey(this.searchKey);
-    this.ngOnInit();
-
-
   }
-
   search() {
     console.log(this.searchKey);
     this._sharedDataService.setSearchKey(this.searchKey);
