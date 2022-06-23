@@ -168,13 +168,29 @@
     height: 40px;
     border-radius: 10px;
     background-color: var(--primary-blue);
-    color: white;
+    color: var(--navWhite);
+    font-size: 14px;
+    margin: 10px 0;
+    margin-bottom: 60px;
+    margin-right: 10px;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  .btn-2 {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--black);
+    color: var(--navWhite);
     font-size: 14px;
     margin: 10px 0;
     margin-bottom: 60px;
   }
   
-  .btn:hover {
+  .btn-2:hover {
     cursor: pointer;
   }
   
