@@ -18,7 +18,7 @@ export class ManageUserroleComponent implements OnInit {
   organizationId!:string
   tableData!:any;
 
-  displayedColumns: string[] = ['username', 'email', 'role'];
+  displayedColumns: string[] = ['username', 'email', 'role', 'delete'];
 
 
 
