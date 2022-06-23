@@ -13,6 +13,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ChangePwComponent } from './change-pw/change-pw.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ToastrModule } from 'ngx-toastr';
+import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
     ForgetPWComponent,
     ResetPwComponent,
     ChangePwComponent,
+    ConfirmEmailComponent,
 
   ],
   imports: [

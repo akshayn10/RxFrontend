@@ -20,7 +20,7 @@
       </div>
     </div>
     <div>
-      <a [routerLink]="['/auth/signup']">
+      <a (click)="navigateToPage(product.redirectUrl)">
         <button mat-button class="name-button">
           Continue to Subscribe
         </button>
@@ -68,7 +68,7 @@
       </ul>
 
       <div class="button-Center">
-        <a [routerLink]="['/auth/signup']"> 
+        <a [routerLink]="['/auth/signup']">
           <button mat-button class="start-button">
             Get Started
           </button>

@@ -13,6 +13,7 @@ import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace
 })
 export class MarketplaceFlex2Component implements OnInit{
   searchKey: string = '';
+  freeTrialFilter: boolean = false;
   products!: MarketplaceProductForDisplay[];
 
   constructor(
@@ -28,8 +29,9 @@ export class MarketplaceFlex2Component implements OnInit{
   }
 
   getProducts() {
-    this._marketplaceService.getProducts(this.searchKey).subscribe((data) => {
+    this._marketplaceService.getProducts(this.searchKey,this.freeTrialFilter).subscribe((data) => {
       this.products = data;
     });
+    console.log(this.freeTrialFilter);
   }
 }
