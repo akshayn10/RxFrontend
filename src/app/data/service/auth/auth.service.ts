@@ -29,7 +29,6 @@ export class AuthService {
     private _tokenService: TokenStorageService
   ) {
     this.currentUserSubject = new BehaviorSubject<LoginResponseData | null>((this._tokenService.getUser()));
-    console.log('rwgr' + this.currentUserSubject);
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
