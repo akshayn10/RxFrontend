@@ -11,7 +11,7 @@ import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace
 export class MarketplaceProductComponent implements OnInit {
   products!: MarketplaceProductForDisplay [];
   searchKey: string = "";
-  
+
   constructor(private _sharedDataService:SharedDataService,
               private _marketplaceService:MarketplaceService) { }
 
@@ -24,7 +24,7 @@ export class MarketplaceProductComponent implements OnInit {
 
 
   getProducts() {
-    this._marketplaceService.getProducts(this.searchKey).subscribe(
+    this._marketplaceService.getProducts(this.searchKey,false).subscribe(
       data => {
         this.products = data;
         console.log(this.products);

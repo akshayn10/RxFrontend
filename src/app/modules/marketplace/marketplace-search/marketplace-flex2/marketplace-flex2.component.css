@@ -33,3 +33,17 @@
     font-weight: 600 !important;
     color: var(--primary-blue);
 }
+
+
+.refine {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.mat-checkbox {
+  font-weight: 600;
+  font-family: Poppins !important;
+}

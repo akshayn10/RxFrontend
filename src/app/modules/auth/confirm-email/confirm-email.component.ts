@@ -31,7 +31,7 @@ export class ConfirmEmailComponent implements OnInit {
         this.notification.showSuccess("Email Verified","Confirm Email");
       }
       else{
-        this.notification.showSuccess("Email Verify error","Confirm Email");
+        this.notification.showError("Email Verify error","Confirm Email");
       }
     })
   }

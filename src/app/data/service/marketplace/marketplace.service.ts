@@ -33,11 +33,12 @@ export class MarketplaceService {
     },{responseType:'text'});
   }
 
-  getProducts(searchKey:string):Observable<MarketplaceProductForDisplay[]>{
+  getProducts(searchKey:string,haveTrial:boolean):Observable<MarketplaceProductForDisplay[]>{
     let params = new HttpParams(
       {
         fromObject:{
-          searchKey:searchKey
+          searchKey:searchKey,
+          haveTrial:haveTrial
         }
       }
     );
@@ -46,5 +47,5 @@ export class MarketplaceService {
   getProductById(productId:string):Observable<MarketplaceProductForDisplay>{
     return this.http.get<MarketplaceProductForDisplay>(`${this.baseURL}/${productId}`);
   }
-  
+
 }
