@@ -1,54 +1,49 @@
-<!-- <div class="top-content">
+<div class="top-content">
   <div class="top">
     <div class="logo">
       <img src="../../../assets/logo/rx.png" />
     </div>
-  </div> -->
-
-  
-    <!-- <div class="button-box">
-      <a [routerLink]="['/marketplace/search']"><button mat-button class="button" type="submit"><img
-            src="../../../assets/icons/search.png" /></button></a>
-    </div> 
-  </div> -->
-
-
-
-<div class="container">
-  <div class="box-1"><img [src]="product?.logoUrl ?? '../../assets/logo/rx.png'" width="40px" height="40px"/></div>
-  <div class="box-2">
-    <div class="container1">
-      <div class="containerItem1">{{product.name}}</div>
-
-      <div class="containerItem2">
-        <p>By {{product.providerName}}</p>
-      </div>
-    </div>
-    <div><a [routerLink]="['/auth/signup']"> <button mat-button class="name-button">Continue to Subscribe</button>
-      </a></div>
   </div>
 </div>
 
+<div class="container">
+  <div class="box-1">
+    <img [src]="product?.logoUrl ?? '../../assets/logo/rx.png'" width="40px" height="40px" />
+  </div>
+  <div class="box-2">
+    <div class="container-1">
+      <div class="containerItem-1">
+        {{product.name}}
+      </div>
+      <div class="containerItem-2">
+        <p>By {{product.providerName}}</p>
+      </div>
+    </div>
+    <div>
+      <a [routerLink]="['/auth/signup']">
+        <button mat-button class="name-button">
+          Continue to Subscribe
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
 
 <div class="cont">
   <div class="details-head">Product Overview</div>
-
   <mat-divider></mat-divider>
   <p class="overview">{{product.description}}</p>
 
-
-    <div class="details-head">Pricing</div>
-    <mat-divider></mat-divider>
-
-<div class="flexBox">
-  <!-- <div class="flex1">
+  <div class="details-head">Pricing</div>
+  <mat-divider></mat-divider>
+  <div class="flexBox">
+    <!-- <div class="flex-1">
     <table mat-table [dataSource] = "dataSource"  >
 
       <ng-container  matColumnDef="planId">
         <th mat-header-cell *matHeaderCellDef class="header"> Plan ID </th>
         <td mat-cell *matCellDef="let Plan "> {{Plan.planId}} </td>
       </ng-container>
-
 
       <ng-container  matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef class="header"> Plan Name </th>
@@ -65,22 +60,22 @@
     </table>
   </div> -->
 
+    <div class="flex-2">
+      <p class="trial-head">Free Trial</p>
+      <ul>
+        <li class="trial">Try one unit of this product for {{product.trialDays}} days</li>
+        <li class="trial">There will be no software charges for this product</li>
+      </ul>
 
-  <div class="flex2">
-<p class="trialH">Free Trial</p>
-<ul>
-  <li class="trial">Try one unit of this product for {{product.trialDays}} days</li>
-  <li class="trial">There will be no software charges for this product</li>
-</ul>
-
-
-<div class="buttonCenter"><a [routerLink]="['/auth/signup']"> <button mat-button class="start-button">Get Started</button>
-</a></div>
+      <div class="button-Center">
+        <a [routerLink]="['/auth/signup']"> 
+          <button mat-button class="start-button">
+            Get Started
+          </button>
+        </a>
+      </div>
+    </div>
   </div>
-</div>
-
-
-
 
 </div>
 
