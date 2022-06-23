@@ -21,11 +21,11 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" (click)="forgotPassword()" class="btn">
+            <button type="submit" class="btn">
               Send Verification Code
           </button>
         </form>
-
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
         <div>{{response}}</div>
     </div>
 </div>
