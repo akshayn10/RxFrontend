@@ -8,6 +8,7 @@
     height: 100vh;
     margin-left: 0px;
     padding: 0px;
+
 }
 
 .box {
@@ -54,11 +55,17 @@ form {
     margin-left: 15%;
     margin-right: 15%;
 }
+.planss{
+  margin-bottom: 50px;
+}
 
 .form-group {
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: 600;
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
 }
 
 input,
@@ -66,9 +73,6 @@ button {
     border: none;
 }
 
-/* label {
-    font-size: 24px;
-} */
 
 .custom-radio {
     margin-top: 10px;
@@ -105,5 +109,9 @@ button {
   font-size: smaller;
 }
 .plan{
+  font-size: x-small;
+}
+.invalid{
+  color: red;
   font-size: x-small;
 }

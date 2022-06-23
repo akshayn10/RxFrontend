@@ -1,8 +1,7 @@
 <div class="container">
     <div class="box-1">
         <h1>Forgot Password?</h1>
-        <p>Please enter the email address. You will receive an email message
-            with verification code to reset your password.
+        <p>Please enter the email address. You will receive an email to reset your password.
         </p>
         <form [formGroup]="forgotForm" (ngSubmit)="forgotPassword()">
             <div class="form-group">
@@ -21,11 +20,11 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" (click)="forgotPassword()" class="btn">
+            <button type="submit" class="btn">
               Send Verification Code
           </button>
         </form>
-
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
         <div>{{response}}</div>
     </div>
 </div>

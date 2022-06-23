@@ -127,6 +127,7 @@ export class AuthService {
     const req = this.http.post<{ message: string }>(url, form);
     return this.mapFromResponse(req, (r) => r.message);
   }
+
   changePassword(
     email: string,
     oldPassword: string,

@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label>Enter Token</label>
         <div>
           <input type="text" class="form-control" formControlName="token" />
@@ -83,8 +83,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <button type="submit" class="btn">Reset Password</button>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
       <div>{{response}}</div>
     </form>
   </div>

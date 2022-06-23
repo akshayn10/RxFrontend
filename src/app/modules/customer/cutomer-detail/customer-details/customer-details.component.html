@@ -23,7 +23,7 @@
             <div>{{ customerID }}</div>
             <div>{{ customer.email }}</div>
             <div>{{ customer.name }}</div>
-            <div>{{ customer.status }}</div>
+            <div [ngClass]="{'statusActive':customer.status=='Active','statusInactive':customer.status=='Inactive'}">{{ customer.status }}</div>
             <div *ngIf="customer.last4">**** **** **** {{ customer.last4 }}</div>
             <div *ngIf="!customer.last4">No Card Details Available {{ customer.last4 }}</div>
           </div>
