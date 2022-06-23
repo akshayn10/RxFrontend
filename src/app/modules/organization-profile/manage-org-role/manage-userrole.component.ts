@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataSource } from '@angular/cdk/table';
 import { OrganizationUser } from 'src/app/data/schema/Organization/organizationUser';
 import { UserService } from 'src/app/data/service/auth/user.service';
 import { AuthService } from 'src/app/data/service/auth/auth.service';

@@ -38,7 +38,7 @@ export class Register3Component implements OnInit {
     }
     this.registerForm3 = this.formBuilder.group({
       systemSubscriptionPlanId:['',[Validators.required]],
-      subscriptionType:[false,[Validators.required]],
+      subscriptionType:[null,[Validators.required]],
       organizationId:[this.organizationId,[Validators.required]],
     })
   }
@@ -51,20 +51,18 @@ export class Register3Component implements OnInit {
     })
   }
 
-
   onSubmit() {
-    // this.submitted = true;
-    // if(this.registerForm3.invalid){
-    //   return;
-    // }
-    // this.isLoading=true;
+    this.submitted = true;
+    if(this.registerForm3.invalid){
+      return;
+    }
+    this.isLoading=true;
     this._systemSubscriptionService.createSystemSubscription(this.registerForm3.value).subscribe((resp)=>{
       console.log("success"+resp);
       this.isLoading=false;
       this.response=resp;
     })
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm3.value))
   }
 
 }

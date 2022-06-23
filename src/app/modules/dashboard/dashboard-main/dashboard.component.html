@@ -7,8 +7,8 @@
     <div class="side-container">
       <app-dashboard-title class="title"></app-dashboard-title>
       <div class="graph-container">
-        <app-graph *ngIf="chart1Data && chart2Data" [graphData]="lineChartData" class="graph"></app-graph>
-        <app-graph *ngIf="chart1Data&&chart2Data" [graphData]="lineChartData2" class="graph"></app-graph>
+        <app-graph *ngIf="chart1Data && chart2Data" [chartTitle]="subscriptionTitle" [graphData]="lineChartData" class="graph"></app-graph>
+        <app-graph *ngIf="chart1Data&&chart2Data" [chartTitle]="revenueTitle" [graphData]="lineChartData2" class="graph"></app-graph>
       </div>
       <app-dashboard-gridbox></app-dashboard-gridbox>
       <div class="bottom-content">
