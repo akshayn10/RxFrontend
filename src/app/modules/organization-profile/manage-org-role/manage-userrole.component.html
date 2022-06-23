@@ -39,9 +39,9 @@
 
       <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef class="header"> </th>
-        <td class="alnright" mat-cell *matCellDef="let Plan ">
+        <td class="alnright" mat-cell *matCellDef="let user">
           <a>
-            <button mat-button class="delete-button">
+            <button (click)="deleteUser(user.email)" mat-button class="delete-button">
               <img class="image-delete" src="../../../../../assets/icons/icons8-delete.svg" alt="">
             </button>
           </a>
