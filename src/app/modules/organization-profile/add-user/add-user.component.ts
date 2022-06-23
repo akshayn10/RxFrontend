@@ -15,8 +15,8 @@ interface Role{
 })
 export class AddUserComponent implements OnInit {
   roles :Role[]=[
-    {value:"Admin",type:'ADMIN'},
-    {value:"FinanceUser",type:'FINANCE USER'},
+    {value:"Admin",type:'Admin'},
+    {value:"FinanceUser",type:'Finance User'},
   ]
   organizationId!:string
   response!:string;
