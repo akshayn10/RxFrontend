@@ -12,7 +12,7 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./bill-table.component.css'],
 })
 export class BillTableComponent implements AfterViewInit, OnInit {
-  searchKey!: string;
+  searchKey: string="";
   displayedColumns: string[] = ['billId', 'name', 'generatedDate', 'amount'];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,7 +26,7 @@ export class BillTableComponent implements AfterViewInit, OnInit {
   }
 
   getBills() {
-    this._billService.getAllBills().subscribe((data) => {
+    this._billService.getAllBills(this.searchKey).subscribe((data) => {
       this.dataSource.data = data;
       console.log(data);
     });
