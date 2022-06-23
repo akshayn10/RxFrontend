@@ -84,3 +84,7 @@
 .mat-button {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
+
+::ng-deep .mat-option {
+  font-family: "Poppins" !important;
+}
