@@ -39,6 +39,17 @@
     font-family: 'Poppins';
     font-weight:normal;
 }
+
+.buttons .market {
+    width: 90px;
+    height: 40px;
+    background-color: #292C38;
+    border-radius: 20px;
+    color: #ECEFF4;
+    font-family: 'Poppins';
+    font-weight:normal;
+}
+
 .buttons .dashboard {
   width: 150px;
   height: 40px;

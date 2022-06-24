@@ -45,7 +45,7 @@
 
 .header {
     font-weight: 700;
-    font-size: 72px;
+    font-size: 48px;
     margin-left: 15%;
     color: var(--primary-blue);
     text-align: start;
@@ -79,39 +79,71 @@ button {
 }
 
 .btn {
-    width: 140px;
+    width: 160px;
     height: 40px;
     border-radius: 10px;
     background-color: #292C38;
-    color: white;
-    font-weight: bold;
+    color: var(--navWhite);
     margin: 10px 0;
+    font-weight: 600;
 }
 
 .btn:hover {
     cursor: pointer;
 }
 
-.btn2:hover {
-    cursor: pointer;
-}
-
-.btn2 {
-    width: 140px;
+.btn-2 {
+    width: 160px;
     height: 40px;
     margin-left: 10px;
     background-color: var(--primary-blue);
-    font-weight: bold;
     border-radius: 10px;
-    color: white;
+    color: var(--navWhite);
+    font-weight: 600;
 }
+
+.btn-2:hover {
+    cursor: pointer;
+}
+
+.labelName {
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .description{
   font-size: smaller;
 }
+
 .plan{
   font-size: x-small;
 }
+
 .invalid{
   color: red;
   font-size: x-small;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: var(--navWhite);
+}
+
+::ng-deep .mat-option-text {
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 600;
+}
+
+::mg-deep .invalid[_ngcontent-nwo-c109] {
+    font-family: "Poppins";
+}
+
+::ng-deep .mat-form-field {
+    font-family: "Poppins";
+}
+
+::ng-deep .mat-select {
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 600;
 }
