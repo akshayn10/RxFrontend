@@ -60,6 +60,7 @@
           <button class="btn2" [disabled]="!registerForm3.valid" type="submit">Proceed Payment</button>
           <mat-spinner *ngIf="isLoading"></mat-spinner>
         </div>
+        <a *ngIf="response" [href]="response">Click this link to Add Your Card Details</a>
         <div>{{response}}</div>
       </form>
     </div>

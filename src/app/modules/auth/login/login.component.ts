@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
           }
           this.router.navigate(['/auth/signup2']);
           this.isLoading = false;
-
           return;
         }
         this._notificationService.showError(res.data.message, 'Login Error');

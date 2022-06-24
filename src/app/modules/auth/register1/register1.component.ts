@@ -82,7 +82,7 @@ export class Register1Component implements OnInit {
         {
           if (res.data.isSuccess) {
             this.isLoading = false;
-            this.router.navigate(['/auth/signup2']);
+            this.router.navigate(['/auth/login']);
             this._notificationService.showSuccess(res.data.message, 'Register Success');
           }
           else{
