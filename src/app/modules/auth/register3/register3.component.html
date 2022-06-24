@@ -7,13 +7,13 @@
   </div>
   <div class="box">
     <div class="box-2">
-      <div class="header">System Subscription</div>
+      <div class="header">SYSTEM SUBSCRIPTION</div>
       <form [formGroup]="registerForm3" (ngSubmit)="onSubmit()">
         <div class="planss">
           <div *ngFor="let plan of plans">
-            <div style="font-weight: bold;">{{plan.name}}</div>
-            <div>{{plan.price}}$</div>
-            <div>{{plan.description}}</div>
+            <div style="font-weight: 700; color: var(--primary-blue); font-size: 18px; margin-top: 10px; margin-left: 16px;">{{plan.name}}</div>
+            <div style="font-weight: 600; color: var(--black); font-size: 14px; margin-left: 24px;">{{plan.price}}$</div>
+            <div style="font-weight: 600; color: var(--black); font-size: 14px; margin-left: 24px;">{{plan.description}}</div>
           </div>
         </div>
 
@@ -30,7 +30,7 @@
                 <div class="invalid"
                   *ngIf="f['systemSubscriptionPlanId'].touched && f['systemSubscriptionPlanId'].invalid">
                   <div *ngIf="f['systemSubscriptionPlanId'].errors && f['systemSubscriptionPlanId'].errors['required']">
-                    Subscription Plan Id is required.
+                    Subscription Plan is required.
                   </div>
                 </div>
               </mat-form-field>
@@ -48,16 +48,16 @@
             </mat-select>
             <div class="invalid" *ngIf="f['subscriptionType'].touched && f['subscriptionType'].invalid">
               <div *ngIf="f['subscriptionType'].errors && f['subscriptionType'].errors['required']">
-                SubscriptionType is required.
+                Subscription Type is required.
               </div>
             </div>
           </mat-form-field>
         </div>
 
         <div class="blank" style="height: 15px;"></div>
-        <div class="form-group">
+        <div class="btn-container">
           <button class="btn" routerLink="/signup">Previous</button>
-          <button class="btn2" [disabled]="!registerForm3.valid" type="submit">Proceed Payment</button>
+          <button class="btn-2" [disabled]="!registerForm3.valid" type="submit">Proceed Payment</button>
           <mat-spinner *ngIf="isLoading"></mat-spinner>
         </div>
         <div>{{response}}</div>
