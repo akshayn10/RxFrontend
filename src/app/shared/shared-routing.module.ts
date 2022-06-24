@@ -4,10 +4,7 @@ import { FooterComponent } from './components/footer/footer/footer.component';
 
 
 const routes: Routes = [
-  {
-    path: 'footer',
-    component: FooterComponent,
-  }
+
 ];
 
 

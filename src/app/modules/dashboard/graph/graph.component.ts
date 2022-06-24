@@ -8,6 +8,7 @@ import * as Chart from 'chart.js';
 })
 export class GraphComponent implements AfterViewInit {
   @Input() graphData: any;
+  @Input() chartTitle!:string;
   @ViewChild('lineCanvas') lineCanvas!: ElementRef;
   lineChart: any;
   constructor() {
@@ -50,6 +51,7 @@ export class GraphComponent implements AfterViewInit {
             color: 'rgba(52, 122, 226, 0.0)',
             zeroLineColor: "transparent",
           },
+
           ticks: {
             padding: 20,
             fontColor: "#292C38",
@@ -60,6 +62,7 @@ export class GraphComponent implements AfterViewInit {
         }],
 
         xAxes: [{
+
           barPercentage: 1.6,
           gridLines: {
             drawBorder: false,

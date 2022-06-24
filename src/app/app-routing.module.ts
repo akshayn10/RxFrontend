@@ -5,52 +5,58 @@ import { AuthGuard } from './core/guard/auth.guard';
 import { NoSubscriptionComponent } from './shared/components/no-subscription/no-subscription.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
-
 const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./modules/home/home.module').then((m) => m.HomeModule)
+      import('./modules/home/home.module').then((m) => m.HomeModule),
   },
-
+  { path: 'no-subscription', component: NoSubscriptionComponent },
   {
-    path: 'auth',loadChildren: () =>import('./modules/auth/auth.module').then((m) => m.AuthModule)
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'bill',
-    loadChildren: () =>import('./modules/bill/bill.module').then((m) => m.TransactionModule),
+    loadChildren: () =>
+      import('./modules/bill/bill.module').then((m) => m.TransactionModule),
     canActivate: [AuthGuard],
-    data: {}
+    data: {},
   },
   {
     path: 'dashboard',
     loadChildren: () =>
-      import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
+      import('./modules/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
     canActivate: [AuthGuard],
-    data: {}
+    data: {},
   },
   {
     path: 'profile',
     loadChildren: () =>
       import('./modules/profile/profile.module').then((m) => m.ProfileModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
-
 
   {
     path: 'customer',
     loadChildren: () =>
-      import('./modules/customer/customer.module').then((m) => m.CustomerModule),
+      import('./modules/customer/customer.module').then(
+        (m) => m.CustomerModule
+      ),
     canActivate: [AuthGuard],
     data: {
-      roles:[Role.Admin]
-    }
+      roles: [Role.Admin],
+    },
   },
 
   {
     path: 'help',
-    loadChildren: () =>import('./modules/help/help.module').then((m) => m.HelpModule),
-    canActivate: [AuthGuard]
+    loadChildren: () =>
+      import('./modules/help/help.module').then((m) => m.HelpModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'product',
@@ -58,48 +64,55 @@ const routes: Routes = [
       import('./modules//product/product.module').then((m) => m.ProductModule),
     canActivate: [AuthGuard],
     data: {
-      roles:[Role.Admin]
-    }
+      roles: [Role.Admin],
+    },
   },
   {
     path: 'organization',
     loadChildren: () =>
-      import('./modules/organization-profile/organization.module').then((m) => m.OrganizationModule),
+      import('./modules/organization-profile/organization.module').then(
+        (m) => m.OrganizationModule
+      ),
     canActivate: [AuthGuard],
     data: {
-      roles:[Role.Owner]
-    }
+      roles: [Role.Owner],
+    },
   },
   {
     path: 'subscription',
-    loadChildren: () =>import('./modules/subscription/subscription.module').then((m) => m.SubscriptionModule),
-      canActivate: [AuthGuard],
-      data: {
-        // roles:[Role.Admin]
-      }
+    loadChildren: () =>
+      import('./modules/subscription/subscription.module').then(
+        (m) => m.SubscriptionModule
+      ),
+    canActivate: [AuthGuard],
+    data: {
+      // roles:[Role.Admin]
+    },
   },
   {
     path: 'reports',
     loadChildren: () =>
       import('./modules/reports/reports.module').then((m) => m.ReportsModule),
-      canActivate: [AuthGuard],
-      data: {}
+    canActivate: [AuthGuard],
+    data: {},
   },
   {
     path: 'marketplace',
-    loadChildren: () =>import('./modules/marketplace/marketplace.module').then((m) => m.MarketplaceModule)
-
+    loadChildren: () =>
+      import('./modules/marketplace/marketplace.module').then(
+        (m) => m.MarketplaceModule
+      ),
   },
-  { path: 'no-subscription', component: NoSubscriptionComponent },
+
   { path: '404', component: NotFoundComponent },
   {
-    path: '**', redirectTo: '404'
+    path: '**',
+    redirectTo: '404',
   },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

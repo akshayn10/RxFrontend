@@ -11,8 +11,9 @@ import { ForgetPWComponent } from './forget-pw/forget-pw.component';
 import { ResetPwComponent } from './reset-pw/reset-pw.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ChangePwComponent } from './change-pw/change-pw.component';
-import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { ToastrModule } from 'ngx-toastr';
+import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
     ForgetPWComponent,
     ResetPwComponent,
     ChangePwComponent,
+    ConfirmEmailComponent,
 
   ],
   imports: [
@@ -32,7 +34,9 @@ import { MatSelectModule } from '@angular/material/select';
     RouterModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatSelectModule
+    MatSelectModule,
+    ToastrModule.forRoot()
+
   ],
   exports: [
   ]

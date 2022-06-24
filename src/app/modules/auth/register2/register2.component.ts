@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/core/service/notification.service';
 import { LoginResponseData } from 'src/app/data/schema/auth/loginResponseData';
 import { AuthService } from 'src/app/data/service/auth/auth.service';
 import { OrganizationService } from 'src/app/data/service/organization/organization.service';
@@ -17,11 +19,14 @@ export class Register2Component implements OnInit {
   imageSelected: boolean = false;
   ownerId!: string;
   response!:string;
+  organizationId!: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private _organizationService: OrganizationService,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _router:Router,
+    private _notificationService:NotificationService
   ) { }
 
   ngOnInit(): void {
@@ -47,9 +52,9 @@ export class Register2Component implements OnInit {
     return this.organizationForm.controls;
   }
   onSubmit() {
-    // if (this.organizationForm.invalid) {
-    //   return;
-    // }
+    if (this.organizationForm.invalid) {
+      return;
+    }
     const formData = new FormData();
     console.log(this.organizationForm.value);
     formData.append('name', this.organizationForm.value.name);
@@ -71,6 +76,8 @@ export class Register2Component implements OnInit {
       console.log(res);
       this.response = res;
       this.isLoading = false;
+      this._notificationService.showSuccess('Organization created successfully',"Organization Success");
+      this._router.navigate(['/auth/login']);
     });
   }
 

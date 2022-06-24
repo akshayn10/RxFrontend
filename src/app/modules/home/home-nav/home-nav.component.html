@@ -1,11 +1,18 @@
 <div class="container">
-    <!-- <h1>Simple card</h1> -->
-    <div class="logo">
-        <img src="../../../../assets/logo/rx.png">
-    </div>
+  <!-- <h1>Simple card</h1> -->
+  <div class="logo">
+    <img src="../../../../assets/logo/rx.png">
+  </div>
 
-    <div class="buttons">
+  <div class="buttons">
+    <div *ngIf="!isLoggedIn">
+      <button mat-raised-button routerLink="/marketplace" style='margin-right:16px; width: 200px;' class="market">Go to Marketplace</button>
       <button mat-raised-button routerLink="/auth/login" style='margin-right:16px' class="signin">Sign In</button>
       <button mat-raised-button routerLink="/auth/signup" style='margin-right:16px' class="signup">Sign Up</button>
     </div>
+    <div *ngIf="isLoggedIn">
+      <button mat-raised-button routerLink="/auth/login" style='margin-right:16px; width: 200px;' class="market">Go to Marketplace</button>
+      <button mat-raised-button routerLink="/dashboard" class="dashboard">Go to Dashboard</button>
+    </div>
+  </div>
 </div>

@@ -10,6 +10,9 @@ import { DashboardService } from 'src/app/data/service/Dashboard/dashboard.servi
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  subscriptionTitle = 'Subscription';
+  revenueTitle = 'Revenue';
+
   chart1Data!:number[];
   chart1Labels!:string[];
   chart2Data!:number[];

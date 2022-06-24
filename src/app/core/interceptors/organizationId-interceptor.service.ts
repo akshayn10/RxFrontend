@@ -23,7 +23,13 @@ export class OrganizationIdInterceptorService implements HttpInterceptor {
     return next.handle(authreq).pipe(
       catchError(errordata => {
         if (errordata.status === 401) {
+          if(authservice.getRole() == 'Owner'){
+            this.router.navigate(['/auth/signup3']);
+
+          }
+          else{
           this.router.navigate(['/no-subscription']);
+          }
         }
         return throwError(errordata);
       })

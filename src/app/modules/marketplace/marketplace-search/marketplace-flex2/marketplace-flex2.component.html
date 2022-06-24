@@ -1,17 +1,19 @@
 <div class="box">
-  <div>{{searchKey+" Current Search key"}}</div>
- <div   *ngFor="let Product of products">
-    <mat-card class="card" >
-        <mat-card-title-group>
-          <img mat-card-sm-image [src]="Product.logoUrl" >
-          <mat-card-title>{{Product.name}}</mat-card-title>
-          <mat-card-subtitle>{{Product.providerName}}</mat-card-subtitle>
-
-        </mat-card-title-group>
-        <mat-card-content>
-          {{Product.description}}
-        </mat-card-content>
-      </mat-card>
-    </div>
-
+  <p class="refine">Refine Results</p>
+  <div class="tick">
+    <mat-checkbox [(ngModel)]="freeTrialFilter" (ngModelChange)="getProducts()" class="checkbox">Free Trial
+    </mat-checkbox>
+  </div>
+  <div class="card-holder" *ngFor="let Product of products">
+    <mat-card class="card">
+      <mat-card-title-group>
+        <img mat-card-sm-image [src]="Product.logoUrl">
+        <mat-card-title>{{Product.name}}</mat-card-title>
+        <mat-card-subtitle>{{Product.providerName}}</mat-card-subtitle>
+      </mat-card-title-group>
+      <mat-card-content>
+        {{Product.description}}
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

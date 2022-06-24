@@ -1,19 +1,49 @@
-.box{
-    width:100%;
+.box {
+    width: 60%;
     height: 100%;
-    background-color: var(--navWhite);
+    /* background-color: var(--navWhite); */
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-top: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
+    margin: 0 auto;
 }
 
-.card{
-  
+.card {
     max-width: 90%;
-    margin: auto;
-    /* background-color:#d1d7de; */
-    background-color:#f0f4fc;
-    margin-bottom: 8px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    /* margin: auto; */
+    margin: 0 auto;
+    background-color: var(--navWhite);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.card-holder {
+    padding: 10px;
+}
+
+::ng-deep .mat-option {
+    font-family: "Poppins" !important;
+}
+
+::ng-deep .mat-card {
+    padding: 24px !important;
+    border-radius: 10px !important;
+    font-family: "Poppins" !important;
+}
+
+::ng-deep .mat-card-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: var(--primary-blue);
+}
+
+
+.refine {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.mat-checkbox {
+  font-weight: 600;
+  font-family: Poppins !important;
 }

@@ -1,55 +1,68 @@
 <div class="container">
-    <div class="box">
-      <div class="box-1">
-        <!-- <img class="logo" routerLink="/" src="../../../assets/logo/rx.png" />  -->
-        <object data="../../../../assets/logo/RX Logo T.svg" width="400" height="400"> </object>
-      </div>
-    </div>
-    <div class="box">
-      <div class="box-2">
-        <div class="header">System Subscription</div>
-        <form [formGroup]="registerForm3" (ngSubmit)="onSubmit()">
-
-            <div class="form-group">
-                <label style="font-size: 18px;">Choose Plan</label>
-                <div>
-                  <div *ngFor="let plan of plans">
-                    {{plan.name}}<br>{{plan.price}}<br>{{plan.description}}<br>
-                  </div>
-
-                <div class="form-group" >
-                  <label class="labelName">Plans</label>
-                  <mat-form-field class="form-field" appearance="fill">
-                    <mat-select formControlName="systemSubscriptionPlanId">
-                      <mat-option  *ngFor="let plan of plans" [value]="plan.planId">
-                        {{plan.name}}<br>
-
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </div>
-              </div>
-
-            </div>
-            <div class="form-group" >
-              <label class="labelName">Subscription Type</label>
-              <mat-form-field class="form-field" appearance="fill">
-                <mat-select formControlName="subscriptionType">
-                  <mat-option *ngFor="let type of types" [value]="type.value">
-                    {{type.type}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-
-            <div class="blank" style="height: 15px;"></div>
-            <div class="form-group">
-                <button class="btn" routerLink="/signup">Previous</button>
-                <button class="btn2" type="submit">Proceed Payment</button>
-                <mat-spinner *ngIf="isLoading"></mat-spinner>
-            </div>
-            <div>{{response}}</div>
-        </form>
-      </div>
+  <div class="box">
+    <div class="box-1">
+      <!-- <img class="logo" routerLink="/" src="../../../assets/logo/rx.png" />  -->
+      <object data="../../../../assets/logo/RX Logo T.svg" width="400" height="400"> </object>
     </div>
   </div>
+  <div class="box">
+    <div class="box-2">
+      <div class="header">SYSTEM SUBSCRIPTION</div>
+      <form [formGroup]="registerForm3" (ngSubmit)="onSubmit()">
+        <div class="planss">
+          <div *ngFor="let plan of plans">
+            <div style="font-weight: 700; color: var(--primary-blue); font-size: 18px; margin-top: 10px; margin-left: 16px;">{{plan.name}}</div>
+            <div style="font-weight: 600; color: var(--black); font-size: 14px; margin-left: 24px;">{{plan.price}}$</div>
+            <div style="font-weight: 600; color: var(--black); font-size: 14px; margin-left: 24px;">{{plan.description}}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <div class="form-group">
+              <label class="labelName">Plans</label>
+              <mat-form-field class="form-field" appearance="fill">
+                <mat-select formControlName="systemSubscriptionPlanId">
+                  <mat-option *ngFor="let plan of plans" [value]="plan.planId">
+                    {{plan.name}}<br>
+                  </mat-option>
+                </mat-select>
+                <div class="invalid"
+                  *ngIf="f['systemSubscriptionPlanId'].touched && f['systemSubscriptionPlanId'].invalid">
+                  <div *ngIf="f['systemSubscriptionPlanId'].errors && f['systemSubscriptionPlanId'].errors['required']">
+                    Subscription Plan is required.
+                  </div>
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label class="labelName">Subscription Type</label>
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-select formControlName="subscriptionType">
+              <mat-option *ngFor="let type of types" [value]="type.value">
+                {{type.type}}
+              </mat-option>
+            </mat-select>
+            <div class="invalid" *ngIf="f['subscriptionType'].touched && f['subscriptionType'].invalid">
+              <div *ngIf="f['subscriptionType'].errors && f['subscriptionType'].errors['required']">
+                Subscription Type is required.
+              </div>
+            </div>
+          </mat-form-field>
+        </div>
+
+        <div class="blank" style="height: 15px;"></div>
+        <div class="btn-container">
+          <button class="btn" routerLink="/signup">Previous</button>
+          <button class="btn-2" [disabled]="!registerForm3.valid" type="submit">Proceed Payment</button>
+          <mat-spinner *ngIf="isLoading"></mat-spinner>
+        </div>
+        <a *ngIf="response" [href]="response">Click this link to Add Your Card Details</a>
+        <div>{{response}}</div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -22,7 +22,7 @@ export class MarketplaceMainComponent implements OnInit {
     ngOnInit() {
     }
     getProducts() {
-      this._marketplaceService.getProducts(this.searchKey).subscribe(
+      this._marketplaceService.getProducts(this.searchKey,false).subscribe(
         data => {
           this.products = data;
         }

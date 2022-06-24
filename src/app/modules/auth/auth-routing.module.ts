@@ -7,6 +7,7 @@ import { ForgetPWComponent } from './forget-pw/forget-pw.component';
 import { ResetPwComponent } from './reset-pw/reset-pw.component';
 import { ChangePwComponent } from './change-pw/change-pw.component';
 import { Component } from '@angular/core';
+import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,9 @@ const routes: Routes = [
       { path: 'signup3', component:Register3Component },
       { path: 'forgot-password', component:ForgetPWComponent },
       { path: 'reset-password', component:ResetPwComponent },
-      { path: 'change-password', component:ChangePwComponent }
+      { path: 'change-password', component:ChangePwComponent },
+      { path: 'confirm-email', component:ConfirmEmailComponent }
+
     ]
   }
 ];
