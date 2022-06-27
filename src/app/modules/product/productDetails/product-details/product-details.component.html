@@ -17,8 +17,6 @@
         <a (click)="onAddToMarketplace()">
           <button *ngIf="!product.isAddedToMarketplace" mat-button class="btn-marketplace">+ Add to Marketplace</button>
           <button *ngIf="product.isAddedToMarketplace" disabled mat-button class="btn-marketplace">Added to Marketplace</button>
-          <button *ngIf="response" disabled mat-button class="btn-marketplace">{{response}}</button>
-
         </a>
       </div>
     </div>

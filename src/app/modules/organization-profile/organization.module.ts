@@ -1,3 +1,4 @@
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgModule } from '@angular/core';
 import {OraganizationProfileComponent} from './organization-profile/organization-profile.component'
 import { OrganizationRoutes } from './organization-routing.module';
@@ -25,7 +26,8 @@ import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress
     MatTableModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxSpinnerModule
   ]
 })
 export class  OrganizationModule { }

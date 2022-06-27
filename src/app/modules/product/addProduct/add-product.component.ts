@@ -13,6 +13,7 @@ export class AddProductComponent implements OnInit {
   submitted = false;
   logoPreviewPath!: string;
   imageSelected:boolean = false;
+  isLoading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -46,16 +47,12 @@ export class AddProductComponent implements OnInit {
     formData.append('webhookURL', this.productForm.value.webhookURL);
     formData.append('redirectUrl', this.productForm.value.redirectUrl);
     formData.append('freeTrialDays', this.productForm.value.freeTrialDays);
-
-    console.log(formData);
-
-    console.log(this.productForm.value);
-
+    this.isLoading = true;
     this.productservice
       .CreateProduct(formData)
       .subscribe((res) => {
         this.productForm.reset();
-        console.log(res);
+        this.isLoading = false;
       });
     this.submitted = true;
     this.logoPreviewPath="";

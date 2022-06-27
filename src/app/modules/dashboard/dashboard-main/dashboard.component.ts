@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit } from '@angular/core';
 import { ChartData, ChartDataSets } from 'chart.js';
 import { DashboardStats } from 'src/app/data/schema/dashboardStats';
@@ -34,7 +35,7 @@ export class DashboardComponent implements OnInit {
     yLabel:'Subscription'
   };
 
-  constructor(private _dashboardService:DashboardService) {
+  constructor(private _dashboardService:DashboardService,private spinner:NgxSpinnerService) {
     this.getSubscriptionData();
     this.getRevenueData();
 
@@ -42,7 +43,9 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.getTableData();
+    this.spinner.show();
 
   }
 
@@ -53,7 +56,6 @@ export class DashboardComponent implements OnInit {
       this.chart1Labels = data.map((x)=>x.type);
       this.lineChartData.chartLabels = this.chart1Labels;
       console.log(this.chart1Data)
-
     })
   }
 
@@ -63,14 +65,15 @@ export class DashboardComponent implements OnInit {
       this.lineChartData2.chartLabels = data.map((x)=>x.type);
       this.chart2Data = data.map((x)=>x.count);
       this.chart2Labels = data.map((x)=>x.type);
-      console.log(this.chart2Data)
     })
   }
   getTableData():void{
     this._dashboardService.getTableDetails().subscribe((data)=>{
       this.planData = data.plan;
       this.addOnData = data.addOn;
-      console.log(data)
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1000);
     })
   }
 

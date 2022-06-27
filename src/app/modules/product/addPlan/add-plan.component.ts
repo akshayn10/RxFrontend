@@ -14,6 +14,7 @@ export class AddPlanComponent implements OnInit {
   productId: string;
   planForm: FormGroup = new FormGroup({});
   submitted = false;
+  isLoading: boolean = false;
 
   constructor(
     public _activatedRoute: ActivatedRoute,
@@ -48,11 +49,12 @@ export class AddPlanComponent implements OnInit {
     if (this.submitted == true) {
       return;
     }
-
+    this.isLoading = true;
     this.planservice
       .postPlan(this.productId, this.planForm.value)
       .subscribe((res) => {
         console.log(res);
+        this.isLoading = false;
         this.submitted = true;
         this.planForm.reset();
       });

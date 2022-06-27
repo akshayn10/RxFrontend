@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -26,10 +27,12 @@ export class SubTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(
     private _router: Router,
-    private _subscriptionService: SubscriptionService
+    private _subscriptionService: SubscriptionService,
+    private spinner:NgxSpinnerService
   ) {}
   ngOnInit(): void {
     this.getSubscriptions();
+    this.spinner.show();
   }
 
   ngAfterViewInit() {
@@ -40,6 +43,9 @@ export class SubTableComponent implements AfterViewInit, OnInit {
     this._subscriptionService.getAllSubscriptions().subscribe((data) => {
       this.subscriptions = data;
       this.dataSource.data = this.subscriptions;
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1000);
     });
   }
 

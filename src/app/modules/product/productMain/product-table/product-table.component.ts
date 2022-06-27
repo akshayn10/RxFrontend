@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/service/Product/product.service';
 import { Product } from 'src/app/data/schema/product.model'
@@ -17,16 +18,17 @@ export class ProductTableComponent implements AfterViewInit, OnInit {
   products: Product[] = [];
   displayedColumns: String[] = ['logoURL', 'productId', 'name', 'planCount', 'addOnCount', 'redirectUrl'];
 
-  
+
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private _router: Router,private productservice: ProductService) { }
+  constructor(private _router: Router,private productservice: ProductService,private spinner:NgxSpinnerService) { }
 
- 
+
 
   ngOnInit(): void {
     this.getProducts();
+    this.spinner.show()
   }
 
   ngAfterViewInit() {
@@ -37,19 +39,21 @@ export class ProductTableComponent implements AfterViewInit, OnInit {
     this.productservice.getProducts(this.searchKey).subscribe((data: Product[]) => {
       this.products = data;
       this.dataSource.data = this.products
-      //console.log(this.dataSource)
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1000);
 
     },
     (error:any)=>{
       console.log(error);
     }
-    
+
     );
   }
 get totalRows(): number {
   return this.products.length;
   }
-  
+
 
   navigate(row: any) {
     this._router.navigate(['/product', row.productId]);

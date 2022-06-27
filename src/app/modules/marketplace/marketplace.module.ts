@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarketplaceMainComponent } from './marketplace-main/marketplace-main.component';
@@ -16,6 +17,7 @@ import { MarketplaceProductDetailComponent } from './marketplace-product-detail/
 import { MatDividerModule } from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
 import {  MatCardModule } from '@angular/material/card';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import {  MatCardModule } from '@angular/material/card';
   ],
   imports: [
     CommonModule,
+    NgxSpinnerModule,
     MarketplaceRoutes,
     SharedModule,
     MatCheckboxModule,
@@ -39,8 +42,7 @@ import {  MatCardModule } from '@angular/material/card';
     MatAutocompleteModule,
     MatDividerModule,
     MatTableModule,
-    MatCardModule,
-
+    MatCardModule
   ],
 })
 export class MarketplaceModule { }
