@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit } from '@angular/core';
 import { CustomerStats } from 'src/app/data/schema/customer';
 import { CustomerService } from 'src/app/data/service/Customer/customer.service';
@@ -12,15 +13,18 @@ export class CustomerGridComponent implements OnInit {
 
 
 
-  constructor(private _customerService:CustomerService) { }
+  constructor(private _customerService:CustomerService,private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.getStats();
   }
   getStats(){
     this._customerService.getCustomerStats().subscribe(data=>{
       this.customerStats=data;
-      console.log(this.customerStats);
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1000);
     }
     );
   }

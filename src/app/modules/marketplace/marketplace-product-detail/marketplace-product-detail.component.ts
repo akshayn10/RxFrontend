@@ -4,12 +4,8 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { MatTableDataSource } from '@angular/material/table';
 import { Plan } from 'src/app/data/schema/plan.model';
-import {
-  MarketplaceProduct,
-  MarketplaceProductForDisplay,
-} from 'src/app/data/schema/marketplaceProduct';
+import { MarketplaceProductForDisplay,} from 'src/app/data/schema/marketplaceProduct';
 import { MarketplaceService } from 'src/app/data/service/marketplace/marketplace.service';
-import { SharedDataService } from '../shared-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

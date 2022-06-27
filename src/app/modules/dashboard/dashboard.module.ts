@@ -1,3 +1,4 @@
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardTitleComponent } from './dashboard-title/dashboard-title.component';
@@ -30,7 +31,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ChartsModule,
     MatTableModule,
     MatTabsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxSpinnerModule
 
   ], exports: [
 

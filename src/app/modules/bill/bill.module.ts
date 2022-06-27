@@ -1,3 +1,4 @@
+import { NgxSpinnerService, NgxSpinnerModule } from 'ngx-spinner';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BillComponent } from './bill-main/bill.component';
@@ -30,6 +31,7 @@ import { BillDetailsComponent } from './bill-details/bill-details.component';
     FormsModule,
     MatPaginatorModule,
     MatDividerModule,
+    NgxSpinnerModule
   ],
   exports: [],
 })

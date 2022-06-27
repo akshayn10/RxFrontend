@@ -1,3 +1,4 @@
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SubscriptionComponent } from './subscription-main/subscription.component';
@@ -35,9 +36,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatPaginatorModule,
     FormsModule,
     MatDividerModule,
-    MatProgressSpinnerModule
-
-
+    MatProgressSpinnerModule,
+    NgxSpinnerModule
   ],exports: [
 
   ]

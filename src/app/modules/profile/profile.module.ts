@@ -1,3 +1,4 @@
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgModule } from '@angular/core';
 import { ProfilePageComponent } from './profile/profile.component';
 import { ProfileRoutes } from './profile-routing.module';
@@ -17,7 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
     ProfileRoutes,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxSpinnerModule
   ]
 })
 export class ProfileModule { }

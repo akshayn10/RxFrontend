@@ -1,3 +1,4 @@
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomerComponent } from './customer-main/customer.component';
@@ -30,7 +31,8 @@ import { OrganizationIdInterceptorService } from 'src/app/core/interceptors/orga
     MatTableModule,
     MatDialogModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule
 
   ],
   exports: [

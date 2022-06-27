@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -25,9 +26,10 @@ export class TransactionTableComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private _transactionService: TransactionService) {}
+  constructor(private _transactionService: TransactionService,private spinner:NgxSpinnerService) {}
 
   ngOnInit(): void {
+    this.spinner.show();
     this.getTransaction();
   }
   ngAfterViewInit(): void {
@@ -38,6 +40,9 @@ export class TransactionTableComponent implements OnInit, AfterViewInit {
     this._transactionService.getTransactions().subscribe((data) => {
       this.transactions = data;
       this.dataSource.data = this.transactions;
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1000);
     });
   }
 }

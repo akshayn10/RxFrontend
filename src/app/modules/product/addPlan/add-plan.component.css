@@ -123,6 +123,7 @@
 .form-group-btn {
   margin-top: 10px;
   margin-left: 23%;
+  display: flex;
 }
 
 .btn {
