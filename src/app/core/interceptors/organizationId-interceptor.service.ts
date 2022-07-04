@@ -22,7 +22,7 @@ export class OrganizationIdInterceptorService implements HttpInterceptor {
     authreq = this.AddTokenheader(request, orgId);
     return next.handle(authreq).pipe(
       catchError(errordata => {
-        if (errordata.status === 401) {
+        if (errordata.status === 402) {
           if(authservice.getRole() == 'Owner'){
             this.router.navigate(['/auth/signup3']);
 
