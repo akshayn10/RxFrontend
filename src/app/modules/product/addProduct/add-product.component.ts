@@ -26,8 +26,8 @@ export class AddProductComponent implements OnInit {
       description: ['', [Validators.required]],
       logoPath: [''],
       logoImage: [null],
-      webhookURL: ['', [Validators.required]],
-      redirectUrl: ['', [Validators.required]],
+      webhookURL: ['', [Validators.required,Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
+      redirectUrl: ['', [Validators.required,Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
       freeTrialDays: [0, [Validators.required]],
     });
   }
@@ -38,6 +38,9 @@ export class AddProductComponent implements OnInit {
 
   onSubmit() {
     if (this.submitted == true) {
+      return;
+    }
+    if(this.productForm.invalid){
       return;
     }
     const formData = new FormData();
