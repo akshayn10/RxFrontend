@@ -19,11 +19,18 @@ export class ReportChartComponent implements OnInit {
   lineChartLabels: Label[] = [];
   lineChartOptions: ChartOptions = {
     responsive: true,
+    elements: {
+      line: {
+        tension: 0,
+
+      }
+    }
   };
   lineChartColors: Color[] = [
     {
-      borderColor: 'white',
-      backgroundColor: '#A2BAF5',
+      borderColor: 'rgb(162, 186, 245)',
+      // backgroundColor: '#A2BAF5',
+      backgroundColor: 'rgba(162, 186, 245,0.3)',
     },
   ];
   lineChartLegend = false;
