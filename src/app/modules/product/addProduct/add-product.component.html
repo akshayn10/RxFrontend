@@ -58,17 +58,23 @@
               <div *ngIf="f['webhookURL'].errors && f['webhookURL'].errors['required']">
                 Webhook URL is required.
               </div>
+              <div *ngIf="f['webhookURL'].errors && f['webhookURL'].errors['pattern']">
+                Webhook URL is not valid
+              </div>
             </div>
           </div>
         </div>
 
         <div class="form-group">
           <label class="labelName">Redirect URL</label>
-          <input type="url" class="form-control" formControlName="redirectUrl" />
+          <input type="text" class="form-control" formControlName="redirectUrl" />
           <div class="invalid">
             <div *ngIf="f['redirectUrl'].touched && f['redirectUrl'].invalid">
               <div *ngIf="f['redirectUrl'].errors && f['redirectUrl'].errors['required']">
                 Redirect URL is required.
+              </div>
+              <div *ngIf="f['redirectUrl'].errors && f['redirectUrl'].errors['pattern']">
+                Redirect URL is not valid
               </div>
             </div>
           </div>
